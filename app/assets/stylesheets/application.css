@@ -12,10 +12,6 @@
  *= require_tree .
  */
 
-.container .row{
-//margin-top: 70px;
-}
-
 
 .ui-helper-hidden-accessible { display:none; }
 
