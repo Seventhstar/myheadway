@@ -31,8 +31,6 @@ h1 {
 
   display: block;
   height: 8px;
-  //  border: 1px solid #EEE;
-// margin-left: auto;
   margin-right: auto;
   &.mini{
      width: 338px;
@@ -53,7 +51,6 @@ width: 800;
  border: 1px solid #EEE;
  padding: 10px 20px 30px 20px;
  
- //margin-left: auto;
  margin-right: auto;
  margin-top: 25px;
  
@@ -84,7 +81,6 @@ left: -21px;
 height: 17px;
 width: 190px;
 padding: 5px 7px;
-//margin-right: 65px;
 margin-right: auto;
 font-size: 12px;
 font-weight: bold;
@@ -100,7 +96,6 @@ border-radius: 4px 0 4px 0;
 #statement_content, p{
   font-family: Georgia, "Times New Roman", serif;
   font-size: 18px;
-//  padding-bottom: 10px;
 -webkit-margin-before: 1em;
 -webkit-margin-after: 1em;
   
@@ -114,7 +109,6 @@ padding-bottom: 10px;
 #statement_author
 {
   font-family: Georgia, "Times New Roman", serif;
- // float: left;
   color: #999;
   height: auto;
   padding: 5px;
@@ -129,7 +123,6 @@ padding-bottom: 10px;
 
 .statement_user {
   float: right;
- // height: 30px;
  color: #999;
   
 }
@@ -153,22 +146,15 @@ padding-bottom: 10px;
 
 .toggleButton{
   cursor: pointer;
-//  color: #aaaaaa;
-
-  //border: 
-  //color: #ffffff;
   color: white;
   background-color: #666;
   border-color: #0088cc;
-  //padding: 2px;
   padding-right: 3px;
   padding-left: 2px;
   margin-left: 5px;
-//margin-top: 2px;
-//margin-bottom: 2px;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3x;
+ -webkit-border-radius: 3px;
+ -moz-border-radius: 3px;
+  border-radius: 3x;
 }
 
 .digg_pagination a, .digg_pagination em, .digg_pagination span{
@@ -218,7 +204,6 @@ border-image: initial;
 
 
 .digg_pagination {
- // margin-left: 25px;
   .digg_pagination a, em {
    text-decoration: none;
    &.current {
