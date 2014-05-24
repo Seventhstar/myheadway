@@ -1,0 +1,37 @@
+<%= form_for(@target_day) do |f| %>
+  <% if @target_day.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@target_day.errors.count, "error") %> prohibited this target_day from being saved:</h2>
+
+      <ul>
+      <% @target_day.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :checked %><br>
+    <%= f.check_box :checked %>
+  </div>
+  <div class="field">
+    <%= f.label :target_id %><br>
+    <%= f.number_field :target_id %>
+  </div>
+  <div class="field">
+    <%= f.label :day %><br>
+    <%= f.number_field :day %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br>
+    <%= f.number_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<%= form_for(@feeling) do |f| %>
+  <% if @feeling.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feeling.errors.count, "error") %> prohibited this feeling from being saved:</h2>
+
+      <ul>
+      <% @feeling.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t("Feeling") %>
+    <%= f.text_area :content, :size =>"120x5", :class => "width_area" %>
+  </div>
+  <div class="field">
+    <%= f.label t(:day) %>
+    <%= f.text_field :day, :value=>fomatdate_date(@feeling.day), :class => 'datepicker' %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit nil, :class => "btn btn-success"%>
+    <%= link_to t('Back'), feelings_path, :class => "btn" %>
+  </div>
+<% end %>
+
+

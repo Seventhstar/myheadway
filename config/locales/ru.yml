@@ -1,0 +1,241 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+ # date:
+  #  formats:
+      #short: "%B %Y"
+   #   short: "%m %Y"
+      #default: "%a, %d %b %Y, %H:%M:%S %z"
+    #  month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+     # abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+
+    #order:
+     ## - :day
+#      - :month
+ #     - :year
+
+          # Названия дней недели -- контекстные и отдельностоящие
+     # common_day_names: [воскресенье, понедельник, вторник, среда, четверг, пятница, суббота]
+      #standalone_day_names: [Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота]
+      #common_abbr_day_names: [Вс, Пн, Вт, Ср, Чт, Пт, Сб]
+      #standalone_abbr_day_names: [вс, пн, вт, ср, чт, пт, сб]
+
+      # Названия месяцев -- сокращенные и полные, плюс отдельностоящие.
+      # Не забудьте nil в начале массиве (~)
+      # 
+      #
+      # Don't forget the nil at the beginning; there's no such thing as a 0th month
+      #month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+      #common_month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+      #standalone_month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+      ##common_abbr_month_names: [~, янв., февр., марта, апр., мая, июня, июля, авг., сент., окт., нояб., дек.]
+      #standalone_abbr_month_names: [~, янв., февр., март, апр., май, июнь, июль, авг., сент., окт., нояб., дек.]
+
+    #defaults: 
+      ##month_names:
+      #  [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+
+  Name: "Имя"
+  BookName: "Название книги"
+
+  Authors: "Авторы"
+  Author: "Автор"
+  Tags: "Метки"
+
+
+  author_id: "Автор"
+  book_id: "Книга"
+  Created at: "Создано"
+  Id: "#"
+  id: "Код"
+  Myheadway: "Движение вперед"
+  name: "Имя"
+  parent_id: "Родитель"
+  author: "Автор:"
+  source: "Источник:"
+  theme: "Темы:"
+  content: "Содержание:"
+  target_page_header: "Цели"
+  target_page_header_h2: "Выполнение целей по дням"
+  NewTarget: "Новая цель"
+  CreateTarget: "Создать цель"
+  Back: "Назад"
+  tags: "Метки:"
+
+  New Author: "Добавить автора"
+  New Target: "Новая цель"
+  New Tag: "Новая метка"
+  New Feeling: "Добавить ощущение"
+  New feeling: "Новое ощущение"
+  New statement: "Новое высказывание"
+  New Book: "Новая книга"
+  New book: "Новая книга"
+
+  Editing Target: "Редактирование цели"
+  Editing feeling: "Редактирование ощущения"
+  Editing statement: "Редактирование высказывания"
+  Editing Book: "Редактирование книги"
+  Editing book: "Редактирование книги"
+
+  Listing feelings: "Список ощущений"
+  Listing books: "Список книг"
+  
+
+  content: "Содержимое:"
+  day: "День:"
+  Day: "День"
+  Feeling: "Ощущение:"
+
+  time:
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      time: "%H:%M"
+      short: "%d %b, %H:%M"
+      long: "%d %B %Y, %H:%M"
+      date: "%Y-%m-%d"
+      md: "%m-%d"
+      descr: "%d %b %Y"
+
+  helpers:
+    submit:
+      create: 'Создать %{model}'
+      update: 'Обновить %{model}'
+      submit: 'Save %{model}'
+
+  will_paginate:
+    previous_label: "&#8592; Назад"
+    next_label: "Вперед &#8594;"
+    page_gap: "&hellip;"
+
+  activerecord:
+    models:
+      target: "цель"
+      statement: "высказывание"
+      feeling: "ощущение"
+      book: "книгу"
+      author: "автора"
+
+  :Statements count: "Высказываний"
+
+
+
+
+  date:
+    abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    abbr_month_names:
+    -
+    - янв.
+    - Февраль
+    - Март
+    - Апрель
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    day_names:
+    - воскресенье
+    - понедельник
+    - вторник
+    - среда
+    - четверг
+    - пятница
+    - суббота
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%-d %B %Y'
+      short: ! '%b %Y'
+    month_names:
+    -
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: около %{count} часов
+        many: около %{count} часов
+        one: около %{count} часа
+        other: около %{count} часа
+      about_x_months:
+        few: около %{count} месяцев
+        many: около %{count} месяцев
+        one: около %{count} месяца
+        other: около %{count} месяца
+      about_x_years:
+        few: около %{count} лет
+        many: около %{count} лет
+        one: около %{count} года
+        other: около %{count} лет
+      almost_x_years:
+        one: почти 1 год
+        few: почти %{count} года
+        many: почти %{count} лет
+        other: почти %{count} лет
+      half_a_minute: меньше минуты
+      less_than_x_minutes:
+        few: меньше %{count} минут
+        many: меньше %{count} минут
+        one: меньше %{count} минуты
+        other: меньше %{count} минуты
+      less_than_x_seconds:
+        few: меньше %{count} секунд
+        many: меньше %{count} секунд
+        one: меньше %{count} секунды
+        other: меньше %{count} секунды
+      over_x_years:
+        few: больше %{count} лет
+        many: больше %{count} лет
+        one: больше %{count} года
+        other: больше %{count} лет
+      x_days:
+        few: ! '%{count} дня'
+        many: ! '%{count} дней'
+        one: ! '%{count} день'
+        other: ! '%{count} дня'
+      x_minutes:
+        few: ! '%{count} минуты'
+        many: ! '%{count} минут'
+        one: ! '%{count} минуту'
+        other: ! '%{count} минуты'
+      x_months:
+        few: ! '%{count} месяца'
+        many: ! '%{count} месяцев'
+        one: ! '%{count} месяц'
+        other: ! '%{count} месяца'
+      x_seconds:
+        few: ! '%{count} секунды'
+        many: ! '%{count} секунд'
+        one: ! '%{count} секундy'
+        other: ! '%{count} секунды'
+    prompts:
+      day: День
+      hour: Часов
+      minute: Минут
+      month: Месяц
+      second: Секунд
+      year: Год

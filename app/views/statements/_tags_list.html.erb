@@ -1,0 +1,21 @@
+<div class="tag_list">
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+	<% @tags.each do |tag| %>
+     <li><a tabindex="-1" href="#" tagid="<%= tag.id %>"><%= tag.name %> (<%=tag.statements.count%>)</a></li>
+    
+   <% end -%>
+   <li class="divider"></li>
+ <li><%= link_to 'Редактировать метки',:tags %></li>
+</ul>
+   
+</div>
+
+
+<!--<div class="tag_list">
+    <select class="selectpicker">
+    <option> </option>
+	<% @tags.each do |tag| %>
+     <option><%= tag.name %> (<%=tag.statements.count%>)</option>
+   <% end -%>
+ </select>
+</div>-->

@@ -1,0 +1,35 @@
+<h1>Listing target_days</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Checked</th>
+      <th>Target</th>
+      <th>Day</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @target_days.each do |target_day| %>
+      <tr>
+        <td><%= target_day.checked %></td>
+        <td><%= target_day.target_id %></td>
+        <td><%= target_day.day %></td>
+        <td><%= target_day.month %></td>
+        <td><%= target_day.year %></td>
+        <td><%= link_to 'Show', target_day %></td>
+        <td><%= link_to 'Edit', edit_target_day_path(target_day) %></td>
+        <td><%= link_to 'Destroy', target_day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Target day', new_target_day_path %>

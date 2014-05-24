@@ -1,0 +1,33 @@
+<h1><%= t("Listing feelings")%></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t("Feeling")%></th>
+      <th width="50"><%= t(:Day)%></th>
+      <th width="40"></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feelings.each do |feeling| %>
+      <tr>
+        <td><%= feeling.content %></td>
+        <td><%= feeling.day.strftime("%d-%m-%Y") %></td>
+    
+            <td><%= link_to image_tag('edit.png'), edit_feeling_path(feeling) %>
+    <%= link_to image_tag('delete.png'), feeling, data: {confirm: 'Are you sure?'}, method: :delete %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t("New Feeling"), new_feeling_path, :class=>"btn btn-success" %>
+
+
+

@@ -1,0 +1,27 @@
+<%- model_class = Tag -%>
+<h1><%= t 'Tags'%></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%=t model_class.human_attribute_name(:name) %></th>
+      <th width="50"><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td><%= tag.name %></td>
+
+        <td><%= link_to image_tag('edit.png'), edit_tag_path(tag) %>
+    <%= link_to image_tag('delete.png'), tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('New Tag'), new_tag_path, :class=>"btn btn-success" %>

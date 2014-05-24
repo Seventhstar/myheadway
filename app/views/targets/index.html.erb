@@ -1,0 +1,98 @@
+<h2><%= t :target_page_header_h2 %></h2>
+<% current_period %>
+
+<%= hidden_field_tag "current_year", @current_year %>
+<%= hidden_field_tag "current_month", @current_month %>
+
+
+<%current_time = Time.now%>
+
+<div class="calendar_period">
+<div class="calendar_period_h">
+    <%= prev_year %> 
+    <%= prev_month %> 
+    
+    <span class="date_head"><%= l current_period, :format => :short %></span>
+    <!-- current_period, :format => "%B %Y" -->
+    <!-- current_period.strftime("%b %Y") -->
+    <%= next_month %> 
+    <%= next_year %> 
+</div>
+</div>
+
+
+<div >
+<div id="div_target_list">
+	<div id="target_head">
+	  <span class="calenhead head"><%= t :target_page_header %></span>
+	  <div id="days_head">
+			<% days = @current_period.end_of_month.day %>
+			<% current_day = @current_period.beginning_of_month %>
+			<% days.times do |d|%>
+			   <span class="calenhead <%= class_on_date_type(current_day)%> h<%=d+1 %>"><%=d+1 %></span>
+			   <% current_day = current_day.advance(:days => 1) %>
+			<% end %>
+	  </div>
+  </div>
+
+
+
+<div id="target_list">
+<% target_count = 0 %>
+<% child_day_array =[] %>
+<% Target.where('parent_id is NULL').each do |target| %>
+  <% target_count+=1 %>
+  <% child_day_array<<nil %>
+  <div class="t-item" id="t-item-<%= target.id %>">
+	  	<div class="target_line_head">
+		      <span class="plus" id="span-<%= target.id %>">-</span>
+		  		<div class="target_name"><%= target.name %></div>
+		  		<%= link_to image_tag('edit.png'), edit_target_path(target), :style=>"display: none; " %>
+		    	<%= link_to image_tag('delete.png'), target, data: {confirm: 'Are you sure?'}, method: :delete, :style=>"display: none; " %>
+		  	</div>
+	  
+	  		<div class="target_line_days">
+
+							<% days.times do |d|%>
+							   <span class="calenday <%=day_checked(target.id,d+1) %> day_" day="<%=d+1%>" target="<%=target.id%>"></span>
+							<% end %>
+				</div>
+	</div>
+  <% if target.targets.count %>
+  <div class="children" id="children-<%= target.id %>" style="display: block; ">
+  <% end %>	
+  <% target.targets.order('id').each do |sub_target| %>
+      <% target_count+=1 %>
+      <% child_day_array<<target.id %>
+
+      <div class="target_li">
+      	<div class="target_line_head">
+	      	<div class="subtarget_name"><%= sub_target.name %></div>
+	        <%= link_to image_tag('edit.png'), edit_target_path(sub_target), :style=>"display: none; " %>
+	        <%= link_to image_tag('delete.png'), sub_target, data: {confirm: 'Are you sure?'}, method: :delete, :style=>"display: none; " %>
+	      </div>
+	      <div class="target_line_days day_<%= target.id %>">
+			        
+							<% days.times do |d|%>
+							   <span class="calenday <%=day_checked(sub_target.id,d+1)  %>" day="<%=d+1%>" target="<%=sub_target.id%>"></span>
+							<% end %>
+			
+				</div>
+      </div>
+  <% end %>
+  <% if target.targets.count %>
+  </div>
+  <% end %>
+<% end %>
+</div>
+</div>
+
+</div>
+
+<br />
+
+<div id="new target">
+<%= link_to t(:NewTarget), new_target_path, :class => "btn btn-success" %>
+</div>
+
+

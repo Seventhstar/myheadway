@@ -1,0 +1,12 @@
+<div class="mainmenu">
+<nav class="round">
+  <%= image_tag("sun.png", :alt => "Sample App", :class => "round") %>
+
+  <%= render_navigation :level => 1 %>
+
+</nav>
+</div>
+
+<div class="subnav">
+  <%= render "submenu" %>
+</div>

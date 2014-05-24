@@ -1,0 +1,56 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.container .row{
+//margin-top: 70px;
+}
+
+
+.ui-helper-hidden-accessible { display:none; }
+
+a.brand_title {
+color: #0088cc;
+float: left;
+display: block;
+padding: 10px 20px 10px;
+margin-left: -20px;
+font-size: 20px;
+font-weight: 200;
+text-shadow: 0 1px 0 #ffffff;
+//background-image: linear-gradient(to bottom, #f5f5f5, #eaeaea);
+a{text-decoration: none;}
+
+background-repeat: repeat-x;
+}
+
+.simple-navigation-active-leaf{
+background-image: linear-gradient(to bottom, #f5f5f5, #eaeaea);
+background-repeat: repeat-x;
+a{color: #000;}
+
+}
+
+a.brand_title:hover {
+color: #0066aa;
+//background-color: #000;
+text-decoration: none;
+}
+
+div#target_list > a:hover{
+	background-color: #000;
+}
+
+.logo {
+	float: left;
+}

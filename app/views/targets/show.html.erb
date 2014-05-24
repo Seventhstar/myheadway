@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @target.name %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @target.parent_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @target.user_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @target.group_id %>
+</p>
+
+<%= link_to 'Edit', edit_target_path(@target) %> |
+<%= link_to 'Back', targets_path %>

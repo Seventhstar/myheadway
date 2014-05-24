@@ -1,0 +1,26 @@
+<%= form_for(@book) do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t :name %>
+    <%= f.text_field :name, :class => "width_area" %>
+  </div>
+  <div class="field">
+     <%= f.label t(:author_id) %>
+    <%= f.text_field :author_name, data: {autocomplete_source: authors_path} %>
+  </div>
+  <div class="actions">
+    <%= f.submit nil, :class => "btn btn-success"%>
+    <%= link_to t('Back'), books_path, :class => "btn" %>
+  </div>
+<% end %>

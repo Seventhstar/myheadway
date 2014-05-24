@@ -1,0 +1,29 @@
+<h1><%= t("Listing books") %></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t("BookName")%></th>
+      <th><%= t("Author")%></th>
+      <th></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.name %></td>
+        <td><%= book.author_name  %></td>
+
+        <td><%= link_to image_tag('edit.png'), edit_book_path(book) %>
+    <%= link_to image_tag('delete.png'), book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to t('New Book'), new_book_path, :class=>"btn btn-success" %>

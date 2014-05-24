@@ -1,0 +1,264 @@
+// Place all the styles related to the targets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$corner-radius: 2px;
+
+#target_list, .target_li{
+//font-size: 1.2em;
+line-height: 18px;
+color: #0F67A1;
+display: block;
+//padding: 0.2em 10px;
+margin: 0;
+text-decoration: none;
+position: relative;
+
+}
+
+#target_head{
+  height: 24px;
+  margin-bottom: 3px;
+}
+
+h2{
+  text-align: center;
+}
+
+#target_list .target_li{
+ height: 23px;
+}
+
+.t-item{
+ height: 23px;
+
+}
+
+.target_line_head{
+  width: 225px;
+   height: 20px;
+   float: left;
+    border-bottom: 1px solid #EEE;
+    margin: 0px 10px 0px 0px;
+}
+
+span.plus {
+display: block;
+float: left;
+width: 15px;
+text-align: center;
+cursor: pointer;
+}
+
+.target_line_days{
+  
+  height: 23px;
+}
+
+.date_head{
+    $corner-radius: 2px;
+    padding: 1px 1px 1px 1px;
+    border: 1px solid #EEE;
+
+   -moz-border-radius: $corner-radius;
+  -webkit-border-radius: $corner-radius;
+  -o-border-radius: $corner-radius;
+  -ms-border-radius: $corner-radius;
+  -khtml-border-radius: $corner-radius;  
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.calenhead{
+      $corner-radius: 2px;
+    padding: 1px 1px 1px 1px;
+    display: block;
+    float: left;
+    margin: 0px 1px 4px 0px;
+    border: 1px solid #EEE;
+    vertical-align: center;
+    text-align: center;
+    width:13px;
+    min-height:13px;
+   font-size: 0.8em;
+   -moz-border-radius: $corner-radius;
+  -webkit-border-radius: $corner-radius;
+  -o-border-radius: $corner-radius;
+  -ms-border-radius: $corner-radius;
+  -khtml-border-radius: $corner-radius;  
+
+  &:hover{
+    border: 1px solid #BBB;
+    background-color: #d9e8ff;
+  }
+    &.head{
+    width: 220px;
+    height: 18px;
+    display: block;
+    float: left;
+    text-align: center;
+    margin: 0px 10px 0px 0px;
+    background-color: #f9f9f9;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+     &:hover{
+    border: 1px solid #EEE;
+  }
+  }
+}
+
+.calenday{
+    $corner-radius: 2px;
+    padding: 1px 1px 1px 1px;
+    display: block;
+    float: left;
+    margin: 0px 1px 4px 0px;
+    border: 1px solid #EEE;
+    vertical-align: center;
+    text-align: center;
+    width:13px;
+    min-height:13px;
+   font-size: 0.8em;
+   -moz-border-radius: $corner-radius;
+  -webkit-border-radius: $corner-radius;
+  -o-border-radius: $corner-radius;
+  -ms-border-radius: $corner-radius;
+  -khtml-border-radius: $corner-radius;  
+  &:hover{
+    border: 1px solid #BBB;
+    background-color: #d9e8ff;
+  }  
+  &.checked{
+    background-image: url(check.png);
+  }
+
+
+}
+
+.today{
+    color: #00f;
+    border: 1px solid #0055ff;
+    background-color: #eeffff;
+  }
+
+.holyday {
+  border: 1px solid #ffcccc;
+  background-color: #ffeeee;
+  &:hover{
+    border: 1px solid #ff0000;
+    background-color: #ffdddd;
+  }  
+}
+
+.edit_delete{
+    float: left;
+    display: block;
+    padding: 0.1em 0.1em; 
+    }
+    
+.end_line{
+float: right;
+width: 10px;
+display: block;
+}
+
+
+
+.target_name {
+width: 170px;
+float: left;
+}
+
+.subtarget_name {
+width: 165px;
+float: left;
+margin-left: 20px;
+}
+
+#children {
+margin-left: 20px;
+}
+
+#target_list{
+//margin-left: -30px;
+padding:0px;
+-webkit-padding-start: 0px;
+
+}
+
+#div_target_list{
+ // width: 230px;
+ // float: left;
+}
+
+#div_days_list{
+  float: right;
+}
+
+
+.calendar_period {
+  background: white;
+  cursor: default;
+  height: 24px;
+  width: 780px;
+  margin: 10px auto;
+
+  .calendar_period_h {
+
+  width: 250px;
+  margin: 10px auto;
+  padding-left: 55px;
+  }
+
+  a, span, em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+
+  }
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1;
+  }
+  a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5;
+    border: 1px solid #EEE;
+
+   -moz-border-radius: $corner-radius;
+   -webkit-border-radius: $corner-radius;
+   -o-border-radius: $corner-radius;
+   -ms-border-radius: $corner-radius;
+   -khtml-border-radius: $corner-radius;  
+
+
+    &:hover, &:focus {
+      color: #000033;
+      border-color: #000033;
+    }
+  }
+  .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center;
+    b {
+      color: #000033;
+      background: #2e6ab1 + 60;
+      padding: 0.1em 0.25em;
+    }
+  }
+}
+
+ .overhead{
+      background-color: #eee;
+      border-color: #333;
+    }

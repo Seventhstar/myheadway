@@ -1,0 +1,24 @@
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    
+    <div class="container">
+      <div class="logo"><%= image_tag('growth.png') %></div>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand_title" href="#"><%= t Myheadway %></a>
+      <div class="nav-collapse">
+        <%= render_navigation :level => 1 %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="subnav">
+  <div class="container">
+    <%= render "submenu" %>
+  </div>
+</div>
