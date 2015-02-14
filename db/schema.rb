@@ -13,66 +13,65 @@
 
 ActiveRecord::Schema.define(version: 20140622081619) do
 
-  create_table "authors", force: true do |t|
+  create_table "authors", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "books", force: true do |t|
+  create_table "books", force: :cascade do |t|
     t.string   "name"
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "denials", force: true do |t|
+  create_table "denials", force: :cascade do |t|
     t.string   "name"
-    t.date     "start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "feelings", force: true do |t|
+  create_table "feelings", force: :cascade do |t|
     t.text     "content"
     t.date     "day"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "search_suggestions", force: true do |t|
+  create_table "search_suggestions", force: :cascade do |t|
     t.string   "term"
     t.integer  "author"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "statements", force: true do |t|
+  create_table "statements", force: :cascade do |t|
     t.integer  "author_id"
     t.string   "source"
     t.string   "theme"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.integer  "book_id"
     t.boolean  "isTip"
   end
 
-  create_table "statementstags", force: true do |t|
+  create_table "statementstags", force: :cascade do |t|
     t.integer  "statement_id"
     t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tags", force: true do |t|
+  create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "target_days", force: true do |t|
+  create_table "target_days", force: :cascade do |t|
     t.boolean  "checked"
     t.integer  "target_id"
     t.integer  "day"
@@ -82,7 +81,7 @@ ActiveRecord::Schema.define(version: 20140622081619) do
     t.datetime "updated_at"
   end
 
-  create_table "targets", force: true do |t|
+  create_table "targets", force: :cascade do |t|
     t.string   "name"
     t.integer  "parent_id"
     t.integer  "user_id"

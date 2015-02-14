@@ -1,5 +1,5 @@
 <% statement = getRandomStatement%>
-
+<% if statement!=nil %>
     <div id="statement_show" class="mini">
     	<div class="rand_statement">Случайное высказываение</div>
     	<div id="statement_header">
@@ -25,3 +25,4 @@
       </div>
 	</div>
 	<div id="statement_bottom" class="mini"></div>
+	<% end %>
