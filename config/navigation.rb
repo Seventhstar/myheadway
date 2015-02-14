@@ -55,8 +55,12 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :key1, 'Высказывания', '/statements' do |sub_nav|
      # sub_nav.item :key1_1, 'Высказывания', '/statements'
       sub_nav.item :key1_2, 'Авторы', '/authors'
+      sub_nav.item :key1_3, 'Книги', '/books'
+      sub_nav.item :key1_4, 'Метки', '/tags'
     end
-    primary.item :key2, 'Ощущения', '/feelings'
+    
+    primary.item :feelings, 'Ощущения', '/feelings'
+    primary.item :denials, 'Отказы', '/denials'
 
 
     # Add an item which has a sub navigation (same params, but with block)
@@ -74,7 +78,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
     # primary.dom_id = 'menu-id'
-    primary.dom_class = 'nav'
+    primary.dom_class = 'nav navbar-nav'
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false

@@ -1,0 +1,30 @@
+<%- model_class = Denial -%>
+<h3><%= t("Listing denials")%></h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+     <th><%= t("Denial")%></th>
+      <th><%= t("Start date")%></th>
+      <th><%= t("Time ago")%></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @denials.each do |denial| %>
+      <tr>
+        <td><%= denial.name %></td>
+        <td><%= denial.start_date %></td>
+        <td><%= time_ago_in_words(denial.start_date) %><abbr class="timeago" title="<%= denial.start_date %>"><%= denial.start_date.to_s %></abbr><%= timeago_tag denial.start_date, :lang => :ru %></td>
+        
+        <td><%= link_to image_tag('edit.png'), edit_denial_path(denial) %>
+    <%= link_to image_tag('delete.png'), denial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('New Denial'), new_denial_path, :class=>"btn btn-success" %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @denial.name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @denial.start_date %>
+</p>
+
+<%= link_to 'Edit', edit_denial_path(@denial) %> |
+<%= link_to 'Back', denials_path %>

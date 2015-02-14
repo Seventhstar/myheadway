@@ -1,4 +1,6 @@
 Myheadway::Application.routes.draw do
+  resources :denials
+
   resources :books
 
   resources :statementstags

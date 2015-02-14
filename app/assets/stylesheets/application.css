@@ -48,3 +48,13 @@ div#target_list > a:hover{
 .logo {
 	float: left;
 }
+
+
+.left-row{
+	width: 70%;
+	float: left;
+}
+
+.navbar .navbar-btn{
+	float: right;
+}

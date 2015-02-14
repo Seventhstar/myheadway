@@ -24,7 +24,18 @@ h1 {
 }
 
 
+.table_row{
+  width: 700px;
+}
 
+.statement_form_content{
+  width: auto;
+}
+
+#statement_isTip,.right_align_span{
+  float: right;
+  margin-left: 5px;
+}
 
 #statement_bottom {
   background: url("st_footer2.png");
@@ -54,7 +65,8 @@ width: 800;
  margin-right: auto;
  margin-top: 25px;
  
- display: block;
+ //display: block;
+ //float: right;
  background: url("back-tet5.png");
  
   -moz-border-radius: 4px;
@@ -64,22 +76,27 @@ width: 800;
   -khtml-border-radius: 4px;
   border-radius: 4px;
   &.mini{
-     width: 300px;
+     width: 338px;
      height: auto;
   }
   &.max_statement{
-   width: 710px; 
+   width: 750px; 
   }
 }
 
+
+.statement_mini{
+  float: right;
+  width: 338px;
+}
 
 .rand_statement {
 position: relative;
 float: left;
 top: -11px;
 left: -21px;
-height: 17px;
-width: 190px;
+height: 30px;
+width: 210px;
 padding: 5px 7px;
 margin-right: auto;
 font-size: 12px;

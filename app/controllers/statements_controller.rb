@@ -85,7 +85,7 @@ class StatementsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def statement_params
       
-      params.require(:statement).permit(:author_id, :source, :theme, :content, :author_name, :tag_tokens, :book_name)
+      params.require(:statement).permit(:author_id, :source, :theme, :content, :author_name, :tag_tokens, :book_name, :isTip)
       
     end
 end

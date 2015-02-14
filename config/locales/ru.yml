@@ -62,6 +62,7 @@ ru:
   CreateTarget: "Создать цель"
   Back: "Назад"
   tags: "Метки:"
+  tip: "Совет"
 
   New Author: "Добавить автора"
   New Target: "Новая цель"
@@ -71,21 +72,29 @@ ru:
   New statement: "Новое высказывание"
   New Book: "Новая книга"
   New book: "Новая книга"
+  New Denial: "Новая вещь"
+  New denial: "Новая вещь, от который отказываюсь"
 
   Editing Target: "Редактирование цели"
   Editing feeling: "Редактирование ощущения"
   Editing statement: "Редактирование высказывания"
   Editing Book: "Редактирование книги"
   Editing book: "Редактирование книги"
+  Editing denial: "Редактирование отказа"
 
   Listing feelings: "Список ощущений"
   Listing books: "Список книг"
-  
+  Listing denials: "Список вещей, от которых отказываюсь"
 
   content: "Содержимое:"
   day: "День:"
   Day: "День"
   Feeling: "Ощущение:"
+  Denial: "Отказался от"
+
+  Start date: "Дата начала"
+  start_date: "Дата начала"
+  Time ago: "Прошло времени"
 
   time:
     formats:
@@ -113,6 +122,7 @@ ru:
       target: "цель"
       statement: "высказывание"
       feeling: "ощущение"
+      denial: "отказ"
       book: "книгу"
       author: "автора"
 

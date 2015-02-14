@@ -23,7 +23,7 @@ $(document).ready ->
     change: (event, ui) ->
        $("#statement_book_id").val(null)       
       
-$ -> 
+$(document).ready -> 
   $('#statement_tag_tokens').tokenInput('/tags.json',
     theme: 'facebook'
     prePopulate: $('#statement_tag_tokens').data('load')
