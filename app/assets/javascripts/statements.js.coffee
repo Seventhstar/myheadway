@@ -3,11 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 //= require jquery-ui
 
-jQuery ->
+$(document).ready ->
   $('#search').autocomplete
     source: "/search_suggestions"
 
-$(document).ready ->
+
   $('#statement_author_name').autocomplete
     source: "/ajax/authors"
     select: (event,ui) ->
@@ -15,7 +15,6 @@ $(document).ready ->
     change: (event, ui) ->
        $("#statement_author_id").val(null)
 
-$(document).ready ->
   $('#statement_book_name').autocomplete
     source: "/ajax/books"
     select: (event,ui) ->
@@ -23,7 +22,6 @@ $(document).ready ->
     change: (event, ui) ->
        $("#statement_book_id").val(null)       
       
-$ -> 
   $('#statement_tag_tokens').tokenInput('/tags.json',
     theme: 'facebook'
     prePopulate: $('#statement_tag_tokens').data('load')

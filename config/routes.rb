@@ -1,4 +1,6 @@
 Myheadway::Application.routes.draw do
+  resources :denials
+
   resources :books
 
   resources :statementstags
@@ -17,6 +19,16 @@ Myheadway::Application.routes.draw do
   resources :authors
 
   root :to => "statements#index"
+
+  get    'signup'  => 'users#new'
+  get    'login'   => 'sessions#new'                                   
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  resources :users
+
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
+
 
   get "ajax/authors"
   get "ajax/books"

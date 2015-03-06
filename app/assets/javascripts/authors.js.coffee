@@ -2,5 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
 $(document).ready ->
-  $('#key1').addClass('simple-navigation-active-leaf')
+  cur = $('.selected')
+  #alert($('.selected').attr('id'))
+  if cur.attr('id') == 'key1'
+     $('#key1').addClass('simple-navigation-active-leaf')
+
+  

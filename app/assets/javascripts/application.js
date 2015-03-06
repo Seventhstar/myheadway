@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.tokeninput
+//= require rails-timeago-all
+//= require locales/jquery.timeago.ru.js
 //= require_tree .
 
 function capitalize(a) {

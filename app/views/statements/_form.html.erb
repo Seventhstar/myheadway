@@ -11,13 +11,18 @@
     </div>
   <% end %>
 
-<table><tr><td><div class="field">
+<div class="statement_form_content">
+<table class="table_row"><tr><td><div class="field">
     <%= f.label t :author %>
     <%= f.text_field :author_name, data: {autocomplete_source: authors_path} %>
   </div></td>
   <td><div class="field">
     <%= f.label t :source %>
     <%= f.text_field :source %>
+  </div></td>
+  <td><div class="field">
+  <span class="right_align_span"><%= t(:tip)%></span>
+    <%= f.check_box :isTip %> 
   </div></td></tr></table>
    <div class="field">
     <%= f.label :tag_tokens, t("tags") %>
@@ -42,4 +47,5 @@
     <%= f.submit nil, :class => "btn btn-success" %> 
     <%= link_to t('Back'), statements_path, :class => "btn" %>
   </div>
+</div>
 <% end %>

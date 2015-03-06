@@ -48,3 +48,31 @@ div#target_list > a:hover{
 .logo {
 	float: left;
 }
+
+
+
+.col-80{
+width: 73%;
+float: left;
+}
+
+.navbar .navbar-btn{
+	float: right;
+}
+
+
+.signin {
+max-width: 500px;
+padding: 20px 50px;
+margin: 0px auto;
+background: #F9F9F9;
+border-radius: 5px;
+margin-top: 30px;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

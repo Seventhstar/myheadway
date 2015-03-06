@@ -1,5 +1,6 @@
 class TargetsController < ApplicationController
   before_action :set_target, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user
 
   # GET /targets
   # GET /targets.json

@@ -1,20 +1,26 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.0'
 
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3','1.3.8'
-gem 'pg'
+group :development, :test do
+  gem 'sqlite3',     '1.3.10'
+  gem 'coffee-script-source', '1.8.0'
+end
+          
+group :production do
+  gem 'pg'
+  gem 'rails_12factor', '0.0.2'
+end
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '~> 5.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -50,7 +56,11 @@ end
 gem 'execjs'
 gem 'twitter-bootstrap-rails'
 
-gem 'RedCloth','4.2.9'
+gem 'RedCloth'
 #gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
 gem 'simple-navigation-bootstrap'
 gem 'will_paginate'
+gem 'rails-timeago', '~> 2.0'
+gem 'tzinfo-data'
+gem 'yaml_db'
+gem 'bcrypt'
