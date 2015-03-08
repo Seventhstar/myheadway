@@ -52,6 +52,7 @@ $('.dropdown-menu li a').click(function(event) {
   $.get($("#statements_search").attr("action"), {tagid:$(this).attr('tagid')}, null, "script");
 } );                  
 
+$('.flash').fadeOut(3000);
 
 if ($('#key0').hasClass('selected') || $('#key2').hasClass('selected'))
 $('#key1').removeClass('simple-navigation-active-leaf');

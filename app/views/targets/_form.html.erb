@@ -11,27 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label t(:id) %>
-    <%= f.text_field :id %>
-  </div>
+  <%= f.hidden_field :id %>
+  
 
-  <div class="field">
-    <%= f.label t(:name) %>
+  <div class="input-group gr-btm_mg">
+      <span class="input-group-addon addon100"><%= t :name %></span>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label t(:parent_id) %>
+
+
+  <div class="input-group gr-btm_mg">
+      <span class="input-group-addon addon100"><%= t :parent_id %></span>
     <%= f.text_field :parent_name %>
+
     <%= f.hidden_field :parent_id %>
   </div>
   
-  <div class="field">
+
     <%= f.hidden_field :user_id, :value => 1 %>
-  </div>
+
          
   <div class="actions">
     <%= f.submit nil, :class => "btn btn-success" %>
-    <%= link_to t('Back'), targets_path, :class => "btn" %>
+    <%= link_to t('Back'), targets_path, :class => "btn btn-white" %>
   </div>
 <% end %>

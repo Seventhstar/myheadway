@@ -5,7 +5,7 @@ class Target < ActiveRecord::Base
   attr_accessor :parent_name
 
   def parent_name
-      parent.name if parent_id
+      parent.name if parent_id?
   end
 
 end

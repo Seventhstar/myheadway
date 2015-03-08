@@ -5,8 +5,10 @@
 $(document).ready ->
   $('#target_parent_name').autocomplete
     source: "/ajax/targets"
-    select: (event,ui) ->
-      $("#target_parent_id").val(ui.item.id)
+    #select: (event,ui) ->
+     # $("#target_parent_id").val if ui.item then ui.item.id else ""
+    change: (event,ui) ->
+      $("#target_parent_id").val if ui.item then ui.item.id else ""
 
   $(".calenday").mouseout ->
     day = $(this).attr("day")
