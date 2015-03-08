@@ -17,6 +17,7 @@
 //= require jquery.tokeninput
 //= require rails-timeago-all
 //= require locales/jquery.timeago.ru.js
+//= require chosen.jquery
 //= require_tree .
 
 function capitalize(a) {
@@ -55,7 +56,7 @@ $('.dropdown-menu li a').click(function(event) {
 if ($('#key0').hasClass('selected') || $('#key2').hasClass('selected'))
 $('#key1').removeClass('simple-navigation-active-leaf');
 
-  $('.toggleButton').click(function(){
+  $('.col-80').on('click','.toggleButton',function(){
     id = $(this).attr('id');
     id = id.substring(4);
 

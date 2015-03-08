@@ -5,19 +5,46 @@ class StatementsController < ApplicationController
   # GET /statements
   # GET /statements.json
   def index
-#     @statements = Statement.all
-    if params[:tagid] 
-      @tag = Tag.find(params[:tagid])
-      @statements = @tag.statements.paginate(:page => params[:page], :per_page => 5)
-    elsif params[:authorid]
-      @author = Author.find_by! id: params[:authorid]
-      @statements = @author.statements.search(params[:search]).order('id').paginate(:page => params[:page], :per_page => 5)
-    else
-       @statements = Statement.search(params[:search]).order('id').paginate(:page => params[:page], :per_page => 5)
-    end
+    @authors = Author.all.order(:name)
     @tags = Tag.all.order(:name)
     @model_name = controller_name.classify
-#     @statements = Statement.find(params[:id]).order('id').paginate(:page => params[:page], :per_page => 5)
+
+    tags_ids = []
+    authors_ids = []
+    search_ids = []
+
+    if params[:tag_id] && params[:tag_id].present?
+      @tag = Tag.find(params[:tag_id])
+      tags_ids = @tag.statements.ids
+    else
+      tags_ids = Statement.all.ids
+    end
+
+    if params[:author_id] && params[:author_id].present?
+      @author = Author.find_by! id: params[:author_id]
+      authors_ids = @author.statements.ids
+      puts authors_ids
+    else
+      authors_ids = Statement.all.ids
+    end
+
+    if params[:search] && params[:search].present?
+      search_ids = Statement.search(params[:search]).ids
+    else
+      search_ids = Statement.all.ids
+    end
+
+
+    ids = authors_ids & tags_ids & search_ids
+    if params[:tag_id].nil? || params[:author_id].nil?
+       @statements = Statement.all
+    else
+       @statements = Statement.where('id in (?)', ids)
+    end
+    
+    @statements = @statements.paginate(:page => params[:page], :per_page => 5)
+    
+
   end
 
   # GET /statements/1
@@ -85,8 +112,6 @@ class StatementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def statement_params
-      
-      params.require(:statement).permit(:author_id, :source, :theme, :content, :author_name, :tag_tokens, :book_name, :isTip)
-      
+      params.require(:statement).permit(:author_id, :source, :theme, :content, :author_name,:author_id, :tag_tokens, :book_name, :isTip, :tag_ids=>[])
     end
 end

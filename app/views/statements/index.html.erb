@@ -8,8 +8,14 @@
 
 <%= form_tag statements_path, :method => 'get', :id => "statements_search" do %>
   <p>
-    <%= text_field_tag :search, params[:search] %> 
-    <%= submit_tag "Поиск", :name => nil, :class=>"btn" %>
+    <div class="navsearch"> 
+    <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %> 
+    </div>
+    
+    <%= select_tag "tag_id", content_tag(:option,'Метка...',:value=>"")+options_from_collection_for_select(@tags, "id", "name") %>
+    <%= select_tag "author_id", content_tag(:option,'Автор...',:value=>"")+options_from_collection_for_select(@authors, "id", "name") %>
+
+    <%= submit_tag "Поиск", :name => nil, :class=>"btn btn-white btn-sm2" %>
   </p>
   <div id="statement"><%= render 'statements' %></div>
 <% end %>

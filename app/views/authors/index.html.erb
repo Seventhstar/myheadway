@@ -14,7 +14,7 @@
     <% @authors.each do |author| %>
       <tr>
         <td><%= link_to author.id, author_path(author) %></td>
-        <td><%= link_to author.name, statements_path(:authorid => author.id) %></td>
+        <td><%= link_to author.name, statements_path(:author_id => author.id) %></td>
         <td><%=l author.created_at %></td>
         <td><%=  author.statements.count %></td>
         <td><%= link_to image_tag('edit.png'), edit_author_path(author) %>

@@ -12,40 +12,47 @@
   <% end %>
 
 <div class="statement_form_content">
-<table class="table_row"><tr><td><div class="field">
-    <%= f.label t :author %>
-    <%= f.text_field :author_name, data: {autocomplete_source: authors_path} %>
-  </div></td>
-  <td><div class="field">
-    <%= f.label t :source %>
-    <%= f.text_field :source %>
-  </div></td>
-  <td><div class="field">
-  <span class="right_align_span"><%= t(:tip)%></span>
-    <%= f.check_box :isTip %> 
-  </div></td></tr></table>
-   <div class="field">
-    <%= f.label :tag_tokens, t("tags") %>
-    <%= f.text_field :tag_tokens, data: {load: @statement.tags} %>
-  </div>
-  
-  <div class="field">
-    <%= f.label t :theme %>
-    <%= f.text_field :theme, :class => "width_area" %>
-  </div>
- 
- <div class="field">
-     <%= f.label t(:book_id) %>
-    <%= f.text_field :book_name, data: {autocomplete_source: books_path}, :class => "width_area" %>
-  </div>
 
-  <div class="field">
-    <%= f.label t :content %>
-    <%= f.text_area :content, :class => "width_area",:size => "100x10" %>
-  </div>
+<span class="right_align_span"><%= t(:tip)%></span>
+    <%= f.check_box :isTip %> 
+    
+   <%= f.hidden_field :author_id   %>
+   <div class="input-group">
+      <span class="input-group-addon addon100"><%= t :author %></span>
+      <%= f.text_field :author_name, data: {autocomplete_source: authors_path} %>
+   </div>
+    
+
+
+    <div class="input-group">
+      <span class="input-group-addon addon100"><%= t :source %></span>
+    <%= f.text_field :source %>
+    </div>
+
+    
+
+    <div class="input-group">
+      <span class="input-group-addon addon100"><%= t("tags") %></span>
+    <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon addon100"><%= t :theme %></span>
+    <%= f.text_field :theme, :class => "width_area" %>
+    </div>
+
+ 
+
+    <div class="input-group">
+      <span class="input-group-addon addon100"><%= t(:book_id) %></span>
+    <%= f.text_field :book_name, data: {autocomplete_source: books_path}, :class => "width_area" %>
+    </div>
+
+    <%= t :content %>
+    <%= f.text_area :content, :class => "width_area",:size => "80x8" %>
   <div class="actions">
     <%= f.submit nil, :class => "btn btn-success" %> 
-    <%= link_to t('Back'), statements_path, :class => "btn" %>
+    <%= link_to t('Back'), statements_path, :class => "btn btn-white" %>
   </div>
 </div>
 <% end %>

@@ -26,7 +26,7 @@ class Statement < ActiveRecord::Base
 
   
   def author_name=(name)
-    self.author = Author.find_or_create_by_name(name) if name.present?
+    self.author = Author.find_or_create_by(name: name) if name.present?
   end
 
 
@@ -36,7 +36,7 @@ class Statement < ActiveRecord::Base
   end
 
    def book_name=(name)
-    self.book = Book.find_or_create_by_name(name) if name.present?
+    self.book = Book.find_or_create_by(name: name) if name.present?
   end
 
   def ae_some_html
