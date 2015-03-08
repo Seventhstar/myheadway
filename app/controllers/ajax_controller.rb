@@ -26,7 +26,7 @@ class AjaxController < ApplicationController
     if params[:term]
       like= "%".concat(params[:term].concat("%"))
 #      targets = Target.where("name like ?", like)
-      targets = Target.where("LOWER(name) like ? and parent_id is NULL ", like)
+      targets = Target.where("name like ? and parent_id is NULL ", like)
     else
       targets = Target.all
     end
