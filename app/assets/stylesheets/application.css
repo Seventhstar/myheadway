@@ -183,3 +183,15 @@ border-top-right-radius: 0;
 border-bottom-right-radius: 0;
 border-right: 0;
 }
+
+
+.sortnav{
+	//float: left;
+	//width: 980px;
+	//margin-left: 148px;
+	margin-bottom: 20px;
+}
+
+.sortnav li a, .sortnav li a:hover, .nav-pills a{
+	padding: 5px 10px;
+}

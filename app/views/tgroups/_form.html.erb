@@ -1,0 +1,28 @@
+<%= form_for(@tgroup) do |f| %>
+  <% if @tgroup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tgroup.errors.count, "error") %> prohibited this tgroup from being saved:</h2>
+
+      <ul>
+      <% @tgroup.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+      <div class="input-group gr-btm_mg">
+        <span class="label-group-addon addon140">Группы целей:</span>
+          <%= f.collection_select(:target_ids, Target.where('parent_id is NULL'), :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
+      </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

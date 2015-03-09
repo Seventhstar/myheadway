@@ -1,4 +1,6 @@
 Myheadway::Application.routes.draw do
+  resources :tgroups
+
   resources :denials
 
   resources :books
