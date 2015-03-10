@@ -1,7 +1,7 @@
 <div class="nav nav-pills">
-	<li <%= activeClassIfModel( "Statement" )%>><%= link_to "Высказывания", :statements %></li>
-	<li <%= activeClassIfModel( "Author" )%>><%= link_to "Авторы", :authors %></li>   
-	<li <%= activeClassIfModel( "Book" )%>><%= link_to "Книги", :books %></li>   
-	<li <%= activeClassIfModel( "Tag" )%>><%= link_to "Метки", :tags %></li>   
-	<li ><%= link_to 'Добавить высказывание', new_statement_path, :id => "link_to_new_statement" %></li>
+	<%= menu_li "Высказывания", :statements %>
+	<%= menu_li "Авторы", :authors %>
+	<%= menu_li "Книги", :books %>   
+	<%= menu_li "Метки", :tags %>
+	<li> <%= link_to 'Добавить высказывание', new_statement_path, :id => "link_to_new_statement" %></li>
 </div> 

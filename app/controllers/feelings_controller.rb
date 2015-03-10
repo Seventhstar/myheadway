@@ -5,7 +5,6 @@ class FeelingsController < ApplicationController
   # GET /feelings.json
   def index
     @feelings = Feeling.all.order(:day)
-    @model_name = controller_name.classify
   end
 
   # GET /feelings/1

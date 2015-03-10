@@ -10,7 +10,6 @@ class TagsController < ApplicationController
       format.html
       format.json { render json: @tags.tokens(params[:q]) }
     end
-    @model_name = controller_name.classify
   end
 
   # GET /tags/1

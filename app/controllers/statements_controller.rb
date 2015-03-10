@@ -7,7 +7,6 @@ class StatementsController < ApplicationController
   def index
     @authors = Author.all.order(:name)
     @tags = Tag.all.order(:name)
-    @model_name = controller_name.classify
 
     tags_ids = []
     authors_ids = []

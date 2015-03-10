@@ -9,19 +9,18 @@ class TargetsController < ApplicationController
     @tgroups = Tgroup.all
     puts params[:tgroup_id]
     if params[:tgroup_id]
-       gr_id = params[:tgroup_id]      
+       @gr_id = params[:tgroup_id]      
     else
       #@targets = Target.where('parent_id is NULL')
-       gr_id = 1
+       @gr_id = 1
     end
 
     if Tgroup.count > 0
-     @targets = Tgroup.find(gr_id).targets
+     @targets = Tgroup.find(@gr_id).targets
     else
      @targets = Target.where('parent_id is NULL')
     end
 
-    @model_name = controller_name.classify
   end
 
   # GET /targets/1

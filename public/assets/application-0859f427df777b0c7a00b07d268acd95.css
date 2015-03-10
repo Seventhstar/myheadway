@@ -1524,6 +1524,41 @@ span.plus {
   background-color: #eee;
   border-color: #333;
 }
+
+/* line 260, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.subnav li.active_li a {
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: #428bca;
+  color: #fff;
+}
+
+/* line 268, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.subpills a {
+  min-width: 100px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  float: left;
+  color: #428bca;
+  padding: 3px 10px;
+  height: 24px !important;
+  cursor: pointer;
+}
+/* line 278, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.subpills a:hover {
+  background-color: #f3f3f3;
+}
+/* line 281, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.subpills a.active {
+  background-color: #428bca;
+  color: #fff;
+}
+/* line 285, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.subpills a.passive {
+  background-color: #eee;
+}
 /* Example tokeninput style #2: Facebook style */
 
 ul.token-input-list-facebook {
@@ -1978,6 +2013,18 @@ vertical-align: middle;
 border-top-right-radius: 0;
 border-bottom-right-radius: 0;
 border-right: 0;
+}
+
+
+.sortnav{
+	//float: left;
+	//width: 980px;
+	//margin-left: 148px;
+	margin-bottom: 20px;
+}
+
+.sortnav li a, .sortnav li a:hover, .nav-pills a{
+	padding: 5px 10px;
 }
 /*!
  * jQuery UI CSS Framework 1.11.2
