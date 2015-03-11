@@ -42,6 +42,7 @@ ru:
   Authors: "Авторы"
   Author: "Автор"
   Tags: "Метки"
+  Tgroup: "Группу"
 
 
   author_id: "Автор"
@@ -74,6 +75,7 @@ ru:
   New book: "Новая книга"
   New Denial: "Новая вещь"
   New denial: "Новая вещь, от который отказываюсь"
+  New Tgroup: "Новая группа"
 
   Editing Target: "Редактирование цели"
   Editing feeling: "Редактирование ощущения"
@@ -81,6 +83,7 @@ ru:
   Editing Book: "Редактирование книги"
   Editing book: "Редактирование книги"
   Editing denial: "Редактирование отказа"
+  Editing Tgroup: "Редактирование группы целей"
 
   Listing feelings: "Список ощущений"
   Listing books: "Список книг"

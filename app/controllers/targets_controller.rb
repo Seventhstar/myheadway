@@ -85,6 +85,6 @@ class TargetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def target_params
-      params.require(:target).permit(:name, :parent_id, :user_id, :group_id, :id)
+      params.require(:target).permit(:name, :parent_id, :user_id, :group_id, :id, :tgroup_ids=>[])
     end
 end

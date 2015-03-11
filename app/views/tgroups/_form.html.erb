@@ -11,18 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="input-group gr-btm_mg">
+      <span class="input-group-addon addon120"><%= t :name %></span>
+
     <%= f.text_field :name %>
   </div>
 
       <div class="input-group gr-btm_mg">
-        <span class="label-group-addon addon140">Группы целей:</span>
+        <span class="input-group-addon addon120">Группы целей:</span>
           <%= f.collection_select(:target_ids, Target.where('parent_id is NULL'), :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
       </div>
 
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="actions">
+    <%= f.submit nil, :class => "btn btn-success" %>
+    <%= link_to t('Back'), targets_path, :class => "btn btn-white" %>
   </div>
+
 <% end %>

@@ -416,6 +416,11 @@ padding: 0px 19px 0px;
 	width: 100px;
 }
 
+.addon120{
+	width: 120px;
+}
+
+
 .input-group input{
 	width: 350px;
 	border-radius: 4px ;	
@@ -1415,49 +1420,49 @@ span.plus {
 }
 
 /* line 153, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-.edit_delete {
-  float: left;
-  display: block;
-  padding: 0.1em 0.1em;
+td.edit_delete, th.edit_delete {
+  width: 45px;
+  padding-right: 4px !important;
+  padding-left: 4px !important;
 }
 
-/* line 159, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 160, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .end_line {
   float: right;
   width: 10px;
   display: block;
 }
 
-/* line 167, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 168, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .target_name {
   width: 170px;
   float: left;
 }
 
-/* line 172, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 173, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .subtarget_name {
   width: 165px;
   float: left;
   margin-left: 20px;
 }
 
-/* line 178, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 179, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 #children {
   margin-left: 20px;
 }
 
-/* line 182, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 183, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 #target_list {
   padding: 0px;
   -webkit-padding-start: 0px;
 }
 
-/* line 188, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 189, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 #div_days_list {
   float: right;
 }
 
-/* line 193, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 194, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period {
   background: white;
   cursor: default;
@@ -1465,20 +1470,20 @@ span.plus {
   width: 780px;
   margin: 10px auto;
 }
-/* line 200, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 201, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period .calendar_period_h {
   width: 350px;
   margin: 10px auto;
   padding-left: 55px;
 }
-/* line 207, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 208, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period a, .calendar_period span, .calendar_period em {
   padding: 0.2em 0.5em;
   display: block;
   float: left;
   margin-right: 1px;
 }
-/* line 214, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 215, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period .current {
   font-style: normal;
   font-weight: bold;
@@ -1486,7 +1491,7 @@ span.plus {
   color: white;
   border: 1px solid #2e6ab1;
 }
-/* line 221, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 222, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period a {
   text-decoration: none;
   color: #105cb6;
@@ -1498,12 +1503,12 @@ span.plus {
   -ms-border-radius: 2px;
   -khtml-border-radius: 2px;
 }
-/* line 234, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 235, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period a:hover, .calendar_period a:focus {
   color: #000033;
   border-color: #000033;
 }
-/* line 239, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 240, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period .page_info {
   background: #2e6ab1;
   color: white;
@@ -1512,20 +1517,20 @@ span.plus {
   margin-bottom: 0.3em;
   text-align: center;
 }
-/* line 246, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 247, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period .page_info b {
   color: #000033;
   background: #6aa6ed;
   padding: 0.1em 0.25em;
 }
 
-/* line 254, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 255, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .overhead {
   background-color: #eee;
   border-color: #333;
 }
 
-/* line 260, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 261, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .subnav li.active_li a {
   border-radius: 4px;
   padding: 10px 15px;
@@ -1534,7 +1539,7 @@ span.plus {
   color: #fff;
 }
 
-/* line 268, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 269, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .subpills a {
   min-width: 100px;
   text-align: center;
@@ -1546,16 +1551,16 @@ span.plus {
   height: 24px !important;
   cursor: pointer;
 }
-/* line 278, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 279, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .subpills a:hover {
   background-color: #f3f3f3;
 }
-/* line 281, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 282, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .subpills a.active {
   background-color: #428bca;
   color: #fff;
 }
-/* line 285, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 286, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .subpills a.passive {
   background-color: #eee;
 }
@@ -1963,9 +1968,9 @@ input[type="text"]:focus,#datepicker:focus,textarea:focus,
 
 .chosen-container-multi .chosen-choices {
 	padding: 4px 12px 0px !important;
-	border-radius: 3px;
+	border-radius: 0 3px 3px 0;
 //	border-color: #CCC !important;
-	height: 27px !important;
+//	height: 27px !important;
 }
 
 .chosen-container-multi .chosen-choices li.search-choice{

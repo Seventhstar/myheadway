@@ -15,7 +15,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.tokeninput
-//= require rails-timeago-all
+//= require rails-timeago
 //= require locales/jquery.timeago.ru.js
 //= require chosen.jquery
 //= require_tree .

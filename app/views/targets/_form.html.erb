@@ -26,6 +26,14 @@
 
     <%= f.hidden_field :parent_id %>
   </div>
+
+  <% if @target.parent.nil? %>
+      <div class="input-group gr-btm_mg">
+        <span class="input-group-addon addon100">Группы:</span>
+          <%= f.collection_select(:tgroup_ids, Tgroup.all, :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
+      </div>
+
+   <% end %>
   
 
     <%= f.hidden_field :user_id, :value => 1 %>
