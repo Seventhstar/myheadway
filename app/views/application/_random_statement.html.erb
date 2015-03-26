@@ -1,7 +1,7 @@
 <% statement = getRandomStatement%>
 <% if statement!=nil %>
     <div id="statement_show" class="mini">
-    	<div class="rand_statement">Случайное высказываение</div>
+    	<div class="min_statement_head">Случайное высказываение</div>
     	<div id="statement_header">
     		<% link_to image_tag('left.png'), "statements/".concat((statement.id-1).to_s) %> 
     		<b>#</b> <%= statement.id %>

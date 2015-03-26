@@ -5,6 +5,9 @@ class TargetsController < ApplicationController
   # GET /targets
   # GET /targets.json
   def index
+    current_time = Time.now
+    #@current_period = current_period
+    #days = @current_period.end_of_month.day
 
     @tgroups = Tgroup.all
     puts params[:tgroup_id]

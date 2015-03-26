@@ -5,13 +5,11 @@ module TargetsHelper
      if params[:month]
         @current_year  = params[:year].to_i
         @current_month  = params[:month].to_i
-
         @current_period = Date.new(@current_year,@current_month,1)
      else    	
-	@current_month = Date.today.month
-	@current_year = Date.today.year
+	      @current_month = Date.today.month
+	      @current_year = Date.today.year
         @current_period ||= Date.today.beginning_of_month
-
      end
   end
 
@@ -19,32 +17,32 @@ module TargetsHelper
      if params[:month]
         @current_month = params[:month].to_i
      else    	
-	@current_month ||= Date.today.month
+	      @current_month ||= Date.today.month
      end
   end
 
   def prev_year 
       year = current_period.prev_year.year
-      month = current_period.prev_year.month
-      return link_to "<<", targets_path+"/period/"+year.to_s+"/"+month.to_s
+      month = current_period.prev_year.month 
+      return link_to "<<", targets_path+"/period/"+year.to_s+"/"+month.to_s, {:class => 'page gradient'}
   end
 
   def next_year 
       year = current_period.next_year.year
       month = current_period.next_year.month
-      return link_to ">>", targets_path+"/period/"+year.to_s+"/"+month.to_s
+      return link_to ">>", targets_path+"/period/"+year.to_s+"/"+month.to_s, {:class => 'page gradient'}
   end
 
   def prev_month 
       year = current_period.prev_month.year
       month = current_period.prev_month.month
-      return link_to "<", targets_path+"/period/"+year.to_s+"/"+month.to_s
+      return link_to "<", targets_path+"/period/"+year.to_s+"/"+month.to_s, {:class => 'page gradient'}
   end
 
   def next_month
       year = current_period.next_month.year
       month = current_period.next_month.month
-      return link_to ">", targets_path+"/period/"+year.to_s+"/"+month.to_s
+      return link_to ">", targets_path+"/period/"+year.to_s+"/"+month.to_s, {:class => 'page gradient'}
   end
 
 

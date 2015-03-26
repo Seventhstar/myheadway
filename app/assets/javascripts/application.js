@@ -102,12 +102,12 @@ $('#key1').removeClass('simple-navigation-active-leaf');
      year = $("#current_year").val();
 
      if ($(this).hasClass("checked")){
-
         $(this).removeClass("checked");
-	checked = false;
+        checked = false;
      }else{
         checked = true;
-	$(this).addClass("checked");
+        $(this).addClass("checked");
+        //$(this).switchClass( "", "checked", 100, "easeInOutQuad" );
      };
 
      $.ajax({
@@ -124,15 +124,10 @@ $('#key1').removeClass('simple-navigation-active-leaf');
   });
 
   
-  $('.target_li, .t-item').hover(
-    function(){
-     $(this).find("a").removeAttr("style");
-   },
-    function(){
-     $(this).find("a").attr("style","display: none; ");
+  /*$('.target_li, .t-item').hover(function(){
+    $(this).find("div.edit_delete").toggleClass('hidden');
    }
-
-  );
+  );*/
   
   $(".notice").fadeOut(1400);
 

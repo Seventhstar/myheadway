@@ -81,7 +81,7 @@ a.brand {
 
 .subnav{
   position: relative;
-margin: 15px 0;
+//margin: 15px 0;
 padding: 0px 19px 0px;
 
 }
@@ -103,7 +103,7 @@ padding: 0px 19px 0px;
 
 
 .navbar1 .nav>li {
-	float: left;
+   float: left;
 }
 
 .navbar-inner {

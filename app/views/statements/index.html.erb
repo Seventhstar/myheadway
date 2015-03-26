@@ -1,7 +1,7 @@
 <% if @author %>
 	<h3>Высказывания автора: <%= @author.name %></h3>
 <% else %>
-	<h2>Высказывания известных людей</h2>
+	<h3>Высказывания известных людей</h3>
 <% end %>
 
 
@@ -15,7 +15,7 @@
     <%= select_tag "tag_id", content_tag(:option,'Метка...',:value=>"")+options_from_collection_for_select(@tags, "id", "name") %>
     <%= select_tag "author_id", content_tag(:option,'Автор...',:value=>"")+options_from_collection_for_select(@authors, "id", "name") %>
 
-    <%= submit_tag "Поиск", :name => nil, :class=>"btn btn-white btn-sm2" %>
+    <%= submit_tag "Поиск", :name => nil, :class=>"btn btn-white2 btn-sm2" %>
   </p>
   <div id="statement"><%= render 'statements' %></div>
 <% end %>

@@ -14,6 +14,15 @@ position: relative;
 
 }
 
+.thead_group{
+  background-color: #f7f7f7;
+  -moz-border-radius: $corner-radius;
+  -webkit-border-radius: $corner-radius;
+  -o-border-radius: $corner-radius;
+  -ms-border-radius: $corner-radius;
+  -khtml-border-radius: $corner-radius;  
+}
+
 #target_head{
   height: 24px;
   margin-bottom: 3px;
@@ -112,7 +121,7 @@ cursor: pointer;
     padding: 1px 1px 1px 1px;
     display: block;
     float: left;
-    margin: 0px 1px 4px 0px;
+    margin: 1px 1px 2px 0px;
     border: 1px solid #EEE;
     vertical-align: center;
     text-align: center;
@@ -125,15 +134,35 @@ cursor: pointer;
   -ms-border-radius: $corner-radius;
   -khtml-border-radius: $corner-radius;  
   &:hover{
-    border: 1px solid #BBB;
-    background-color: #d9e8ff;
+    border: 1px solid #ACF;
+    background-color: #e9f8ff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }  
   &.checked{
     background-image: url(check.png);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
-
-
 }
+
+
+.group_day .calenday{
+  border: 1px solid #ddd;
+    &:hover{
+    border: 1px solid #ACF;
+    background-color: #e9f8ff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }  
+}
+
 
 .today{
     color: #00f;
@@ -158,17 +187,22 @@ td.edit_delete, th.edit_delete{
 
     
 .end_line{
-float: right;
-width: 10px;
-display: block;
+  float: right;
+  width: 10px;
+  display: block;
 }
 
 
 
 .target_name {
-width: 170px;
-float: left;
+  width: 170px;
+  float: left;
 }
+
+.thead_group .target_name{
+  color: #616161;
+}
+
 
 .subtarget_name {
 width: 165px;
@@ -192,21 +226,22 @@ padding:0px;
 
 
 .calendar_period {
-  background: white;
+//  background: white;
   cursor: default;
-  height: 24px;
-  width: 780px;
-  margin: 10px auto;
+  height: 28px;
+//  width: 780px;
+  margin: 10px 0;
 
   .calendar_period_h {
-
-  width: 350px;
-  margin: 10px auto;
-  padding-left: 55px;
+//  width: 350px;
+  //margin: 10px auto;
+  //padding-left: 55px;
+  float: right;
   }
 
-  a, span, em {
-    padding: 0.2em 0.5em;
+  //a, 
+  span, em {
+    padding: 0.2em 1.2em;
     display: block;
     float: left;
     margin-right: 1px;
@@ -219,7 +254,7 @@ padding:0px;
     color: white;
     border: 1px solid #2e6ab1;
   }
-  a {
+/*  a {
     text-decoration: none;
     color: #105cb6;
     border: 1px solid #9aafe5;
@@ -236,7 +271,7 @@ padding:0px;
       color: #000033;
       border-color: #000033;
     }
-  }
+  }*/
   .page_info {
     background: #2e6ab1;
     color: white;

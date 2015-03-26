@@ -17,3 +17,6 @@ $(document).ready ->
   $('.calenday').mouseover ->
     day = $(this).attr("day");
     $('.h'+day).addClass('overhead');
+
+  $('.target_li, .t-item').hover ->
+    $(this).find('div.edit_delete').toggleClass 'hid'  
