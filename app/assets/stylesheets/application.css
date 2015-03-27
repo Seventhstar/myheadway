@@ -16,6 +16,9 @@
  *= require chosen
  */
 
+.container{
+	width: 1260px !important;
+}
 
 h3{
 	padding-bottom: 2px;
@@ -78,7 +81,7 @@ div#target_list > a:hover{
 }
 
 .col-80{
-width: 73%;
+width: 67%;
 float: left;
 }
 

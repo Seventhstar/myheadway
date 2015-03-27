@@ -83,10 +83,7 @@ width: 800;
  padding: 10px 20px 30px 20px;
  
  margin-right: auto;
- margin-top: 66px;
- 
- //display: block;
- //float: right;
+ margin-top: 18px;
  background: url("back-tet5.png");
  
   -moz-border-radius: 4px;
@@ -168,9 +165,17 @@ padding-bottom: 10px;
 
 #statement_header{
   position: relative ; 
-    top: -7px; 
-    right: -7px;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  top: -11px; 
+  right: -21px;
   float: right;
+  padding: 5px 7px;
+   border-radius: 0 5px 0 5px;
+   -webkit-border-radius: 0 5px 0 5px;
+ -moz-border-radius: 0 5px 0 5px;
 }
 
 #statement_footer{
@@ -257,7 +262,7 @@ border-image: initial;
 
 .statement_mini{
   float: right;
-  width: 300px;
+  //width: 300px;
   
   & #statement_content p{
      font-size: 14px;
