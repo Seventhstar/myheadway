@@ -1,6 +1,7 @@
 module ApplicationHelper
 
 
+
 	def getRandomStatement()
 		@rand_statement = Statement.order("RANDOM()").first
 	end

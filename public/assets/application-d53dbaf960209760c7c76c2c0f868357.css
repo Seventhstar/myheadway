@@ -1056,41 +1056,40 @@ body {
   line-height: 18px;
 }
 
-/* line 58, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
-.container-all {
-  background-color: #fff;
-  width: 1230px;
+/*.container-all{
+ background-color: #fff;
+ width: 1230px;
   margin-right: auto;
   margin-left: auto;
   min-height: 95%;
   margin-bottom: -50px;
-}
-
+}*/
 /* line 67, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
 .page-wrapper {
-  min-height: 95%;
+  min-height: 90%;
   margin-bottom: -50px;
 }
 
-/* line 71, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
-* html .page-wrapper {
-  height: 95%;
-}
-
-/* line 74, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+/* line 72, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
 .page-buffer {
   height: 50px;
 }
 
-/* line 78, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
-.page-footer, .footer {
+/*.page-footer, .footer{
   background-color: #fff;
   margin-right: auto;
   margin-left: auto;
   height: 50px;
+}*/
+/* line 83, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777777;
 }
 
-/* line 85, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+/* line 91, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
 .subnav li.active_li a {
   border-radius: 4px;
   padding: 10px 15px;
@@ -1099,7 +1098,7 @@ body {
   color: #fff;
 }
 
-/* line 93, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+/* line 99, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
 .subpills a {
   min-width: 100px;
   text-align: center;
@@ -1111,21 +1110,21 @@ body {
   height: 24px !important;
   cursor: pointer;
 }
-/* line 106, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+/* line 112, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
 .subpills a.btn-success:hover {
   background-color: green;
 }
-/* line 109, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+/* line 115, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
 .subpills a.active {
   background-color: #428bca;
   color: #fff;
 }
-/* line 113, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+/* line 119, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
 .subpills a.passive {
   background-color: #eee;
 }
 
-/* line 118, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+/* line 124, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
 .subnav .btn-success:hover, .subnav .btn-success:focus {
   background-color: #5fcf5f;
 }

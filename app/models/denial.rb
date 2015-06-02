@@ -1,7 +1,12 @@
 class Denial < ActiveRecord::Base
  def denial_start_date
      if self.present?
-       fomatdate_date(self.try(:start_date))
+        start_date = self.try(:start_date) 
+        if start_date
+           start_date.strftime("%d-%m-%Y")
+	else
+	  ""
+        end
      else
        ""
      end

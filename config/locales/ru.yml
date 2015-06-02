@@ -193,7 +193,7 @@ ru:
         few: около %{count} часов
         many: около %{count} часов
         one: около %{count} часа
-        other: около %{count} часа
+        other: около %{count} час.
       about_x_months:
         few: около %{count} месяцев
         many: около %{count} месяцев
@@ -208,18 +208,18 @@ ru:
         one: почти 1 год
         few: почти %{count} года
         many: почти %{count} лет
-        other: почти %{count} лет
+        other: почти %{count} г.
       half_a_minute: меньше минуты
       less_than_x_minutes:
         few: меньше %{count} минут
         many: меньше %{count} минут
         one: меньше %{count} минуты
-        other: меньше %{count} минуты
+        other: меньше %{count} мин.
       less_than_x_seconds:
         few: меньше %{count} секунд
         many: меньше %{count} секунд
         one: меньше %{count} секунды
-        other: меньше %{count} секунды
+        other: меньше %{count} сек.
       over_x_years:
         few: больше %{count} лет
         many: больше %{count} лет

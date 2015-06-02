@@ -55,32 +55,38 @@ body {
   line-height: 18px;
 }
 
-.container-all{
+/*.container-all{
  background-color: #fff;
  width: 1230px;
   margin-right: auto;
   margin-left: auto;
   min-height: 95%;
   margin-bottom: -50px;
-}
+}*/
 
 .page-wrapper {
-    min-height: 95%;
+    min-height: 90%;
     margin-bottom: -50px;
 }
-* html .page-wrapper {
-    height: 95%;
-}
+
 .page-buffer {
     height: 50px;
 }
 
-.page-footer, .footer{
+/*.page-footer, .footer{
   background-color: #fff;
   margin-right: auto;
   margin-left: auto;
   height: 50px;
+}*/
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777777;
 }
+
 
 .subnav li.active_li a{
 border-radius: 4px;
