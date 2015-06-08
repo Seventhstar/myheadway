@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label t(:start_date) %><br>
-    <%= f.text_field :start_date,:value=>@denial.start_date.try('strftime',"%d.%m.%Y"), :class => 'datepicker' %>
+    <%= f.text_field :start_date,:value=>@denial.denial_start_date, :class => 'datepicker' %>
   </div>
 
   <div class="actions">
