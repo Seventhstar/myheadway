@@ -3,7 +3,7 @@ class ChangeStartDateDenials < ActiveRecord::Migration
     reversible do |dir|
       change_table :denials do |t|
         dir.up   { t.change :start_date, :date }
-        dir.down { t.change :start_date, :datetime }
+#        dir.down { t.change :start_date, :datetime }
       end
     end
   end
