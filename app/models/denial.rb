@@ -1,4 +1,7 @@
 class Denial < ActiveRecord::Base
+
+  attr_accessor :start_date
+
  def start_date
      if self.present?
         start_date = self.try(:start_date) 
