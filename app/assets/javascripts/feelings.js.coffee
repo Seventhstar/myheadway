@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  $('.datepicker').datepicker({ dateFormat: 'dd-mm-yy', altFormat: 'yy-mm-dd' })
+  $('.datepicker').datepicker({ dateFormat: 'dd.mm.yy', altFormat: '%Y-%m-%d %H:%M:%S' })
 

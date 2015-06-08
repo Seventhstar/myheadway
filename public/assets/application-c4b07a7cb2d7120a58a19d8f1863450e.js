@@ -34172,8 +34172,8 @@ if (typeof jQuery === 'undefined') {
 (function() {
   jQuery(function() {
     return $('.datepicker').datepicker({
-      dateFormat: 'dd-mm-yy',
-      altFormat: 'yy-mm-dd'
+      dateFormat: 'dd.mm.yy',
+      altFormat: '%Y-%m-%d %H:%M:%S'
     });
   });
 

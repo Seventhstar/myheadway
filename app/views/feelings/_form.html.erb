@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label t(:day) %>
-    <%= f.text_field :day, :value=>fomatdate_date(@feeling.day), :class => 'datepicker' %>
+    <%= f.text_field :day, :value=>@feeling.day.try('strftime',"%d.%m.%Y"), :class => 'datepicker' %>
   </div>
 
 
