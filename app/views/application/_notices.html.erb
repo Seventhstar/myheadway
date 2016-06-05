@@ -1,0 +1,12 @@
+<% notices = Notice.all %>
+<% if !notices.nil? %>
+	<div id="statement_show" class="mini">
+		<div class="min_statement_head">Установки / заметки</div></br>
+		<div id="statement_content">
+			<% notices.each do |notice| %>
+				<p><%= notice.name %></p>
+			<% end %>
+		</div>
+	</div>
+	<div id="statement_bottom" class="mini"></div>
+<% end %>

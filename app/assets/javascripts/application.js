@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery.tokeninput
 //= require rails-timeago
 //= require locales/jquery.timeago.ru.js
@@ -55,7 +54,7 @@ $('.dropdown-menu li a').click(function(event) {
 $('.flash').fadeOut(3000);
 
 if ($('#key0').hasClass('selected') || $('#key2').hasClass('selected'))
-$('#key1').removeClass('simple-navigation-active-leaf');
+/*$('#key1').removeClass('simple-navigation-active-leaf');*/
 
   $('.col-80').on('click','.toggleButton',function(){
     id = $(this).attr('id');

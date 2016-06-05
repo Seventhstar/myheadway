@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Список заметок</h1>
+
+<table class="table table-spripped">
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Актуальна</th>
+      <th width="40px"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notices.each do |notice| %>
+      <tr>
+        <td><%= notice.name %></td>
+        <td><%= notice.actual %></td>
+        <%= td_tool_icons(notice) %> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новая заметка', new_notice_path, :class=>"btn btn-success" %>

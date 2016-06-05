@@ -54,11 +54,12 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'execjs'
-gem 'twitter-bootstrap-rails'
+#gem 'twitter-bootstrap-rails'
 
 gem 'RedCloth'
 #gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
-gem 'simple-navigation-bootstrap'
+#gem 'simple-navigation-bootstrap'
+gem 'simple-navigation'
 gem 'will_paginate'
 gem 'rails-timeago', '~> 2.0'
 gem 'tzinfo-data'

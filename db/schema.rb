@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608112020) do
+ActiveRecord::Schema.define(version: 20160604174250) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20150608112020) do
     t.datetime "updated_at"
   end
 
+  create_table "claims", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date"
+    t.integer  "user_id"
+    t.boolean  "reached"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "denials", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.date     "start_date"
@@ -38,6 +47,14 @@ ActiveRecord::Schema.define(version: 20150608112020) do
     t.date     "day"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "notices", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean  "actual"
   end
 
   create_table "search_suggestions", force: :cascade do |t|

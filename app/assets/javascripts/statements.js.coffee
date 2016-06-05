@@ -32,6 +32,5 @@ $(document).ready ->
        $("#statement_book_id").val(null)       
 
   $('.chosen-select').chosen
-    width: '348px'
     placeholder_text_multiple: 'Выберите...'
     

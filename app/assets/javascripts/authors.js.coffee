@@ -6,7 +6,7 @@
 $(document).ready ->
   cur = $('.selected')
   #alert($('.selected').attr('id'))
-  if cur.attr('id') == 'key1'
-     $('#key1').addClass('simple-navigation-active-leaf')
+  #if cur.attr('id') == 'key1'
+  #   $('#key1').addClass('simple-navigation-active-leaf')
 
   

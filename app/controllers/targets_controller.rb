@@ -15,7 +15,7 @@ class TargetsController < ApplicationController
        @gr_id = params[:tgroup_id]      
     else
       #@targets = Target.where('parent_id is NULL')
-       @gr_id = 1
+       @gr_id = "1"
     end
 
     if Tgroup.count > 0

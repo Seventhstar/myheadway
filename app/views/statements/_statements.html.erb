@@ -10,26 +10,24 @@
     </div><br />
 	<div id="statement_content"><%= raw CheckShortContent(RedCloth.new(statement.content).to_html,statement.id) %></div>
 	  <div id="statement_footer">
-        <div id="statement_author"><b>Автор: </b><%= statement.author_name %><br />
+        <div id="statement_author"><b>Автор: </b><%= statement.author_name %><br/>
         	<% if statement.book_id? %>
-		    	<b>Книга: </b>
-		    	<%= statement.book_name %><br/>
-		    <% end %> 
+		    		<b>Книга: </b><%= statement.book_name %><br/>
+		    	<% end %> 
         	<% if statement.tags.count %>
-		    	<b>Темы: </b>
-		    	<%= statement.tags_names %>
+		    		<b>Метки: </b><%= statement.tags_names %>
 		    	<% end %> 
 		</div>
 		<div id="statement_edit_menu">
 		    
 		    <%= link_to image_tag('link.png'), statement.source %>
-		      <%= link_to image_tag('edit.png'), edit_statement_path(statement) %>
-		      <%= link_to image_tag('delete.png'), statement, data: {confirm: 'Are you sure?'}, method: :delete %>
+		    <%= link_to image_tag('edit.png'), edit_statement_path(statement) %>
+		    <%= link_to image_tag('delete.png'), statement, data: {confirm: 'Are you sure?'}, method: :delete %>
 
 		</div>
       </div>
 	</div>
-	<div id="statement_bottom" class="max_statement"></div>
+	<!-- <div id="statement_bottom" class="max_statement"></div> -->
 <% end %>
 <br/>
 

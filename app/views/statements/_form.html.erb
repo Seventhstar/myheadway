@@ -10,49 +10,36 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+  <div class="col-md-8">
+    <%= f.hidden_field :author_id   %>
+    <div class="field"> <label><%= t :author %></label>
+      <%= f.text_field :author_name, data: {autocomplete_source: authors_path} %> </div>
 
-<div class="statement_form_content">
+    <div class="field"><label><%= t :source %></label>
+      <%= f.text_field :source %></div>
 
-<span class="right_align_span"><%= t(:tip)%></span>
-    <%= f.check_box :isTip %> 
-    
-   <%= f.hidden_field :author_id   %>
-   <div class="input-group">
-      <span class="input-group-addon addon100"><%= t :author %></span>
-      <%= f.text_field :author_name, data: {autocomplete_source: authors_path} %>
-   </div>
-    
+    <div class="field"><label><%= t :tags %></label>
+      <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  </div>
 
+    <div class="field"><label><%= t :book_id %></label>
+      <%= f.text_field :book_name, data: {autocomplete_source: books_path}, :class => "width_area" %></div>
+  </div>
 
-    <div class="input-group">
-      <span class="input-group-addon addon100"><%= t :source %></span>
-    <%= f.text_field :source %>
-    </div>
+  <div class="col-md-4">
+    <label class="inp_btn_label"><div class="inp_btn checkbox"><%= f.check_box :isTip, {}, "true", "false" %></div>Совет
+     </label>
 
-    
-
-    <div class="input-group">
-      <span class="input-group-addon addon100"><%= t("tags") %></span>
-    <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
-    </div>
-
-    <div class="input-group">
-      <span class="input-group-addon addon100"><%= t :theme %></span>
-    <%= f.text_field :theme, :class => "width_area" %>
-    </div>
-
- 
-
-    <div class="input-group">
-      <span class="input-group-addon addon100"><%= t(:book_id) %></span>
-    <%= f.text_field :book_name, data: {autocomplete_source: books_path}, :class => "width_area" %>
-    </div>
-
-    <%= t :content %>
-    <%= f.text_area :content, :class => "width_area",:size => "80x8" %>
+  </div>
+</div>
+<div class="row">
+  <div class="field"><label><%= t :content %></label>
+  <%= f.text_area :content, :class => "width_area",:size => "80x8" %>
+  </div>
   <div class="actions">
     <%= f.submit nil, :class => "btn btn-success" %> 
     <%= link_to t('Back'), statements_path, :class => "btn btn-white" %>
   </div>
 </div>
+
 <% end %>

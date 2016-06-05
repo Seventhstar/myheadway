@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Список вызовов/заявок (на победу :))</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th> Название</th>
+      <th width="50">Дата</th>
+      <th width="50">Достигнута</th>
+      <th width="50"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @claims.each do |claim| %>
+      <tr>
+        <td><%= claim.name %></td>
+        <td><%= claim.date.try('strftime',"%d.%m.%Y") %></td>
+        <td><%= claim.reached %></td>
+        <%= td_tool_icons(claim)%>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новый вызов/заявка', new_claim_path, class: 'btn btn-success' %>

@@ -1,4 +1,8 @@
 Myheadway::Application.routes.draw do
+  resources :notices
+
+  resources :claims
+
   resources :tgroups
 
   resources :denials

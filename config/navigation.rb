@@ -11,7 +11,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
   # Specify the class that will be applied to the current leaf of
   # active navigation items. Defaults to 'simple-navigation-active-leaf'
-  # navigation.active_leaf_class = 'your_active_leaf_class'
+  navigation.active_leaf_class = 'active'
 
   # Item keys are normally added to list items as id.
   # This setting turns that off
@@ -51,17 +51,19 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     #primary.item :key_1, 'name', url, options
     primary.item :key0, 'Цели', '/targets'
-    #primary.item :key1, 'Высказывания', '/statements'
-    primary.item :key1, 'Высказывания', '/statements' do |sub_nav|
+    li_class = request.url==root_url ? "selected active" : ""
+    primary.item :key1, 'Высказывания', '/statements', html: {class: li_class} do |sub_nav|
      # sub_nav.item :key1_1, 'Высказывания', '/statements'
       sub_nav.item :key1_2, 'Авторы', '/authors'
       sub_nav.item :key1_3, 'Книги', '/books'
       sub_nav.item :key1_4, 'Метки', '/tags'
     end
-    
+
+    primary.item :feelings, 'Вызовы/Заявки', '/claims'
+    primary.item :feelings, 'Заметки', '/notices'
     primary.item :feelings, 'Ощущения', '/feelings'
     primary.item :denials, 'Отказы', '/denials'
-
+    primary.item :logout, image_tag('logout.png'),logout_path, method: :delete, html: {class: "orange logout li-right"}
 
     # Add an item which has a sub navigation (same params, but with block)
 #    primary.item :key_2, 'name', url, options do |sub_nav|
