@@ -2,7 +2,6 @@
   <% if @tgroup.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tgroup.errors.count, "error") %> prohibited this tgroup from being saved:</h2>
-
       <ul>
       <% @tgroup.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,16 +10,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-      <label><%= t :name %></label>
+  <div class="field"><label><%= t :name %></label>
+    <%= f.text_field :name %> </div>
 
-    <%= f.text_field :name %>
-  </div>
-
-      <div class="field">
-        <label>Группы целей:</label>
-          <%= f.collection_select(:target_ids, Target.where('parent_id is NULL'), :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
-      </div>
+  <div class="field"><label>Группы целей:</label>
+    <%= f.collection_select(:target_ids, Target.where('parent_id is NULL'), :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %></div>
 
 
     <div class="actions">

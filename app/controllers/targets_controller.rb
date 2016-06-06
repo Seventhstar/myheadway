@@ -1,6 +1,7 @@
 class TargetsController < ApplicationController
   before_action :set_target, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user
+  
 
   # GET /targets
   # GET /targets.json
@@ -81,6 +82,9 @@ class TargetsController < ApplicationController
   end
 
   private
+
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_target
       @target = Target.find(params[:id])

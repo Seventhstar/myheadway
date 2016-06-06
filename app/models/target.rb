@@ -4,10 +4,27 @@ class Target < ActiveRecord::Base
   has_many :target_groups
   has_many :tgroups, through: :target_groups
   belongs_to :user
+  after_save :check_group
   attr_accessor :parent_name
 
   def parent_name
       parent.name if parent_id?
   end
 
+	def check_group
+      if !parent_id.nil? 
+        tgroups.clear
+      end
+   end
+
+
+end
+
+
+class CheckGroup
+	 def before_save
+      if !record.parent_id.nil? 
+        record.group_id = nil
+      end
+    end
 end

@@ -32,7 +32,7 @@ module ApplicationHelper
 
   def menu_li(title, link, def_link = :statements)
      css_li = current_page?(link)||link==def_link ? "active": ""
-     p "link",link, request.url==root_url
+     #p "link",link, request.url==root_url
      content_tag :li,{:class => css_li} do
         link_to title, link
      end
@@ -40,7 +40,7 @@ module ApplicationHelper
 
   def sortable_pil(column, title = nil)
     css_class = column.to_s == @gr_id ? "active " : ""
-    p "column",column, @gr_id
+    #p "column",column, @gr_id
     link_to title, "targets?tgroup_id="+column.to_s,{:class => css_class, :sort => column }
   end
 

@@ -2,7 +2,6 @@
   <% if @claim.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@claim.errors.count, "error") %> prohibited this claim from being saved:</h2>
-
       <ul>
       <% @claim.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,17 +10,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label t :name %>
-    <%= f.text_field :name, class: 'fullwidth' %>
-  </div>
+  <div class="field"><%= f.label t :name %>
+    <%= f.text_field :name, class: 'fullwidth' %></div>
 
-  <div class="field">
-    <%= f.label 'Дата' %>
-    <%= f.text_field :date, :value=>@claim.date.try('strftime',"%d.%m.%Y"), :class => 'datepicker' %>
-  </div>
+  <div class="field"><%= f.label 'Дата' %>
+    <%= f.text_field :date, :value=>@claim.date.try('strftime',"%d.%m.%Y"), :class => 'datepicker' %></div>
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
+
   <label class="inp_btn_label"><div class="inp_btn checkbox"><%= f.check_box :reached, {}, "true", "false" %></div><%= t :reached %></label>
 
   <div class="actions">
