@@ -11,20 +11,20 @@
     </div>
   <% end %>
 
-  <div class="input-group gr-btm_mg">
-      <span class="input-group-addon addon120"><%= t :name %></span>
+  <div class="field">
+      <label><%= t :name %></label>
 
     <%= f.text_field :name %>
   </div>
 
-      <div class="input-group gr-btm_mg">
-        <span class="input-group-addon addon120">Группы целей:</span>
+      <div class="field">
+        <label>Группы целей:</label>
           <%= f.collection_select(:target_ids, Target.where('parent_id is NULL'), :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
       </div>
 
 
     <div class="actions">
-    <%= f.submit nil, :class => "btn btn-success" %>
+    <%= f.submit 'Создать группу', :class => "btn btn-success" %>
     <%= link_to t('Back'), targets_path, :class => "btn btn-white" %>
   </div>
 

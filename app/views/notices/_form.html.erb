@@ -15,8 +15,7 @@
     <%= f.label t :name %><br>
     <%= f.text_field :name, class: 'fullwidth' %>
   </div>
-  <label class="inp_btn_label"><div class="inp_btn checkbox"><%= f.check_box :actual, {}, "true", "false" %></div>Актуально
-      </label>
+  <label class="inp_btn_label"><div class="inp_btn checkbox"><%= f.check_box :actual, {}, "true", "false" %></div>Актуально</label>
  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="actions">
     <%= f.submit 'Сохранить', class: 'btn btn-success' %>
