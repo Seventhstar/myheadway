@@ -17,5 +17,4 @@ class Target < ActiveRecord::Base
       end
    end
 
-
 end

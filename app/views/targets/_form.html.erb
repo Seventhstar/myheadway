@@ -29,7 +29,7 @@
 
   <% if @target.parent.nil? %>
       <div class="field">
-        <label>Группы:</label>
+        <label>Или группы:</label>
           <%= f.collection_select(:tgroup_ids, Tgroup.all, :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
       </div>
 
