@@ -19,12 +19,3 @@ class Target < ActiveRecord::Base
 
 
 end
-
-
-class CheckGroup
-	 def before_save
-      if !record.parent_id.nil? 
-        record.group_id = nil
-      end
-    end
-end
