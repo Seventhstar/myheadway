@@ -53,4 +53,20 @@ class AjaxController < ApplicationController
   end
 
 
+  def upd_param
+  	if params['model'] && params['model']!='undefined'
+
+  		obj = Object.const_get(params['model']).find(params['id'])
+      params[:upd].each do |p|
+        #p "p",p,obj[p[0]]
+        new_value = p[1]
+        new_value.gsub!(' ','') if p[0]=='sum'  
+        obj[p[0]] = new_value
+      end
+      obj.save
+   	 end
+   	 render :nothing => true 
+   	end
+
+
 end

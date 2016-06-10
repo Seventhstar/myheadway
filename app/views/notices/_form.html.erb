@@ -19,8 +19,7 @@
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-success' %>
-    <%= link_to 'Назад', notices_path, class: 'btn btn-cancel' %>
+    <%= submit_cancel notices_path %>
   </div>
   
 <% end %>

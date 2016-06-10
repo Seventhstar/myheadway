@@ -21,7 +21,6 @@
   <label class="inp_btn_label"><div class="inp_btn checkbox"><%= f.check_box :reached, {}, "true", "false" %></div><%= t :reached %></label>
 
   <div class="actions">
-    <%= f.submit 'Сохранить',class: 'btn btn-success' %>
-    <%= link_to 'Отмена', claims_path, class: 'btn btn-cancel' %>
+   <%= submit_cancel claims_path %>
   </div>
 <% end %>

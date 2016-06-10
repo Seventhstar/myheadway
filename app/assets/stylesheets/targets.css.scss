@@ -4,296 +4,81 @@
 
 $corner-radius: 2px;
 
-#target_list, .target_li{
-line-height: 18px;
-color: #0F67A1;
-display: block;
-margin: 0;
-text-decoration: none;
-position: relative;
-font-size: 12px;
+#target_list, .target_li{ line-height: 18px; color: #0F67A1; display: block; margin: 0; text-decoration: none; position: relative; font-size: 12px; }
+.thead_group{background-color: #f7f7f7; }
+
+#target_head{ height: 24px; margin-bottom: 3px;}
+#target_list .target_li{ height: 23px;}
+// h2{text-align: center;}
+.t-item{ height: 23px;}
+
+.target_line_head{ width: 225px; height: 20px; float: left; border-bottom: 1px solid #EEE; margin: 1px 10px 0px 0px; color: #428bca; 
+  &.cur_head,&:hover{ color: white; background-color: #93c0e6;}
 }
 
+span.plus { display: block; float: left; width: 15px;text-align: center; cursor: pointer; }
 
-.thead_group{
-  background-color: #f7f7f7;
-  -moz-border-radius: $corner-radius;
-  -webkit-border-radius: $corner-radius;
-  -o-border-radius: $corner-radius;
-  -ms-border-radius: $corner-radius;
-  -khtml-border-radius: $corner-radius;  
-}
+.target_line_days{height: 23px;}
 
-#target_head{
-  height: 24px;
-  margin-bottom: 3px;
-}
-
-h2{
-  text-align: center;
-}
-
-#target_list .target_li{
- height: 23px;
-}
-
-.t-item{
- height: 23px;
-
-}
-
-.target_line_head{
-  width: 225px;
-  height: 20px;
-  float: left;
-  border-bottom: 1px solid #EEE;
-  margin: 0px 10px 0px 0px;
-  color: #428bca;
-  &.cur_head,&:hover{ color: #4e2100; background-color: #fafafa;}
-}
-
-span.plus {
-display: block;
-float: left;
-width: 15px;
-text-align: center;
-cursor: pointer;
-}
-
-.target_line_days{
-  
-  height: 23px;
-}
-
-.date_head{
-    $corner-radius: 2px;
-    padding: 1px 1px 1px 1px;
-    border: 1px solid #EEE;
-
-   -moz-border-radius: $corner-radius;
-  -webkit-border-radius: $corner-radius;
-  -o-border-radius: $corner-radius;
-  -ms-border-radius: $corner-radius;
-  -khtml-border-radius: $corner-radius;  
-    background-color: #f9f9f9;
-    font-weight: bold;
-}
+.calenhead, .calenday { -moz-border-radius: $corner-radius;-webkit-border-radius: $corner-radius;-o-border-radius: $corner-radius;-ms-border-radius: $corner-radius;-khtml-border-radius: $corner-radius;  
+  font-size: 0.8em; width:18px; vertical-align: center;  text-align: center; float: left; display: block; border: 1px solid #EEE;}
 
 .calenhead{
-    $corner-radius: 2px;
-    padding: 5px 1px 1px 1px;
-    display: block;
-    line-height: 1;
-    float: left;
-    margin: 0px 1px 4px 0px;
-    border: 1px solid #EEE;
-    vertical-align: center;
-    text-align: center;
-    width:18px;
-    min-height:24px;
-   font-size: 0.8em;
-   -moz-border-radius: $corner-radius;
-  -webkit-border-radius: $corner-radius;
-  -o-border-radius: $corner-radius;
-  -ms-border-radius: $corner-radius;
-  -khtml-border-radius: $corner-radius;  
+    padding: 5px 1px 1px 1px; margin: 0px 1px 4px 0px; min-height:24px;
+    &.overhead,&:hover{
+      background-color: #93c0e6; border-color: #428bca;color: white;
+      &.holyday{ border: 1px solid #ff0000; background-color: #ffaaaa;} }
 
-  &:hover{
-    border: 1px solid #BBB;
-    background-color: #d9e8ff;
-  }
-    &.head{
-    width: 225px;
-    height: 25px;
-    display: block;
-    float: left;
-    text-align: center;
-    margin: 0px 10px 0px 0px;
-    background-color: #f9f9f9;
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-     &:hover{
-    border: 1px solid #EEE;
-  }
-  }
+    &.head{ width: 225px; height: 25px; margin: 0px 10px 0px 0px; background-color: #f9f9f9;
+      font-family: verdana, arial, helvetica, sans-serif; font-size: 13px;  font-weight: bold;
+      &:hover{ border: 1px solid #EEE;}
+    }
 }
 
-.calenday{
-    $corner-radius: 2px;
-    padding: 1px 1px 1px 1px;
-    display: block;
-    float: left;
-    margin: 1px 1px 2px 0px;
-    border: 1px solid #EEE;
-    vertical-align: center;
-    text-align: center;
-    width:18px;
-    min-height:18px;
-   font-size: 0.8em;
-   -moz-border-radius: $corner-radius;
-  -webkit-border-radius: $corner-radius;
-  -o-border-radius: $corner-radius;
-  -ms-border-radius: $corner-radius;
-  -khtml-border-radius: $corner-radius;  
-  &:hover{
-    border: 1px solid #ACF;
-    background-color: #e9f8ff;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-  }  
-  &.checked{
-    background-image: url(check.png);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-  }
+.calenday{    
+    padding: 1px 1px 1px 1px; margin: 1px 1px 2px 0px; min-height:18px;
+  &:hover{ border: 1px solid #ACF; background-color: #e9f8ff;
+    -webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease; }  
+  &.checked{ background-image: url(check.png);-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
 }
-
 
 .group_day .calenday{
   border: 1px solid #ddd;
-    &:hover{
-    border: 1px solid #ACF;
-    background-color: #e9f8ff;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  &:hover{ border: 1px solid #ACF; background-color: #e9f8ff; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease;    -o-transition: all 0.5s ease;    transition: all 0.5s ease;
   }  
 }
 
+.today{ color: white; border: 1px solid #428bca; background-color: #428bca; }
 
-.today{
-    color: white;
-    border: 1px solid #428bca;
-    background-color: #428bca;
-  }
+.holyday { border: 1px solid #ffcccc; background-color: #ffeeee;
+  &:hover{ border: 1px solid #ff0000; background-color: #ffaaaa; }}
 
-.holyday {
-  border: 1px solid #ffcccc;
-  background-color: #ffeeee;
-  &:hover{
-    border: 1px solid #ff0000;
-    background-color: #ffdddd;
-  }  
-}
-
-td.edit_delete, th.edit_delete{
-	width: 45px;
-	padding-right: 4px !important;
-	padding-left: 4px !important;
-}
+td.edit_delete, th.edit_delete{	width: 45px; padding-right: 4px !important;	padding-left: 4px !important;}
 
     
-.end_line{
-  float: right;
-  width: 10px;
-  display: block;
+.end_line{ float: right; width: 10px; display: block;}
+
+
+
+.target_name { width: 170px; float: left;}
+
+.thead_group .target_name{ color: #616161;}
+
+
+.subtarget_name { width: 165px; float: left; margin-left: 20px;}
+
+#children { margin-left: 20px;}
+#target_list{ padding:0px; -webkit-padding-start: 0px;}
+#div_days_list{ float: right;}
+
+ .calendar_period_h { float: right; }
+
+.calendar_period { cursor: default; height: 28px; margin: 10px 0;
+  span, em { padding: 0.2em 1.2em; display: block; float: left; margin-right: 1px; }
+  .current { font-style: normal;font-weight: bold; background: #2e6ab1;color: white; border: 1px solid #2e6ab1;}  
+  
 }
 
-
-
-.target_name {
-  width: 170px;
-  float: left;
-}
-
-.thead_group .target_name{
-  color: #616161;
-}
-
-
-.subtarget_name {
-width: 165px;
-float: left;
-margin-left: 20px;
-}
-
-#children {
-margin-left: 20px;
-}
-
-#target_list{
-padding:0px;
--webkit-padding-start: 0px;
-
-}
-
-#div_days_list{
-  float: right;
-}
-
-
-.calendar_period {
-//  background: white;
-  cursor: default;
-  height: 28px;
-//  width: 780px;
-  margin: 10px 0;
-
-  .calendar_period_h {
-//  width: 350px;
-  //margin: 10px auto;
-  //padding-left: 55px;
-  float: right;
-  }
-
-  //a, 
-  span, em {
-    padding: 0.2em 1.2em;
-    display: block;
-    float: left;
-    margin-right: 1px;
-
-  }
-  .current {
-    font-style: normal;
-    font-weight: bold;
-    background: #2e6ab1;
-    color: white;
-    border: 1px solid #2e6ab1;
-  }
-/*  a {
-    text-decoration: none;
-    color: #105cb6;
-    border: 1px solid #9aafe5;
-    border: 1px solid #EEE;
-
-   -moz-border-radius: $corner-radius;
-   -webkit-border-radius: $corner-radius;
-   -o-border-radius: $corner-radius;
-   -ms-border-radius: $corner-radius;
-   -khtml-border-radius: $corner-radius;  
-
-
-    &:hover, &:focus {
-      color: #000033;
-      border-color: #000033;
-    }
-  }*/
-  .page_info {
-    background: #2e6ab1;
-    color: white;
-    padding: 0.4em 0.6em;
-    width: 22em;
-    margin-bottom: 0.3em;
-    text-align: center;
-    b {
-      color: #000033;
-      background: #2e6ab1 + 60;
-      padding: 0.1em 0.25em;
-    }
-  }
-}
-
- .overhead{
-      background-color: #93c0e6;
-      border-color: #428bca;
-      color: white;
-    }
+ 
 
 

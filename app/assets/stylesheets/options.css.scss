@@ -5,5 +5,18 @@
 .icon_edit {background: url('edit.png');}
 
 label.inp_btn_label { padding: 0 0 0 18px; position: relative; }
-label.inp_btn_label .inp_btn { position: absolute; top: -2px; left: 0;}
+label.inp_btn_label .inp_btn { position: absolute; top: -2px; left: 0; }
 
+.btn-reset {margin-left: 10px;}
+
+#itemAdd_form { margin-bottom: 20px; }
+#itemAdd_form label { width: 120px; }
+#itemAdd_form input { width: 400px; margin-right: 10px; }
+
+.datepicker { background: asset-url('ico-date.png') 97% 3px no-repeat; cursor: pointer;}
+
+span.icon { width: 16px;  height: 16px; display: inline-block; vertical-align:middle; position:relative; }
+span.icon:hover{ cursor: pointer; }
+
+span.icon_apply{background: url('apply.png') no-repeat;}
+span.icon_cancel{background: url('cancel.png') no-repeat;}

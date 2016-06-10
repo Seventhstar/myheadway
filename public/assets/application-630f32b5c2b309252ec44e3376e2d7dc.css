@@ -1,3 +1,179 @@
+/* *********************************************************************************************
+
+How to Create CSS3 + jQuery Accordion Menu [Tutorial]
+"How to Create CSS3 + jQuery Accordion Menu" that was specially made for DesignModo by our friend Valeriu Timbuc. 
+
+Links:
+http://vtimbuc.net/
+https://twitter.com/vtimbuc
+http://designmodo.com/futurico
+http://vladimirkudinov.com
+http://rockablethemes.com
+
+********************************************************************************************* */
+/* Reset */
+/* line 18, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion,
+.accordion ul,
+.accordion li,
+.accordion a,
+.accordion span {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* line 29, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li {
+  list-style: none;
+}
+
+/* line 30, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion {
+  margin-right: 20px;
+}
+
+/* Layout & Style */
+/* line 34, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > a {
+  display: block;
+  position: relative;
+  min-width: 110px;
+  padding: 0 10px 0 40px;
+  height: 32px;
+  color: #fdfdfd;
+  font: bold 12px/32px Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35);
+  background: #6c6e74;
+  background: -moz-linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6c6e74), color-stop(100%, #4b4d51));
+  background: -webkit-linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  background: -o-linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  background: -ms-linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  background: linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* line 59, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li:hover > a,
+.accordion > li:target > a,
+.accordion > li > a.active {
+  color: #eee;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+  background: url(/assets/active-9a9b6f12c462c54406e2dcc0394cceef.png) repeat-x;
+}
+
+/* line 75, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > a span {
+  display: block;
+  position: absolute;
+  top: 7px;
+  right: 0;
+  padding: 0 10px;
+  margin-right: 10px;
+  font: normal bold 12px/18px Arial, sans-serif;
+  background: #404247;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* line 95, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li:hover > a span,
+.accordion > li:target > a span,
+.accordion > li > a.active span {
+  color: #fdfdfd;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35);
+  background: #3e5706;
+}
+
+/* Images */
+/* line 101, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li > a:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 24px;
+  height: 24px;
+  margin: 4px 8px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/menu-arrows-24-94acc47be678e7686930c50a52859c41.png);
+  background-position: 0px 0px;
+}
+
+/* line 119, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li.files > a:before {
+  background-position: 0px 0px;
+}
+
+/* line 120, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li.files:hover > a:before,
+.accordion li.files:target > a:before,
+.accordion li.files > a.active:before {
+  background-position: 0px -24px;
+}
+
+/* Sub Menu */
+/* line 141, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li a {
+  color: #797979;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+  background: #e5e5e5;
+  border-bottom: 1px solid #c9c9c9;
+  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* line 153, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li:hover a, .sub-menu li.active a {
+  background: #f5f5f5;
+}
+
+/* line 155, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li:last-child a {
+  border: none;
+}
+
+/* line 157, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li > a span {
+  color: #797979;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border: 1px solid #c9c9c9;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 168, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu em {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 14px;
+  color: #a6a6a6;
+  font: normal 10px/32px Arial, sans-serif;
+}
+
+/* Functionality */
+/* line 179, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > .sub-menu {
+  display: none;
+}
+
+/* line 180, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li:target > .sub-menu {
+  display: block;
+}
 /*!
  * Bootstrap v3.0.0
  *
@@ -310,67 +486,79 @@ h1, h3, .h3 {
 
 /* line 19, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .col-80 {
-  width: 67%;
+  width: 80%;
   float: left;
 }
 
 /* line 20, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .col-20 {
-  width: 33%;
-  float: right;
+  width: 20%;
+  float: left;
 }
 
 /* line 21, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-70 {
+  width: 70%;
+  float: left;
+}
+
+/* line 22, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-30 {
+  width: 30%;
+  float: left;
+}
+
+/* line 23, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .col-xs-6 {
   width: 50%;
 }
 
-/* line 22, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 24, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .col-md-8 {
   width: 66.66666667%;
   float: left;
 }
 
-/* line 23, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 25, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .col-md-4 {
   width: 33.33333333%;
   float: left;
 }
 
-/* line 25, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 27, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .row {
   overflow: hidden;
 }
 
-/* line 32, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 34, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
   content: " ";
   display: table;
 }
 
-/* line 38, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 40, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .top-menu {
   margin-top: 15px;
 }
 
-/* line 39, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 41, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subnav {
   display: block;
   overflow: auto;
 }
 
-/* line 40, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 42, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
 }
 
-/* line 41, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 43, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   border-color: #e7e7e7;
 }
 
-/* line 43, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 45, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .container {
   width: 1260px !important;
   margin-right: auto;
@@ -379,7 +567,7 @@ h1, h3, .h3 {
   padding-right: 15px;
 }
 
-/* line 44, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 46, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -387,86 +575,86 @@ h1, h3, .h3 {
   padding-right: 15px;
 }
 
-/* line 45, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 47, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
   margin-right: 0;
   margin-left: 0;
 }
 
-/* line 47, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 49, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
 
-/* line 48, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 50, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav > li {
   position: relative;
   display: block;
 }
 
-/* line 49, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 51, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav > li.selected {
   background-color: #616161;
   box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);
 }
 
-/* line 50, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 52, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav > li.selected a {
   color: #f0f0f0;
   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* line 51, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 53, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav > li {
   position: relative;
   display: block;
   font-size: 13px;
 }
 
-/* line 52, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 54, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav > li > a {
   position: relative;
   display: block;
   padding: 10px 15px;
 }
 
-/* line 54, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 56, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav-pills > li {
   float: left;
 }
 
-/* line 55, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 57, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav-pills > li > a {
   border-radius: 4px;
 }
 
-/* line 56, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 58, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav > li > a:hover, .nav > li > a:focus {
   text-decoration: none;
   background-color: #93c0e6;
   color: white;
 }
 
-/* line 57, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 59, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav-pills > li + li {
   margin-left: 2px;
 }
 
-/* line 58, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 60, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
   background-color: #428bca;
 }
 
-/* line 59, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 61, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 a {
   color: #428bca;
   text-decoration: none;
 }
 
-/* line 61, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 63, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar {
   position: relative;
   min-height: 52px;
@@ -476,45 +664,45 @@ a {
   background-color: #f8f8f8;
 }
 
-/* line 62, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 64, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-nav {
   float: left;
   margin: 0;
   width: 92%;
 }
 
-/* line 63, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 65, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-nav > li {
   float: left;
 }
 
-/* line 64, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 66, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
 }
 
-/* line 65, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 67, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-nav > li.logout > a {
   padding-top: 13px;
   padding-bottom: 13px;
 }
 
-/* line 66, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 68, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-nav > li > a {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-/* line 69, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 71, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-collapse {
   width: auto;
   border-top: 0;
   box-shadow: none;
 }
 
-/* line 70, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 72, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-collapse.collapse {
   display: block !important;
   height: auto !important;
@@ -522,7 +710,7 @@ a {
   overflow: visible !important;
 }
 
-/* line 72, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 74, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subnav li.active_li a {
   border-radius: 4px;
   padding: 10px 15px;
@@ -531,7 +719,7 @@ a {
   color: #fff;
 }
 
-/* line 73, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 75, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subpills a {
   min-width: 100px;
   text-align: center;
@@ -543,37 +731,37 @@ a {
   height: 24px !important;
   cursor: pointer;
 }
-/* line 83, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 85, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subpills a:hover {
   background-color: #93c0e6;
   color: white;
 }
-/* line 84, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 86, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subpills a.btn-success:hover {
   background-color: green;
 }
-/* line 85, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 87, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subpills a.active {
   background-color: #428bca;
   color: #fff;
 }
-/* line 86, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 88, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subpills a.passive {
   background-color: #eee;
 }
 
-/* line 89, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 91, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subpills a + a {
   margin-left: 2px;
 }
 
-/* line 91, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 93, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
   content: " ";
   display: table;
 }
 
-/* line 96, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 98, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -595,72 +783,79 @@ a {
   user-select: none;
 }
 
-/* line 117, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 119, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 a.btn, a.btn:hover {
   text-decoration: none;
 }
 
-/* line 118, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 120, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-primary {
   color: #fff;
   background-color: #428bca;
   border-color: #357ebd;
 }
 
-/* line 119, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 121, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
   color: #fff;
   background-color: #3071a9;
   border-color: #285e8e;
 }
 
-/* line 125, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 127, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-success {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
 
-/* line 126, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 128, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-success:hover, .subnav .btn-success:focus {
   background-color: #5fcf5f;
 }
 
-/* line 127, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 129, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-cancel {
   color: black;
   background-color: #eee;
   border-color: #aaa;
 }
 
-/* line 128, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 130, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-cancel:hover {
   background-color: #f5f5f5;
 }
 
-/* line 129, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 131, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-white {
   border: 1px solid #ccc;
 }
 
-/* line 130, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 132, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-white:hover {
   background-color: #eee;
 }
 
-/* line 131, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 133, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .btn-sm2 {
   padding: 4px 10px;
   line-height: 1;
 }
 
-/* line 133, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 135, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-min {
+  height: 26px;
+  padding: 3px 5px;
+  font-size: 12px;
+}
+
+/* line 137, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .subnav .btn-success:hover, .subnav .btn-success:focus {
   background-color: #5fcf5f;
   color: white;
 }
 
-/* line 134, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 138, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 label {
   display: inline-block;
   max-width: 100%;
@@ -668,19 +863,19 @@ label {
   font-weight: 500;
 }
 
-/* line 140, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 144, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .signin .btn {
   width: 100%;
 }
 
-/* line 142, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 146, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 input[type="radio"], input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9;
   line-height: normal;
 }
 
-/* line 148, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 152, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .form-control {
   display: block;
   width: 100%;
@@ -700,7 +895,7 @@ input[type="radio"], input[type="checkbox"] {
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
-/* line 167, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 171, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, .comment_area {
   border: 1px solid #bbb;
   border-radius: 3px;
@@ -714,19 +909,19 @@ input[type="text"], input[type="number"], input[type="password"], input[type="em
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* line 180, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 184, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .table {
   width: 100%;
   max-width: 100%;
   margin-bottom: 20px;
 }
 
-/* line 185, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 189, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .table-striped > tbody > tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
-/* line 186, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 190, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
   padding: 8px;
   line-height: 1.42857143;
@@ -734,12 +929,17 @@ input[type="text"], input[type="number"], input[type="password"], input[type="em
   border-bottom: 1px solid #ddd;
 }
 
-/* line 193, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 197, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .li-right {
   float: right !important;
 }
 
-/* line 195, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 198, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.left {
+  float: left;
+}
+
+/* line 200, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 ul.ui-autocomplete {
   position: absolute;
   list-style: none;
@@ -760,14 +960,14 @@ ul.ui-autocomplete {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   text-decoration: none;
 }
-/* line 216, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 221, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 ul.ui-autocomplete li {
   background-color: #FFF;
   border-top: solid 1px #DDD;
   margin: 0;
   padding: 0;
 }
-/* line 221, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 226, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 ul.ui-autocomplete li a {
   display: block;
   padding: 3px 20px;
@@ -777,14 +977,14 @@ ul.ui-autocomplete li a {
   color: #333333;
   white-space: nowrap;
 }
-/* line 231, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 236, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 ul.ui-autocomplete li a.ui-state-hover, ul.ui-autocomplete li a.ui-state-active {
   background-color: #FFFCB2;
   background-color: #0081c2;
   text-decoration: none;
 }
 
-/* line 240, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 245, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 ul.ui-autocomplete > li > a:hover, ul.ui-autocomplete > li > a:focus, ul.ui-autocomplete:hover > a, ul.ui-autocomplete:focus > a {
   color: #ffffff;
   text-decoration: none;
@@ -798,7 +998,7 @@ ul.ui-autocomplete > li > a:hover, ul.ui-autocomplete > li > a:focus, ul.ui-auto
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-/* line 253, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 258, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 ul.ui-autocomplete > li > a {
   display: block;
   padding: 2px 15px;
@@ -810,22 +1010,22 @@ ul.ui-autocomplete > li > a {
   white-space: nowrap;
 }
 
-/* line 264, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 269, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 a.brand {
   color: #0088cc;
 }
 
-/* line 268, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 273, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .pagination {
   margin: 0px;
 }
 
-/* line 272, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 277, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .span3 {
   float: right;
 }
 
-/* line 276, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 281, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .tag_list > .dropdown-menu {
   display: block;
   right: 0;
@@ -833,12 +1033,12 @@ a.brand {
   top: 130px;
 }
 
-/* line 284, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 289, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar1 .nav > li {
   float: left;
 }
 
-/* line 288, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 293, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .navbar-inner {
   min-height: 40px;
   padding-right: 20px;
@@ -861,32 +1061,32 @@ a.brand {
   margin-bottom: 20px;
 }
 
-/* line 310, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 315, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .signin .btn {
   width: 100%;
 }
 
-/* line 314, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 319, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .signin p {
   margin: 10px 0 10px 0;
 }
 
-/* line 318, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 323, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .signin a:nth-child(2) {
   float: right;
 }
 
-/* line 322, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 327, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .addon100 {
   width: 100px;
 }
 
-/* line 326, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 331, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .addon120 {
   width: 120px;
 }
 
-/* line 331, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+/* line 336, d:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
 .input-group input {
   width: 350px;
   border-radius: 4px;
@@ -1333,10 +1533,6 @@ This file is generated by `grunt build`, do not edit it by hand.
   }
 }
 /* @end */
-/* line 5, h:/www/railsprj/myheadway/app/assets/stylesheets/feelings.css.scss */
-.content {
-  width: 500px;
-}
 @font-face {
   font-family: 'Pragmatica';
   src: url(/assets/pragmatica/Pragmatica_gdi-ab058e0dfa906e44464263cd12443371.eot);
@@ -1421,17 +1617,68 @@ label.inp_btn_label .inp_btn {
   top: -2px;
   left: 0;
 }
+
+/* line 10, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.btn-reset {
+  margin-left: 10px;
+}
+
+/* line 12, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+#itemAdd_form {
+  margin-bottom: 20px;
+}
+
+/* line 13, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+#itemAdd_form label {
+  width: 120px;
+}
+
+/* line 14, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+#itemAdd_form input {
+  width: 400px;
+  margin-right: 10px;
+}
+
+/* line 16, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.datepicker {
+  background: url(/assets/ico-date-fea26e88473a7a2d4dbebd52287ef896.png) 97% 3px no-repeat;
+  cursor: pointer;
+}
+
+/* line 18, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* line 19, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon:hover {
+  cursor: pointer;
+}
+
+/* line 21, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon_apply {
+  background: url("apply.png") no-repeat;
+}
+
+/* line 22, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon_cancel {
+  background: url("cancel.png") no-repeat;
+}
 /*------------------------------------*\
 	Light Theme Styles
 \*------------------------------------*/
-/* line 6, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 6, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .pagination {
   display: block;
   overflow: hidden;
   padding: 0 20px 2px 0;
 }
 
-/* line 12, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 12, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .btn-white2 {
   color: #666;
   border: 1px solid #BBB;
@@ -1454,7 +1701,7 @@ label.inp_btn_label .inp_btn {
   /* W3C */
 }
 
-/* line 27, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 27, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .pagination a, .pagination span, .pagination em {
   float: left;
   color: #666;
@@ -1484,14 +1731,14 @@ label.inp_btn_label .inp_btn {
   /* W3C */
 }
 
-/* line 49, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 49, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .pagination a:hover, .btn-white2:hover {
   text-decoration: none;
   background: #FCFCFC;
   border-color: rgba(82, 168, 236, 0.8);
 }
 
-/* line 55, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 55, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .pagination .current, .pagination .disabled {
   background: #666;
   color: #FFF;
@@ -1500,7 +1747,7 @@ label.inp_btn_label .inp_btn {
   cursor: default;
 }
 
-/* line 63, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 63, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .pagination .ellipse {
   background: none;
   border: none;
@@ -1510,7 +1757,7 @@ label.inp_btn_label .inp_btn {
   cursor: default;
 }
 
-/* line 73, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 73, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .page {
   float: left;
   min-height: 24px;
@@ -1527,7 +1774,7 @@ label.inp_btn_label .inp_btn {
   text-shadow: 0px 1px 0px white;
 }
 
-/* line 90, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 90, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .page:hover, .page.gradient:hover {
   background: #fefefe;
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
@@ -1535,7 +1782,7 @@ label.inp_btn_label .inp_btn {
   text-decoration: none;
 }
 
-/* line 97, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 97, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .page.active {
   border: none;
   padding: auto 10px;
@@ -1545,7 +1792,7 @@ label.inp_btn_label .inp_btn {
   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* line 107, h:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+/* line 107, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
 .page.gradient {
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#e9e9e9));
   background: -moz-linear-gradient(0% 0% 270deg, #f8f8f8, #e9e9e9);
@@ -1905,53 +2152,43 @@ br {
   font-size: 12px;
 }
 
-/* line 18, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 8, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .thead_group {
   background-color: #f7f7f7;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -khtml-border-radius: 2px;
 }
 
-/* line 27, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 10, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 #target_head {
   height: 24px;
   margin-bottom: 3px;
 }
 
-/* line 32, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-h2 {
-  text-align: center;
-}
-
-/* line 36, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 11, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 #target_list .target_li {
   height: 23px;
 }
 
-/* line 40, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 13, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .t-item {
   height: 23px;
 }
 
-/* line 45, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 15, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .target_line_head {
   width: 225px;
   height: 20px;
   float: left;
   border-bottom: 1px solid #EEE;
-  margin: 0px 10px 0px 0px;
+  margin: 1px 10px 0px 0px;
   color: #428bca;
 }
-/* line 52, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 16, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .target_line_head.cur_head, .target_line_head:hover {
-  color: #4e2100;
-  background-color: #fafafa;
+  color: white;
+  background-color: #93c0e6;
 }
 
-/* line 55, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 19, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 span.plus {
   display: block;
   float: left;
@@ -1960,85 +2197,66 @@ span.plus {
   cursor: pointer;
 }
 
-/* line 63, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 21, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .target_line_days {
   height: 23px;
 }
 
-/* line 68, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-.date_head {
-  padding: 1px 1px 1px 1px;
-  border: 1px solid #EEE;
+/* line 23, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead, .calenday {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   -o-border-radius: 2px;
   -ms-border-radius: 2px;
   -khtml-border-radius: 2px;
-  background-color: #f9f9f9;
-  font-weight: bold;
-}
-
-/* line 82, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-.calenhead {
-  padding: 5px 1px 1px 1px;
-  display: block;
-  line-height: 1;
-  float: left;
-  margin: 0px 1px 4px 0px;
-  border: 1px solid #EEE;
+  font-size: 0.8em;
+  width: 18px;
   vertical-align: center;
   text-align: center;
-  width: 18px;
+  float: left;
+  display: block;
+  border: 1px solid #EEE;
+}
+
+/* line 26, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead {
+  padding: 5px 1px 1px 1px;
+  margin: 0px 1px 4px 0px;
   min-height: 24px;
-  font-size: 0.8em;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -khtml-border-radius: 2px;
 }
-/* line 101, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-.calenhead:hover {
-  border: 1px solid #BBB;
-  background-color: #d9e8ff;
+/* line 28, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.overhead, .calenhead:hover {
+  background-color: #93c0e6;
+  border-color: #428bca;
+  color: white;
 }
-/* line 105, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 30, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.overhead.holyday, .calenhead:hover.holyday {
+  border: 1px solid #ff0000;
+  background-color: #ffaaaa;
+}
+/* line 32, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calenhead.head {
   width: 225px;
   height: 25px;
-  display: block;
-  float: left;
-  text-align: center;
   margin: 0px 10px 0px 0px;
   background-color: #f9f9f9;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   font-weight: bold;
 }
-/* line 116, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 34, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calenhead.head:hover {
   border: 1px solid #EEE;
 }
 
-/* line 122, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 38, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calenday {
   padding: 1px 1px 1px 1px;
-  display: block;
-  float: left;
   margin: 1px 1px 2px 0px;
-  border: 1px solid #EEE;
-  vertical-align: center;
-  text-align: center;
-  width: 18px;
   min-height: 18px;
-  font-size: 0.8em;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -khtml-border-radius: 2px;
 }
-/* line 139, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 40, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calenday:hover {
   border: 1px solid #ACF;
   background-color: #e9f8ff;
@@ -2047,7 +2265,7 @@ span.plus {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-/* line 147, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 42, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calenday.checked {
   background-image: url(check.png);
   -webkit-transition: all 0.5s ease;
@@ -2056,11 +2274,11 @@ span.plus {
   transition: all 0.5s ease;
 }
 
-/* line 157, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 45, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .group_day .calenday {
   border: 1px solid #ddd;
 }
-/* line 159, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 47, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .group_day .calenday:hover {
   border: 1px solid #ACF;
   background-color: #e9f8ff;
@@ -2070,136 +2288,97 @@ span.plus {
   transition: all 0.5s ease;
 }
 
-/* line 170, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 51, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .today {
   color: white;
   border: 1px solid #428bca;
   background-color: #428bca;
 }
 
-/* line 176, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 53, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .holyday {
   border: 1px solid #ffcccc;
   background-color: #ffeeee;
 }
-/* line 179, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 54, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .holyday:hover {
   border: 1px solid #ff0000;
-  background-color: #ffdddd;
+  background-color: #ffaaaa;
 }
 
-/* line 185, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 56, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 td.edit_delete, th.edit_delete {
   width: 45px;
   padding-right: 4px !important;
   padding-left: 4px !important;
 }
 
-/* line 192, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 59, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .end_line {
   float: right;
   width: 10px;
   display: block;
 }
 
-/* line 200, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 63, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .target_name {
   width: 170px;
   float: left;
 }
 
-/* line 205, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 65, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .thead_group .target_name {
   color: #616161;
 }
 
-/* line 210, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 68, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .subtarget_name {
   width: 165px;
   float: left;
   margin-left: 20px;
 }
 
-/* line 216, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 70, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 #children {
   margin-left: 20px;
 }
 
-/* line 220, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 71, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 #target_list {
   padding: 0px;
   -webkit-padding-start: 0px;
 }
 
-/* line 226, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 72, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 #div_days_list {
   float: right;
 }
 
-/* line 231, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 74, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period_h {
+  float: right;
+}
+
+/* line 76, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period {
   cursor: default;
   height: 28px;
   margin: 10px 0;
-  /*  a {
-      text-decoration: none;
-      color: #105cb6;
-      border: 1px solid #9aafe5;
-      border: 1px solid #EEE;
-  
-     -moz-border-radius: $corner-radius;
-     -webkit-border-radius: $corner-radius;
-     -o-border-radius: $corner-radius;
-     -ms-border-radius: $corner-radius;
-     -khtml-border-radius: $corner-radius;  
-  
-  
-      &:hover, &:focus {
-        color: #000033;
-        border-color: #000033;
-      }
-    }*/
 }
-/* line 238, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-.calendar_period .calendar_period_h {
-  float: right;
-}
-/* line 246, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 77, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period span, .calendar_period em {
   padding: 0.2em 1.2em;
   display: block;
   float: left;
   margin-right: 1px;
 }
-/* line 253, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+/* line 78, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
 .calendar_period .current {
   font-style: normal;
   font-weight: bold;
   background: #2e6ab1;
   color: white;
   border: 1px solid #2e6ab1;
-}
-/* line 278, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-.calendar_period .page_info {
-  background: #2e6ab1;
-  color: white;
-  padding: 0.4em 0.6em;
-  width: 22em;
-  margin-bottom: 0.3em;
-  text-align: center;
-}
-/* line 285, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-.calendar_period .page_info b {
-  color: #000033;
-  background: #6aa6ed;
-  padding: 0.1em 0.25em;
-}
-
-/* line 293, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
-.overhead {
-  background-color: #93c0e6;
-  border-color: #428bca;
-  color: white;
 }
 /* Example tokeninput style #2: Facebook style */
 

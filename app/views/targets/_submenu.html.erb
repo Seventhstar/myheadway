@@ -1,6 +1,7 @@
   <div class="nav nav-pills">
 	<%= menu_li "Цели",:targets %>
-	<%= menu_li "Закладки", :tgroups %>
+	<%= menu_li "Закладки", 'options/	tgroups' %>
+	
         
 	<li> <%= link_to t(:NewTarget), new_target_path %></li>
   <li> <%= link_to t('New Tgroup'), new_tgroup_path %></li>

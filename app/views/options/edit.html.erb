@@ -1,0 +1,29 @@
+<div class="options-menu col-20">
+<div class="col-menu">
+
+  <ul class="accordion" active=<%= get_active_option_page %>> 
+    <li id="one3" class="files">
+    <a href="#">Высказывания:</a>
+      <ul class="sub-menu">
+    			<%= option_li("authors","Авторы") %>
+    			<%= option_li("books","Книги") %>
+          <%= option_li("tags","Метки") %>
+      </ul>
+    </li>
+   
+   <li id="two" class="files">
+    <a href="#">Цели:</a>
+    <ul class="sub-menu">
+			    <%= option_li("tgroups","Закладки") %>
+    </ul>
+   </li>
+
+  </ul>
+</div>
+</div>
+
+<div class="col-80 content">
+	  <%= render("shared/simple_option") %>
+<div class="sep_3"></div>
+</div>
+

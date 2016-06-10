@@ -2,27 +2,24 @@ Myheadway::Application.routes.draw do
   resources :notices
 
   resources :claims
-
   resources :tgroups
-
   resources :denials
-
   resources :books
-
   resources :statementstags
-
   resources :tags
-
   resources :feelings
-
   resources :target_days
-
   resources :targets
-
   resources :search_suggestions
-
   resources :statements
   resources :authors
+
+  get    'options'  => 'options#edit'
+  get    'options/:options_page'  => 'options#edit',:constraints => {:format => /(json|html)/}
+  post   'options/:options_page' => 'options#create'
+  delete 'options/:options_page/:id' => 'options#destroy'
+  post "ajax/upd_param"
+
 
   root :to => "statements#index"
 

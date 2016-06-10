@@ -15,8 +15,10 @@ h1, h3, .h3 { font-size: 24px;  padding-bottom: 2px;	border-bottom: 1px solid #c
 /*h1 { font-family: Georgia, "Times New Roman", serif; text-align: center;}*/
 
 .top-menu{ margin-top: 15px; }
-.col-80 { width: 67%; float: left; } 
-.col-20 { width: 33%; float: right; }
+.col-80 { width: 80%; float: left; } 
+.col-20 { width: 20%; float: left; }
+.col-70 { width: 70%; float: left; } 
+.col-30 { width: 30%; float: left; }
 .col-xs-6 { width: 50%; }
 .col-md-8 { width: 66.66666667%; float: left;}
 .col-md-4 { width: 33.33333333%; float: left;}
@@ -129,6 +131,8 @@ a.btn, a.btn:hover {text-decoration: none;}
 .btn-white:hover{	background-color: #eee; }
 .btn-sm2 { padding: 4px 10px; line-height: 1; }
 
+.btn-min { height:26px; padding: 3px 5px; font-size: 12px; }
+
 .subnav .btn-success:hover, .subnav .btn-success:focus {  background-color: #5fcf5f; color: white;}
 label {
     display: inline-block;
@@ -190,6 +194,7 @@ input[type="text"], input[type="number"], input[type="password"], input[type="em
 }
 
 .li-right{ float: right !important; }
+.left {float: left;}
 
 ul.ui-autocomplete {
   position: absolute;

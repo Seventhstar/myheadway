@@ -36,10 +36,7 @@
   <div class="field"><label><%= t :content %></label>
   <%= f.text_area :content, :class => "width_area",:size => "80x8" %>
   </div>
-  <div class="actions">
-    <%= f.submit nil, :class => "btn btn-success" %> 
-    <%= link_to t('Back'), statements_path, :class => "btn btn-white" %>
-  </div>
+  <%= submit_cancel statements_path %>
 </div>
 
 <% end %>

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require jquery-ui/accordion
 //= require jquery_ujs
 //= require jquery.tokeninput
 //= require rails-timeago
@@ -45,6 +46,28 @@ $('.calenday').mouseout(function(){
    day = $(this).attr("day");
    $('.h'+day).removeClass('overhead');
 })*/
+
+
+      var accordion_head = $('.accordion > li > a'),
+        accordion_body = $('.accordion li > .sub-menu');
+
+      // Open the first tab on load
+      m_active = parseInt($('.accordion').attr('active'));
+      accordion_head.eq(m_active).addClass('active').next().slideDown('normal');
+      
+      accordion_head.on('click', function(event) {
+        event.preventDefault();
+
+        if ($(this).attr('class') != 'active'){
+          accordion_body.slideUp('normal');
+          $(this).next().stop(true,true).slideToggle('normal');
+          accordion_head.removeClass('active');
+          $(this).addClass('active');
+        }
+
+      });
+
+
 
 $('.dropdown-menu li a').click(function(event) {
   //alert($(this).attr('tagid'));

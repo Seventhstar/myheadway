@@ -88,4 +88,12 @@ module ApplicationHelper
 
   end
 
+
+  def submit_cancel(back_url)
+      s = submit_tag  t('Save'), class: 'btn btn-success' 
+      c = link_to t('Cancel'), back_url, class: "btn btn-white btn-reset" 
+      s + c
+  end
+
+
 end

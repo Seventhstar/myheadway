@@ -19,6 +19,7 @@
     <%= f.text_field :name %>
   </div>
 
+  
 
   <div class="field">
        <%= f.label t :parent_id %>
@@ -39,8 +40,9 @@
     <%= f.hidden_field :user_id, :value => 1 %>
 
          
-  <div class="actions">
-    <%= f.submit nil, :class => "btn btn-success" %>
-    <%= link_to t('Back'), targets_path, :class => "btn btn-white" %>
-  </div>
+  
+    <%= submit_cancel targets_path %>
+    <!-- < f.submit nil, :class => "btn btn-success" %> -->
+    <!-- < link_to t('Back'), targets_path, :class => "btn btn-white" %> -->
+  
 <% end %>
