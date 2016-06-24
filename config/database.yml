@@ -31,6 +31,9 @@ test:
 
 production:
   adapter: postgresql
-  database: myheadway
+  host: 
+  database: 
   pool: 5
   timeout: 5000
+  username: 
+  password: 

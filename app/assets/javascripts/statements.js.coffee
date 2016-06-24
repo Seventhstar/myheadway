@@ -17,7 +17,9 @@ $(document).ready ->
   # $('#author_id').chosen().on 'change', ->
   #   $.get 'statements', $("#statements_search").serialize(), null, 'script'
   $('.st_chosen').chosen().on 'change', ->
-    $.get 'statements', $("#statements_search").serialize(), null, 'script'
+    prms = $("#statements_search").serialize()
+    $.get 'statements', prms, null, 'script'
+    setLoc("statements?"+prms);
 
   $('#statement_author_name').autocomplete
     source: "/ajax/authors"

@@ -4,7 +4,7 @@ class StatementsController < ApplicationController
 
   # GET /statements
   # GET /statements.json
-  def index
+  def index    
     # @authors = Author.all.order(:name)
     # @tags    = Tag.all.order(:name)
     # @books = Book.order(:name)
@@ -18,7 +18,7 @@ class StatementsController < ApplicationController
     search_ids  = Statement.search(params[:search]).ids if !params[:search].nil?
 
     ids = authors_ids & tags_ids & search_ids & all_ids & books_ids
-    @statements = Statement.where('id in (?)', ids).paginate(:page => params[:page], :per_page => 5)
+    @statements = Statement.where('id in (?)', ids).order(id: :desc).paginate(:page => params[:page], :per_page => 5)
 
 
   end
