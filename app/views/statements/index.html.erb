@@ -8,17 +8,21 @@
 
 <%= form_tag statements_path, :method => 'get', :id => "statements_search" do %>
   <p>
-    <div class="navsearch"> 
-    <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %> 
-    </div>
-    
-    <%= select_tag "tag_id", content_tag(:option,'Метка...',:value=>"")+options_from_collection_for_select(@tags, "id", "name") %>
-    <%= select_tag "author_id", content_tag(:option,'Автор...',:value=>"")+options_from_collection_for_select(@authors, "id", "name") %>
+    <div class="navsearch">
+    <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %>
 
-    <%= submit_tag "Поиск", :name => nil, :class=>"btn btn-white2 btn-sm2" %>
-  </p>
-  <div id="statement"><%= render 'statements' %></div>
+    <div class="combobox big_combo"><%= chosen_src :book_id, Book.all, params[:book_id], {nil_value: 'Книга...', class: 'st_chosen'} %></div>
+    <div class="combobox"><%= chosen_src :tag_id, Tag.all, params[:tag_id], {nil_value: 'Метка...', class: 'st_chosen'} %></div>
+    <div class="combobox"><%= chosen_src :author_id, Author.all, params[:author_id], {nil_value: 'Автор...', class: 'st_chosen'} %></div>
+
+
+    </div>
+    <%= submit_tag "Поиск", :name => nil, :class=>"btn btn-white2 btn-sm2 left" %>
 <% end %>
+
+  </p>
+  <div id="statements"><%= render 'statements' %></div>
+
 
 
 

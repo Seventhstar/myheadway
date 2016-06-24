@@ -5,44 +5,21 @@ class StatementsController < ApplicationController
   # GET /statements
   # GET /statements.json
   def index
-    @authors = Author.all.order(:name)
-    @tags = Tag.all.order(:name)
+    # @authors = Author.all.order(:name)
+    # @tags    = Tag.all.order(:name)
+    # @books = Book.order(:name)
 
-    tags_ids = []
-    authors_ids = []
-    search_ids = []
+    tags_ids = authors_ids = search_ids = books_ids = all_ids = Statement.all.ids
+    params.delete_if{|k,v| v=='' || v=='0' || k=='_' }
 
-    if params[:tag_id] && params[:tag_id].present?
-      @tag = Tag.find(params[:tag_id])
-      tags_ids = @tag.statements.ids
-    else
-      tags_ids = Statement.all.ids
-    end
+    books_ids   = Book.find(params[:book_id]).statements.ids if !params[:book_id].nil?
+    authors_ids = Author.find(params[:author_id]).statements.ids if !params[:author_id].nil?
+    tags_ids    = Tag.find(params[:tag_id]).statements.ids if !params[:tag_id].nil?
+    search_ids  = Statement.search(params[:search]).ids if !params[:search].nil?
 
-    if params[:author_id] && params[:author_id].present?
-      @author = Author.find_by! id: params[:author_id]
-      authors_ids = @author.statements.ids
-      puts authors_ids
-    else
-      authors_ids = Statement.all.ids
-    end
+    ids = authors_ids & tags_ids & search_ids & all_ids & books_ids
+    @statements = Statement.where('id in (?)', ids).paginate(:page => params[:page], :per_page => 5)
 
-    if params[:search] && params[:search].present?
-      search_ids = Statement.search(params[:search]).ids
-    else
-      search_ids = Statement.all.ids
-    end
-
-
-    ids = authors_ids & tags_ids & search_ids
-    if params[:tag_id].nil? || params[:author_id].nil?
-       @statements = Statement.all
-    else
-       @statements = Statement.where('id in (?)', ids)
-    end
-    
-    @statements = @statements.paginate(:page => params[:page], :per_page => 5)
-    
 
   end
 
@@ -61,6 +38,7 @@ class StatementsController < ApplicationController
   def edit
     @statement = Statement.find(params[:id])
     @tags = Tag.all.order(:name)
+    @books = Book.order(:name)
   end
 
   # POST /statements
