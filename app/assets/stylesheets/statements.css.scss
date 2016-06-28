@@ -23,7 +23,8 @@ img.round { position: absolute; z-index: 2; display: block; left: -40px; top: -1
 
 #statements {overflow: hidden; display: inline-block;}
 
-#statement_author a {color: #999; cursor: pointer; &:hover{color:#428bca;}}
+#statement_author a{color: black; cursor: pointer; &:hover{color: #428bca;}}
+.st_a:hover {background-color:#428bca; color: white;}
 
 #statement_show { border: 1px solid #EEE; padding: 10px 20px 30px 20px;
  margin-right: auto; margin-top: 18px; background: url("back-tet5.png");

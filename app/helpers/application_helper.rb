@@ -1,9 +1,7 @@
 module ApplicationHelper
-
-
-
 	def getRandomStatement()
-		@rand_statement = Statement.order("RANDOM()").first
+		#@rand_statement = Statement.order("RANDOM()").first
+		@rand_statement = Statement.find(95)
 	end
 
   def chosen_src( id, collection, obj = nil, options = {})  

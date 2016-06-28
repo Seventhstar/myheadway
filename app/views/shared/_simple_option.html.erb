@@ -11,9 +11,9 @@
 <div class="sep_15"></div>
 
 <% if @items.first.nil? %>
-<% attrs = @item.attributes.except("id", "created_at", "updated_at") %>
+<% attrs = @item.attributes.except("created_at", "updated_at") %>
 <% else %>
-<% attrs = @items.first.attributes.except("id", "created_at", "updated_at") %>
+<% attrs = @items.first.attributes.except("created_at", "updated_at") %>
 <% end %>
 
 <div class="panel panel-default">
@@ -21,7 +21,13 @@
 <table class="table table-striped" model="<%= @item.class.name %>">
   <thead>
   <% attrs.each do |attr| %>
-  	<th <%= attr_boolean?(@item,attr[0]) ? 'width=60px;':'' %> fld='<%= attr[0] %>'><%= t(attr[0]) %></th>
+    <% if attr_boolean?(@item,attr[0]) %>
+      <th width=60px; fld='<%= attr[0] %>'><%= t(attr[0]) %></th>
+    <% elsif attr[0]=='id' %>
+  	  <th width=30px; fld='id'>#</th>
+    <% else %>
+      <th fld='<%= attr[0] %>'><%= t(attr[0]) %></th>
+    <% end %>
   <% end %>
   <th width="60px;"></th>
   </thead>
@@ -30,8 +36,10 @@
       <tr>
         <% attrs.each do |attr| %>
           <% if attr_boolean?(@item,attr[0]) %>
-            <td class="state"><span class="check_img sw_check <%= item[attr[0]] ? "checked" :"" %>" item_id="<%= item.id%>" chk="<%= attr[0] %>"></span>
+            <td class="state"><span class="check_img sw_check <%= item[attr[0]] ? "checked" :"" %>" item_id="<%= item.id %>" chk="<%= attr[0] %>"></span>
             </td> 
+          <% elsif attr[0]=='id' %>  
+            <td class="col_id"><%= item.id %></td>
           <% else %>
             <td><%= item[attr[0]].to_s %></td>
           <% end %>

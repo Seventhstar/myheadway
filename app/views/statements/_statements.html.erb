@@ -12,11 +12,14 @@
 	  <div id="statement_footer">
         <div id="statement_author"><b>Автор: </b><%= link_to statement.author_name, controller: 'statements', author_id: statement.author_id %><br/>
         	<% if statement.book_id? %>
-		    		<b>Книга: </b><%= link_to statement.book_name,controller: "statements", book_id: statement.book_id %><br/>
+		    	<b>Книга: </b><%= link_to statement.book_name,controller: "statements", book_id: statement.book_id %><br/>
+		    <% end %>
+        <% if statement.tags.count %>
+		    	<b>Метки: </b>
+		    	<% statement.tags.each do |t| %>		    		
+		    		<span class="st_a"><%= link_to t.name, controller: 'statements', tag_id: t.id %></span>
 		    	<% end %>
-        	<% if statement.tags.count %>
-		    		<b>Метки: </b><%= statement.tags_names %>
-		    	<% end %>
+		    <% end %>
 		</div>
 		<div id="statement_edit_menu">
 

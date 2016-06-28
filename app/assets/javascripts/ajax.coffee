@@ -132,7 +132,7 @@ $(document).ready ->
     item_rm_id= $(this).next().attr('item_id')
     $row = $(this).parents('')
     disable_input()
-    $cells = $row.children('td').not('.edit_delete,.state')    
+    $cells = $row.children('td').not('.edit_delete,.state,.col_id')    
     $cells.each ->
       cell_to_edit($(this))
       return

@@ -3,7 +3,7 @@ class OptionsController < ApplicationController
  include OptionsHelper
   
   def index
-    @items = option_model.order(:name)
+    @items = option_model.order(:id)
     @item = option_model.new
   end
 
@@ -26,7 +26,7 @@ class OptionsController < ApplicationController
     @page = params[:options_page]
     @page ||= "books"
     
-    @items = option_model.order(:name)
+    @items = option_model.order(:id)
     @item = option_model.new
     end
 
