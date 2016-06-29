@@ -1,0 +1,8 @@
+<% book = Book.find(18) %>
+<% if !book.nil? %>
+	<div id="statement_show" class="mini">
+		<div id="book_img">
+		<%= link_to image_tag(book.img_url), [:edit, book] %>
+		</div>
+	</div>
+<% end %>

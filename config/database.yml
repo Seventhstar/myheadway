@@ -29,11 +29,11 @@ test:
   pool: 5
   timeout: 5000
 
-production:
-  adapter: postgresql
-  host: 
-  database: 
-  pool: 5
-  timeout: 5000
-  username: 
-  password: 
+#production:
+#  adapter: postgresql
+#  host: 
+#  database: 
+#  pool: 5
+#  timeout: 5000
+#  username: 
+#  password: 

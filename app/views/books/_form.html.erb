@@ -19,6 +19,17 @@
      <%= f.label t(:author_id) %>
     <%= f.text_field :author_name, data: {autocomplete_source: authors_path} %>
   </div>
+
+  <div class="field">
+    <%= f.label 'url' %>
+    <%= f.text_field :img_url, :class => "width_area" %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Описание' %>
+    <%= f.text_area :annotation, :class => "width_area",:size => "80x8" %>
+  </div>
+
   <div class="actions">
     <%= f.submit nil, :class => "btn btn-success"%>
     <%= link_to t('Back'), books_path, :class => "btn" %>

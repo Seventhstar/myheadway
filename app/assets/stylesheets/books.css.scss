@@ -1,3 +1,12 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#book_img {margin-top: 20px}
+#book_img img {
+    height: auto; 
+    width: auto; 
+    max-width: 400px; 
+    max-height: 400px;
+}

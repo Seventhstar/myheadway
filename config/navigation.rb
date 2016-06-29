@@ -55,9 +55,9 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :key1, 'Высказывания', '/statements', html: {class: li_class} do |sub_nav|
      # sub_nav.item :key1_1, 'Высказывания', '/statements'
       sub_nav.item :key1_2, 'Авторы', '/authors'
-      sub_nav.item :key1_3, 'Книги', '/books'
       sub_nav.item :key1_4, 'Метки', '/tags'
     end
+    primary.item :books, 'Книги', '/books'
 
     primary.item :feelings, 'Вызовы/Заявки', '/claims'
     primary.item :feelings, 'Заметки', '/notices'

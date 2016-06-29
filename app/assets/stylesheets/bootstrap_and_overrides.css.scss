@@ -24,7 +24,10 @@ h1, h3, .h3 { font-size: 24px;  padding-bottom: 2px;	border-bottom: 1px solid #c
 .col-md-8 { width: 66.66666667%; float: left;}
 .col-md-4 { width: 33.33333333%; float: left;}
 
-.row {overflow: hidden;}
+.row {
+  // overflow: hidden;
+  display: inline-block;
+}
 // * {
 //     -webkit-box-sizing: border-box;
 //     -moz-box-sizing: border-box;

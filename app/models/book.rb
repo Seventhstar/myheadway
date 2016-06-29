@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
   end
   
   def author_name=(name)
-    self.author = Author.find_or_create_by_name(name) if name.present?
+    self.author = Author.find_or_create_by(name: name) if name.present?
   end
 
 end
