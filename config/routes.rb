@@ -19,6 +19,7 @@ Myheadway::Application.routes.draw do
   post   'options/:options_page' => 'options#create'
   delete 'options/:options_page/:id' => 'options#destroy'
   post "ajax/upd_param"
+  post "ajax/add_option"
 
 
   root :to => "statements#index"

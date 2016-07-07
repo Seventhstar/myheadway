@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20160629175648) do
 
   create_table "authors", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "books", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       limit: 255
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 20160629175648) do
   end
 
   create_table "denials", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       limit: 255
+    t.date     "start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "start_date"
   end
 
   create_table "feelings", force: :cascade do |t|
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20160629175648) do
   end
 
   create_table "search_suggestions", force: :cascade do |t|
-    t.string   "term"
+    t.string   "term",       limit: 255
     t.integer  "author"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -69,12 +69,12 @@ ActiveRecord::Schema.define(version: 20160629175648) do
 
   create_table "statements", force: :cascade do |t|
     t.integer  "author_id"
-    t.string   "source"
-    t.string   "theme"
+    t.string   "source",     limit: 255
+    t.string   "theme",      limit: 255
     t.text     "content"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
     t.integer  "book_id"
     t.boolean  "isTip"
   end
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20160629175648) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 20160629175648) do
   end
 
   create_table "targets", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       limit: 255
     t.integer  "parent_id"
     t.integer  "user_id"
     t.integer  "group_id"

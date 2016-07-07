@@ -52,6 +52,18 @@ class AjaxController < ApplicationController
     end
   end
 
+  def add_option
+    if params['model'] && params['model']!='undefined'
+      obj = params['model'].classify.constantize.find_or_create_by(name: params['name'])
+    end
+    # respond_to do |format|
+    #   format.json { render :json => @post }
+    # end
+    render json: obj.id
+    # respond_to do |format|
+    #   format.js { render :json obj }
+    # end
+  end
 
   def upd_param
   	if params['model'] && params['model']!='undefined'
