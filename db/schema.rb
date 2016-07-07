@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629175648) do
+ActiveRecord::Schema.define(version: 20160707180538) do
+
+  create_table "attentions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.text     "description"
+    t.string   "src_url"
+    t.string   "img_url"
+    t.integer  "attn_cat_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "attn_cats", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "authors", force: :cascade do |t|
     t.string   "name",       limit: 255

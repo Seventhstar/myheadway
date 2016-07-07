@@ -58,12 +58,13 @@ SimpleNavigation::Configuration.run do |navigation|
       sub_nav.item :key1_4, 'Метки', '/tags'
     end
     primary.item :books, 'Книги', '/books'
-
+    primary.item :books, 'Интересное', '/attentions'
     primary.item :feelings, 'Вызовы/Заявки', '/claims'
     primary.item :feelings, 'Заметки', '/notices'
     primary.item :feelings, 'Ощущения', '/feelings'
     primary.item :denials, 'Отказы', '/denials'
     primary.item :logout, image_tag('logout.png'),logout_path, method: :delete, html: {class: "orange logout li-right"}
+    primary.item :options, image_tag('gear.png'),options_path, html: {class: "orange logout li-right"}
 
     # Add an item which has a sub navigation (same params, but with block)
 #    primary.item :key_2, 'name', url, options do |sub_nav|

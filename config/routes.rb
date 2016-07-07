@@ -1,4 +1,6 @@
 Myheadway::Application.routes.draw do
+  resources :attentions
+
   resources :notices
 
   resources :claims
@@ -13,6 +15,7 @@ Myheadway::Application.routes.draw do
   resources :search_suggestions
   resources :statements
   resources :authors
+  resources :attn_cats
 
   get    'options'  => 'options#edit'
   get    'options/:options_page'  => 'options#edit',:constraints => {:format => /(json|html)/}

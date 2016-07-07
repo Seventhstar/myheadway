@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @attention.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @attention.user_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @attention.description %>
+</p>
+
+<p>
+  <strong>Src url:</strong>
+  <%= @attention.src_url %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @attention.img_url %>
+</p>
+
+<p>
+  <strong>Attn cat:</strong>
+  <%= @attention.attn_cat_id %>
+</p>
+
+<%= link_to 'Edit', edit_attention_path(@attention) %> |
+<%= link_to 'Back', attentions_path %>

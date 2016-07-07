@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Список интересного</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th>Description</th>
+      <th>Src url</th>
+      <th>Img url</th>
+      <th>Attn cat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attentions.each do |attention| %>
+    <tr >
+      <td rowspan='2'><%= image_tag attention.img_url %></td>
+      <td><%= attention.name %></td>
+    </tr>
+      <tr>
+        <td><%= attention.name %></td>
+        <td><%= attention.user_id %></td>
+        <td><%= attention.description %></td>
+        <td><%= attention.src_url %></td>
+        <td><%= attention.img_url %></td>
+        <td><%= attention.attn_cat_id %></td>
+        <td><%= link_to 'Show', attention %></td>
+        <td><%= link_to 'Edit', edit_attention_path(attention) %></td>
+        <td><%= link_to 'Destroy', attention, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attention', new_attention_path %>
