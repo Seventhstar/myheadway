@@ -4,7 +4,13 @@ class AttentionsController < ApplicationController
   # GET /attentions
   # GET /attentions.json
   def index
-    @attentions = Attention.all
+    cat_ids = search_ids = all_ids = Attention.all.ids
+    params.delete_if{|k,v| v=='' || v=='0' || k=='_' }
+
+    cat_ids   = Attention.find(params[:attn_cat_id]).attentions.ids if !params[:book_id].nil?
+    search_ids  = Attention.search(params[:search]).ids if !params[:search].nil?
+    ids = cat_ids & search_ids & all_ids 
+    @attentions = Attention.where('id in (?)', ids).order(created_at: :desc).paginate(:page => params[:page], :per_page => 20)
   end
 
   # GET /attentions/1

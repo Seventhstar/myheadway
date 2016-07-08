@@ -35,7 +35,5 @@
     <%= f.label :attn_cat_id %><br>
     <div class="combobox"><%= chosen_src :attn_cat_id, AttnCat.all, params[:attn_cat_id], {nil_value: 'Категория...', class: 'st_chosen'} %></div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
 <% end %>

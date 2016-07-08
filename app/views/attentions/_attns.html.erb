@@ -1,0 +1,19 @@
+<table class="table table-striped">
+  <tbody>
+    <% @attentions.each do |attention| %>
+    <tr class='att_head'>
+      <td rowspan='2' class="img_attn"><div ><%= image_tag attention.img_url, class: "img_attn" %></div></td>
+      
+      <td><%= attention.name %></td>
+      <td><%= attention.attn_cat_id %></td>
+      <%= td_tool_icons(attention )%>
+    </tr>
+      <tr>
+        <td colspan="3"><%= attention.description %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
