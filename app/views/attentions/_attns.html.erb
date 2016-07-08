@@ -1,19 +1,17 @@
-<table class="table table-striped">
-  <tbody>
-    <% @attentions.each do |attention| %>
-    <tr class='att_head'>
-      <td rowspan='2' class="img_attn"><div ><%= image_tag attention.img_url, class: "img_attn" %></div></td>
-      
-      <td><%= attention.name %></td>
-      <td><%= attention.attn_cat_id %></td>
-      <%= td_tool_icons(attention )%>
-    </tr>
-      <tr>
-        <td colspan="3"><%= attention.description %></td>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @attentions.each do |attention| %>
 
-<br>
+ <div class="attn_boby">
+
+  <div class="attn_img_box left"><%= image_tag attention.img_url, class: "img_attn" %></div>
+  <div class="col-80">
+    <div class="attn_head left fullwidth">
+      <span><%= attention.name %></span>
+      <%= tool_icons(attention,{content_tag: :span, content_class: 'right'})%>
+    </div>
+    <div class="attn_desc">
+        <%= raw CheckShortContent(attention.description,attention.id,310) %>
+    </div>
+  </div>
+ </div>
+
+<% end %>

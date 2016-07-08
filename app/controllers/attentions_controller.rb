@@ -9,7 +9,7 @@ class AttentionsController < ApplicationController
 
     cat_ids   = Attention.find(params[:attn_cat_id]).attentions.ids if !params[:book_id].nil?
     search_ids  = Attention.search(params[:search]).ids if !params[:search].nil?
-    ids = cat_ids & search_ids & all_ids 
+    ids = cat_ids & search_ids & all_ids
     @attentions = Attention.where('id in (?)', ids).order(created_at: :desc).paginate(:page => params[:page], :per_page => 20)
   end
 
@@ -21,10 +21,12 @@ class AttentionsController < ApplicationController
   # GET /attentions/new
   def new
     @attention = Attention.new
+    @user = current_user.id
   end
 
   # GET /attentions/1/edit
   def edit
+    @user = @attention.user_id
   end
 
   # POST /attentions

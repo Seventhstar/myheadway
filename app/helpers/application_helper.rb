@@ -4,11 +4,11 @@ module ApplicationHelper
 		# @rand_statement = Statement.find(95)
 	end
 
-  def chosen_src( id, collection, obj = nil, options = {})  
+  def chosen_src( id, collection, obj = nil, options = {})
     p_name    = options[:p_name].nil? ? 'name' : options[:p_name]
     order     = options[:order].nil? ? p_name : options[:order]
     nil_value = options[:nil_value].nil? ? 'Выберите...' : options[:nil_value]
-    
+
     coll = collection.class.ancestors.include?(ActiveRecord::Relation) ? collection : collection
     coll = coll.collect{ |u| [u[p_name], u.id] }
     coll.insert(0,[nil_value,nil]) if nil_value != ''
@@ -21,7 +21,7 @@ module ApplicationHelper
 
     def_cls = coll.count < 8 ? 'chosen' : 'schosen'
     cls       = options[:class].nil? ? def_cls : options[:class]
-    
+
     cls = cls+" has-error" if is_attr && ( obj.errors[id].any? || obj.errors[id.to_s.gsub('_id','')].any? )
     l = label_tag options[:label]
     s = select_tag n, options_for_select(coll, :selected => sel), class: cls
@@ -43,35 +43,34 @@ module ApplicationHelper
   end
 
   def edit_delete(element, subcount = 0, invisible = false)
-
     hidden = invisible ? "hid": ""
-
     content_tag :div,{:class=>"edit_delete #{hidden}"} do
-		ed = link_to image_tag('edit.png'), edit_polymorphic_path(element) 
- 		
-    
-
+		ed = link_to image_tag('edit.png'), edit_polymorphic_path(element)
     subcount ||= 0
-		if subcount>0 
+		if subcount>0
   			de = image_tag('delete-disabled.png')
 		else
   			de = link_to image_tag('delete.png'), element, method: :delete, data: { confirm: 'Действительно удалить?' }
-		end 
+		end
 
 		ed + de
 	end
   end
 
-  def td_tool_icons(element,str_icons='edit,delete',params = nil)
-    
+  def tool_icons(element,params = nil)
+
     all_icons = {} #['edit','delete','show'] tag='span',subcount=nil
     params ||= {}
-    params[:tag] ||= 'href' 
-    icons = str_icons.split(',')
+    params[:tag] ||= 'href'
+    params[:icons] ||= 'edit,delete'
+    icons = params[:icons].split(',')
     params[:subcount] ||= 0
     params[:add_cls] ||= ''
+    params[:content_class] ||= ''
+    params[:content_tag] ||= :td
+    content = params[:content_tag]
     dilable_cls = params[:subcount]>0 ? '_disabled' : ''
-    if params[:tag] == 'span' 
+    if params[:tag] == 'span'
       all_icons['edit'] = content_tag :span, "", {class: 'icon icon_edit', item_id: element.id}
       all_icons['delete'] = content_tag( :span,"",{class: ['icon icon_remove',dilable_cls,' ',params[:add_cls]].join, item_id: params[:subcount]>0 ? '' : element.id})
      else
@@ -80,16 +79,15 @@ module ApplicationHelper
       all_icons['delete'] = link_to "", element, method: :delete, data: { confirm: 'Действительно удалить?' }, class: "icon icon_remove " if params[:subcount]==0
       all_icons['delete'] = content_tag(:span,"",{class: 'icon icon_remove_disabled'}) if params[:subcount]>0
     end
-    content_tag :td,{:class=>"edit_delete"} do
+    content_tag content,{:class=>["edit_delete",' ',params[:content_class]].join} do
       icons.collect{ |i| all_icons[i] }.join.html_safe
     end
-
   end
 
 
   def submit_cancel(back_url)
-      s = submit_tag  t('Save'), class: 'btn btn-success' 
-      c = link_to t('Cancel'), back_url, class: "btn btn-white btn-reset" 
+      s = submit_tag  t('Save'), class: 'btn btn-success'
+      c = link_to t('Cancel'), back_url, class: "btn btn-white btn-reset"
       s + c
   end
 

@@ -16,8 +16,7 @@
         <td><%= book.name %></td>
         <td><%= book.author_name  %></td>
 
-        <td><%= link_to image_tag('edit.png'), edit_book_path(book) %>
-            <%= link_to image_tag('delete.png'), book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= tool_icons(book) %>
       </tr>
     <% end %>
   </tbody>

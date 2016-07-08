@@ -5,3 +5,14 @@
 .img_attn 	{ max-width: 100px; max-height: 140px; }
 td.img_attn { width: 102px;}
 .att_head 	{ height: 16px;}
+
+#new_attention label, .edit_attention label {width: 120px;}
+#attn_form .field input[type='text'], #attn_form .field .chosen-container, .field select
+
+{width: 100%;}
+
+
+
+.attn_boby {display: block; overflow: hidden; margin-bottom: 20px}
+.attn_img_box{width: 15%; margin-right: 20px; display: flex; align-items: center; justify-content: center}
+.attn_head{ background-color: #93c0e6; margin-bottom: 10px; padding: 5px 10px; border-radius: 4px; color: white;}

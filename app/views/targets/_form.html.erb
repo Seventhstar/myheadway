@@ -12,14 +12,14 @@
   <% end %>
 
   <%= f.hidden_field :id %>
-  
+
 
   <div class="field">
       <%= f.label t :name %>
     <%= f.text_field :name %>
   </div>
 
-  
+
 
   <div class="field">
        <%= f.label t :parent_id %>
@@ -31,18 +31,16 @@
   <% if @target.parent.nil? %>
       <div class="field">
         <label>Или группы:</label>
-          <%= f.collection_select(:tgroup_ids, Tgroup.all, :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>  
+          <%= f.collection_select(:tgroup_ids, Tgroup.all, :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>
       </div>
 
    <% end %>
-  
+
 
     <%= f.hidden_field :user_id, :value => 1 %>
 
-         
-  
+
+
     <%= submit_cancel targets_path %>
-    <!-- < f.submit nil, :class => "btn btn-success" %> -->
-    <!-- < link_to t('Back'), targets_path, :class => "btn btn-white" %> -->
-  
+
 <% end %>

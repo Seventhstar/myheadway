@@ -18,7 +18,7 @@
         <td><%= claim.name %></td>
         <td><%= claim.date.try('strftime',"%d.%m.%Y") %></td>
         <td><%= claim.reached %></td>
-        <%= td_tool_icons(claim)%>
+        <%= tool_icons(claim)%>
 
       </tr>
     <% end %>

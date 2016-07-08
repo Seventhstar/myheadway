@@ -1,39 +1,28 @@
+<div id="attn_form">
 <%= form_for(@attention) do |f| %>
-  <% if @attention.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@attention.errors.count, "error") %> prohibited this attention from being saved:</h2>
-
-      <ul>
-      <% @attention.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <label>Наименование:</label>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <label>Категория:</label>
+    <div class="combobox"><%= chosen_src :attn_cat_id, AttnCat.all, params[:attn_cat_id], {nil_value: 'Категория...', class: 'st_chosen'} %></div>
+  </div>
+  <%= f.hidden_field :user_id, value: @user %>
+  <div class="field">
+    <%= f.label t :description %><br>
+    <%= f.text_area :description, :class => "width_area",:size => "80x8" %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :src_url %><br>
+    <%= f.label t :src_url %><br>
     <%= f.text_field :src_url %>
   </div>
   <div class="field">
-    <%= f.label :img_url %><br>
+    <%= f.label t :img_url %><br>
     <%= f.text_field :img_url %>
   </div>
-  <div class="field">
-    <%= f.label :attn_cat_id %><br>
-    <div class="combobox"><%= chosen_src :attn_cat_id, AttnCat.all, params[:attn_cat_id], {nil_value: 'Категория...', class: 'st_chosen'} %></div>
-  </div>
-  
+
+  <%= submit_cancel attentions_path %>
 <% end %>
+</div>

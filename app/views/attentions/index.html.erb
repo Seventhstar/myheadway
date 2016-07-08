@@ -5,9 +5,9 @@
     <div class="navsearch">
     <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %>
     <div class="combobox big_combo"><%= chosen_src :attn_cat_id, AttnCat.all, params[:attn_cat_id], {nil_value: 'Категория...', class: 'st_chosen'} %></div>
-    
+
     <div class="nav-pills">
-     <%= link_to '+ Добавить высказывание', new_statement_path, :class =>"btn-success right" %>
+     <%= link_to '+ Добавить', new_attention_path, :class =>"btn-success right" %>
     </div>
     </div>
 <% end %>
