@@ -8,6 +8,8 @@ module ApplicationHelper
     p_name    = options[:p_name].nil? ? 'name' : options[:p_name]
     order     = options[:order].nil? ? p_name : options[:order]
     nil_value = options[:nil_value].nil? ? 'Выберите...' : options[:nil_value]
+    multiple  = options[:multiple].nil? ? false : options[:multiple]
+
 
     coll = collection.class.ancestors.include?(ActiveRecord::Relation) ? collection : collection
     coll = coll.collect{ |u| [u[p_name], u.id] }
@@ -24,7 +26,7 @@ module ApplicationHelper
 
     cls = cls+" has-error" if is_attr && ( obj.errors[id].any? || obj.errors[id.to_s.gsub('_id','')].any? )
     l = label_tag options[:label]
-    s = select_tag n, options_for_select(coll, :selected => sel), class: cls
+    s = select_tag n, options_for_select(coll, :selected => sel), class: cls, multiple: multiple, model: options[:model]
     options[:label].nil? ? s : l+s
   end
 
@@ -83,12 +85,26 @@ module ApplicationHelper
       icons.collect{ |i| all_icons[i] }.join.html_safe
     end
   end
-
+  def only_actual_btn()
+    txt = @only_actual == false ? 'Все' : "Актуальные"
+    cls = @only_actual ? ' on only_actual' : ''
+    active = @only_actual ?  'active' : ''
+    a = content_tag :a, txt,{ class: "link_a left"+cls, off: "Все", on: "Актуальные"}
+    b = content_tag :div, { class: 'scale'} do
+        content_tag :div, '',{class:"handle "+ active}
+      end
+    cls = @only_actual ? ' toggled' : ''
+    content_tag :div, {class: 'switcher_a'+ cls} do
+      a+b
+    end
+  end
 
   def submit_cancel(back_url)
       s = submit_tag  t('Save'), class: 'btn btn-success'
       c = link_to t('Cancel'), back_url, class: "btn btn-white btn-reset"
-      s + c
+      content_tag :div, class: 'submit_cancel' do
+        s + c
+      end
   end
 
 

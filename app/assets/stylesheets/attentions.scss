@@ -8,9 +8,11 @@ td.img_attn { width: 102px;}
 
 #new_attention label, .edit_attention label {width: 120px;}
 #attn_form .field input[type='text'], #attn_form .field .chosen-container, .field select
-
 {width: 100%;}
 
+#attn_form .col-30 {margin-right: 20px;}
+#attn_form .inp_btn_label{ margin: 25px 30px 0 0;}
+#attn_form .field label {display: block;}
 
 
 .attn_boby {display: block; overflow: hidden; margin-bottom: 20px}

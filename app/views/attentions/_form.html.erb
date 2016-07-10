@@ -5,21 +5,34 @@
     <label>Наименование:</label>
     <%= f.text_field :name %>
   </div>
+
+  <div class="col-30">
   <div class="field">
     <label>Категория:</label>
-    <div class="combobox"><%= chosen_src :attn_cat_id, AttnCat.all, params[:attn_cat_id], {nil_value: 'Категория...', class: 'st_chosen'} %></div>
+    <div class="combobox"><%= chosen_src :attn_cat_id, AttnCat.all, @attention, {nil_value: 'Категория...'} %></div>
   </div>
+  </div>
+  <div class="col-30">
+  <div class="field">
+    <label>Автор:</label>
+    <div class="combobox"><%= chosen_src :author_id, Author.all, @attention, {nil_value: 'Автор...', model: 'authors'} %></div>
+  </div>
+  </div>
+  <div class="col-30">
+    <label class="inp_btn_label"><div class="inp_btn checkbox"><%= f.check_box :actual, {:checked=>@actual}, "true", "false" %></div>Актуально</label>
+  </div>
+
   <%= f.hidden_field :user_id, value: @user %>
   <div class="field">
-    <%= f.label t :description %><br>
+    <label>Описание:</label>
     <%= f.text_area :description, :class => "width_area",:size => "80x8" %>
   </div>
   <div class="field">
-    <%= f.label t :src_url %><br>
+    <%= f.label t :src_url %>
     <%= f.text_field :src_url %>
   </div>
   <div class="field">
-    <%= f.label t :img_url %><br>
+    <%= f.label t :img_url %>
     <%= f.text_field :img_url %>
   </div>
 

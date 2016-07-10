@@ -95,11 +95,11 @@
   each params, (i, a) ->
     url[i] = a
     return
-  method = if $('#cur_method').val() == 'edit_multiple' then '/edit_multiple' else ''
-  controller =  $('#search').attr('cname')
+  # method = if $('#cur_method').val() == 'edit_multiple' then '/edit_multiple' else ''
+  controller =  $('form').attr('action').replace("/", "")
 
-  $.get '/'+controller+method, url, null, 'script'
-  setLoc(""+controller+method+"?"+ajx2q(url));
+  $.get controller, url, null, 'script'
+  setLoc(controller+"?"+ajx2q(url));
   return
 
 $(document).ready ->
@@ -109,7 +109,7 @@ $(document).ready ->
     isWordCharacter = c.match(/\w/);
     isBackspaceOrDelete = (event.keyCode == 8 || event.keyCode == 46);
     if (isWordCharacter || isBackspaceOrDelete)
-       delay('sortable_query({})',700)
+       delay("$.get($('form').attr('action'), $('form').serialize(), null, 'script')",700)
     return
 # обновление данных в таблицах страниц index
   $('.index_filter select,.index_filter input[type="radio"]').on 'change', ->
@@ -119,6 +119,7 @@ $(document).ready ->
   $('.schosen').chosen(width: '99.5%')
   # $('#new_statement .st_chosen').chosen(width: '80%')
   # $('#new_attention .st_chosen,.edit_attention .st_chosen').chosen(width: '100%')
+  # $('.chosen-select').chosen(width: '100%', disable_search: 'true')
   $('.chosen').chosen(width: '99.5%', disable_search: 'true')
 
 # редактирование ячейки в таблице

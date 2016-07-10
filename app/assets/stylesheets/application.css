@@ -17,6 +17,8 @@
  */
 
 .container{ width: 1260px !important; }
+.chosen-container {width: 100%;}
+.submit_cancel {margin-top: 20px; float: right;}
 
 .page-wrapper { display: flex; flex-direction: column; height: 100%; }
 .page-content{  flex: 1 0 auto;}
@@ -182,6 +184,6 @@ border-right: 0;
 }
 
 .sortnav li a, .sortnav li a:hover, .nav-pills a{
-	padding: 5px 10px !important;
+	padding: 5px 10px;
 }
 

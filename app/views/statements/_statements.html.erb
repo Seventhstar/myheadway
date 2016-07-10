@@ -10,9 +10,10 @@
     </div><br />
 	<div id="statement_content"><%= raw CheckShortContent(statement.content,statement.id) %></div>
 	  <div id="statement_footer">
-        <div id="statement_author"><b>Автор: </b><%= link_to statement.author_name, controller: 'statements', author_id: statement.author_id %><br/>
+        <div id="statement_author"><b>Автор: </b><span class="st_a">
+        		<%= link_to statement.author_name, controller: 'statements', author_id: statement.author_id %></span><br/>
         	<% if statement.book_id? %>
-		    	<b>Книга: </b><%= link_to statement.book_name,controller: "statements", book_id: statement.book_id %><br/>
+		    	<b>Книга: </b> <span class="st_a"><%= link_to statement.book_name,controller: "statements", book_id: statement.book_id %></span><br/>
 		    <% end %>
         <% if statement.tags.count %>
 		    	<b>Метки: </b>

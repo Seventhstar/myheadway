@@ -1,10 +1,17 @@
-<% @attentions.each do |attention| %>
+<% cur_date = "" %>
 
+
+<% @attentions.each do |attention| %>
+  <% if cur_date != attention.created_at.try('strftime',"%d.%m.%Y") %>
+      <% cur_date = attention.created_at.try('strftime',"%d.%m.%Y") %>
+      <h5> <%= cur_date %> </h5>
+  <% end %>
  <div class="attn_boby">
 
   <div class="attn_img_box left"><%= image_tag attention.img_url, class: "img_attn" %></div>
   <div class="col-80">
     <div class="attn_head left fullwidth">
+      <span><%= attention.author.try(:name) %></span>
       <span><%= attention.name %></span>
       <%= tool_icons(attention,{content_tag: :span, content_class: 'right'})%>
     </div>

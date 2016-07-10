@@ -4,12 +4,16 @@ class AttentionsController < ApplicationController
   # GET /attentions
   # GET /attentions.json
   def index
-    cat_ids = search_ids = all_ids = Attention.all.ids
+    cat_ids = search_ids = act_ids = auth_ids = all_ids = Attention.all.ids
+    @only_actual = params[:only_actual].nil? ? true : params[:only_actual]=='true'
     params.delete_if{|k,v| v=='' || v=='0' || k=='_' }
-
-    cat_ids   = Attention.find(params[:attn_cat_id]).attentions.ids if !params[:book_id].nil?
-    search_ids  = Attention.search(params[:search]).ids if !params[:search].nil?
-    ids = cat_ids & search_ids & all_ids
+    cat_ids   = AttnCat.find(params[:attn_cat_id]).attentions.ids if !params[:attn_cat_id].nil?
+    
+    act_ids = Attention.where(actual: true).ids if @only_actual
+    auth_ids = Attention.where(author_id: params[:author_id]).ids if !params[:author_id].nil?
+    search_ids  = Attention.where('name like ? or description like ?',
+      '%'+params[:search]+'%','%'+params[:search]+'%').ids if !params[:search].nil?
+    ids = cat_ids & search_ids & all_ids & act_ids & auth_ids
     @attentions = Attention.where('id in (?)', ids).order(created_at: :desc).paginate(:page => params[:page], :per_page => 20)
   end
 
@@ -22,11 +26,13 @@ class AttentionsController < ApplicationController
   def new
     @attention = Attention.new
     @user = current_user.id
+    @actual = true
   end
 
   # GET /attentions/1/edit
   def edit
     @user = @attention.user_id
+    @actual = @attention.actual
   end
 
   # POST /attentions
@@ -77,6 +83,6 @@ class AttentionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attention_params
-      params.require(:attention).permit(:name, :user_id, :description, :src_url, :img_url, :attn_cat_id)
+      params.require(:attention).permit(:name, :user_id, :description, :src_url, :img_url, :attn_cat_id, :actual, :author_id)
     end
 end

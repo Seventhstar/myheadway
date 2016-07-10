@@ -1,15 +1,4 @@
 <%= form_for(@target_day) do |f| %>
-  <% if @target_day.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@target_day.errors.count, "error") %> prohibited this target_day from being saved:</h2>
-
-      <ul>
-      <% @target_day.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :checked %><br>

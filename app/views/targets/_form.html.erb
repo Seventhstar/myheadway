@@ -1,18 +1,6 @@
 <%= form_for(@target) do |f| %>
-  <% if @target.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@target.errors.count, "error") %> prohibited this target from being saved:</h2>
-
-      <ul>
-      <% @target.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <%= f.hidden_field :id %>
-
 
   <div class="field">
       <%= f.label t :name %>
@@ -31,7 +19,7 @@
   <% if @target.parent.nil? %>
       <div class="field">
         <label>Или группы:</label>
-          <%= f.collection_select(:tgroup_ids, Tgroup.all, :id, :name, {}, {multiple: true,  class: "chosen-select", :include_blank => 'None'}) %>
+          <%= chosen_src :tgroup_ids, Tgroup.all, @target,{class: 'chosen-select', multiple: true, width: '80%'} %>
       </div>
 
    <% end %>

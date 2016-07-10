@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.navsearch #search{ width: 200px; margin-right: 20px; padding-left: 8px;}
+.navsearch #search{ width: 200px; margin-right:5px; padding-left: 8px;}
 .navsearch {margin-bottom: 20px; display: block; height: 30px;}
 
 textarea.width_area{ -webkit-margin-before: 0 !important; display:block; width:100%; padding: 5px;}
@@ -24,8 +24,9 @@ img.round { position: absolute; z-index: 2; display: block; left: -40px; top: -1
 
 #statements {overflow: hidden; display: inline-block;}
 
-#statement_author a{color: black; cursor: pointer; &:hover{color: #428bca;}}
-.st_a:hover {background-color:#428bca; color: white;}
+// #statement_author a{color: black; cursor: pointer; &:hover{color: white;}}
+.st_a {padding: 1px 5px;}
+.st_a:hover, .st_a:hover a{background-color:#428bca; border-radius: 2px; color: white;}
 
 #statement_show { border: 1px solid #EEE; padding: 10px 20px 30px 20px;
  margin-right: auto; margin-top: 18px; background: url("back-tet5.png");

@@ -28,8 +28,6 @@
     window.chHashFlag = true
     location.hash = navPrefix + curLoc
 
-    if withFrame and getLoc() != curLoc
-      setFrameContent curLoc
   return
 
 @ajx2q = (qa) ->
