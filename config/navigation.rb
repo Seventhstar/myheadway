@@ -47,7 +47,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #           :method - Specifies the http-method for the generated link - default is :get.
     #           :highlights_on - if autohighlighting is turned off and/or you want to explicitly specify
     #                            when the item should be highlighted, you can set a regexp which is matched
-    #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
+    #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
     #primary.item :key_1, 'name', url, options
     primary.item :key0, 'Цели', '/targets'
@@ -63,8 +63,9 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :feelings, 'Заметки', '/notices'
     primary.item :feelings, 'Ощущения', '/feelings'
     primary.item :denials, 'Отказы', '/denials'
-    primary.item :logout, image_tag('logout.png'),logout_path, method: :delete, html: {class: "orange logout li-right"}
-    primary.item :options, image_tag('gear.png'),options_path, html: {class: "orange logout li-right"}
+    primary.item :logout, image_tag('logout.png'),logout_path, method: :delete, html: {class: " logout li-right"}
+    img_url = request.original_fullpath() == "/options" ? 'gear_wh.png' : 'gear.png'
+    primary.item :options, image_tag(img_url) ,options_path, html: {class: "orange logout li-right"}
 
     # Add an item which has a sub navigation (same params, but with block)
 #    primary.item :key_2, 'name', url, options do |sub_nav|

@@ -1,0 +1,4412 @@
+/* *********************************************************************************************
+
+How to Create CSS3 + jQuery Accordion Menu [Tutorial]
+"How to Create CSS3 + jQuery Accordion Menu" that was specially made for DesignModo by our friend Valeriu Timbuc. 
+
+Links:
+http://vtimbuc.net/
+https://twitter.com/vtimbuc
+http://designmodo.com/futurico
+http://vladimirkudinov.com
+http://rockablethemes.com
+
+********************************************************************************************* */
+/* Reset */
+/* line 18, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion,
+.accordion ul,
+.accordion li,
+.accordion a,
+.accordion span {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* line 29, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li {
+  list-style: none;
+}
+
+/* line 30, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion {
+  margin-right: 20px;
+}
+
+/* Layout & Style */
+/* line 34, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > a {
+  display: block;
+  position: relative;
+  min-width: 110px;
+  padding: 0 10px 0 40px;
+  height: 32px;
+  color: #fdfdfd;
+  font: bold 12px/32px Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35);
+  background: #6c6e74;
+  background: -moz-linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #6c6e74), color-stop(100%, #4b4d51));
+  background: -webkit-linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  background: -o-linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  background: -ms-linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  background: linear-gradient(top, #6c6e74 0%, #4b4d51 100%);
+  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* line 59, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li:hover > a,
+.accordion > li:target > a,
+.accordion > li > a.active {
+  color: #eee;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+  background: url(/assets/active-fd839b8531a61f52a2be12fa7d0b45f708b7d7a307635ed2243d1ade2eb5eedd.png) repeat-x;
+}
+
+/* line 75, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > a span {
+  display: block;
+  position: absolute;
+  top: 7px;
+  right: 0;
+  padding: 0 10px;
+  margin-right: 10px;
+  font: normal bold 12px/18px Arial, sans-serif;
+  background: #404247;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(255, 255, 255, 0.1);
+  -moz-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* line 95, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li:hover > a span,
+.accordion > li:target > a span,
+.accordion > li > a.active span {
+  color: #fdfdfd;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.35);
+  background: #3e5706;
+}
+
+/* Images */
+/* line 101, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li > a:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 24px;
+  height: 24px;
+  margin: 4px 8px;
+  background-repeat: no-repeat;
+  background-image: url(/assets/menu-arrows-24-32fc3431bccccf64c498093f1b46a38943591be50f19380d2418f50a31c9ef63.png);
+  background-position: 0px 0px;
+}
+
+/* line 119, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li.files > a:before {
+  background-position: 0px 0px;
+}
+
+/* line 120, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li.files:hover > a:before,
+.accordion li.files:target > a:before,
+.accordion li.files > a.active:before {
+  background-position: 0px -24px;
+}
+
+/* Sub Menu */
+/* line 141, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li a {
+  color: #797979;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+  background: #e5e5e5;
+  border-bottom: 1px solid #c9c9c9;
+  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.1), 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* line 153, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li:hover a, .sub-menu li.active a {
+  background: #f5f5f5;
+}
+
+/* line 155, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li:last-child a {
+  border: none;
+}
+
+/* line 157, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li > a span {
+  color: #797979;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border: 1px solid #c9c9c9;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 168, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu em {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 14px;
+  color: #a6a6a6;
+  font: normal 10px/32px Arial, sans-serif;
+}
+
+/* Functionality */
+/* line 179, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > .sub-menu {
+  display: none;
+}
+
+/* line 180, d:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li:target > .sub-menu {
+  display: block;
+}
+/* line 5, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.img_attn {
+  max-width: 100px;
+  max-height: 140px;
+}
+
+/* line 6, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+td.img_attn {
+  width: 102px;
+}
+
+/* line 7, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.att_head {
+  height: 16px;
+}
+
+/* line 9, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#new_attention label, .edit_attention label {
+  width: 120px;
+}
+
+/* line 10, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#attn_form .field input[type='text'], #attn_form .field .chosen-container, .field select {
+  width: 100%;
+}
+
+/* line 13, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#attn_form .col-30 {
+  margin-right: 20px;
+}
+
+/* line 14, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#attn_form .inp_btn_label {
+  margin: 25px 30px 0 0;
+}
+
+/* line 15, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#attn_form .field label {
+  display: block;
+}
+
+/* line 18, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.attn_boby {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* line 19, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.attn_img_box {
+  width: 15%;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 20, d:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.attn_head {
+  background-color: #93c0e6;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+}
+/* line 6, d:/www/railsprj/myheadway/app/assets/stylesheets/books.css.scss */
+#book_img {
+  margin-top: 20px;
+}
+
+/* line 7, d:/www/railsprj/myheadway/app/assets/stylesheets/books.css.scss */
+#book_img img {
+  height: auto;
+  width: auto;
+  max-width: 400px;
+  max-height: 400px;
+}
+/*!
+ * Bootstrap v3.0.0
+ *
+ * Copyright 2013 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}
+audio,canvas,video{display:inline-block;}
+audio:not([controls]){display:none;height:0;}
+[hidden]{display:none;}
+html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+body{margin:0;}
+/*a:focus{outline:thin dotted;}*/
+/*a:active,a:hover{outline:0;}*/
+h1{font-size:2em;margin:0.67em 0;}
+abbr[title]{border-bottom:1px dotted;}
+b,strong{font-weight:bold;}
+dfn{font-style:italic;}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}
+mark{background:#ff0;color:#000;}
+code,kbd,pre,samp{font-family:monospace, serif;font-size:1em;}
+pre{white-space:pre-wrap;}
+q{quotes:"\201C" "\201D" "\2018" "\2019";}
+small{font-size:80%;}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+img{border:0;}
+svg:not(:root){overflow:hidden;}
+figure{margin:0;}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em;}
+legend{border:0;padding:0;}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}
+button,input{line-height:normal;}
+button,select{text-transform:none;}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}
+button[disabled],html input[disabled]{cursor:default;}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+textarea{overflow:auto;vertical-align:top;}
+table{border-collapse:collapse;border-spacing:0;}
+*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+html{font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+input,button,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit;}
+button,input,select[multiple],textarea{background-image:none;}
+/*a{color:#428bca;text-decoration:none;}a:hover,a:focus{color:#2a6496;text-decoration:underline;}*/
+/*a:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}*/
+img{vertical-align:middle;}
+.img-responsive{display:block;max-width:100%;height:auto;}
+.img-rounded{border-radius:6px;}
+.img-thumbnail{padding:4px;line-height:1.428571429;background-color:#ffffff;border:1px solid #dddddd;border-radius:4px;-webkit-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;display:inline-block;max-width:100%;height:auto;}
+.img-circle{border-radius:50%;}
+hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eeeeee;}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);border:0;}
+@font-face{font-family:'Glyphicons Halflings';src:url('../assets/glyphicons-halflings-regular.eot');src:url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('../assets/glyphicons-halflings-regular.woff') format('woff'),url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');}.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;}
+.glyphicon-asterisk:before{content:"\2a";}
+.glyphicon-plus:before{content:"\2b";}
+.glyphicon-euro:before{content:"\20ac";}
+.glyphicon-minus:before{content:"\2212";}
+.glyphicon-cloud:before{content:"\2601";}
+.glyphicon-envelope:before{content:"\2709";}
+.glyphicon-pencil:before{content:"\270f";}
+.glyphicon-glass:before{content:"\e001";}
+.glyphicon-music:before{content:"\e002";}
+.glyphicon-search:before{content:"\e003";}
+.glyphicon-heart:before{content:"\e005";}
+.glyphicon-star:before{content:"\e006";}
+.glyphicon-star-empty:before{content:"\e007";}
+.glyphicon-user:before{content:"\e008";}
+.glyphicon-film:before{content:"\e009";}
+.glyphicon-th-large:before{content:"\e010";}
+.glyphicon-th:before{content:"\e011";}
+.glyphicon-th-list:before{content:"\e012";}
+.glyphicon-ok:before{content:"\e013";}
+.glyphicon-remove:before{content:"\e014";}
+.glyphicon-zoom-in:before{content:"\e015";}
+.glyphicon-zoom-out:before{content:"\e016";}
+.glyphicon-off:before{content:"\e017";}
+.glyphicon-signal:before{content:"\e018";}
+.glyphicon-cog:before{content:"\e019";}
+.glyphicon-trash:before{content:"\e020";}
+.glyphicon-home:before{content:"\e021";}
+.glyphicon-file:before{content:"\e022";}
+.glyphicon-time:before{content:"\e023";}
+.glyphicon-road:before{content:"\e024";}
+.glyphicon-download-alt:before{content:"\e025";}
+.glyphicon-download:before{content:"\e026";}
+.glyphicon-upload:before{content:"\e027";}
+.glyphicon-inbox:before{content:"\e028";}
+.glyphicon-play-circle:before{content:"\e029";}
+.glyphicon-repeat:before{content:"\e030";}
+.glyphicon-refresh:before{content:"\e031";}
+.glyphicon-list-alt:before{content:"\e032";}
+.glyphicon-flag:before{content:"\e034";}
+.glyphicon-headphones:before{content:"\e035";}
+.glyphicon-volume-off:before{content:"\e036";}
+.glyphicon-volume-down:before{content:"\e037";}
+.glyphicon-volume-up:before{content:"\e038";}
+.glyphicon-qrcode:before{content:"\e039";}
+.glyphicon-barcode:before{content:"\e040";}
+.glyphicon-tag:before{content:"\e041";}
+.glyphicon-tags:before{content:"\e042";}
+.glyphicon-book:before{content:"\e043";}
+.glyphicon-print:before{content:"\e045";}
+.glyphicon-font:before{content:"\e047";}
+.glyphicon-bold:before{content:"\e048";}
+.glyphicon-italic:before{content:"\e049";}
+.glyphicon-text-height:before{content:"\e050";}
+.glyphicon-text-width:before{content:"\e051";}
+.glyphicon-align-left:before{content:"\e052";}
+.glyphicon-align-center:before{content:"\e053";}
+.glyphicon-align-right:before{content:"\e054";}
+.glyphicon-align-justify:before{content:"\e055";}
+.glyphicon-list:before{content:"\e056";}
+.glyphicon-indent-left:before{content:"\e057";}
+.glyphicon-indent-right:before{content:"\e058";}
+.glyphicon-facetime-video:before{content:"\e059";}
+.glyphicon-picture:before{content:"\e060";}
+.glyphicon-map-marker:before{content:"\e062";}
+.glyphicon-adjust:before{content:"\e063";}
+.glyphicon-tint:before{content:"\e064";}
+.glyphicon-edit:before{content:"\e065";}
+.glyphicon-share:before{content:"\e066";}
+.glyphicon-check:before{content:"\e067";}
+.glyphicon-move:before{content:"\e068";}
+.glyphicon-step-backward:before{content:"\e069";}
+.glyphicon-fast-backward:before{content:"\e070";}
+.glyphicon-backward:before{content:"\e071";}
+.glyphicon-play:before{content:"\e072";}
+.glyphicon-pause:before{content:"\e073";}
+.glyphicon-stop:before{content:"\e074";}
+.glyphicon-forward:before{content:"\e075";}
+.glyphicon-fast-forward:before{content:"\e076";}
+.glyphicon-step-forward:before{content:"\e077";}
+.glyphicon-eject:before{content:"\e078";}
+.glyphicon-chevron-left:before{content:"\e079";}
+.glyphicon-chevron-right:before{content:"\e080";}
+.glyphicon-plus-sign:before{content:"\e081";}
+.glyphicon-minus-sign:before{content:"\e082";}
+.glyphicon-remove-sign:before{content:"\e083";}
+.glyphicon-ok-sign:before{content:"\e084";}
+.glyphicon-question-sign:before{content:"\e085";}
+.glyphicon-info-sign:before{content:"\e086";}
+.glyphicon-screenshot:before{content:"\e087";}
+.glyphicon-remove-circle:before{content:"\e088";}
+.glyphicon-ok-circle:before{content:"\e089";}
+.glyphicon-ban-circle:before{content:"\e090";}
+.glyphicon-arrow-left:before{content:"\e091";}
+.glyphicon-arrow-right:before{content:"\e092";}
+.glyphicon-arrow-up:before{content:"\e093";}
+.glyphicon-arrow-down:before{content:"\e094";}
+.glyphicon-share-alt:before{content:"\e095";}
+.glyphicon-resize-full:before{content:"\e096";}
+.glyphicon-resize-small:before{content:"\e097";}
+.glyphicon-exclamation-sign:before{content:"\e101";}
+.glyphicon-gift:before{content:"\e102";}
+.glyphicon-leaf:before{content:"\e103";}
+.glyphicon-eye-open:before{content:"\e105";}
+.glyphicon-eye-close:before{content:"\e106";}
+.glyphicon-warning-sign:before{content:"\e107";}
+.glyphicon-plane:before{content:"\e108";}
+.glyphicon-random:before{content:"\e110";}
+.glyphicon-comment:before{content:"\e111";}
+.glyphicon-magnet:before{content:"\e112";}
+.glyphicon-chevron-up:before{content:"\e113";}
+.glyphicon-chevron-down:before{content:"\e114";}
+.glyphicon-retweet:before{content:"\e115";}
+.glyphicon-shopping-cart:before{content:"\e116";}
+.glyphicon-folder-close:before{content:"\e117";}
+.glyphicon-folder-open:before{content:"\e118";}
+.glyphicon-resize-vertical:before{content:"\e119";}
+.glyphicon-resize-horizontal:before{content:"\e120";}
+.glyphicon-hdd:before{content:"\e121";}
+.glyphicon-bullhorn:before{content:"\e122";}
+.glyphicon-certificate:before{content:"\e124";}
+.glyphicon-thumbs-up:before{content:"\e125";}
+.glyphicon-thumbs-down:before{content:"\e126";}
+.glyphicon-hand-right:before{content:"\e127";}
+.glyphicon-hand-left:before{content:"\e128";}
+.glyphicon-hand-up:before{content:"\e129";}
+.glyphicon-hand-down:before{content:"\e130";}
+.glyphicon-circle-arrow-right:before{content:"\e131";}
+.glyphicon-circle-arrow-left:before{content:"\e132";}
+.glyphicon-circle-arrow-up:before{content:"\e133";}
+.glyphicon-circle-arrow-down:before{content:"\e134";}
+.glyphicon-globe:before{content:"\e135";}
+.glyphicon-tasks:before{content:"\e137";}
+.glyphicon-filter:before{content:"\e138";}
+.glyphicon-fullscreen:before{content:"\e140";}
+.glyphicon-dashboard:before{content:"\e141";}
+.glyphicon-heart-empty:before{content:"\e143";}
+.glyphicon-link:before{content:"\e144";}
+.glyphicon-phone:before{content:"\e145";}
+.glyphicon-usd:before{content:"\e148";}
+.glyphicon-gbp:before{content:"\e149";}
+.glyphicon-sort:before{content:"\e150";}
+.glyphicon-sort-by-alphabet:before{content:"\e151";}
+.glyphicon-sort-by-alphabet-alt:before{content:"\e152";}
+.glyphicon-sort-by-order:before{content:"\e153";}
+.glyphicon-sort-by-order-alt:before{content:"\e154";}
+.glyphicon-sort-by-attributes:before{content:"\e155";}
+.glyphicon-sort-by-attributes-alt:before{content:"\e156";}
+.glyphicon-unchecked:before{content:"\e157";}
+.glyphicon-expand:before{content:"\e158";}
+.glyphicon-collapse-down:before{content:"\e159";}
+.glyphicon-collapse-up:before{content:"\e160";}
+.glyphicon-log-in:before{content:"\e161";}
+.glyphicon-flash:before{content:"\e162";}
+.glyphicon-log-out:before{content:"\e163";}
+.glyphicon-new-window:before{content:"\e164";}
+.glyphicon-record:before{content:"\e165";}
+.glyphicon-save:before{content:"\e166";}
+.glyphicon-open:before{content:"\e167";}
+.glyphicon-saved:before{content:"\e168";}
+.glyphicon-import:before{content:"\e169";}
+.glyphicon-export:before{content:"\e170";}
+.glyphicon-send:before{content:"\e171";}
+.glyphicon-floppy-disk:before{content:"\e172";}
+.glyphicon-floppy-saved:before{content:"\e173";}
+.glyphicon-floppy-remove:before{content:"\e174";}
+.glyphicon-floppy-save:before{content:"\e175";}
+.glyphicon-floppy-open:before{content:"\e176";}
+.glyphicon-credit-card:before{content:"\e177";}
+.glyphicon-transfer:before{content:"\e178";}
+.glyphicon-cutlery:before{content:"\e179";}
+.glyphicon-header:before{content:"\e180";}
+.glyphicon-compressed:before{content:"\e181";}
+.glyphicon-earphone:before{content:"\e182";}
+.glyphicon-phone-alt:before{content:"\e183";}
+.glyphicon-tower:before{content:"\e184";}
+.glyphicon-stats:before{content:"\e185";}
+.glyphicon-sd-video:before{content:"\e186";}
+.glyphicon-hd-video:before{content:"\e187";}
+.glyphicon-subtitles:before{content:"\e188";}
+.glyphicon-sound-stereo:before{content:"\e189";}
+.glyphicon-sound-dolby:before{content:"\e190";}
+.glyphicon-sound-5-1:before{content:"\e191";}
+.glyphicon-sound-6-1:before{content:"\e192";}
+.glyphicon-sound-7-1:before{content:"\e193";}
+.glyphicon-copyright-mark:before{content:"\e194";}
+.glyphicon-registration-mark:before{content:"\e195";}
+.glyphicon-cloud-download:before{content:"\e197";}
+.glyphicon-cloud-upload:before{content:"\e198";}
+.glyphicon-tree-conifer:before{content:"\e199";}
+.glyphicon-tree-deciduous:before{content:"\e200";}
+.glyphicon-briefcase:before{content:"\1f4bc";}
+.glyphicon-calendar:before{content:"\1f4c5";}
+.glyphicon-pushpin:before{content:"\1f4cc";}
+.glyphicon-paperclip:before{content:"\1f4ce";}
+.glyphicon-camera:before{content:"\1f4f7";}
+.glyphicon-lock:before{content:"\1f512";}
+.glyphicon-bell:before{content:"\1f514";}
+.glyphicon-bookmark:before{content:"\1f516";}
+.glyphicon-fire:before{content:"\1f525";}
+.glyphicon-wrench:before{content:"\1f527";}
+/*
+
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+
+  */
+/* line 10, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+/* line 11, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h2 {
+  font-size: 30px;
+}
+
+/* line 12, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h1, h2, h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* line 13, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h1, h3, h5 {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #e5e5e5 !important;
+  margin-bottom: 20px;
+}
+
+/* line 14, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h5 {
+  text-align: right;
+  font-size: 14px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #717171;
+  font-weight: 600;
+}
+
+/* line 15, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h1, h3 {
+  font-size: 24px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #ccc !important;
+  margin-bottom: 20px;
+}
+
+/*h1 { font-family: Georgia, "Times New Roman", serif; text-align: center;}*/
+/* line 19, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.top-menu {
+  margin-top: 15px;
+}
+
+/* line 21, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-80 {
+  width: 80%;
+  float: left;
+}
+
+/* line 22, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-20 {
+  width: 20%;
+  float: left;
+}
+
+/* line 23, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-70 {
+  width: 70%;
+  float: left;
+}
+
+/* line 24, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-30 {
+  width: 30%;
+  float: left;
+}
+
+/* line 25, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-xs-6 {
+  width: 50%;
+}
+
+/* line 26, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-md-8 {
+  width: 66.66666667%;
+  float: left;
+}
+
+/* line 27, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-md-4 {
+  width: 33.33333333%;
+  float: left;
+}
+
+/* line 29, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.row {
+  display: inline-block;
+}
+
+/* line 39, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+  content: " ";
+  display: table;
+}
+
+/* line 45, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.top-menu {
+  margin-top: 15px;
+}
+
+/* line 46, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subnav {
+  display: block;
+  overflow: auto;
+}
+
+/* line 47, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+
+/* line 48, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+
+/* line 50, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.container {
+  width: 1260px !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 51, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 52, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* line 54, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* line 55, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li {
+  position: relative;
+  display: block;
+}
+
+/* line 56, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li.selected {
+  background-color: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+/* line 57, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li.selected a {
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 58, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li {
+  position: relative;
+  display: block;
+  font-size: 13px;
+}
+
+/* line 59, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+/* line 61, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav-pills > li {
+  float: left;
+}
+
+/* line 62, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav-pills a {
+  border-radius: 4px;
+}
+
+/* line 63, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #93c0e6;
+  color: white;
+}
+
+/* line 64, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav-pills > li + li {
+  margin-left: 2px;
+}
+
+/* line 65, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+/* line 66, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+/* line 68, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar {
+  position: relative;
+  min-height: 52px;
+  margin-bottom: 20px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+/* line 69, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-nav {
+  float: left;
+  margin: 0;
+  width: 92%;
+}
+
+/* line 70, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-nav > li {
+  float: left;
+}
+
+/* line 71, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+
+/* line 73, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#logout a {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+/* line 74, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#options a {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+/* line 75, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#options a:hover img {
+  background-image: url(/assets/gear_wh-2627578243d2b968c8c73ec0f5bdf57f638514db9c19d99b80de96bd1ac95cab.png);
+}
+
+/* line 76, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 79, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-collapse {
+  width: auto;
+  border-top: 0;
+  box-shadow: none;
+}
+
+/* line 80, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-collapse.collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+
+/* line 82, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subnav li.active_li a {
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: #428bca;
+  color: #fff;
+}
+
+/* line 83, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a {
+  min-width: 100px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  float: left;
+  color: #428bca;
+  padding: 3px 10px;
+  height: 24px !important;
+  cursor: pointer;
+}
+/* line 93, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a:hover {
+  background-color: #93c0e6;
+  color: white;
+}
+/* line 94, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a.btn-success:hover {
+  background-color: green;
+}
+/* line 95, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a.active {
+  background-color: #428bca;
+  color: #fff;
+}
+/* line 96, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a.passive {
+  background-color: #eee;
+}
+
+/* line 99, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a + a {
+  margin-left: 2px;
+}
+
+/* line 100, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subtabs {
+  float: right;
+  margin-left: auto;
+  width: 800;
+}
+
+/* line 102, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+  content: " ";
+  display: table;
+}
+
+/* line 107, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 128, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+a.btn, a.btn:hover {
+  text-decoration: none;
+}
+
+/* line 129, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+/* line 130, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3071a9;
+  border-color: #285e8e;
+}
+
+/* line 136, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+/* line 137, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-success:hover, .subnav .btn-success:focus {
+  background-color: #5fcf5f;
+}
+
+/* line 138, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-cancel {
+  color: black;
+  background-color: #eee;
+  border-color: #aaa;
+}
+
+/* line 139, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-cancel:hover {
+  background-color: #f5f5f5;
+}
+
+/* line 140, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-white {
+  border: 1px solid #ccc;
+}
+
+/* line 141, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-white:hover {
+  background-color: #eee;
+}
+
+/* line 142, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-sm2 {
+  padding: 4px 10px;
+  line-height: 1;
+}
+
+/* line 144, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-min {
+  height: 26px;
+  padding: 3px 5px;
+  font-size: 12px;
+}
+
+/* line 146, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subnav .btn-success:hover, .subnav .btn-success:focus {
+  background-color: #5fcf5f;
+  color: white;
+}
+
+/* line 147, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* line 153, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.signin .btn {
+  width: 100%;
+}
+
+/* line 155, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+input[type="radio"], input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+/* line 161, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+/* line 180, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, .comment_area {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  -webkit-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s,box-shadow linear 0.2s;
+  transition: border linear 0.2s,box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 193, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+/* line 198, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.table-striped > tbody > tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* line 199, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 206, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.li-right {
+  float: right !important;
+}
+
+/* line 207, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.left {
+  float: left;
+}
+
+/* line 208, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.right {
+  float: right;
+}
+
+/* line 210, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  min-height: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+/* line 231, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+ul.ui-autocomplete li {
+  background-color: #FFF;
+  border-top: solid 1px #DDD;
+  margin: 0;
+  padding: 0;
+}
+/* line 236, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+ul.ui-autocomplete li a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  color: #333333;
+  white-space: nowrap;
+}
+/* line 246, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+ul.ui-autocomplete li a.ui-state-hover, ul.ui-autocomplete li a.ui-state-active {
+  background-color: #FFFCB2;
+  background-color: #0081c2;
+  text-decoration: none;
+}
+
+/* line 255, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+ul.ui-autocomplete > li > a:hover, ul.ui-autocomplete > li > a:focus, ul.ui-autocomplete:hover > a, ul.ui-autocomplete:focus > a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #0081c2;
+  background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+  background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+
+/* line 268, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+ul.ui-autocomplete > li > a {
+  display: block;
+  padding: 2px 15px;
+  margin: 0px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  color: #333333;
+  white-space: nowrap;
+}
+
+/* line 279, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+a.brand {
+  color: #0088cc;
+}
+
+/* line 283, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.pagination {
+  margin: 0px;
+}
+
+/* line 287, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.span3 {
+  float: right;
+}
+
+/* line 291, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar1 .nav > li {
+  float: left;
+}
+
+/* line 295, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-inner {
+  min-height: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, #fff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #fff, #f2f2f2);
+  background-image: -o-linear-gradient(top, #fff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  margin-bottom: 20px;
+}
+
+/* line 317, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.signin .btn {
+  width: 100%;
+}
+
+/* line 321, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.signin p {
+  margin: 10px 0 10px 0;
+}
+
+/* line 325, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.signin a:nth-child(2) {
+  float: right;
+}
+
+/* line 329, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.addon100 {
+  width: 100px;
+}
+
+/* line 333, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.addon120 {
+  width: 120px;
+}
+
+/* line 338, D:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.input-group input {
+  width: 350px;
+  border-radius: 4px;
+  border-top-right-radius: 4px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-right-radius: 4px !important;
+  border-bottom-left-radius: 0 !important;
+}
+/*!
+Chosen, a Select Box Enhancer for jQuery and Prototype
+by Patrick Filler for Harvest, http://getharvest.com
+
+Version 1.3.0
+Full source at https://github.com/harvesthq/chosen
+Copyright (c) 2011-2014 Harvest http://getharvest.com
+
+MIT License, https://github.com/harvesthq/chosen/blob/master/LICENSE.md
+This file is generated by `grunt build`, do not edit it by hand.
+*/
+
+/* @group Base */
+
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  zoom: 1;
+  *display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.chosen-container * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-top: 0;
+  background: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+.chosen-container.chosen-with-drop .chosen-drop {
+  left: 0;
+}
+.chosen-container a {
+  cursor: pointer;
+}
+
+.chcreate {
+  /*margin-left: 10px;*/
+  position: relative;
+  /*margin: 2px 5px 2px 0;*/
+  padding: 2px 5px;
+  /*border: 1px solid #aaa;*/
+  max-width: 100%;
+  border-radius: 3px;
+  background-color: #428bca;
+  color: white;
+  cursor: pointer;
+
+    background-color: #3875d7;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+  float: right;
+  margin-top: -2px;
+}
+
+/* @end */
+/* @group Single Chosen */
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0 0 0 8px;
+  height: 25px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #fff;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #ffffff), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+  background: -webkit-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -moz-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -o-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-clip: padding-box;
+  box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px;
+}
+.chosen-container-single .chosen-default {
+  color: #999;
+}
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  margin-right: 26px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chosen-container-single .chosen-single-with-deselect span {
+  margin-right: 38px;
+}
+.chosen-container-single .chosen-single abbr {
+  position: absolute;
+  top: 6px;
+  right: 26px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url('chosen-sprite.png') -42px 1px no-repeat;
+  font-size: 1px;
+}
+.chosen-container-single .chosen-single abbr:hover {
+  background-position: -42px -10px;
+}
+.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
+  background-position: -42px -10px;
+}
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 100%;
+}
+.chosen-container-single .chosen-single div b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('chosen-sprite.png') no-repeat 0px 2px;
+}
+.chosen-container-single .chosen-search {
+  position: relative;
+  z-index: 1010;
+  margin: 0;
+  padding: 3px 4px;
+  white-space: nowrap;
+}
+.chosen-container-single .chosen-search input[type="text"] {
+  margin: 1px 0;
+  padding: 4px 20px 4px 5px;
+  width: 100%;
+  height: auto;
+  outline: 0;
+  border: 1px solid #aaa;
+  background: white url('chosen-sprite.png') no-repeat 100% -20px;
+  background: url('chosen-sprite.png') no-repeat 100% -20px;
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0;
+}
+.chosen-container-single .chosen-drop {
+  margin-top: -1px;
+  border-radius: 0 0 4px 4px;
+  background-clip: padding-box;
+}
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+  position: absolute;
+  left: -9999px;
+}
+
+/* @end */
+/* @group Results */
+.chosen-container .chosen-results {
+  color: #444;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch;
+}
+.chosen-container .chosen-results li {
+  display: none;
+  margin: 0;
+  padding: 5px 6px;
+  list-style: none;
+  line-height: 15px;
+  word-wrap: break-word;
+  -webkit-touch-callout: none;
+}
+.chosen-container .chosen-results li.active-result {
+  display: list-item;
+  cursor: pointer;
+}
+.chosen-container .chosen-results li.disabled-result {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+.chosen-container .chosen-results li.highlighted {
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+}
+.chosen-container .chosen-results li.no-results {
+  color: #777;
+  display: list-item;
+  background: #f4f4f4;
+}
+.chosen-container .chosen-results li.group-result {
+  display: list-item;
+  font-weight: bold;
+  cursor: default;
+}
+.chosen-container .chosen-results li.group-option {
+  padding-left: 15px;
+}
+.chosen-container .chosen-results li em {
+  font-style: normal;
+  text-decoration: underline;
+}
+
+/* @end */
+/* @group Multi Chosen */
+.chosen-container-multi .chosen-choices {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 5px;
+  width: 100%;
+  height: auto !important;
+  height: 1%;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+  background-image: -webkit-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: linear-gradient(#eeeeee 1%, #ffffff 15%);
+  cursor: text;
+}
+.chosen-container-multi .chosen-choices li {
+  float: left;
+  list-style: none;
+}
+.chosen-container-multi .chosen-choices li.search-field {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  margin: 1px 0;
+  padding: 0;
+  height: 23px;
+  outline: 0;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none;
+  color: #999;
+  font-size: 100%;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0;
+}
+.chosen-container-multi .chosen-choices li.search-choice {
+  position: relative;
+  margin: 2px 5px 2px 0;
+  padding: 3px 20px 3px 5px;
+  border: 1px solid #aaa;
+  max-width: 100%;
+  border-radius: 3px;
+  background-color: #eeeeee;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-size: 100% 19px;
+  background-repeat: repeat-x;
+  background-clip: padding-box;
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: #333;
+  line-height: 13px;
+  cursor: default;
+}
+.chosen-container-multi .chosen-choices li.search-choice span {
+  word-wrap: break-word;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url('chosen-sprite.png') -42px 1px no-repeat;
+  font-size: 1px;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+  background-position: -42px -10px;
+}
+.chosen-container-multi .chosen-choices li.search-choice-disabled {
+  padding-right: 5px;
+  border: 1px solid #ccc;
+  background-color: #e4e4e4;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  color: #666;
+}
+.chosen-container-multi .chosen-choices li.search-choice-focus {
+  background: #d4d4d4;
+}
+.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
+  background-position: -42px -10px;
+}
+.chosen-container-multi .chosen-results {
+  margin: 0;
+  padding: 0;
+}
+.chosen-container-multi .chosen-drop .result-selected {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+
+/* @end */
+/* @group Active  */
+.chosen-container-active .chosen-single {
+  border: 1px solid #5897fb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.chosen-container-active.chosen-with-drop .chosen-single {
+  border: 1px solid #aaa;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
+  background-image: -webkit-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: -moz-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: -o-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
+  box-shadow: 0 1px 0 #fff inset;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-left: none;
+  background: transparent;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+  background-position: -18px 2px;
+}
+.chosen-container-active .chosen-choices {
+  border: 1px solid #5897fb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.chosen-container-active .chosen-choices li.search-field input[type="text"] {
+  color: #222 !important;
+}
+
+/* @end */
+/* @group Disabled Support */
+.chosen-disabled {
+  opacity: 0.5 !important;
+  cursor: default;
+}
+.chosen-disabled .chosen-single {
+  cursor: default;
+}
+.chosen-disabled .chosen-choices .search-choice .search-choice-close {
+  cursor: default;
+}
+
+/* @end */
+/* @group Right to Left */
+.chosen-rtl {
+  text-align: right;
+}
+.chosen-rtl .chosen-single {
+  overflow: visible;
+  padding: 0 8px 0 0;
+}
+.chosen-rtl .chosen-single span {
+  margin-right: 0;
+  margin-left: 26px;
+  direction: rtl;
+}
+.chosen-rtl .chosen-single-with-deselect span {
+  margin-left: 38px;
+}
+.chosen-rtl .chosen-single div {
+  right: auto;
+  left: 3px;
+}
+.chosen-rtl .chosen-single abbr {
+  right: auto;
+  left: 26px;
+}
+.chosen-rtl .chosen-choices li {
+  float: right;
+}
+.chosen-rtl .chosen-choices li.search-field input[type="text"] {
+  direction: rtl;
+}
+.chosen-rtl .chosen-choices li.search-choice {
+  margin: 3px 5px 3px 0;
+  padding: 3px 5px 3px 19px;
+}
+.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
+  right: auto;
+  left: 4px;
+}
+.chosen-rtl.chosen-container-single-nosearch .chosen-search,
+.chosen-rtl .chosen-drop {
+  left: 9999px;
+}
+.chosen-rtl.chosen-container-single .chosen-results {
+  margin: 0 0 4px 4px;
+  padding: 0 4px 0 0;
+}
+.chosen-rtl .chosen-results li.group-option {
+  padding-right: 15px;
+  padding-left: 0;
+}
+.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-right: none;
+}
+.chosen-rtl .chosen-search input[type="text"] {
+  padding: 4px 5px 4px 20px;
+  background: white url('chosen-sprite.png') no-repeat -30px -20px;
+  background: url('chosen-sprite.png') no-repeat -30px -20px;
+  direction: rtl;
+}
+.chosen-rtl.chosen-container-single .chosen-single div b {
+  background-position: 6px 2px;
+}
+.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
+  background-position: -12px 2px;
+}
+
+/* @end */
+/* @group Retina compatibility */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container-single .chosen-single abbr,
+  .chosen-container-single .chosen-single div b,
+  .chosen-container-single .chosen-search input[type="text"],
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span {
+    background-image: url('chosen-sprite@2x.png') !important;
+    background-size: 52px 37px !important;
+    background-repeat: no-repeat !important;
+  }
+}
+/* @end */
+@font-face {
+  font-family: 'Pragmatica';
+  src: url(/assets/pragmatica/Pragmatica_gdi-6ad44ece9a8f85ba77b90fbf028a2c08273cbbe15fa9ae90de6b26f98eaa8a0e.eot);
+  src: url(/assets/pragmatica/Pragmatica_gdi-6ad44ece9a8f85ba77b90fbf028a2c08273cbbe15fa9ae90de6b26f98eaa8a0e.eot?#iefix) format("embedded-opentype"), url(/assets/pragmatica/Pragmatica_gdi-5aac7eed31e19b20f9318bf75870daf81c8df388ffe8f5270e85bdd98df2793c.woff) format("woff"), url(/assets/pragmatica/Pragmatica_gdi-78083d094cdc81d4c5612692f490c0751166c2a36cc55466caeef0500a5a221b.ttf) format("truetype"), url(/assets/pragmatica/Pragmatica_gdi-edea517d01434b08dae7b23ed9fce725fefd87e3d268380566d6faaaa1df390e.svg#Pragmatica-Regular) format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: 'Pragmatica';
+  src: url(/assets/pragmatica/Pragmatica-Oblique_gdi-f2641d63c5ba39dfcd8ffb3376796a20600bc5c5d25b02b58ba1a7b9d4d9744f.eot);
+  src: url(/assets/pragmatica/Pragmatica-Oblique_gdi-f2641d63c5ba39dfcd8ffb3376796a20600bc5c5d25b02b58ba1a7b9d4d9744f.eot?#iefix) format("embedded-opentype"), url(/assets/pragmatica/Pragmatica-Oblique_gdi-cf91952e9c1754e65df0a2586f1134c801bfc0b21658f1b3e167a6f7bee1e5ce.woff) format("woff"), url(/assets/pragmatica/Pragmatica-Oblique_gdi-a701499b7885f23d8d33dc96ccf85423ac7c05ee4dcc6fefec41e525ae2171c1.ttf) format("truetype"), url(/assets/pragmatica/Pragmatica-Oblique_gdi-030b37aed4a7447c1cdf208bac731a878ea9e8551e70bedf773c8db2d3dccb75.svg#Pragmatica-Oblique) format("svg");
+  font-weight: normal;
+  font-style: oblique;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: 'Pragmatica';
+  src: url(/assets/pragmatica/Pragmatica-Medium_gdi-37968b9fe98f9b5d631793ee0bbe999b9750d3da259ff10b3e758cb13ad0e2aa.eot);
+  src: url(/assets/pragmatica/Pragmatica-Medium_gdi-37968b9fe98f9b5d631793ee0bbe999b9750d3da259ff10b3e758cb13ad0e2aa.eot?#iefix) format("embedded-opentype"), url(/assets/pragmatica/Pragmatica-Medium_gdi-afe8ad22bcba40e364ae23606b72a147fe4aa540bbc7dccdda78a97e56fca97d.woff) format("woff"), url(/assets/pragmatica/Pragmatica-Medium_gdi-3592b1a8ddcf9c0013fbc18deeef898ec5d6e101dba713b8bba3c5342f1b31d2.ttf) format("truetype"), url(/assets/pragmatica/Pragmatica-Medium_gdi-a4c482e4b3d84b619b22db733314c282ba7fc222f5ce5b4768ba5be96f819c6e.svg#Pragmatica-Medium) format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: 'Pragmatica';
+  src: url(/assets/pragmatica/Pragmatica-MediumOblique_gdi-d64de8d941d9930a50ef6d559fcde6c0ba14252729b4f21f8246c97bbbf46bb5.eot);
+  src: url(/assets/pragmatica/Pragmatica-MediumOblique_gdi-d64de8d941d9930a50ef6d559fcde6c0ba14252729b4f21f8246c97bbbf46bb5.eot?#iefix) format("embedded-opentype"), url(/assets/pragmatica/Pragmatica-MediumOblique_gdi-769fc63a32ca9b95460da93b4210e72d1ea9655e3b808e20eabef04ae4bb0dda.woff) format("woff"), url(/assets/pragmatica/Pragmatica-MediumOblique_gdi-5eb9c1480541ac57f7baab6ab886404d59f4e1931f5cdeb2fcc7ba264881d162.ttf) format("truetype"), url(/assets/pragmatica/Pragmatica-MediumOblique_gdi-1cd1a945e7a6423f7470a176c4b7b5390a9d123a362a2bd54a19e5202e41fe70.svg#Pragmatica-MediumOblique) format("svg");
+  font-weight: 500;
+  font-style: oblique;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: 'Pragmatica';
+  src: url(/assets/pragmatica/Pragmatica-Bold_gdi-471e4a82f521a178c3c5843e5d64b7d3548a675dc602c4f90af8be6c7f9193fc.eot);
+  src: url(/assets/pragmatica/Pragmatica-Bold_gdi-471e4a82f521a178c3c5843e5d64b7d3548a675dc602c4f90af8be6c7f9193fc.eot?#iefix) format("embedded-opentype"), url(/assets/pragmatica/Pragmatica-Bold_gdi-9378cd6041e0c451d38471242a29f533476a4bfdfd2e2d06bc25bdb1fa87355c.woff) format("woff"), url(/assets/pragmatica/Pragmatica-Bold_gdi-0e25bcb0a12aa66a3f4d9fab1960e7fad1501ffbeca671dd4b495346d6239fe2.ttf) format("truetype"), url(/assets/pragmatica/Pragmatica-Bold_gdi-809ec221f7792be56b9d02219040fe9869a991b85667ce3d71486922c09f52c9.svg#Pragmatica-Bold) format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: 'Pragmatica';
+  src: url(/assets/pragmatica/Pragmatica-BoldOblique_gdi-c74fa1279a4acb77a1404ab848fd850c31cab9c619e9c5638d168a225e03e802.eot);
+  src: url(/assets/pragmatica/Pragmatica-BoldOblique_gdi-c74fa1279a4acb77a1404ab848fd850c31cab9c619e9c5638d168a225e03e802.eot?#iefix) format("embedded-opentype"), url(/assets/pragmatica/Pragmatica-BoldOblique_gdi-29f0970d58af63f7a1216fe66da4100c0412ad1ba79f3cca9b7a3eaa9ddfb7f8.woff) format("woff"), url(/assets/pragmatica/Pragmatica-BoldOblique_gdi-f0d46d2d4cb4149907e154a76226eccef427a8603e7f565d766217b57557dd86.ttf) format("truetype"), url(/assets/pragmatica/Pragmatica-BoldOblique_gdi-69a816108ecb24242905d59ef4f5633cb47e6f30d5295f88bf3be5105fea20de.svg#Pragmatica-BoldOblique) format("svg");
+  font-weight: bold;
+  font-style: oblique;
+  font-stretch: normal;
+}
+/* line 1, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon, li.icon a {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+/* line 2, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon + .icon {
+  margin-left: 2px;
+}
+
+/* line 3, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon_remove {
+  background: url("delete.png");
+}
+
+/* line 5, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon_edit {
+  background: url("edit.png");
+}
+
+/* line 7, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+label.inp_btn_label {
+  padding: 0 0 0 18px;
+  position: relative;
+}
+
+/* line 8, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+label.inp_btn_label .inp_btn {
+  position: absolute;
+  top: -2px;
+  left: 0;
+}
+
+/* line 10, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.btn-reset {
+  margin-left: 10px;
+}
+
+/* line 12, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+#itemAdd_form {
+  margin-bottom: 20px;
+}
+
+/* line 13, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+#itemAdd_form label {
+  width: 120px;
+}
+
+/* line 14, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+#itemAdd_form input {
+  width: 400px;
+  margin-right: 10px;
+}
+
+/* line 16, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.datepicker {
+  background: url(/assets/ico-date-53c4efc61fe3fb6a701e627088794e841b9b26c898f190a17f94ee688ae1b82f.png) 97% 3px no-repeat;
+  cursor: pointer;
+}
+
+/* line 18, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* line 19, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon:hover {
+  cursor: pointer;
+}
+
+/* line 21, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon_apply {
+  background: url("apply.png") no-repeat;
+}
+
+/* line 22, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon_cancel {
+  background: url("cancel.png") no-repeat;
+}
+
+/* line 24, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.only_actual:hover {
+  opacity: 0.8;
+}
+
+/* line 25, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a {
+  margin-top: 2px;
+  margin-right: 20px;
+  width: 140px;
+  float: right;
+}
+
+/* line 26, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a .link_a {
+  text-decoration: none;
+  text-align: right;
+  padding: 0 5px;
+  min-width: 78px;
+}
+
+/* line 27, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a .scale {
+  float: right;
+  width: 44px;
+  height: 19px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 28, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a.toggled .scale {
+  background: #009ddd;
+}
+
+/* line 29, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a .handle {
+  float: right;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  transition: left 0.2s ease;
+}
+
+/* line 43, d:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a .handle.active {
+  left: 27px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+/*------------------------------------*\
+	Light Theme Styles
+\*------------------------------------*/
+/* line 6, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination {
+  display: block;
+  overflow: hidden;
+  padding: 0 20px 2px 0;
+}
+
+/* line 12, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.btn-white2 {
+  color: #666;
+  border: 1px solid #BBB;
+  min-width: 14px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: #efefef;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* W3C */
+}
+
+/* line 27, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination a, .pagination span, .pagination em {
+  float: left;
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  text-align: center;
+  border: 1px solid #BBB;
+  min-width: 14px;
+  padding: 0 7px;
+  margin: 0 3px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: #efefef;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* W3C */
+}
+
+/* line 49, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination a:hover, .btn-white2:hover {
+  text-decoration: none;
+  background: #FCFCFC;
+  border-color: rgba(82, 168, 236, 0.8);
+}
+
+/* line 55, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination .current, .pagination .disabled {
+  background: #666;
+  color: #FFF;
+  border-color: #444;
+  box-shadow: 0 1px 0 white, 0 0 2px rgba(0, 0, 0, 0.3) inset;
+  cursor: default;
+}
+
+/* line 63, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination .ellipse {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* line 73, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.page {
+  float: left;
+  min-height: 24px;
+  padding: 2px 9px;
+  margin-right: 1px;
+  border-radius: 3px;
+  border: solid 1px #c0c0c0;
+  background: #e9e9e9;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: .875em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #717171;
+  text-shadow: 0px 1px 0px white;
+}
+
+/* line 90, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.page:hover, .page.gradient:hover {
+  background: #fefefe;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
+  background: -moz-linear-gradient(0% 0% 270deg, #FEFEFE, #f0f0f0);
+  text-decoration: none;
+}
+
+/* line 97, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.page.active {
+  border: none;
+  padding: auto 10px;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 107, d:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.page.gradient {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#e9e9e9));
+  background: -moz-linear-gradient(0% 0% 270deg, #f8f8f8, #e9e9e9);
+}
+/* line 1, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 2, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  color: #333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* line 6, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+
+/* line 8, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 10, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 12, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 14, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 21, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 31, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 34, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.fullwidth {
+  width: 100%;
+}
+
+/* line 35, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.sign-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+/* line 37, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.field label {
+  width: 80px;
+}
+
+/* line 38, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.field input[type='text'] {
+  height: 27px;
+  width: 80%;
+}
+/* line 1, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 27, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 31, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 37, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 45, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 56, d:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 6, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch #search {
+  width: 200px;
+  margin-right: 5px;
+  padding-left: 8px;
+}
+
+/* line 7, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch {
+  margin-bottom: 20px;
+  display: block;
+  height: 30px;
+}
+
+/* line 9, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+textarea.width_area {
+  -webkit-margin-before: 0 !important;
+  display: block;
+  width: 100%;
+  padding: 5px;
+}
+
+/* line 11, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+img.round {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  left: -40px;
+  top: -12px;
+  width: 72px;
+  height: 67px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+}
+
+/* line 13, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.table_row {
+  width: 700px;
+}
+
+/* line 14, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_form_content {
+  width: auto;
+}
+
+/* line 16, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .schosen {
+  float: left;
+  width: 180px;
+}
+
+/* line 17, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .btn {
+  align-items: flex-end;
+}
+
+/* line 19, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .combobox .chosen-container {
+  width: 145px !important;
+}
+
+/* line 20, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .big_combo .chosen-container {
+  width: 190px !important;
+}
+
+/* line 21, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .combobox {
+  float: left;
+  padding-right: 5px;
+}
+
+/* line 23, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statements_search .navsearch {
+  width: 88%;
+  float: left;
+}
+
+/* line 25, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statements {
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* line 28, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.st_a {
+  padding: 1px 5px;
+}
+
+/* line 29, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.st_a:hover, .st_a:hover a {
+  background-color: #428bca;
+  border-radius: 2px;
+  color: white;
+}
+
+/* line 31, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_show {
+  border: 1px solid #EEE;
+  padding: 10px 20px 30px 20px;
+  margin-right: auto;
+  margin-top: 18px;
+  background: url("back-tet5.png");
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.15);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 40, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_show.mini {
+  width: 338px;
+  height: auto;
+}
+/* line 41, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_show.max_statement {
+  width: 824px;
+}
+
+/* line 45, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.min_statement_head {
+  position: relative;
+  float: left;
+  top: -11px;
+  left: -21px;
+  height: 30px;
+  width: 210px;
+  padding: 5px 7px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  color: #616161;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#e9e9e9));
+  background: -moz-linear-gradient(0% 0% 270deg, #f8f8f8, #e9e9e9);
+  -webkit-border-radius: 4px 0 4px 0;
+  -moz-border-radius: 4px 0 4px 0;
+  border-radius: 4px 0 4px 0;
+}
+
+/* line 59, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_content {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+}
+
+/* line 61, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+br {
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 63, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_author {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #999;
+  height: auto;
+  padding: 5px;
+}
+
+/* line 64, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_edit_menu {
+  display: inline;
+  float: right;
+  vertical-align: bottom;
+}
+
+/* line 66, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_user {
+  float: right;
+  color: #999;
+}
+
+/* line 68, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_show a:hover {
+  background-color: transparent;
+}
+
+/* line 69, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_header {
+  position: relative;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  top: -11px;
+  right: -21px;
+  float: right;
+  padding: 5px 7px;
+  border-radius: 0 5px 0 5px;
+  -webkit-border-radius: 0 5px 0 5px;
+  -moz-border-radius: 0 5px 0 5px;
+}
+
+/* line 84, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statement_footer {
+  vertical-align: bottom;
+  height: auto;
+  display: inline;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+}
+
+/* line 86, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.toggleButton {
+  cursor: pointer;
+  color: white;
+  background-color: #666;
+  border-color: #0088cc;
+  padding-right: 3px;
+  padding-left: 2px;
+  margin-left: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3x;
+}
+
+/* line 99, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination a, .digg_pagination em, .digg_pagination span {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+  background: #838A90;
+  background: -webkit-gradient(linear, left top, left bottom, from(#838A90), to(#414549));
+  background: -moz-linear-gradient(-90deg, #838A90, #414549);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#838a90, endColorstr=#414549);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#838a90, endColorstr=#414549);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-shadow: black 0 1px 0;
+  text-decoration: none;
+  margin-right: 3px;
+  font-weight: bold;
+  font-size: 1.0em;
+  cursor: pointer;
+  padding: .6em 1.4em .5em 1.3em;
+  border: none;
+  color: #EFEFEF;
+  background: #F9F9F9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F9F9F9), to(#DDDBDB));
+  background: -moz-linear-gradient(-90deg, #F9F9F9, #DDDBDB);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f9f9f9, endColorstr=#dddbdb);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f9f9f9, endColorstr=#dddbdb);
+  text-shadow: white 0 1px 0;
+  color: #777;
+  border-image: initial;
+}
+
+/* line 133, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  padding: 0.35em 0.7em;
+  display: block;
+  float: left;
+  margin-right: 3px;
+}
+/* line 138, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination a.disabled, .digg_pagination span.disabled, .digg_pagination em.disabled {
+  color: #DDDBDB;
+}
+
+/* line 146, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination .digg_pagination a, .digg_pagination em {
+  text-decoration: none;
+}
+/* line 148, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination .digg_pagination a.current, .digg_pagination em.current {
+  background: #F9F9F9;
+}
+
+/* line 155, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.tag_list {
+  width: 200px;
+  float: right;
+}
+
+/* line 157, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_mini, .mini {
+  float: right;
+}
+/* line 158, d:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_mini p, .mini p {
+  font-size: 14px;
+}
+/* line 7, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_list, .target_li {
+  line-height: 18px;
+  color: #0F67A1;
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  position: relative;
+  font-size: 12px;
+}
+
+/* line 8, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.thead_group {
+  background-color: #f7f7f7;
+}
+
+/* line 10, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_head {
+  height: 24px;
+  margin-bottom: 3px;
+}
+
+/* line 11, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_list .target_li {
+  height: 23px;
+}
+
+/* line 13, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.span9 .chosen-container {
+  width: 80%;
+}
+
+/* line 14, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.t-item {
+  height: 23px;
+}
+
+/* line 16, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.target_line_head {
+  width: 225px;
+  height: 20px;
+  float: left;
+  border-bottom: 1px solid #EEE;
+  margin: 1px 10px 0px 0px;
+  color: #428bca;
+}
+/* line 17, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.target_line_head.cur_head, .target_line_head:hover {
+  color: white;
+  background-color: #93c0e6;
+}
+
+/* line 20, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+span.plus {
+  display: block;
+  float: left;
+  width: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 22, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.target_line_days {
+  height: 23px;
+}
+
+/* line 24, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead, .calenday {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  font-size: 0.8em;
+  width: 18px;
+  vertical-align: center;
+  text-align: center;
+  float: left;
+  display: block;
+  border: 1px solid #EEE;
+}
+
+/* line 27, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead {
+  padding: 5px 1px 1px 1px;
+  margin: 0px 1px 4px 0px;
+  min-height: 24px;
+}
+/* line 29, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.overhead, .calenhead:hover {
+  background-color: #93c0e6;
+  border-color: #428bca;
+  color: white;
+}
+/* line 31, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.overhead.holyday, .calenhead:hover.holyday {
+  border: 1px solid #ff0000;
+  background-color: #ffaaaa;
+}
+/* line 33, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.head {
+  width: 225px;
+  height: 25px;
+  margin: 0px 10px 0px 0px;
+  background-color: #f9f9f9;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+/* line 35, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.head:hover {
+  border: 1px solid #EEE;
+}
+
+/* line 39, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday {
+  padding: 1px 1px 1px 1px;
+  margin: 1px 1px 2px 0px;
+  min-height: 18px;
+}
+/* line 41, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday:hover {
+  border: 1px solid #ACF;
+  background-color: #e9f8ff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 43, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday.checked {
+  background-image: url(check.png);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 46, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.group_day .calenday {
+  border: 1px solid #ddd;
+}
+/* line 48, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.group_day .calenday:hover {
+  border: 1px solid #ACF;
+  background-color: #e9f8ff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 52, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.today {
+  color: white;
+  border: 1px solid #428bca;
+  background-color: #428bca;
+}
+
+/* line 54, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.holyday {
+  border: 1px solid #ffcccc;
+  background-color: #ffeeee;
+}
+/* line 55, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.holyday:hover {
+  border: 1px solid #ff0000;
+  background-color: #ffaaaa;
+}
+
+/* line 57, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+td.edit_delete, th.edit_delete {
+  width: 45px;
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+}
+
+/* line 60, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.end_line {
+  float: right;
+  width: 10px;
+  display: block;
+}
+
+/* line 64, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.target_name {
+  width: 170px;
+  float: left;
+}
+
+/* line 66, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.thead_group .target_name {
+  color: #616161;
+}
+
+/* line 69, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.subtarget_name {
+  width: 165px;
+  float: left;
+  margin-left: 20px;
+}
+
+/* line 71, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#children {
+  margin-left: 20px;
+}
+
+/* line 72, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_list {
+  padding: 0px;
+  -webkit-padding-start: 0px;
+}
+
+/* line 73, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#div_days_list {
+  float: right;
+}
+
+/* line 75, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period_h {
+  float: right;
+}
+
+/* line 77, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period {
+  cursor: default;
+  height: 28px;
+  margin: 10px 0;
+}
+/* line 78, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period span, .calendar_period em {
+  padding: 0.2em 1.2em;
+  display: block;
+  float: left;
+  margin-right: 1px;
+}
+/* line 79, d:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period .current {
+  font-style: normal;
+  font-weight: bold;
+  background: #2e6ab1;
+  color: white;
+  border: 1px solid #2e6ab1;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+
+
+
+
+ */
+
+
+.container{ width: 1260px !important; }
+.chosen-container {width: 100%;}
+.submit_cancel {margin-top: 20px; float: right;}
+
+.page-wrapper { display: flex; flex-direction: column; height: 100%; }
+.page-content{  flex: 1 0 auto;}
+.page-footer {  margin-top: 45px; border-top: 1px solid #eaeaea; min-height: 20px; flex: 0 0 auto; }
+
+.edit_delete { opacity: 1; transition: opacity 2s; }
+.hid { opacity: 0; transition: opacity .3s; }
+
+.ui-helper-hidden-accessible { display:none; }
+
+a.brand_title {
+color: #0088cc;
+float: left;
+display: block;
+padding: 10px 20px 10px;
+margin-left: -20px;
+font-size: 20px;
+font-weight: 200;
+text-shadow: 0 1px 0 #ffffff;
+background-repeat: repeat-x;
+}
+
+/*.simple-navigation-active-leaf{
+background-image: linear-gradient(to bottom, #f5f5f5, #eaeaea);
+background-repeat: repeat-x;
+a{color: #000;}
+
+}*/
+
+a.brand_title:hover {
+color: #0066aa;
+text-decoration: none;
+}
+
+div#target_list > a:hover{
+	background-color: #000;
+}
+
+.logo {
+	float: left;
+	margin-right: 20px;
+}
+
+
+
+.signin {
+width: 500px;
+padding: 20px 50px;
+margin: 0px auto;
+background: #F9F9F9;
+border-radius: 5px;
+//margin-top: 30px;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font: normal 13px 'Pragmatica', sans-serif;
+    
+  }
+}
+
+.navsearch {
+//margin-left: 210px;
+float: left;
+}
+
+.search_area {
+height: 24px;
+border: 1px solid #bbb;
+border-radius: 3px;
+width: 100%;
+z-index: 2;
+float: left;
+width: 100%;
+margin-bottom: 0;
+}
+
+
+.form-group input {
+border-radius: 4px;
+border-top-right-radius: 4px !important;
+border-bottom-right-radius: 4px !important;
+}
+
+
+input[type="text"], input[type="number"], input[type="password"], 
+input[type="email"], textarea, .comment_area{
+border: 1px solid #bbb;
+border-radius: 3px;
+-webkit-transition: border linear 0.2s,box-shadow linear 0.2s;
+-moz-transition: border linear 0.2s,box-shadow linear 0.2s;
+-ms-transition: border linear 0.2s,box-shadow linear 0.2s;
+-o-transition: border linear 0.2s,box-shadow linear 0.2s;
+transition: border linear 0.2s,box-shadow linear 0.2s;
+-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+padding: 0 5px;
+}
+
+input[type="text"]:focus,#datepicker:focus,textarea:focus,
+.chosen-container-multi:focus, .chosen-choices:focus
+{
+ outline:0;
+ border-color:rgba(82,168,236,0.8);
+-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+-moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+ box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6)
+}
+
+
+.chosen-container-multi .chosen-choices {
+	/*padding: 4px 12px 0px !important;*/
+	border-radius: 3px;
+	border-color: #CCC !important;
+	/*height: 27px !important;*/
+}
+
+.chosen-container-multi .chosen-choices li.search-choice{
+/* margin: -1px 5px 3px 0;
+ padding: 3px 20px 2px 5px;*/ 
+font-size: 12px !important;
+}
+
+.input-group{
+margin-bottom: 10px;
+ -webkit-margin-after: .5em;	
+}
+
+.input-group-addon {
+ line-height: .5;
+ 
+}
+
+
+
+.label-group-addon1 {
+padding: 6px 12px;
+font-weight: 700;
+line-height: .4;
+color: #555;
+background-color: #eee;
+border: 1px solid #ccc;
+border-radius: 4px;
+vertical-align: middle;
+display: table-cell;
+white-space: nowrap;
+vertical-align: middle;
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+border-right: 0;
+}
+
+
+.sortnav{
+	//float: left;
+	//width: 980px;
+	//margin-left: 148px;
+	margin-bottom: 20px;
+}
+
+.sortnav li a, .sortnav li a:hover, .nav-pills a{
+	padding: 5px 10px;
+}
+
+/*!
+ * jQuery UI CSS Framework 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ *
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/
+ */
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */
+
+
+
+/* Component containers
+----------------------------------*/
+
+.ui-widget {
+	font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+	font-size: 1.1em/*{fsDefault}*/;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+	font-size: 1em;
+}
+.ui-widget-content {
+	border: 1px solid #aaaaaa/*{borderColorContent}*/;
+	background: #ffffff/*{bgColorContent}*/ url(/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-39ab7ccd9f4e82579da78a9241265df288d8eb65dbbd7cf48aed2d0129887df5.png)/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
+	color: #222222/*{fcContent}*/;
+}
+.ui-widget-content a {
+	color: #222222/*{fcContent}*/;
+}
+.ui-widget-header {
+	border: 1px solid #aaaaaa/*{borderColorHeader}*/;
+	background: #cccccc/*{bgColorHeader}*/ url(/assets/jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100-54270656df079c4da5182629a080fc633b6f84b87985eb016d25a560e2c38d4a.png)/*{bgImgUrlHeader}*/ 50%/*{bgHeaderXPos}*/ 50%/*{bgHeaderYPos}*/ repeat-x/*{bgHeaderRepeat}*/;
+	color: #222222/*{fcHeader}*/;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #222222/*{fcHeader}*/;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: 1px solid #d3d3d3/*{borderColorDefault}*/;
+	background: #e6e6e6/*{bgColorDefault}*/ url(/assets/jquery-ui/ui-bg_glass_75_e6e6e6_1x400-ddf5dd4e0ef2b185e8bb0af7b6e90ebe74a84384cb4700658e76e754c8bfe550.png)/*{bgImgUrlDefault}*/ 50%/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #555555/*{fcDefault}*/;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+	color: #555555/*{fcDefault}*/;
+	text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #999999/*{borderColorHover}*/;
+	background: #dadada/*{bgColorHover}*/ url(/assets/jquery-ui/ui-bg_glass_75_dadada_1x400-c108f5cbf2dd9ec07a26530695ddd95e1664597ce6c056ae44c162cc2e28cec4.png)/*{bgImgUrlHover}*/ 50%/*{bgHoverXPos}*/ 50%/*{bgHoverYPos}*/ repeat-x/*{bgHoverRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #212121/*{fcHover}*/;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+	color: #212121/*{fcHover}*/;
+	text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+	border: 1px solid #aaaaaa/*{borderColorActive}*/;
+	background: #ffffff/*{bgColorActive}*/ url(/assets/jquery-ui/ui-bg_glass_65_ffffff_1x400-f0e6cd91b837d5c5644d026e5ffeccd907953317cd5c0f689901733afda260b2.png)/*{bgImgUrlActive}*/ 50%/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #212121/*{fcActive}*/;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #212121/*{fcActive}*/;
+	text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid #fcefa1/*{borderColorHighlight}*/;
+	background: #fbf9ee/*{bgColorHighlight}*/ url(/assets/jquery-ui/ui-bg_glass_55_fbf9ee_1x400-691597e8a40a891ea94d3589976ecfc33e6145c49422443b00ac2b5a0022964c.png)/*{bgImgUrlHighlight}*/ 50%/*{bgHighlightXPos}*/ 50%/*{bgHighlightYPos}*/ repeat-x/*{bgHighlightRepeat}*/;
+	color: #363636/*{fcHighlight}*/;
+}
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+	color: #363636/*{fcHighlight}*/;
+}
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+	border: 1px solid #cd0a0a/*{borderColorError}*/;
+	background: #fef1ec/*{bgColorError}*/ url(/assets/jquery-ui/ui-bg_glass_95_fef1ec_1x400-f6f1c1bedf1a0f37cfef81d12f5f012869d1ee7c984775a569827a1784d34f5c.png)/*{bgImgUrlError}*/ 50%/*{bgErrorXPos}*/ 50%/*{bgErrorYPos}*/ repeat-x/*{bgErrorRepeat}*/;
+	color: #cd0a0a/*{fcError}*/;
+}
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+	color: #cd0a0a/*{fcError}*/;
+}
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+	color: #cd0a0a/*{fcError}*/;
+}
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+	font-weight: bold;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+	opacity: .7;
+	filter:Alpha(Opacity=70); /* support: IE8 */
+	font-weight: normal;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+	opacity: .35;
+	filter:Alpha(Opacity=35); /* support: IE8 */
+	background-image: none;
+}
+.ui-state-disabled .ui-icon {
+	filter:Alpha(Opacity=35); /* support: IE8 - See #6059 */
+}
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	width: 16px;
+	height: 16px;
+}
+.ui-icon,
+.ui-widget-content .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_222222_256x240-57adb0d65f4e91dacfee975d9574422bee7486c8a182d60133728c672f2cdbbc.png)/*{iconsContent}*/;
+}
+.ui-widget-header .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_222222_256x240-57adb0d65f4e91dacfee975d9574422bee7486c8a182d60133728c672f2cdbbc.png)/*{iconsHeader}*/;
+}
+.ui-state-default .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_888888_256x240-ea2e29625de3463465e93b002b065f5833e05b97f7a052b1c141e754d62e1a8b.png)/*{iconsDefault}*/;
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_454545_256x240-07460e843c3e59aaadbb34231e699e856a2980753c7a47b66447da5d9f93fb7f.png)/*{iconsHover}*/;
+}
+.ui-state-active .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_454545_256x240-07460e843c3e59aaadbb34231e699e856a2980753c7a47b66447da5d9f93fb7f.png)/*{iconsActive}*/;
+}
+.ui-state-highlight .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_2e83ff_256x240-20f8c6667afc48aa433ee9eb6d8a0584bdbd6b4a4a9091ff1e6b3adb31e63bd9.png)/*{iconsHighlight}*/;
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_cd0a0a_256x240-1e32c6dbf5d3fd342f27a78aa881550d6412aa207f48468724a6a15402b6041b.png)/*{iconsError}*/;
+}
+
+/* positioning */
+.ui-icon-blank { background-position: 16px 16px; }
+.ui-icon-carat-1-n { background-position: 0 0; }
+.ui-icon-carat-1-ne { background-position: -16px 0; }
+.ui-icon-carat-1-e { background-position: -32px 0; }
+.ui-icon-carat-1-se { background-position: -48px 0; }
+.ui-icon-carat-1-s { background-position: -64px 0; }
+.ui-icon-carat-1-sw { background-position: -80px 0; }
+.ui-icon-carat-1-w { background-position: -96px 0; }
+.ui-icon-carat-1-nw { background-position: -112px 0; }
+.ui-icon-carat-2-n-s { background-position: -128px 0; }
+.ui-icon-carat-2-e-w { background-position: -144px 0; }
+.ui-icon-triangle-1-n { background-position: 0 -16px; }
+.ui-icon-triangle-1-ne { background-position: -16px -16px; }
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-se { background-position: -48px -16px; }
+.ui-icon-triangle-1-s { background-position: -64px -16px; }
+.ui-icon-triangle-1-sw { background-position: -80px -16px; }
+.ui-icon-triangle-1-w { background-position: -96px -16px; }
+.ui-icon-triangle-1-nw { background-position: -112px -16px; }
+.ui-icon-triangle-2-n-s { background-position: -128px -16px; }
+.ui-icon-triangle-2-e-w { background-position: -144px -16px; }
+.ui-icon-arrow-1-n { background-position: 0 -32px; }
+.ui-icon-arrow-1-ne { background-position: -16px -32px; }
+.ui-icon-arrow-1-e { background-position: -32px -32px; }
+.ui-icon-arrow-1-se { background-position: -48px -32px; }
+.ui-icon-arrow-1-s { background-position: -64px -32px; }
+.ui-icon-arrow-1-sw { background-position: -80px -32px; }
+.ui-icon-arrow-1-w { background-position: -96px -32px; }
+.ui-icon-arrow-1-nw { background-position: -112px -32px; }
+.ui-icon-arrow-2-n-s { background-position: -128px -32px; }
+.ui-icon-arrow-2-ne-sw { background-position: -144px -32px; }
+.ui-icon-arrow-2-e-w { background-position: -160px -32px; }
+.ui-icon-arrow-2-se-nw { background-position: -176px -32px; }
+.ui-icon-arrowstop-1-n { background-position: -192px -32px; }
+.ui-icon-arrowstop-1-e { background-position: -208px -32px; }
+.ui-icon-arrowstop-1-s { background-position: -224px -32px; }
+.ui-icon-arrowstop-1-w { background-position: -240px -32px; }
+.ui-icon-arrowthick-1-n { background-position: 0 -48px; }
+.ui-icon-arrowthick-1-ne { background-position: -16px -48px; }
+.ui-icon-arrowthick-1-e { background-position: -32px -48px; }
+.ui-icon-arrowthick-1-se { background-position: -48px -48px; }
+.ui-icon-arrowthick-1-s { background-position: -64px -48px; }
+.ui-icon-arrowthick-1-sw { background-position: -80px -48px; }
+.ui-icon-arrowthick-1-w { background-position: -96px -48px; }
+.ui-icon-arrowthick-1-nw { background-position: -112px -48px; }
+.ui-icon-arrowthick-2-n-s { background-position: -128px -48px; }
+.ui-icon-arrowthick-2-ne-sw { background-position: -144px -48px; }
+.ui-icon-arrowthick-2-e-w { background-position: -160px -48px; }
+.ui-icon-arrowthick-2-se-nw { background-position: -176px -48px; }
+.ui-icon-arrowthickstop-1-n { background-position: -192px -48px; }
+.ui-icon-arrowthickstop-1-e { background-position: -208px -48px; }
+.ui-icon-arrowthickstop-1-s { background-position: -224px -48px; }
+.ui-icon-arrowthickstop-1-w { background-position: -240px -48px; }
+.ui-icon-arrowreturnthick-1-w { background-position: 0 -64px; }
+.ui-icon-arrowreturnthick-1-n { background-position: -16px -64px; }
+.ui-icon-arrowreturnthick-1-e { background-position: -32px -64px; }
+.ui-icon-arrowreturnthick-1-s { background-position: -48px -64px; }
+.ui-icon-arrowreturn-1-w { background-position: -64px -64px; }
+.ui-icon-arrowreturn-1-n { background-position: -80px -64px; }
+.ui-icon-arrowreturn-1-e { background-position: -96px -64px; }
+.ui-icon-arrowreturn-1-s { background-position: -112px -64px; }
+.ui-icon-arrowrefresh-1-w { background-position: -128px -64px; }
+.ui-icon-arrowrefresh-1-n { background-position: -144px -64px; }
+.ui-icon-arrowrefresh-1-e { background-position: -160px -64px; }
+.ui-icon-arrowrefresh-1-s { background-position: -176px -64px; }
+.ui-icon-arrow-4 { background-position: 0 -80px; }
+.ui-icon-arrow-4-diag { background-position: -16px -80px; }
+.ui-icon-extlink { background-position: -32px -80px; }
+.ui-icon-newwin { background-position: -48px -80px; }
+.ui-icon-refresh { background-position: -64px -80px; }
+.ui-icon-shuffle { background-position: -80px -80px; }
+.ui-icon-transfer-e-w { background-position: -96px -80px; }
+.ui-icon-transferthick-e-w { background-position: -112px -80px; }
+.ui-icon-folder-collapsed { background-position: 0 -96px; }
+.ui-icon-folder-open { background-position: -16px -96px; }
+.ui-icon-document { background-position: -32px -96px; }
+.ui-icon-document-b { background-position: -48px -96px; }
+.ui-icon-note { background-position: -64px -96px; }
+.ui-icon-mail-closed { background-position: -80px -96px; }
+.ui-icon-mail-open { background-position: -96px -96px; }
+.ui-icon-suitcase { background-position: -112px -96px; }
+.ui-icon-comment { background-position: -128px -96px; }
+.ui-icon-person { background-position: -144px -96px; }
+.ui-icon-print { background-position: -160px -96px; }
+.ui-icon-trash { background-position: -176px -96px; }
+.ui-icon-locked { background-position: -192px -96px; }
+.ui-icon-unlocked { background-position: -208px -96px; }
+.ui-icon-bookmark { background-position: -224px -96px; }
+.ui-icon-tag { background-position: -240px -96px; }
+.ui-icon-home { background-position: 0 -112px; }
+.ui-icon-flag { background-position: -16px -112px; }
+.ui-icon-calendar { background-position: -32px -112px; }
+.ui-icon-cart { background-position: -48px -112px; }
+.ui-icon-pencil { background-position: -64px -112px; }
+.ui-icon-clock { background-position: -80px -112px; }
+.ui-icon-disk { background-position: -96px -112px; }
+.ui-icon-calculator { background-position: -112px -112px; }
+.ui-icon-zoomin { background-position: -128px -112px; }
+.ui-icon-zoomout { background-position: -144px -112px; }
+.ui-icon-search { background-position: -160px -112px; }
+.ui-icon-wrench { background-position: -176px -112px; }
+.ui-icon-gear { background-position: -192px -112px; }
+.ui-icon-heart { background-position: -208px -112px; }
+.ui-icon-star { background-position: -224px -112px; }
+.ui-icon-link { background-position: -240px -112px; }
+.ui-icon-cancel { background-position: 0 -128px; }
+.ui-icon-plus { background-position: -16px -128px; }
+.ui-icon-plusthick { background-position: -32px -128px; }
+.ui-icon-minus { background-position: -48px -128px; }
+.ui-icon-minusthick { background-position: -64px -128px; }
+.ui-icon-close { background-position: -80px -128px; }
+.ui-icon-closethick { background-position: -96px -128px; }
+.ui-icon-key { background-position: -112px -128px; }
+.ui-icon-lightbulb { background-position: -128px -128px; }
+.ui-icon-scissors { background-position: -144px -128px; }
+.ui-icon-clipboard { background-position: -160px -128px; }
+.ui-icon-copy { background-position: -176px -128px; }
+.ui-icon-contact { background-position: -192px -128px; }
+.ui-icon-image { background-position: -208px -128px; }
+.ui-icon-video { background-position: -224px -128px; }
+.ui-icon-script { background-position: -240px -128px; }
+.ui-icon-alert { background-position: 0 -144px; }
+.ui-icon-info { background-position: -16px -144px; }
+.ui-icon-notice { background-position: -32px -144px; }
+.ui-icon-help { background-position: -48px -144px; }
+.ui-icon-check { background-position: -64px -144px; }
+.ui-icon-bullet { background-position: -80px -144px; }
+.ui-icon-radio-on { background-position: -96px -144px; }
+.ui-icon-radio-off { background-position: -112px -144px; }
+.ui-icon-pin-w { background-position: -128px -144px; }
+.ui-icon-pin-s { background-position: -144px -144px; }
+.ui-icon-play { background-position: 0 -160px; }
+.ui-icon-pause { background-position: -16px -160px; }
+.ui-icon-seek-next { background-position: -32px -160px; }
+.ui-icon-seek-prev { background-position: -48px -160px; }
+.ui-icon-seek-end { background-position: -64px -160px; }
+.ui-icon-seek-start { background-position: -80px -160px; }
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+.ui-icon-seek-first { background-position: -80px -160px; }
+.ui-icon-stop { background-position: -96px -160px; }
+.ui-icon-eject { background-position: -112px -160px; }
+.ui-icon-volume-off { background-position: -128px -160px; }
+.ui-icon-volume-on { background-position: -144px -160px; }
+.ui-icon-power { background-position: 0 -176px; }
+.ui-icon-signal-diag { background-position: -16px -176px; }
+.ui-icon-signal { background-position: -32px -176px; }
+.ui-icon-battery-0 { background-position: -48px -176px; }
+.ui-icon-battery-1 { background-position: -64px -176px; }
+.ui-icon-battery-2 { background-position: -80px -176px; }
+.ui-icon-battery-3 { background-position: -96px -176px; }
+.ui-icon-circle-plus { background-position: 0 -192px; }
+.ui-icon-circle-minus { background-position: -16px -192px; }
+.ui-icon-circle-close { background-position: -32px -192px; }
+.ui-icon-circle-triangle-e { background-position: -48px -192px; }
+.ui-icon-circle-triangle-s { background-position: -64px -192px; }
+.ui-icon-circle-triangle-w { background-position: -80px -192px; }
+.ui-icon-circle-triangle-n { background-position: -96px -192px; }
+.ui-icon-circle-arrow-e { background-position: -112px -192px; }
+.ui-icon-circle-arrow-s { background-position: -128px -192px; }
+.ui-icon-circle-arrow-w { background-position: -144px -192px; }
+.ui-icon-circle-arrow-n { background-position: -160px -192px; }
+.ui-icon-circle-zoomin { background-position: -176px -192px; }
+.ui-icon-circle-zoomout { background-position: -192px -192px; }
+.ui-icon-circle-check { background-position: -208px -192px; }
+.ui-icon-circlesmall-plus { background-position: 0 -208px; }
+.ui-icon-circlesmall-minus { background-position: -16px -208px; }
+.ui-icon-circlesmall-close { background-position: -32px -208px; }
+.ui-icon-squaresmall-plus { background-position: -48px -208px; }
+.ui-icon-squaresmall-minus { background-position: -64px -208px; }
+.ui-icon-squaresmall-close { background-position: -80px -208px; }
+.ui-icon-grip-dotted-vertical { background-position: 0 -224px; }
+.ui-icon-grip-dotted-horizontal { background-position: -16px -224px; }
+.ui-icon-grip-solid-vertical { background-position: -32px -224px; }
+.ui-icon-grip-solid-horizontal { background-position: -48px -224px; }
+.ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
+.ui-icon-grip-diagonal-se { background-position: -80px -224px; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-top-left-radius: 4px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+	border-top-right-radius: 4px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+	border-bottom-left-radius: 4px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+	border-bottom-right-radius: 4px/*{cornerRadius}*/;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+	background: #aaaaaa/*{bgColorOverlay}*/ url(/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100-9a8492a580bf85d3e98ae8861fbd45567e5a1f83eeafcf9574da0399d5f602ab.png)/*{bgImgUrlOverlay}*/ 50%/*{bgOverlayXPos}*/ 50%/*{bgOverlayYPos}*/ repeat-x/*{bgOverlayRepeat}*/;
+	opacity: .3/*{opacityOverlay}*/;
+	filter: Alpha(Opacity=30)/*{opacityFilterOverlay}*/; /* support: IE8 */
+}
+.ui-widget-shadow {
+	margin: -8px/*{offsetTopShadow}*/ 0 0 -8px/*{offsetLeftShadow}*/;
+	padding: 8px/*{thicknessShadow}*/;
+	background: #aaaaaa/*{bgColorShadow}*/ url(/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100-9a8492a580bf85d3e98ae8861fbd45567e5a1f83eeafcf9574da0399d5f602ab.png)/*{bgImgUrlShadow}*/ 50%/*{bgShadowXPos}*/ 50%/*{bgShadowYPos}*/ repeat-x/*{bgShadowRepeat}*/;
+	opacity: .3/*{opacityShadow}*/;
+	filter: Alpha(Opacity=30)/*{opacityFilterShadow}*/; /* support: IE8 */
+	border-radius: 8px/*{cornerRadiusShadow}*/;
+}
+/*!
+ * jQuery UI CSS Framework 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ */
+/*
+
+ */
+
+/* Layout helpers
+----------------------------------*/
+
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1.3;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-clearfix {
+	min-height: 0; /* support: IE7 */
+}
+.ui-helper-zfix {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+	filter:Alpha(Opacity=0); /* support: IE8 */
+}
+
+.ui-front {
+	z-index: 100;
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+	cursor: default !important;
+}
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*!
+ * jQuery UI Accordion 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/accordion/#theming
+ */
+/*
+
+
+ */
+
+.ui-accordion .ui-accordion-header {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	margin: 2px 0 0 0;
+	padding: .5em .5em .5em .7em;
+	min-height: 0; /* support: IE7 */
+	font-size: 100%;
+}
+.ui-accordion .ui-accordion-icons {
+	padding-left: 2.2em;
+}
+.ui-accordion .ui-accordion-icons .ui-accordion-icons {
+	padding-left: 2.2em;
+}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	position: absolute;
+	left: .5em;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 1em 2.2em;
+	border-top: 0;
+	overflow: auto;
+}
+/*!
+ * jQuery UI Menu 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/menu/#theming
+ */
+/*
+
+
+ */
+
+.ui-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	outline: none;
+}
+.ui-menu .ui-menu {
+	position: absolute;
+}
+.ui-menu .ui-menu-item {
+	position: relative;
+	margin: 0;
+	padding: 3px 1em 3px .4em;
+	cursor: pointer;
+	min-height: 0; /* support: IE7 */
+	/* support: IE10, see #8844 */
+	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+.ui-menu .ui-menu-divider {
+	margin: 5px 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: 1px 0 0 0;
+}
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+	margin: -1px;
+}
+
+/* icon support */
+.ui-menu-icons {
+	position: relative;
+}
+.ui-menu-icons .ui-menu-item {
+	padding-left: 2em;
+}
+
+/* left-aligned */
+.ui-menu .ui-icon {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: .2em;
+	margin: auto 0;
+}
+
+/* right-aligned */
+.ui-menu .ui-menu-icon {
+	left: auto;
+	right: 0;
+}
+/*!
+ * jQuery UI Autocomplete 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/autocomplete/#theming
+ */
+/*
+
+
+
+ */
+
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+}
+/*!
+ * jQuery UI Button 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/button/#theming
+ */
+/*
+
+
+ */
+
+.ui-button {
+	display: inline-block;
+	position: relative;
+	padding: 0;
+	line-height: normal;
+	margin-right: .1em;
+	cursor: pointer;
+	vertical-align: middle;
+	text-align: center;
+	overflow: visible; /* removes extra width in IE */
+}
+.ui-button,
+.ui-button:link,
+.ui-button:visited,
+.ui-button:hover,
+.ui-button:active {
+	text-decoration: none;
+}
+/* to make room for the icon, a width needs to be set here */
+.ui-button-icon-only {
+	width: 2.2em;
+}
+/* button elements seem to need a little more width */
+button.ui-button-icon-only {
+	width: 2.4em;
+}
+.ui-button-icons-only {
+	width: 3.4em;
+}
+button.ui-button-icons-only {
+	width: 3.7em;
+}
+
+/* button text element */
+.ui-button .ui-button-text {
+	display: block;
+	line-height: normal;
+}
+.ui-button-text-only .ui-button-text {
+	padding: .4em 1em;
+}
+.ui-button-icon-only .ui-button-text,
+.ui-button-icons-only .ui-button-text {
+	padding: .4em;
+	text-indent: -9999999px;
+}
+.ui-button-text-icon-primary .ui-button-text,
+.ui-button-text-icons .ui-button-text {
+	padding: .4em 1em .4em 2.1em;
+}
+.ui-button-text-icon-secondary .ui-button-text,
+.ui-button-text-icons .ui-button-text {
+	padding: .4em 2.1em .4em 1em;
+}
+.ui-button-text-icons .ui-button-text {
+	padding-left: 2.1em;
+	padding-right: 2.1em;
+}
+/* no icon support for input elements, provide padding by default */
+input.ui-button {
+	padding: .4em 1em;
+}
+
+/* button icon element(s) */
+.ui-button-icon-only .ui-icon,
+.ui-button-text-icon-primary .ui-icon,
+.ui-button-text-icon-secondary .ui-icon,
+.ui-button-text-icons .ui-icon,
+.ui-button-icons-only .ui-icon {
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-button-icon-only .ui-icon {
+	left: 50%;
+	margin-left: -8px;
+}
+.ui-button-text-icon-primary .ui-button-icon-primary,
+.ui-button-text-icons .ui-button-icon-primary,
+.ui-button-icons-only .ui-button-icon-primary {
+	left: .5em;
+}
+.ui-button-text-icon-secondary .ui-button-icon-secondary,
+.ui-button-text-icons .ui-button-icon-secondary,
+.ui-button-icons-only .ui-button-icon-secondary {
+	right: .5em;
+}
+
+/* button sets */
+.ui-buttonset {
+	margin-right: 7px;
+}
+.ui-buttonset .ui-button {
+	margin-left: 0;
+	margin-right: -.3em;
+}
+
+/* workarounds */
+/* reset extra padding in Firefox, see h5bp.com/l */
+input.ui-button::-moz-focus-inner,
+button.ui-button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+/*!
+ * jQuery UI Datepicker 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/datepicker/#theming
+ */
+/*
+
+
+ */
+
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.8em;
+	height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 45%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+	width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+	float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+	width: 95%;
+	margin: 0 auto .4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+	width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+	width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+	width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+	border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+	clear: left;
+}
+.ui-datepicker-row-break {
+	clear: both;
+	width: 100%;
+	font-size: 0;
+}
+
+/* RTL support */
+.ui-datepicker-rtl {
+	direction: rtl;
+}
+.ui-datepicker-rtl .ui-datepicker-prev {
+	right: 2px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next {
+	left: 2px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+	right: 1px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+	left: 1px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+	clear: right;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+	float: left;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+	float: right;
+}
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+	border-right-width: 0;
+	border-left-width: 1px;
+}
+/*!
+ * jQuery UI Draggable 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/*
+
+
+ */
+
+.ui-draggable-handle {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+/*!
+ * jQuery UI Resizable 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/*
+
+
+ */
+
+.ui-resizable {
+	position: relative;
+}
+.ui-resizable-handle {
+	position: absolute;
+	font-size: 0.1px;
+	display: block;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-resizable-disabled .ui-resizable-handle,
+.ui-resizable-autohide .ui-resizable-handle {
+	display: none;
+}
+.ui-resizable-n {
+	cursor: n-resize;
+	height: 7px;
+	width: 100%;
+	top: -5px;
+	left: 0;
+}
+.ui-resizable-s {
+	cursor: s-resize;
+	height: 7px;
+	width: 100%;
+	bottom: -5px;
+	left: 0;
+}
+.ui-resizable-e {
+	cursor: e-resize;
+	width: 7px;
+	right: -5px;
+	top: 0;
+	height: 100%;
+}
+.ui-resizable-w {
+	cursor: w-resize;
+	width: 7px;
+	left: -5px;
+	top: 0;
+	height: 100%;
+}
+.ui-resizable-se {
+	cursor: se-resize;
+	width: 12px;
+	height: 12px;
+	right: 1px;
+	bottom: 1px;
+}
+.ui-resizable-sw {
+	cursor: sw-resize;
+	width: 9px;
+	height: 9px;
+	left: -5px;
+	bottom: -5px;
+}
+.ui-resizable-nw {
+	cursor: nw-resize;
+	width: 9px;
+	height: 9px;
+	left: -5px;
+	top: -5px;
+}
+.ui-resizable-ne {
+	cursor: ne-resize;
+	width: 9px;
+	height: 9px;
+	right: -5px;
+	top: -5px;
+}
+/*!
+ * jQuery UI Dialog 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/dialog/#theming
+ */
+/*
+
+
+
+
+
+ */
+
+.ui-dialog {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: .2em;
+	outline: 0;
+}
+.ui-dialog .ui-dialog-titlebar {
+	padding: .4em 1em;
+	position: relative;
+}
+.ui-dialog .ui-dialog-title {
+	float: left;
+	margin: .1em 0;
+	white-space: nowrap;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+	position: absolute;
+	right: .3em;
+	top: 50%;
+	width: 20px;
+	margin: -10px 0 0 0;
+	padding: 1px;
+	height: 20px;
+}
+.ui-dialog .ui-dialog-content {
+	position: relative;
+	border: 0;
+	padding: .5em 1em;
+	background: none;
+	overflow: auto;
+}
+.ui-dialog .ui-dialog-buttonpane {
+	text-align: left;
+	border-width: 1px 0 0 0;
+	background-image: none;
+	margin-top: .5em;
+	padding: .3em 1em .5em .4em;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+	float: right;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: .5em .4em .5em 0;
+	cursor: pointer;
+}
+.ui-dialog .ui-resizable-se {
+	width: 12px;
+	height: 12px;
+	right: -5px;
+	bottom: -5px;
+	background-position: 16px 16px;
+}
+.ui-draggable .ui-dialog-titlebar {
+	cursor: move;
+}
+/*!
+ * jQuery UI Progressbar 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/progressbar/#theming
+ */
+/*
+
+
+ */
+
+.ui-progressbar {
+	height: 2em;
+	text-align: left;
+	overflow: hidden;
+}
+.ui-progressbar .ui-progressbar-value {
+	margin: -1px;
+	height: 100%;
+}
+.ui-progressbar .ui-progressbar-overlay {
+	background: url("data:image/gif;base64,R0lGODlhKAAoAIABAAAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJAQABACwAAAAAKAAoAAACkYwNqXrdC52DS06a7MFZI+4FHBCKoDeWKXqymPqGqxvJrXZbMx7Ttc+w9XgU2FB3lOyQRWET2IFGiU9m1frDVpxZZc6bfHwv4c1YXP6k1Vdy292Fb6UkuvFtXpvWSzA+HycXJHUXiGYIiMg2R6W459gnWGfHNdjIqDWVqemH2ekpObkpOlppWUqZiqr6edqqWQAAIfkECQEAAQAsAAAAACgAKAAAApSMgZnGfaqcg1E2uuzDmmHUBR8Qil95hiPKqWn3aqtLsS18y7G1SzNeowWBENtQd+T1JktP05nzPTdJZlR6vUxNWWjV+vUWhWNkWFwxl9VpZRedYcflIOLafaa28XdsH/ynlcc1uPVDZxQIR0K25+cICCmoqCe5mGhZOfeYSUh5yJcJyrkZWWpaR8doJ2o4NYq62lAAACH5BAkBAAEALAAAAAAoACgAAAKVDI4Yy22ZnINRNqosw0Bv7i1gyHUkFj7oSaWlu3ovC8GxNso5fluz3qLVhBVeT/Lz7ZTHyxL5dDalQWPVOsQWtRnuwXaFTj9jVVh8pma9JjZ4zYSj5ZOyma7uuolffh+IR5aW97cHuBUXKGKXlKjn+DiHWMcYJah4N0lYCMlJOXipGRr5qdgoSTrqWSq6WFl2ypoaUAAAIfkECQEAAQAsAAAAACgAKAAAApaEb6HLgd/iO7FNWtcFWe+ufODGjRfoiJ2akShbueb0wtI50zm02pbvwfWEMWBQ1zKGlLIhskiEPm9R6vRXxV4ZzWT2yHOGpWMyorblKlNp8HmHEb/lCXjcW7bmtXP8Xt229OVWR1fod2eWqNfHuMjXCPkIGNileOiImVmCOEmoSfn3yXlJWmoHGhqp6ilYuWYpmTqKUgAAIfkECQEAAQAsAAAAACgAKAAAApiEH6kb58biQ3FNWtMFWW3eNVcojuFGfqnZqSebuS06w5V80/X02pKe8zFwP6EFWOT1lDFk8rGERh1TTNOocQ61Hm4Xm2VexUHpzjymViHrFbiELsefVrn6XKfnt2Q9G/+Xdie499XHd2g4h7ioOGhXGJboGAnXSBnoBwKYyfioubZJ2Hn0RuRZaflZOil56Zp6iioKSXpUAAAh+QQJAQABACwAAAAAKAAoAAACkoQRqRvnxuI7kU1a1UU5bd5tnSeOZXhmn5lWK3qNTWvRdQxP8qvaC+/yaYQzXO7BMvaUEmJRd3TsiMAgswmNYrSgZdYrTX6tSHGZO73ezuAw2uxuQ+BbeZfMxsexY35+/Qe4J1inV0g4x3WHuMhIl2jXOKT2Q+VU5fgoSUI52VfZyfkJGkha6jmY+aaYdirq+lQAACH5BAkBAAEALAAAAAAoACgAAAKWBIKpYe0L3YNKToqswUlvznigd4wiR4KhZrKt9Upqip61i9E3vMvxRdHlbEFiEXfk9YARYxOZZD6VQ2pUunBmtRXo1Lf8hMVVcNl8JafV38aM2/Fu5V16Bn63r6xt97j09+MXSFi4BniGFae3hzbH9+hYBzkpuUh5aZmHuanZOZgIuvbGiNeomCnaxxap2upaCZsq+1kAACH5BAkBAAEALAAAAAAoACgAAAKXjI8By5zf4kOxTVrXNVlv1X0d8IGZGKLnNpYtm8Lr9cqVeuOSvfOW79D9aDHizNhDJidFZhNydEahOaDH6nomtJjp1tutKoNWkvA6JqfRVLHU/QUfau9l2x7G54d1fl995xcIGAdXqMfBNadoYrhH+Mg2KBlpVpbluCiXmMnZ2Sh4GBqJ+ckIOqqJ6LmKSllZmsoq6wpQAAAh+QQJAQABACwAAAAAKAAoAAAClYx/oLvoxuJDkU1a1YUZbJ59nSd2ZXhWqbRa2/gF8Gu2DY3iqs7yrq+xBYEkYvFSM8aSSObE+ZgRl1BHFZNr7pRCavZ5BW2142hY3AN/zWtsmf12p9XxxFl2lpLn1rseztfXZjdIWIf2s5dItwjYKBgo9yg5pHgzJXTEeGlZuenpyPmpGQoKOWkYmSpaSnqKileI2FAAACH5BAkBAAEALAAAAAAoACgAAAKVjB+gu+jG4kORTVrVhRlsnn2dJ3ZleFaptFrb+CXmO9OozeL5VfP99HvAWhpiUdcwkpBH3825AwYdU8xTqlLGhtCosArKMpvfa1mMRae9VvWZfeB2XfPkeLmm18lUcBj+p5dnN8jXZ3YIGEhYuOUn45aoCDkp16hl5IjYJvjWKcnoGQpqyPlpOhr3aElaqrq56Bq7VAAAOw==");
+	height: 100%;
+	filter: alpha(opacity=25); /* support: IE8 */
+	opacity: 0.25;
+}
+.ui-progressbar-indeterminate .ui-progressbar-value {
+	background-image: none;
+}
+/*!
+ * jQuery UI Selectable 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/*
+
+
+ */
+
+.ui-selectable {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-selectable-helper {
+	position: absolute;
+	z-index: 100;
+	border: 1px dotted black;
+}
+/*!
+ * jQuery UI Selectmenu 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/selectmenu/#theming
+ */
+/*
+
+
+
+ */
+
+.ui-selectmenu-menu {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.ui-selectmenu-menu .ui-menu {
+	overflow: auto;
+	/* Support: IE7 */
+	overflow-x: hidden;
+	padding-bottom: 1px;
+}
+.ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup {
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 2px 0.4em;
+	margin: 0.5em 0 0 0;
+	height: auto;
+	border: 0;
+}
+.ui-selectmenu-open {
+	display: block;
+}
+.ui-selectmenu-button {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none;
+	cursor: pointer;
+}
+.ui-selectmenu-button span.ui-icon {
+	right: 0.5em;
+	left: auto;
+	margin-top: -8px;
+	position: absolute;
+	top: 50%;
+}
+.ui-selectmenu-button span.ui-selectmenu-text {
+	text-align: left;
+	padding: 0.4em 2.1em 0.4em 1em;
+	display: block;
+	line-height: 1.4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+/*!
+ * jQuery UI Sortable 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/*
+
+
+ */
+
+.ui-sortable-handle {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+/*!
+ * jQuery UI Slider 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/slider/#theming
+ */
+/*
+
+
+ */
+
+.ui-slider {
+	position: relative;
+	text-align: left;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.2em;
+	height: 1.2em;
+	cursor: default;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+
+/* support: IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+	filter: inherit;
+}
+
+.ui-slider-horizontal {
+	height: .8em;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.3em;
+	margin-left: -.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+
+.ui-slider-vertical {
+	width: .8em;
+	height: 100px;
+}
+.ui-slider-vertical .ui-slider-handle {
+	left: -.3em;
+	margin-left: 0;
+	margin-bottom: -.6em;
+}
+.ui-slider-vertical .ui-slider-range {
+	left: 0;
+	width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+	bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+	top: 0;
+}
+/*!
+ * jQuery UI Spinner 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/spinner/#theming
+ */
+/*
+
+
+
+ */
+
+.ui-spinner {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	padding: 0;
+	vertical-align: middle;
+}
+.ui-spinner-input {
+	border: none;
+	background: none;
+	color: inherit;
+	padding: 0;
+	margin: .2em 0;
+	vertical-align: middle;
+	margin-left: .4em;
+	margin-right: 22px;
+}
+.ui-spinner-button {
+	width: 16px;
+	height: 50%;
+	font-size: .5em;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	position: absolute;
+	cursor: default;
+	display: block;
+	overflow: hidden;
+	right: 0;
+}
+/* more specificity required here to override default borders */
+.ui-spinner a.ui-spinner-button {
+	border-top: none;
+	border-bottom: none;
+	border-right: none;
+}
+/* vertically center icon */
+.ui-spinner .ui-icon {
+	position: absolute;
+	margin-top: -8px;
+	top: 50%;
+	left: 0;
+}
+.ui-spinner-up {
+	top: 0;
+}
+.ui-spinner-down {
+	bottom: 0;
+}
+
+/* TR overrides */
+.ui-spinner .ui-icon-triangle-1-s {
+	/* need to fix icons sprite */
+	background-position: -65px -16px;
+}
+/*!
+ * jQuery UI Tabs 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/tabs/#theming
+ */
+/*
+
+
+ */
+
+.ui-tabs {
+	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+	padding: .2em;
+}
+.ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em .2em 0;
+}
+.ui-tabs .ui-tabs-nav li {
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	margin: 1px .2em 0 0;
+	border-bottom-width: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	float: left;
+	padding: .5em 1em;
+	text-decoration: none;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: -1px;
+	padding-bottom: 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+	cursor: text;
+}
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+	cursor: pointer;
+}
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 1em 1.4em;
+	background: none;
+}
+/*!
+ * jQuery UI Tooltip 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/tooltip/#theming
+ */
+/*
+
+
+ */
+
+.ui-tooltip {
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	max-width: 300px;
+	-webkit-box-shadow: 0 0 5px #aaa;
+	box-shadow: 0 0 5px #aaa;
+}
+body .ui-tooltip {
+	border-width: 2px;
+}
+/*!
+ * jQuery UI CSS Framework 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ */
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */
+
+/*!
+ * jQuery UI CSS Framework 1.11.4
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ */
+/*
+
+
+ */
+
