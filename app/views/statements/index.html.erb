@@ -11,9 +11,12 @@
     <div class="navsearch">
     <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %>
 
-    <div class="combobox big_combo"><%= chosen_src :book_id, Book.all, params[:book_id], {nil_value: 'Книга...', class: 'st_chosen'} %></div>
-    <div class="combobox"><%= chosen_src :tag_id, Tag.all, params[:tag_id], {nil_value: 'Метка...', class: 'st_chosen'} %></div>
-    <div class="combobox"><%= chosen_src :author_id, Author.all, params[:author_id], {nil_value: 'Автор...', class: 'st_chosen'} %></div>
+    <div class="combobox big_combo">
+      <%= chosen_src :book_id, Book.all, params[:book_id], {nil_value: 'Книга...', class: 'filter_chosen'} %></div>
+    <div class="combobox">
+      <%= chosen_src :tag_id, Tag.all, params[:tag_id], {nil_value: 'Метка...', class: 'filter_chosen'} %></div>
+    <div class="combobox">
+      <%= chosen_src :author_id, Author.all, params[:author_id], {nil_value: 'Автор...', class: 'filter_chosen'} %></div>
 
 
     </div>
