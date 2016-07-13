@@ -1,41 +1,29 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Документация</h1>
 
-
 <%= form_tag docs_path, :method => 'get', :id => "statements_search" do %>
-  <p>
-    <div class="navsearch">
+  <div class="navsearch">
     <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %>
-
-    <div class="combobox big_combo"><%= chosen_src :doc_type_id, DocType.all, params[:doc_type_id], {nil_value: 'Документация по...', class: 'st_chosen'} %></div>
-
-    </div>
-
+    <div class="combobox big_combo">
+    <%= chosen_src :doc_type_id, DocType.all, params[:doc_type_id], {nil_value: 'Документация по...', class: 'st_chosen'} %></div>
+  </div>
 <% end %>
 
-<div class="nav-pills">
-    <%= add_new( new_doc_path ) %>
-</div>
+<div class="nav-pills"><%= add_new( new_doc_path ) %></div>
 
 <nav id="metadata">
-<div id="project-metadata">
-<nav id="classindex-section" class="section project-section">
-<h4 class="section-header">Class and Module Index</h4>
-
-<ul class="link-list">
-    <% @docs.each do |doc| %>
+  <div id="project-metadata">
+    <nav id="classindex-section" class="section project-section">
+    <h4 class="section-header">Class and Module Index</h4>
+    <ul class="link-list">
+      <% @docs.each do |doc| %>
         <li class="link" id='doc<%= doc.id %>'><%= doc.name %></li>
-    <% end %>
-</ul>
+      <% end %>
+    </ul>
+    </nav>
+  </div>
 </nav>
-</div>
-</nav>
-
 
 <div class="col-80" id='cur_doc'>
   <%= render 'cur_doc' %>
 </div>
-
-<br>
-

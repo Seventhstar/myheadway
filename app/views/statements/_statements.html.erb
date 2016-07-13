@@ -1,37 +1,31 @@
 <% @statements.each do |statement| %>
-
-    <div id="statement_show" class="max_statement">
-
-    	<div id="statement_header">
-    		<% link_to image_tag('left.png'), "statements/".concat((statement.id-1).to_s) %>
-    		<b>#</b> <%= statement.id %>
-    		<% text_field :statement_id, statement.id, :size => 1, :value => statement.id %>
-    		<% link_to image_tag('right.png'), "statements/".concat((statement.id+1).to_s) %>
-    </div><br />
-	<div id="statement_content"><%= raw CheckShortContent(statement.content,statement.id) %></div>
-	  <div id="statement_footer">
-        <div id="statement_author"><b>Автор: </b><span class="st_a">
-        		<%= link_to statement.author_name, controller: 'statements', author_id: statement.author_id %></span><br/>
-        	<% if statement.book_id? %>
-		    	<b>Книга: </b> <span class="st_a"><%= link_to statement.book_name,controller: "statements", book_id: statement.book_id %></span><br/>
-		    <% end %>
-        <% if statement.tags.count %>
-		    	<b>Метки: </b>
-		    	<% statement.tags.each do |t| %>		    		
-		    		<span class="st_a"><%= link_to t.name, controller: 'statements', tag_id: t.id %></span>
-		    	<% end %>
-		    <% end %>
+<div class="statement_show max_statement">
+	<div class="statement_header">
+		<% link_to image_tag('left.png'), "statements/".concat((statement.id-1).to_s) %>
+		<b>#</b> <%= statement.id %>
+		<% text_field :statement_id, statement.id, :size => 1, :value => statement.id %>
+		<% link_to image_tag('right.png'), "statements/".concat((statement.id+1).to_s) %>
+	</div><br />
+	<div class="statement_content"><%= raw CheckShortContent(statement.content,statement.id) %></div>
+	<div class="statement_footer">
+    <div class="statement_author"><b>Автор: </b><span class="st_a">
+    	<%= link_to statement.author_name, controller: 'statements', author_id: statement.author_id %></span><br/>
+    	<% if statement.book_id? %>
+    		<b>Книга: </b> <span class="st_a"><%= link_to statement.book_name,controller: "statements", book_id: statement.book_id %></span><br/>
+    	<% end %>
+    	<% if statement.tags.count %>
+    		<b>Метки: </b>
+    		<% statement.tags.each do |t| %>		    		
+    			<span class="st_a"><%= link_to t.name, controller: 'statements', tag_id: t.id %></span>
+    		<% end %>
+    	<% end %>
 		</div>
-		<div id="statement_edit_menu">
-
+		<div class="statement_edit_menu">
 		    <%= link_to image_tag('link.png'), statement.source %>
-		    <%= link_to image_tag('edit.png'), edit_statement_path(statement) %>
-		    <%= link_to image_tag('delete.png'), statement, data: {confirm: 'Are you sure?'}, method: :delete %>
-
+		    <%= tool_icons(statement) %>
 		</div>
-      </div>
+  </div>
 	</div>
-	<!-- <div id="statement_bottom" class="max_statement"></div> -->
 <% end %>
 <br/>
 

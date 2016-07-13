@@ -57,7 +57,8 @@ h1, h3 { font-size: 24px;  padding-bottom: 2px;	border-bottom: 1px solid #ccc !i
 .nav>li.selected {background-color: #616161; box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);}
 .nav>li.selected a { color: #f0f0f0;  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);}
 .nav>li {   position: relative;  display: block; font-size: 13px;}
-.nav>li>a { position: relative;  display: block; padding: 10px 15px; }
+.nav>li>a { position: relative;  display: block;  }
+.navbar .nav>li>a { padding: 16px 16px; }
 
 .nav-pills>li { float: left;}
 .nav-pills a {border-radius: 4px;}
@@ -69,8 +70,8 @@ a { color: #428bca;  text-decoration: none;}
 .navbar { position: relative; min-height: 52px; margin-bottom: 20px; border: 1px solid #e7e7e7; border-radius: 4px; background-color: #f8f8f8; }
 .navbar-nav { float: left; margin: 0; width: 92%;}
 .navbar-nav>li { float: left;}
-.navbar-nav>li>a { padding-top: 10px; padding-bottom: 10px; line-height: 20px;}
-// .navbar-nav>li.logout>a { padding-top: 13px; padding-bottom: 13px;}
+// .navbar .navbar-nav>li>a { padding-top: 10px; padding-bottom: 10px; line-height: 20px;}
+.navbar-nav>li.logout>a { padding-top: 13px; padding-bottom: 13px;}
 #logout a {padding-top: 13px; padding-bottom: 13px;}
 #options a  {padding-top: 13px; padding-bottom: 13px; }
 #options a:hover img  { background-image: asset-url("gear_wh.png") }

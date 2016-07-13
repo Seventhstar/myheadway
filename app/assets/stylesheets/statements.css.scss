@@ -28,7 +28,7 @@ img.round { position: absolute; z-index: 2; display: block; left: -40px; top: -1
 .st_a {padding: 1px 5px;}
 .st_a:hover, .st_a:hover a{background-color:#428bca; border-radius: 2px; color: white;}
 
-#statement_show { border: 1px solid #EEE; padding: 10px 20px 30px 20px;
+.statement_show { border: 1px solid #EEE; padding: 10px 20px 30px 20px;
  margin-right: auto; margin-top: 18px; background: url("back-tet5.png");
  box-shadow: 3px 3px 4px rgba(0,0,0,0.15);
  -moz-border-radius: 4px;
@@ -40,6 +40,7 @@ img.round { position: absolute; z-index: 2; display: block; left: -40px; top: -1
  &.mini{width: 338px; height: auto;}
  &.max_statement{width: 824px;}
 }
+.statement_show.mini{width: 338px; height: auto;}
 
 
 .min_statement_head { position: relative; float: left; top: -11px; left: -21px; height: 30px; width: 210px; padding: 5px 7px;
@@ -56,17 +57,17 @@ img.round { position: absolute; z-index: 2; display: block; left: -40px; top: -1
   border-radius: 4px 0 4px 0;
 }
 
-#statement_content{ font-family: Georgia, "Times New Roman", serif; font-size: 18px; -webkit-margin-before: 1em;-webkit-margin-after: 1em;}
+.statement_content, .statement_content p{ font-family: Georgia, "Times New Roman", serif; font-size: 18px; margin: 10px 0;}
 
 br {margin-top: 10px;padding-bottom: 10px;}
 
-#statement_author    { font-family: Georgia, "Times New Roman", serif; color: #999; height: auto; padding: 5px; }
-#statement_edit_menu { display: inline; float: right; vertical-align: bottom;}
+.statement_author    { font-family: Georgia, "Times New Roman", serif; color: #999; height: auto; padding: 5px; }
+.statement_edit_menu { display: inline; float: right; vertical-align: bottom;}
 
 .statement_user { float: right; color: #999;}
 
-#statement_show a:hover{ background-color: transparent; }
-#statement_header {
+.statement_show a:hover{ background-color: transparent; }
+.statement_header {
   position: relative ;
   background: #616161;
   box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);
@@ -81,7 +82,7 @@ br {margin-top: 10px;padding-bottom: 10px;}
   -moz-border-radius: 0 5px 0 5px;
 }
 
-#statement_footer{ vertical-align: bottom; height: auto; display: inline; -webkit-margin-before: 1em; -webkit-margin-after: 1em; }
+.statement_footer{ vertical-align: bottom; height: auto; display: inline; -webkit-margin-before: 1em; -webkit-margin-after: 1em; }
 
 .toggleButton{
   cursor: pointer;
