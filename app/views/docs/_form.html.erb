@@ -1,0 +1,27 @@
+<%= form_for(@doc) do |f| %>
+  <% if @doc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@doc.errors.count, "error") %> prohibited this doc from being saved:</h2>
+
+      <ul>
+      <% @doc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label class="big_lbl">Имя процедуры/функции:</label>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <label class="big_lbl">Документация по:</label>
+    <%= chosen_src :doc_type_id, DocType.all, @doc %>
+  </div>
+  <div class="field">
+    <%= f.label t :description %><br>
+    <%= f.text_area :description, :class => "width_area",:size => "80x8" %>
+  </div>
+  <%= submit_cancel docs_path %>
+<% end %>

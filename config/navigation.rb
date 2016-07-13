@@ -59,6 +59,7 @@ SimpleNavigation::Configuration.run do |navigation|
     end
     primary.item :books, 'Книги', '/books'
     primary.item :books, 'Интересное', '/attentions'
+    primary.item :books, 'Док.', '/docs'
     primary.item :feelings, 'Вызовы/Заявки', '/claims'
     primary.item :feelings, 'Заметки', '/notices'
     primary.item :feelings, 'Ощущения', '/feelings'

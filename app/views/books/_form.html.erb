@@ -19,8 +19,5 @@
     <%= f.text_area :annotation, :class => "width_area",:size => "80x8" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit nil, :class => "btn btn-success"%>
-    <%= link_to t('Back'), books_path, :class => "btn" %>
-  </div>
+  <%= submit_cancel annotations_path %>
 <% end %>

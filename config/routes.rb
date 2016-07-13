@@ -1,4 +1,8 @@
 Myheadway::Application.routes.draw do
+
+  resources :docs
+  resources :doc_types
+
   resources :attentions
 
   resources :notices

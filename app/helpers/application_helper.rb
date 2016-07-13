@@ -68,6 +68,7 @@ module ApplicationHelper
     icons = params[:icons].split(',')
     params[:subcount] ||= 0
     params[:add_cls] ||= ''
+    params[:class] ||= ''
     params[:content_class] ||= ''
     params[:content_tag] ||= :td
     content = params[:content_tag]
@@ -76,9 +77,9 @@ module ApplicationHelper
       all_icons['edit'] = content_tag :span, "", {class: 'icon icon_edit', item_id: element.id}
       all_icons['delete'] = content_tag( :span,"",{class: ['icon icon_remove',dilable_cls,' ',params[:add_cls]].join, item_id: params[:subcount]>0 ? '' : element.id})
      else
-      all_icons['edit'] = link_to "", edit_polymorphic_path(element), class: "icon icon_edit"
+      all_icons['edit'] = link_to "", edit_polymorphic_path(element), class: "icon icon_edit " + params[:class]
       all_icons['show'] = link_to "", polymorphic_path(element), class: "icon icon_show", data: { modal: true }
-      all_icons['delete'] = link_to "", element, method: :delete, data: { confirm: 'Действительно удалить?' }, class: "icon icon_remove " if params[:subcount]==0
+      all_icons['delete'] = link_to "", element, method: :delete, data: { confirm: 'Действительно удалить?' }, class: "icon icon_remove " + params[:class] if params[:subcount]==0
       all_icons['delete'] = content_tag(:span,"",{class: 'icon icon_remove_disabled'}) if params[:subcount]>0
     end
     content_tag content,{:class=>["edit_delete",' ',params[:content_class]].join} do
@@ -107,5 +108,12 @@ module ApplicationHelper
       end
   end
 
+  def add_new( path )
+    link_to '+ Добавить',path, :class =>"btn-success right"
+  end
+
+  def link_to_del( obj)
+	link_to	@task, method: :delete, data: { confirm: 'Действительно удалить?' }, :class=>"icon icon_remove right"
+  end
 
 end

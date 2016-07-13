@@ -1,0 +1,2 @@
+<h6><%= @cur_doc.name %><%= tool_icons(@cur_doc,{icons:'edit', class: 'right'}) %></h6>
+<%= check_fn(RedCloth.new(@cur_doc.description).to_html).html_safe %>

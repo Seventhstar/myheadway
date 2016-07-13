@@ -6,13 +6,12 @@
     <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %>
     <div class="combobox big_combo"><%= chosen_src :attn_cat_id, AttnCat.all, params[:attn_cat_id], {nil_value: 'Категория...', class: 'filter_chosen'} %></div>
     <div class="combobox big_combo">
-    <%= chosen_src :author_id, Author.where(id: Attention.pluck(:author_id).compact), params[:author_id], 
+    <%= chosen_src :author_id, Author.where(id: Attention.pluck(:author_id).compact), params[:author_id],
                   {nil_value: 'Автор...', class: 'filter_chosen'} %>
     </div>
 
     <div class="nav-pills">
-     
-     <%= link_to '+ Добавить', new_attention_path, :class =>"btn-success right" %>
+     <%= add_new new_attention_path %>
      <%= only_actual_btn %>
     </div>
     </div>

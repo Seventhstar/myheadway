@@ -1,0 +1,25 @@
+// Place all the styles related to the Docs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+code.inline_code, div.multiline_code{ background-color: #444; color: #f8f8f2; padding: 3px 8px; width:100%; display: block; border-radius: 3px; }
+span.function { color: #a6e22a;}
+span.key {color: #66d9ef;}
+span.symbol, span.predefined-constant {color: #fd971f;}
+span.string{ color: #e6db74;}
+
+:link:hover, :visited:hover { border-bottom: 1px dotted #6C8C22; }
+.link { color: #6C8C22; text-decoration: none; cursor: pointer;  &:hover{color: #fd971f;}}
+
+ul.link-list li {white-space: nowrap;}
+
+
+// #project-metadata { margin-top: 2em;}
+#metadata h4.section-header { margin: 0; padding: 2px 8px; background: #ccc;color: #666; border-bottom: 1px solid #aaa;
+  -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px;-webkit-border-top-left-radius: 4px;-webkit-border-top-right-radius: 4px;
+}
+
+#metadata ul, #metadata dl, #metadata p {  padding: 8px;list-style: none;}
+#metadata {width: 170px; float: left;}
+#metadata .section { background-color: #f5f5f5; -moz-border-radius: 5px; -webkit-border-radius: 5px;border: 1px solid #aaa;margin: 0 8px 0 0;font-size: 90%; overflow: hidden;}
+
