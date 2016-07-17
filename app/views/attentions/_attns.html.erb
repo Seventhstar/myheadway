@@ -15,7 +15,7 @@
       <span><%= attention.name %></span>
       <div class="statement_edit_menu">
         
-        <%= link_to image_tag('link.png'), attention.src_url %>
+        <%= link_to image_tag('link.png'), attention.src_url, :target => "_blank" %>
         <%= tool_icons(attention,{content_tag: :span})%>
       </div>
     </div>
