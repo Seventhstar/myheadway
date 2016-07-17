@@ -13,7 +13,11 @@
     <div class="attn_head left fullwidth">
       <span><%= attention.author.try(:name) %></span>
       <span><%= attention.name %></span>
-      <%= tool_icons(attention,{content_tag: :span, content_class: 'right'})%>
+      <div class="statement_edit_menu">
+        
+        <%= link_to image_tag('link.png'), attention.src_url %>
+        <%= tool_icons(attention,{content_tag: :span})%>
+      </div>
     </div>
     <div class="attn_desc">
         <%= raw CheckShortContent(attention.description,attention.id,310) %>
