@@ -4,12 +4,13 @@
 
 code.inline_code, div.multiline_code{ background-color: #444; color: #f8f8f2; padding: 3px 8px; width:100%; display: block; border-radius: 3px; }
 span.function { color: #a6e22a;}
-span.key {color: #66d9ef;}
+.multiline_code span.key {color: #66d9ef; font-weight: 500;}
+span.key {color: #428bca; font-weight: 600;}
 span.symbol, span.predefined-constant {color: #fd971f;}
 span.string{ color: #e6db74;}
 
 // :link:hover, :visited:hover { border-bottom: 1px dotted #6C8C22; }
-.link { color: #6C8C22; text-decoration: none; cursor: pointer;  &:hover{color: #fd971f;}}
+.link { color: #428bca; font-weight: 600; text-decoration: none; cursor: pointer;  &:hover{color: #55aa00;}}
 
 ul.link-list li {white-space: nowrap;}
 
@@ -21,5 +22,5 @@ ul.link-list li {white-space: nowrap;}
 
 #metadata ul, #metadata dl, #metadata p {  padding: 8px;list-style: none;}
 #metadata {width: 170px; float: left;}
-#metadata .section { background-color: #f5f5f5; -moz-border-radius: 5px; -webkit-border-radius: 5px;border: 1px solid #aaa;margin: 0 8px 0 0;font-size: 90%; overflow: hidden;}
+#metadata .section { background-color: #f9f9f9; -moz-border-radius: 5px; -webkit-border-radius: 5px;border: 1px solid #aaa;margin: 0 8px 0 0;font-size: 90%; overflow: hidden;}
 

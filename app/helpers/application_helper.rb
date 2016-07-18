@@ -81,11 +81,7 @@ module ApplicationHelper
       icons.each do |i|
         all_icons[i] = content_tag :span, "", {class: 'icon icon_'+i}
       end
-      
-      # del_list = ['edit','delete','show']
-      # del_list.each do |del|
-      #   icons.delete()
-      # end      
+
      else
       all_icons['edit'] = link_to "", edit_polymorphic_path(element), class: "icon icon_edit " + params[:class]
       all_icons['show'] = link_to "", polymorphic_path(element), class: "icon icon_show", data: { modal: true }
