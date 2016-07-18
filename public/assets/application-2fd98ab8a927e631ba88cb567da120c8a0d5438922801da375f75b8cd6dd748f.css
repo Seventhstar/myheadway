@@ -1822,47 +1822,57 @@ ul.link-list li {
   background: url("edit.png");
 }
 
+/* line 6, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon_code {
+  background: url("code.png");
+}
+
 /* line 7, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon_tag {
+  background: url("tag.png");
+}
+
+/* line 9, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 label.inp_btn_label {
   padding: 0 0 0 18px;
   position: relative;
 }
 
-/* line 8, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 10, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 label.inp_btn_label .inp_btn {
   position: absolute;
   top: -2px;
   left: 0;
 }
 
-/* line 10, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 12, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .btn-reset {
   margin-left: 10px;
 }
 
-/* line 12, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 14, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 #itemAdd_form {
   margin-bottom: 20px;
 }
 
-/* line 13, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 15, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 #itemAdd_form label {
   width: 120px;
 }
 
-/* line 14, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 16, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 #itemAdd_form input {
   width: 400px;
   margin-right: 10px;
 }
 
-/* line 16, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 18, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .datepicker {
   background: url(/assets/ico-date-53c4efc61fe3fb6a701e627088794e841b9b26c898f190a17f94ee688ae1b82f.png) 97% 3px no-repeat;
   cursor: pointer;
 }
 
-/* line 18, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 20, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 span.icon {
   width: 16px;
   height: 16px;
@@ -1871,27 +1881,27 @@ span.icon {
   position: relative;
 }
 
-/* line 19, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 21, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 span.icon:hover {
   cursor: pointer;
 }
 
-/* line 21, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 23, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 span.icon_apply {
   background: url("apply.png") no-repeat;
 }
 
-/* line 22, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 24, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 span.icon_cancel {
   background: url("cancel.png") no-repeat;
 }
 
-/* line 24, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 26, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .only_actual:hover {
   opacity: 0.8;
 }
 
-/* line 25, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 27, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .switcher_a {
   margin-top: 2px;
   margin-right: 20px;
@@ -1899,7 +1909,7 @@ span.icon_cancel {
   float: right;
 }
 
-/* line 26, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 28, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .switcher_a .link_a {
   text-decoration: none;
   text-align: right;
@@ -1907,7 +1917,7 @@ span.icon_cancel {
   min-width: 78px;
 }
 
-/* line 27, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 29, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .switcher_a .scale {
   float: right;
   width: 44px;
@@ -1919,12 +1929,12 @@ span.icon_cancel {
   cursor: pointer;
 }
 
-/* line 28, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 30, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .switcher_a.toggled .scale {
   background: #009ddd;
 }
 
-/* line 29, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 31, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .switcher_a .handle {
   float: right;
   width: 17px;
@@ -1939,7 +1949,7 @@ span.icon_cancel {
   transition: left 0.2s ease;
 }
 
-/* line 43, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+/* line 45, h:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
 .switcher_a .handle.active {
   left: 27px;
   background: #fff;
