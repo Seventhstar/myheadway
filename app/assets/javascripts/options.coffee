@@ -10,6 +10,11 @@ $(document).ready ->
   $('.chosen').chosen(width: '99.5%', disable_search: 'true')
   $('.chosen-select').chosen({display_selected_options: false, display_disabled_options:false})
 
+  $('.icon_code').click ->
+    insertAtCaret('doc_description','<source></source>',8)
+  $('.icon_tag').click ->
+    insertAtCaret('doc_description','<span class="key"></span>',18)
+
   $('.container').on 'click', 'span.sw_check',  ->
     model = $(this).parents('table').attr('model')
     if $(this).hasClass('checked')

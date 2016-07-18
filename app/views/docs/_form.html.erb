@@ -20,7 +20,8 @@
     <%= chosen_src :doc_type_id, DocType.all, @doc %>
   </div>
   <div class="field">
-    <%= f.label t :description %><br>
+    <label class='left'><%= t :description %></label>
+    <%= tool_icons(nil,{tag: 'span',icons: 'edit,code,tag', content_class:'right', content_tag: 'span'}) %>
     <%= f.text_area :description, :class => "width_area",:size => "80x8" %>
   </div>
   <%= submit_cancel docs_path %>

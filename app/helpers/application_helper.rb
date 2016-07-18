@@ -73,9 +73,19 @@ module ApplicationHelper
     params[:content_tag] ||= :td
     content = params[:content_tag]
     dilable_cls = params[:subcount]>0 ? '_disabled' : ''
+
     if params[:tag] == 'span'
-      all_icons['edit'] = content_tag :span, "", {class: 'icon icon_edit', item_id: element.id}
-      all_icons['delete'] = content_tag( :span,"",{class: ['icon icon_remove',dilable_cls,' ',params[:add_cls]].join, item_id: params[:subcount]>0 ? '' : element.id})
+      all_icons['edit'] = content_tag :span, "", {class: 'icon icon_edit', item_id: element.id} if !element.nil?
+      all_icons['delete'] = content_tag( :span,"",{class: ['icon icon_remove',dilable_cls,' ',params[:add_cls]].join, item_id: params[:subcount]>0 ? '' : element.id}) if !element.nil?
+      icons = icons - ['edit','delete','show']
+      icons.each do |i|
+        all_icons[i] = content_tag :span, "", {class: 'icon icon_'+i}
+      end
+      
+      # del_list = ['edit','delete','show']
+      # del_list.each do |del|
+      #   icons.delete()
+      # end      
      else
       all_icons['edit'] = link_to "", edit_polymorphic_path(element), class: "icon icon_edit " + params[:class]
       all_icons['show'] = link_to "", polymorphic_path(element), class: "icon icon_show", data: { modal: true }
