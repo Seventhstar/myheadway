@@ -38,9 +38,10 @@ class AjaxController < ApplicationController
    if params[:target]
       target_day = TargetDay.where( :target_id => params[:target], :day => params[:day], :month => params[:month], :year => params[:year] ).first
       if target_day != nil
-         target_day.checked = params[:checked]
-      else 
-         target_day = TargetDay.new( :target_id => params[:target], :day => params[:day], :month => params[:month], :year => params[:year], :checked => params[:checked])
+         # target_day.checked = params[:checked]
+          target_day.state = params[:state]
+      else
+         target_day = TargetDay.new( :target_id => params[:target], :day => params[:day], :month => params[:month], :year => params[:year], :state => params[:state])
       end
 
       target_day.save
@@ -72,12 +73,12 @@ class AjaxController < ApplicationController
       params[:upd].each do |p|
         #p "p",p,obj[p[0]]
         new_value = p[1]
-        new_value.gsub!(' ','') if p[0]=='sum'  
+        new_value.gsub!(' ','') if p[0]=='sum'
         obj[p[0]] = new_value
       end
       obj.save
    	 end
-   	 render :nothing => true 
+   	 render :nothing => true
    	end
 
 

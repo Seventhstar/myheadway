@@ -34693,10 +34693,10 @@ $(document).ready(function(){
 
             if(switcher.hasClass('toggled')){
                 details.slideDown(300);
-                
+
             } else {
                 details.slideUp(300);
-           
+
             }
             sortable_query({only_actual:link.hasClass('on')});
             return false;
@@ -34716,8 +34716,8 @@ $(document).ready(function(){
             sortable_query({only_actual:link.hasClass('on')});
             return false;
         });
-       
-        
+
+
 
     });
 
@@ -34744,7 +34744,7 @@ $(document).ready(function(){
     id = id.substring(4);
 
     $('#addon'+id).slideToggle('slow', function(){
-    	if($('#addon'+id).is(':visible')) { 
+    	if($('#addon'+id).is(':visible')) {
     		$('#addon'+id).attr('style','');
     		$('#stid'+id).text(' <');
     	}else{
@@ -34752,11 +34752,11 @@ $(document).ready(function(){
     	}
   	});
   });
-  
+
   $("#statement_author_name").keyup(function() {
     var c= String.fromCharCode(event.keyCode);
     var isWordcharacter = c.match(/\w/);
-    
+
     if (isWordcharacter || event.keyCode ==8){
 
       myString = capitalize($(this).val());
@@ -34764,43 +34764,41 @@ $(document).ready(function(){
       return false;
     }
   });
-  
+
   $("#statement_theme, #target_parent_name, #target_name").keyup(function() {
     var c= String.fromCharCode(event.keyCode);
     var isWordcharacter = c.match(/\w/);
-    
+
     if (isWordcharacter || event.keyCode ==8){
 
       myString = capitalize_first($(this).val());
       $(this).val(myString);
       return false;}
     });
-  
-  $('span.calenday').click(function(){
-     day = $(this).attr("day");
-     target = $(this).attr("target");
-     month = $("#current_month").val();
-     year = $("#current_year").val();
 
-     if ($(this).hasClass("checked")){
-        $(this).removeClass("checked");
-        checked = false;
-     }else{
-        checked = true;
-        $(this).addClass("checked");
-     };
+  $('span.calenday').click(function(e){
+     var day = $(this).attr("day");
+     var state = parseInt($(this).attr("state"));
+     var target = $(this).attr("target");
+     var month = $("#current_month").val();
+     var year = $("#current_year").val();
+
+     var spkey = false;
+     if (e.shiftKey) {state = 3; spkey = true;}
+     if (e.ctrlKey) {state = 0; spkey = true;}
+     if (e.altKey) {state = 1; spkey = true; }
+     if (!state) { state = 2;}
+     else if (!spkey) {state = state+1; if (state>3) state=0;}
+
+     $(this).attr("state",state);
 
      $.ajax({
-	 url: "/ajax/target_days",
-	 data: {'day':day,'target':target, 'checked': checked, 'month': month, 'year': year },
-	 type: "POST",
-	 beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},	 
-	  success: function(){
-	   $(this).addClass("done");
-	  }
-	 });
+	     url: "/ajax/target_days",
+	     data: {'day':day,'target':target, 'state': state, 'month': month, 'year': year },
+	     type: "POST", beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
+	   });
 
-   
+
   });
 
   $(".notice").fadeOut(1400);
@@ -34808,7 +34806,7 @@ $(document).ready(function(){
   	id = $(this).attr('id').substr(5);
   	$('#children-'+id).slideToggle('slow');
     $('.day_'+id).slideToggle('slow');
-    
+
   	if($('#span-'+id).hasClass('opened')) {
       $('#span-'+id).removeClass('opened');
       $('#span-'+id).text('-');

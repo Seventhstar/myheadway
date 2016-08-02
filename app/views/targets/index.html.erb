@@ -13,11 +13,11 @@
 
 <div class="calendar_period">
 <div class="calendar_period_h">
-    <%= prev_year %> 
-    <%= prev_month %>     
+    <%= prev_year %>
+    <%= prev_month %>
     <span class="page active"><%= l current_period, :format => :short %></span>
-    <%= next_month %> 
-    <%= next_year %> 
+    <%= next_month %>
+    <%= next_year %>
 </div>
 </div>
 
@@ -50,17 +50,17 @@
 		  		<div class="target_name"><%= target.name %></div>
 		  		<%= edit_delete(target,0,true)%>
 		  	</div>
-	  
+
 	  		<div class="target_line_days group_day">
 
 							<% days.times do |d|%>
-							   <span class="calenday <%=day_checked(target.id,d+1) %> day_" day="<%=d+1%>" target="<%=target.id%>"></span>
+							   <span class="calenday <%= day_checked(target.id,d+1) %> day_" day="<%=d+1%>" target="<%=target.id%>"></span>
 							<% end %>
 				</div>
 	</div>
   <% if target.targets.count %>
   <div class="children" id="children-<%= target.id %>" style="display: block; ">
-  <% end %>	
+  <% end %>
   <% target.targets.order('id').each do |sub_target| %>
       <% target_count+=1 %>
       <% child_day_array<<target.id %>
@@ -71,11 +71,12 @@
 	      	<%= edit_delete(sub_target,0,true)%>
 	      </div>
 	      <div class="target_line_days day_<%= target.id %>">
-			        
+
 							<% days.times do |d|%>
-							   <span class="calenday <%=day_checked(sub_target.id,d+1)  %>" day="<%=d+1%>" target="<%=sub_target.id%>"></span>
+                 <% state = day_state(sub_target.id,d+1) %>
+							   <span class="calenday" state="<%= state %>" day="<%=d+1%>" target="<%=sub_target.id%>"></span>
 							<% end %>
-			
+
 				</div>
       </div>
   <% end %>

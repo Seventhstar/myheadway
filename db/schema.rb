@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713071036) do
+ActiveRecord::Schema.define(version: 20160802062626) do
 
   create_table "attentions", force: :cascade do |t|
     t.string   "name"
@@ -133,6 +133,8 @@ ActiveRecord::Schema.define(version: 20160713071036) do
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "state"
+    t.integer  "value"
   end
 
   create_table "target_groups", force: :cascade do |t|
