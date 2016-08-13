@@ -77,8 +77,8 @@ module ApplicationHelper
     if params[:tag] == 'span'
       all_icons['edit'] = content_tag :span, "", {class: 'icon icon_edit', item_id: element.id} if !element.nil?
       all_icons['delete'] = content_tag( :span,"",{class: ['icon icon_remove',dilable_cls,' ',params[:add_cls]].join, item_id: params[:subcount]>0 ? '' : element.id}) if !element.nil?
-      icons = icons - ['edit','delete','show']
-      icons.each do |i|
+      add_icons = icons - ['edit','delete','show']
+      add_icons.each do |i|
         all_icons[i] = content_tag :span, "", {class: 'icon icon_'+i}
       end
 
@@ -88,6 +88,7 @@ module ApplicationHelper
       all_icons['delete'] = link_to "", element, method: :delete, data: { confirm: 'Действительно удалить?' }, class: "icon icon_remove " + params[:class] if params[:subcount]==0
       all_icons['delete'] = content_tag(:span,"",{class: 'icon icon_remove_disabled'}) if params[:subcount]>0
     end
+
     content_tag content,{:class=>["edit_delete",' ',params[:content_class]].join} do
       icons.collect{ |i| all_icons[i] }.join.html_safe
     end
