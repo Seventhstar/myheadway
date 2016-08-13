@@ -46,8 +46,10 @@ ru:
   Tgroup: "Группу"
   reached: Достигнута
   description: 'Описание'
-  src_url: 'Источник:'
-  img_url: 'Картинка:'
+  annotation: 'Описание'
+  order: 'Порядок'
+  src_url: 'Источник'
+  img_url: 'Картинка'
 
   author_id: "Автор"
   book_id: "Книга"
@@ -69,9 +71,12 @@ ru:
   tags: "Метки:"
   tip: "Совет"
 
-  New Author: "Добавить автора"
+  new_DocType: "Новый вид док."
+  new_AttnCat: "Новая категория"
+  new_Author: "Новый автор"
   New Target: "Новая цель"
-  New Tag: "Новая метка"
+  new_Tgroup: "Новая закладка"
+  new_Tag: "Новая метка"
   New Feeling: "Добавить ощущение"
   New feeling: "Новое ощущение"
   New statement: "Новое высказывание"
@@ -89,6 +94,11 @@ ru:
   Editing denial: "Редактирование отказа"
   Editing Tgroup: "Редактирование группы целей"
 
+  list_DocType: "Список видов документации:"
+  list_AttnCat: "Список категорий"
+  list_Tgroup: "Список закладок"
+  list_Author: "Список авторов"
+  list_Tag: "Список меток"
   list_Book: "Список книг"
   Listing feelings: "Список ощущений"
   Listing books: "Список книг"

@@ -11,9 +11,9 @@ label.inp_btn_label .inp_btn { position: absolute; top: -2px; left: 0; }
 
 .btn-reset {margin-left: 10px;}
 
-#itemAdd_form { margin-bottom: 20px; }
-#itemAdd_form label { width: 120px; }
-#itemAdd_form input { width: 400px; margin-right: 10px; }
+#itemAdd_form {  height: 28px;}
+#itemAdd_form .input-group-addon { width: 150px;     font-weight: 500; }
+#itemAdd_form input { width: 440px; margin-right: 10px;     display: table-cell;}
 
 .datepicker { background: asset-url('ico-date.png') 97% 3px no-repeat; cursor: pointer;}
 
@@ -43,3 +43,27 @@ span.icon_cancel{background: url('cancel.png') no-repeat;}
 }
 
 .switcher_a .handle.active { left: 27px; background: #fff; border: 1px solid #ccc; }
+
+.input-group {
+    display: inline-table;
+    vertical-align: middle;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    // text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: auto;
+    display: table-cell;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+        border-right: 0;
+       // display: inline-block;
+       // vertical-align: middle;
+}

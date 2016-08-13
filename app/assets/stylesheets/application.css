@@ -8,15 +8,13 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+
  *= require_tree .
  *= require_self
- *= require jquery-ui
- *= require jquery-ui/core
- *= require jquery-ui/theme
  *= require chosen
  */
 
-html, body { height: 100%; margin: 0;padding: 0;font: normal 13px 'Pragmatica', sans-serif; }
+html, body { height: 100%; margin: 0;padding: 0;font: normal 13px sans-serif; }
 
 ::-webkit-scrollbar { width: 8px; background: #f5f5f5;}
 ::-webkit-scrollbar-thumb {
@@ -133,5 +131,43 @@ border-bottom-right-radius: 0;
 border-right: 0;
 }
 
+.panel {
+  display: block;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
 
 
+.panel-default { border-color: #ddd; }
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+}
+
+.sep_1 {height: 10px; }
+.sep_05 {height: 2px; }
+.sep_15 {height: 15px; }
+.sep_2 {height: 20px; }
+.sep_3 {height: 30px; }
+.sep_4 {height: 40px; }
+.sep_5 {height: 50px; }
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}

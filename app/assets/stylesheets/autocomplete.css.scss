@@ -1,0 +1,41 @@
+.ui-widget {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1.1em;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: default;
+}
+.ui-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    outline: none;
+}
+.ui-front {
+    z-index: 100;
+}
+.ui-widget-content {
+    border: 1px solid #aaaaaa/*{borderColorContent}*/;
+    background: #ffffff/*{bgColorContent}*/ url(/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-39ab7ccd9f4e82579da78a9241265df288d8eb65dbbd7cf48aed2d0129887df5.png)/*{bgImgUrlContent}*/ 50%/*{bgContentXPos}*/ 50%/*{bgContentYPos}*/ repeat-x/*{bgContentRepeat}*/;
+    color: #222222/*{fcContent}*/;
+}
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+    font-size: 1.1em/*{fsDefault}*/;
+}
+
+.ui-menu .ui-menu-item {
+    position: relative;
+    margin: 0;
+    padding: 3px 1em 3px .4em;
+    cursor: pointer;
+    min-height: 0;
+    list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+
+.ui-menu .ui-state-focus{color: white;background:#93c0e6;}

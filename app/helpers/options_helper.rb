@@ -12,7 +12,7 @@ module OptionsHelper
     #p "lnk",lnk,url
     content_tag :li, {:class =>css_class } do
 
-      link_to title, lnk,{:class =>"list-group-item #{css_class}", :controller => page}
+      link_to title, lnk,{:class =>"list-group-item", :controller => page}
     end
   end
 
@@ -22,6 +22,10 @@ module OptionsHelper
     case @page
     when 'books','authors','tags'
       0
+    when 'attn_cats'
+      2
+    when 'doc_types'
+      3
     else
       1
     end
