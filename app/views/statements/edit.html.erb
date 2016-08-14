@@ -1,3 +1,9 @@
-<h1><%= t("Editing statement")%></h1>
+
+<div class="hl"><%= t("Editing statement")%>
+<%= tool_icons(@statement,{icons: 'delete', class: 'right'}) %>
+</div>
+
+
+
 
 <%= render 'form' %>
