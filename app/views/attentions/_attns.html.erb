@@ -8,13 +8,16 @@
   <% end %>
  <div class="attn_boby">
 
-  <div class="attn_img_box left"><%= image_tag attention.image, class: "img_attn" %></div>
+  <div class="attn_img_box left">
+  <div class="attn_cats acat<%= attention.object.try(:id) %>"><%= attention.object.try(:name) %></div>
+  <%= image_tag attention.image, class: "img_attn" %>
+  </div>
   <div class="col-80">
     <div class="attn_head left fullwidth">
       <span><%= attention.author.try(:name) %></span>
       <span><%= attention.name %></span>
       <div class="statement_edit_menu">
-        
+
         <%= link_to image_tag('link.png'), attention.src_url, :target => "_blank" %>
         <%= tool_icons(attention,{content_tag: :span})%>
       </div>

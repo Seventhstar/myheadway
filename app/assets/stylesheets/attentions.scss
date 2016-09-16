@@ -16,5 +16,17 @@ td.img_attn { width: 102px;}
 
 
 .attn_boby {display: block; overflow: hidden; margin-bottom: 20px}
-.attn_img_box{width: 15%; margin-right: 20px; display: flex; align-items: center; justify-content: center}
+.attn_img_box{width: 15%; margin-right: 20px; display: flex; align-items: center; justify-content: center; display: table;}
 .attn_head{ background-color: #93c0e6; margin-bottom: 10px; padding: 5px 10px; border-radius: 4px; color: white;}
+
+.attn_cats { background-color: #93c0e6; margin-bottom: 10px; padding: 5px 10px; border-radius: 4px; color: white; min-height: 27px;}
+
+.acat1{ background-color: #e6e2d9; color: #a56400;} // книги #ccc9b0
+.acat2 {background-color: #f7f5c4; color: #ec1919;}
+.acat3 {background-color: #409a6d;}
+.acat4 {background-color: #e88b3b;}
+.acat5 {background-color: #3d75af;}
+.acat6 {background-color: #3e983e;}
+.acat7 {background-color: #722673;}  //с#
+.acat8 {background-color: #999a97;}  // arduino
+.acat9 {background-color: #bbb89c;}
