@@ -6,14 +6,14 @@
       <% cur_date = attention.created_at.try('strftime',"%d.%m.%Y") %>
       <h5> <%= cur_date %> </h5>
   <% end %>
- <div class="attn_boby">
+ <div class="attn">
 
   <div class="attn_img_box left">
   <div class="attn_cats acat<%= attention.object.try(:id) %>"><%= attention.object.try(:name) %></div>
-  <%= image_tag attention.image, class: "img_attn" %>
+  <div class="imgc"> <%= image_tag attention.image, class: "img_attn" %></div>
   </div>
-  <div class="col-80">
-    <div class="attn_head left fullwidth">
+  <div class="attn_body">
+    <div class="attn_head">
       <span><%= attention.author.try(:name) %></span>
       <span><%= attention.name %></span>
       <div class="statement_edit_menu">
@@ -23,9 +23,11 @@
       </div>
     </div>
     <div class="attn_desc">
-        <%= raw CheckShortContent(attention.description,attention.id,310) %>
+        <%= raw CheckShortContent(attention.description,attention.id,510) %>
     </div>
   </div>
  </div>
 
 <% end %>
+
+

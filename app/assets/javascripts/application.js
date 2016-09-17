@@ -107,7 +107,7 @@ $(document).ready(function(){
 
   $('.flash').fadeOut(3000);
 
-  $('.col-70').on('click','.toggleButton',function(){
+  $('.col-70,.col-30').on('click','.toggleButton',function(){
     id = $(this).attr('id');
     id = id.substring(4);
 

@@ -15,9 +15,11 @@ td.img_attn { width: 102px;}
 #attn_form .field label {display: block;}
 
 
-.attn_boby {display: block; overflow: hidden; margin-bottom: 20px}
-.attn_img_box{width: 15%; margin-right: 20px; display: flex; align-items: center; justify-content: center; display: table;}
-.attn_head{ background-color: #93c0e6; margin-bottom: 10px; padding: 5px 10px; border-radius: 4px; color: white;}
+.attn {display: block; overflow: hidden; margin-bottom: 20px}
+.attn_body { margin-left: 145px; }
+.imgc { text-align: center;}
+.attn_img_box{width: 16%; margin-right: 15px; display: flex; align-items: center; justify-content: center; display: table;}
+.attn_head{ background-color: #93c0e6; margin-bottom: 10px; padding: 5px 10px; border-radius: 4px; color: white; height: 27px;}
 
 .attn_cats { background-color: #93c0e6; margin-bottom: 10px; padding: 5px 10px; border-radius: 4px; color: white; min-height: 27px;}
 

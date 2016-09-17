@@ -8,9 +8,9 @@
   		<% text_field :statement_id, statement.id, :size => 1, :value => statement.id %>
   		<% link_to image_tag('right.png'), "statements/".concat((statement.id+1).to_s) %>
     </div><br />
-	<div class="statement_content"><p><%= raw CheckShortContent(RedCloth.new(statement.content).to_html,statement.id) %></p></div>
+	<div class="statement_content"><%= raw CheckShortContent(RedCloth.new(statement.content).to_html,statement.id) %></div>
 	<div class="statement_footer">
-  <div class="statement_author"><b>Автор: </b><%= statement.author_name %><br />
+  <div class="statement_author col-80"><b>Автор: </b><%= statement.author_name %><br />
       <% if statement.theme? %>
 		    <b>Тема:</b><%= statement.theme %>
 		  <% end %> 
