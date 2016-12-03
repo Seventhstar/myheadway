@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802062626) do
+ActiveRecord::Schema.define(version: 20161203064132) do
 
   create_table "attentions", force: :cascade do |t|
     t.string   "name"
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 20160802062626) do
   end
 
   create_table "authors", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "books", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,10 +58,10 @@ ActiveRecord::Schema.define(version: 20160802062626) do
   end
 
   create_table "denials", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.date     "start_date"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "start_date"
   end
 
   create_table "doc_types", force: :cascade do |t|
@@ -93,8 +93,14 @@ ActiveRecord::Schema.define(version: 20160802062626) do
     t.boolean  "actual"
   end
 
+  create_table "priorities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "search_suggestions", force: :cascade do |t|
-    t.string   "term",       limit: 255
+    t.string   "term"
     t.integer  "author"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -102,12 +108,12 @@ ActiveRecord::Schema.define(version: 20160802062626) do
 
   create_table "statements", force: :cascade do |t|
     t.integer  "author_id"
-    t.string   "source",     limit: 255
-    t.string   "theme",      limit: 255
+    t.string   "source"
+    t.string   "theme"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.integer  "book_id"
     t.boolean  "isTip"
   end
@@ -120,7 +126,7 @@ ActiveRecord::Schema.define(version: 20160802062626) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -145,12 +151,31 @@ ActiveRecord::Schema.define(version: 20160802062626) do
   end
 
   create_table "targets", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.integer  "parent_id"
     t.integer  "user_id"
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "task_cats", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.string   "guid_1c"
+    t.integer  "task_cat_id"
+    t.integer  "priority_id"
+    t.date     "start_date"
+    t.boolean  "fixed"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "tgroups", force: :cascade do |t|
