@@ -29,7 +29,7 @@ html, body { height: 100%; margin: 0;padding: 0;font: normal 13px sans-serif; }
 .submit_cancel {margin-top: 20px; float: right;}
 
 .page-wrapper { display: flex; flex-direction: column; height: 100%; }
-.page-content{  flex: 1 0 auto;}
+.page-content{  flex: 1 0 auto; }
 .page-footer {  margin-top: 45px; border-top: 1px solid #eaeaea; min-height: 20px; flex: 0 0 auto; }
 
 .edit_delete { opacity: 1; transition: opacity 2s; }

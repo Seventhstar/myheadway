@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
-  
+   skip_before_action :verify_authenticity_token
   def new
   end
   
   def create
+    p "params",params.count,params.class, params[0],params[1],params[2]
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       if user.activated?

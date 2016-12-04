@@ -20,9 +20,17 @@ Myheadway::Application.routes.draw do
   resources :statements
   resources :authors
   resources :attn_cats
+  resources :task_cats
+  resources :tasks
+  resources :priorities
+  
+  get 'exchange1c/:model.json' => 'exchange1c#index'
+  post 'exchange1c/:model/upload' => 'exchange1c#upload'
 
   get    'options'  => 'options#edit'
+  get    'options/:options_page.json' => 'options#index'
   get    'options/:options_page'  => 'options#edit',:constraints => {:format => /(json|html)/}
+  post   'options/upload/:options_page' => 'options#upload'
   post   'options/:options_page' => 'options#create'
   delete 'options/:options_page/:id' => 'options#destroy'
   post "ajax/upd_param"

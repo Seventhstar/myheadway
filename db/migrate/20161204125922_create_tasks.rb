@@ -9,8 +9,13 @@ class CreateTasks < ActiveRecord::Migration
       t.integer :priority_id
       t.date :start_date
       t.boolean :fixed
+      t.boolean :upd_1c
 
       t.timestamps null: false
     end
+
+    add_index :tasks, :guid_1c
+    add_index :tasks, :task_cat_id
+
   end
 end

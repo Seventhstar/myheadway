@@ -1,0 +1,17 @@
+<h1>Список задач</h1>
+
+<%= form_tag tasks_path, :method => 'get', :id => "tasks_search" do %>
+
+    <div class="navsearch fullwidth">
+    <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %>
+    <div class="combobox big_combo"><%= chosen_src :attn_cat_id, TaskCat.all, params[:task_cat_id], {nil_value: 'Категория...', class: 'filter_chosen'} %></div>
+    <div class="nav-pills">
+     <%= add_new new_task_path %>
+     <%= only_actual_btn %>
+    </div>
+    </div>
+<% end %>
+
+  <br/>
+
+  <div id="tasks"><%= render 'tasks' %></div>

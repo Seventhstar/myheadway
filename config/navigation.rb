@@ -51,6 +51,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     #primary.item :key_1, 'name', url, options
     primary.item :key0, 'Цели', '/targets'
+    primary.item :tasks, 'Задачи', '/tasks'
     li_class = request.url==root_url ? "selected active" : ""
     primary.item :key1, 'Высказывания', '/statements', html: {class: li_class} do |sub_nav|
      # sub_nav.item :key1_1, 'Высказывания', '/statements'

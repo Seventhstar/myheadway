@@ -26,6 +26,8 @@ module OptionsHelper
       2
     when 'doc_types'
       3
+    when 'task_cats', 'priorities'
+      4
     else
       1
     end

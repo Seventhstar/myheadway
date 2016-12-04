@@ -1,10 +1,13 @@
 class OptionsController < ApplicationController
-# before_action :logged_in_user
+  before_action :logged_in_user
  include OptionsHelper
   
   def index
     @items = option_model.order(:id)
     @item = option_model.new
+
+    render json: @items
+    
   end
 
   def create

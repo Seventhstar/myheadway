@@ -1,0 +1,62 @@
+// Place all the styles related to the Task controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+._task {
+    margin-bottom: 4px;
+    transition: box-shadow 0.3s linear 0s, -webkit-transform 0.3s linear 0s;
+    transition: box-shadow 0.3s linear 0s, transform 0.3s linear 0s;
+    transition: box-shadow 0.3s linear 0s, transform 0.3s linear 0s, -webkit-transform 0.3s linear 0s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    font-family: OpenSans, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.33;
+
+}
+
+._task:hover {
+    box-shadow: 0 1px 15px rgba(0,0,0,0.2);
+}
+
+.task-item {
+    position: relative;
+    display: block;
+    height: 50px;
+    padding: 13px 15px 13px 20px;
+    cursor: pointer;
+    color: #333;
+    border-bottom: none;
+    border-radius: 2px;
+    background-color: #fff;
+        background-color: #FaFaFF;
+    font-size: 14px;
+}
+
+.task_head{
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333;
+    display: inline-block;
+    width: 795px;
+    margin-left: 10px;
+}
+
+.task-cat {
+	width: 16px;
+	height: 16px;
+	//border: 1px solid black;
+	display: inline-block;
+	background: url(cat.png);
+}
+
+.task-cat17 { background-position: -320px; }
+.task-cat15 { background-position: -272px; }
+.task-cat13 { background-position: -288px; }
+.task-cat12 { background-position: -192px; }
+.task-cat10 { background-position: -208px; }
+
+.task-cat9 { background-position: -160px; }
+.task-cat6 { background-position: -128px; }
+.task-cat4 { background-position: -96px; }
+.task-cat3 { background-position: -80px; }
+.task-cat2 { background-position: -64px; }

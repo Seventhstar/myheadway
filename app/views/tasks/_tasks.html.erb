@@ -1,0 +1,25 @@
+<% cur_date = "" %>
+
+
+<% @tasks.each do |t| %>
+  <% if cur_date != t.start_date.try('strftime',"%d.%m.%Y") %>
+      <% cur_date = t.start_date.try('strftime',"%d.%m.%Y") %>
+      <h5> <%= cur_date %> </h5>
+  <% end %>
+ <div class="_task">
+  <div class="task-item">
+    <div class="task-cat task-cat<%= t.task_cat.try(:code1c).to_i %>" alt="<%= t.task_cat.try(:name) %>"></div>
+
+      <div class="task_head">
+        <span><%= t.name %></span>
+        <div class="statement_edit_menu">
+          <%= tool_icons(t,{content_tag: :span})%>
+        </div>
+      </div>
+    </div>
+
+ </div>
+
+<% end %>
+
+
