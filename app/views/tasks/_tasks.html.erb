@@ -1,10 +1,14 @@
+
+
+<div class="col-80 right">
+
 <% cur_date = "" %>
 
 
 <% @tasks.each do |t| %>
   <% if cur_date != t.start_date.try('strftime',"%d.%m.%Y") %>
       <% cur_date = t.start_date.try('strftime',"%d.%m.%Y") %>
-      <h5> <%= cur_date %> </h5>
+      <h4> <%= cur_date %> </h4>
   <% end %>
  <div class="_task">
   <div class="task-item">
@@ -21,5 +25,6 @@
  </div>
 
 <% end %>
-
+</div>
+<div class="clear"></div>
 
