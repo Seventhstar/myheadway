@@ -45,6 +45,15 @@ var delay = (function(){
 
 $(document).ready(function(){
 
+  $( document ).ajaxStop(function() {
+    NProgress.done();
+    $('.datepicker').datetimepicker({step:5});
+  });
+
+  $('.datepicker').datetimepicker({step:5});
+
+
+
   $('.switcher_a').each(function(){
         var switcher = $(this);
         var link = $(this).find('.link_a');

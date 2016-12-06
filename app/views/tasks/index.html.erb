@@ -1,5 +1,21 @@
 <h1>Список задач</h1>
 
+<%= form_for(@task) do |f| %>
+<div class="itemAdd_form">
+  <div class="caption">Новая задача:</div>
+  <div class="field left w260"><%= f.text_field :name, :class => 'txt' %></div>
+  <div class="field left w130">
+  <%= f.text_field :start_date,:value => Date.today.try('strftime',"%d.%m.%Y %H:%M"), label: false, class: "txt datepicker" %>
+  </div>
+    <div class="inp_ch_head">
+  </div>
+  <div class="field left" style="width: 220px;"><%= chosen_src :attn_cat_id, TaskCat.all, params[:task_cat_id], {nil_value: 'Категория...', class: 'filter_chosen'} %>
+  </div>
+  <span class="sub btn btn-min2 btn-success left" id="btn-send"> Добавить</span>
+
+<% end %>
+
+
 <%= form_tag tasks_path, :method => 'get', :id => "tasks_search" do %>
 
     <div class="navsearch fullwidth">

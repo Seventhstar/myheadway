@@ -3,6 +3,7 @@ class TasksController < ApplicationController
 	before_action :set_task, only: [:show, :edit, :update, :destroy]
 
 	def index
+    @task = Task.new
     v = params[:v] || 1
 
     case v
@@ -14,6 +15,11 @@ class TasksController < ApplicationController
 		  @tasks = Task.order(:start_date)
     end
 	end
+
+  def new
+
+    @task = Task.new
+  end
 
 
   def edit
