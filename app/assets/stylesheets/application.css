@@ -23,7 +23,6 @@ html, body { height: 100%; margin: 0;padding: 0;font: normal 13px sans-serif; }
     border:1px solid #ccc;
 }
 
-
 .container{ width: 1260px !important; }
 .chosen-container {width: 100%;}
 .submit_cancel {margin-top: 20px; float: right;}

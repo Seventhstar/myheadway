@@ -1,49 +1,41 @@
 <h1>Список задач</h1>
 
-<%= form_for(@task) do |f| %>
-<div class="itemAdd_form">
-  <div class="caption">Новая задача:</div>
-  <div class="field left w260"><%= f.text_field :name, :class => 'txt' %></div>
-  <div class="field left w130">
-  <%= f.text_field :start_date,:value => Date.today.try('strftime',"%d.%m.%Y %H:%M"), label: false, class: "txt datepicker" %>
-  </div>
-    <div class="inp_ch_head">
-  </div>
-  <div class="field left" style="width: 220px;"><%= chosen_src :attn_cat_id, TaskCat.all, params[:task_cat_id], {nil_value: 'Категория...', class: 'filter_chosen'} %>
-  </div>
-  <span class="sub btn btn-min2 btn-success left" id="btn-send"> Добавить</span>
-
-<% end %>
-
-
-<%= form_tag tasks_path, :method => 'get', :id => "tasks_search" do %>
-
-    <div class="navsearch fullwidth">
-    <%= text_field_tag :search, params[:search], :class => "search_area", :placeholder=>"Поиск по содержимому..." %>
-    <div class="combobox big_combo"><%= chosen_src :attn_cat_id, TaskCat.all, params[:task_cat_id], {nil_value: 'Категория...', class: 'filter_chosen'} %></div>
-    <div class="nav-pills">
-     <%= add_new new_task_path %>
-     <%= only_actual_btn %>
-    </div>
-    </div>
-<% end %>
-
-  <br/>
-
 <div class="col-20">
-
 <div class="options-menu">
-<div class="col-menu">
-<ul class="accordion" active="0">
-  <ul class="sub-menu" style="display: block;">
-        <li class="active"><a class="list-group-item" href="#">Сегодня/завтра</a></li>
-        <li class=""><a class="list-group-item" href="#">Неделя</a></li>
-        <li class=""><a class="list-group-item" href="#">Просроченные</a></li>
-  </ul>
+  <div class="col-menu">
+  <ul class="accordion" active="0">
+      <li id="one3" class="files">
+      <a href="#" class="active">Высказывания:</a>
+      <ul class="sub-menu" style="display: block;">
+          <li class="active"><a class="list-group-item" href="#">Сегодня/завтра</a></li>
+          <li class=""><a class="list-group-item" href="#">Неделя</a></li>
+          <li class=""><a class="list-group-item" href="#">Просроченные</a></li>
+      </ul>
+      </li>
+    </div>
+    </ul>
   </div>
-  </ul>
 </div>
 
-</div>
+<div class="col-80">
+<%= form_for(@task) do |t| %>
+<div id="itemAdd_form" class="inline">
 
-<div id="tasks"><%= render 'tasks' %></div>
+  <div class="input-group left">
+    <div class="input-group-addon">Новая задача:</div>
+    <div class="txt"><%= t.text_field :name, :class => 'txt' %></div>
+  </div>
+  <div class="field left w100 input-group">
+  <%= t.text_field :start_date,:value => Date.today.try('strftime',"%d.%m.%Y"), label: false, class: "txt datepicker" %>
+  </div>
+  <div class="field left" style="width: 186px;"><%= chosen_src "task[task_cat_id]", TaskCat.all, params[:task_cat_id], {nil_value: 'Категория...', class: 'filter_chosen'} %>
+  </div>
+
+  <span class="sub btn btn-min btn-success right" id="btn-send"> Добавить</span>
+</div>
+<% end %>
+
+<div id="tasks">
+<%= render 'tasks' %>
+</div>
+</div>

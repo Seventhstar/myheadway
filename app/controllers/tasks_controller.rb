@@ -26,6 +26,24 @@ class TasksController < ApplicationController
 
   end
 
+
+  # POST /books
+  # POST /books.json
+  def create
+    @task = Task.new(task_params)
+
+    respond_to do |format|
+      if @task.save
+        # format.html { redirect_to tasks_url, notice: 'Book was successfully created.' }
+        # format.json { render :index, status: :created, location: @task }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # PATCH/PUT /goals/1
   # PATCH/PUT /goals/1.json
   def update
@@ -46,7 +64,6 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
   end
@@ -59,7 +76,7 @@ private
     end
 
     def task_params
-      params.require(:task).permit(:name, :description, :user_id, :fixed, :start_date, :tasl, :priority_id)
+      params.require(:task).permit(:name, :description, :user_id, :fixed, :start_date, :tasl, :priority_id, :task_cat_id)
     end
 
 end

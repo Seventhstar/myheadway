@@ -42,16 +42,48 @@ var delay = (function(){
   };
 })();
 
+var showNotifications = function(){ 
+  var time = 5000;
+  $nt = $(".alert"); 
+  if ($nt.hasClass('flash_success')){ time = 2000; }
+  setTimeout(function() {
+    $nt.removeClass("in"); 
+    setTimeout("$nt.addClass('out')",1000);
+  }, time);
+}
+
+
 
 $(document).ready(function(){
 
   $( document ).ajaxStop(function() {
     NProgress.done();
-    $('.datepicker').datetimepicker({step:5});
+//    $('.datepicker').datetimepicker({step:5});
   });
 
-  $('.datepicker').datetimepicker({step:5});
+//  $('.datepicker').datetimepicker({step:5});
 
+
+  $(document).on('click','#itemAdd_form #btn-send1',function(e) {
+    var valuesToSubmit = $('form').serialize();
+    var values = $('form').serialize();
+    var url = $('form').attr('action');
+    var empty_name = false;
+    each(q2ajx(values), function(i, a) {
+      if (i.indexOf("[name]") >0  && a=="" ) { empty_name = true; return false; }
+    });
+
+    if (!empty_name){
+      $.ajax({
+          type: "POST",
+          url: url, //sumbits it to the given url of the form
+          data: valuesToSubmit,
+          dataType: 'JSON',
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          success: function(){$.get(url, null, null, "script"); $('input[name*=name]').val('');}
+      });
+    }
+  });
 
 
   $('.switcher_a').each(function(){

@@ -14,7 +14,7 @@
 @setLoc = (loc) ->
   navPrefix = ''
   curLoc = fixEncode(loc)
-  
+
   l = (location.toString().match(/#(.*)/) or {})[1] or ''
   if !l
     l = (location.pathname or '') + (location.search or '')
@@ -43,7 +43,7 @@
     return
 
   for key of qa
-    if qa[key] == null or qa[key] == undefined or qa[key]=='' or key == 'utf8' or isFunction(qa[key])
+    if qa[key] == null or qa[key] == undefined or qa[key]=='' or key == 'utf8' or key == 'authenticity_token' or key == '_' or isFunction(qa[key])
       continue
     if isArray(qa[key])
       i = 0
@@ -88,7 +88,7 @@
       else
         query[dec(t[0])] = v
     return
-  query  
+  query
 
 
 @each = (object, callback) ->
@@ -112,6 +112,6 @@
 isObject = (obj) ->
   Object::toString.call(obj) == '[object Object]' and !(browser.msie8 and obj and obj.item != 'undefined' and obj.namedItem != 'undefined')
 isFunction = (obj) ->
-  Object::toString.call(obj) == '[object Function]'  
+  Object::toString.call(obj) == '[object Function]'
 isArray = (obj) ->
   Object::toString.call(obj) == '[object Array]'

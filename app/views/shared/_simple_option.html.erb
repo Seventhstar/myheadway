@@ -16,7 +16,7 @@
 
 <div class="panel panel-default">
 <div class="panel-heading table-heading"><%= t("list_"+@item.class.name) %></div>
-<table class="table table-striped" model="<%= @item.class.name %>">
+<table class="table table-striped" model="<%= @item.class.name %>" action="<%= @item.class.name.underscore.pluralize %>">
   <thead>
   <% attrs.each do |attr| %>
     <% if attr_boolean?(@item,attr[0]) %>
@@ -35,8 +35,8 @@
         <% attrs.each do |attr| %>
           <% if attr_boolean?(@item,attr[0]) %>
             <td class="state"><span class="check_img sw_check <%= item[attr[0]] ? "checked" :"" %>" item_id="<%= item.id %>" chk="<%= attr[0] %>"></span>
-            </td> 
-          <% elsif attr[0]=='id' %>  
+            </td>
+          <% elsif attr[0]=='id' %>
             <td class="col_id"><%= item.id %></td>
           <% else %>
             <td><%= item[attr[0]].to_s %></td>

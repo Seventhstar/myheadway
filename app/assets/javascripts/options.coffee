@@ -23,7 +23,7 @@ $(document).ready ->
     else
       $(this).addClass 'checked'
       checked = true
-      
+
     item_id = $(this).attr('item_id')
     chk = $(this).attr('chk')
     if !chk
@@ -78,7 +78,7 @@ $(document).ready ->
         $.get url, null, null, 'script'
         show_ajax_message 'Успешно добавлено'
         return
-      error: (evt, xhr, status, error) ->      
+      error: (evt, xhr, status, error) ->
         errors = evt.responseText
         #alert(typeof(errors))
         show_ajax_message(errors,'error')
@@ -86,10 +86,13 @@ $(document).ready ->
     return
 
   # запись нового элемента простого справочника
-  $(document).on 'click', '.option_list #btn-send', (e) ->
+  $(document).on 'click', '#itemAdd_form #btn-send', (e) ->
     valuesToSubmit = $('form').serialize()
     values = $('form').serialize()
-    url = '/options'+$('form').attr('action')+'?_=1'
+    if document.URL.search('options') >0
+      url = '/options'+$('form').attr('action')+'?_=1'
+    else
+      url = $('form').attr('action')+'?_=1'
     empty_name = false
     #alert values
     each q2ajx(values), (i, a) ->
@@ -118,14 +121,16 @@ $(document).ready ->
   # удаляем элемент справочника
   $(document).on 'click', ' span.icon_remove', ->
       item_id = $(this).attr('item_id')
-      url = document.URL.replace('#', '') #$('form').attr('action')
-      attr_url = $(this).parents('table').attr('action') 
+      # url = document.URL.replace('#', '') #$('form').attr('action')
+      url = document.URL.split('?')[0]
+       # url = url[url.length-1]
+      attr_url = $(this).parents('table').attr('action')
       if attr_url!=undefined
         del_url = '/'+attr_url + '/' + item_id
       else
         del_url = url + '/' + item_id
-      if url.indexOf('edit')<1 && url.indexOf('options')<1 then url = url + '/edit'
-     # url = url.replace('options/','')  
+      if url.indexOf('edit')<1 && url.indexOf('options')<1 && url.indexOf('tasks')<1 then url = url + '/edit'
+     # url = url.replace('options/','')
       del = confirm('Действительно удалить?')
       if !del
         return

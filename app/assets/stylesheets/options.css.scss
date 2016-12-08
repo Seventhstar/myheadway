@@ -11,11 +11,9 @@ label.inp_btn_label .inp_btn { position: absolute; top: -2px; left: 0; }
 
 .btn-reset {margin-left: 10px;}
 
-#itemAdd_form {  height: 28px;}
-#itemAdd_form .input-group-addon { width: 150px;     font-weight: 500; }
-#itemAdd_form input { width: 440px; margin-right: 10px;     display: table-cell;}
 
-.datepicker { background: asset-url('ico-date.png') 97% 3px no-repeat; cursor: pointer;}
+
+.datepicker { background: asset-url('ico-date.png') 95% 4px no-repeat; cursor: pointer;}
 
 span.icon { width: 16px;  height: 16px; display: inline-block; vertical-align:middle; position:relative; }
 span.icon:hover{ cursor: pointer; }
@@ -28,7 +26,7 @@ span.icon_cancel{background: url('cancel.png') no-repeat;}
 .switcher_a .link_a { text-decoration: none; text-align: right; padding: 0 5px; min-width: 78px; }
 .switcher_a .scale {  float: right; width: 44px; height: 19px; background: #fff; border: 1px solid #dedede; border-radius: 10px; position: relative; cursor: pointer;}
 .switcher_a.toggled .scale {background: #009ddd;}
-.switcher_a .handle { 
+.switcher_a .handle {
     float: right;
     width: 17px;
     height: 17px;

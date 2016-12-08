@@ -5,7 +5,7 @@ class Exchange1cController < ApplicationController
   def index
     @items = model.order(:id)
     render json: @items
-   
+
   end
 
   def upload
@@ -22,14 +22,14 @@ class Exchange1cController < ApplicationController
   			  t.start_date =  Date.parse( d["dt"]) if !d["dt"].nil?
   			  t.upd_1c = true
   			  t.task_cat_id = TaskCat.find_by_code1c(d["cat"]).id
-  			  t.save 
+  			  t.save
   			end
   		end
 
   	else
 	  	 j_data.each do |d|
 	  	 	  tc = model.find_by_code1c( d["id"])
-	  	 	  if tc.nil? 
+	  	 	  if tc.nil?
 	  	 	  	tc = model.new
 	  	 	  	tc.code1c = d["id"]
 	  	 	  	tc.name = d["name"]
@@ -42,7 +42,7 @@ class Exchange1cController < ApplicationController
   end
 
 
-  private 
+  private
   	def model
       page = params[:model]
       page ||= "task_cats"

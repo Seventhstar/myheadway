@@ -1,10 +1,11 @@
-.ui-datepicker {background: asset-url('bg0_1.png') repeat; padding: 26px 22px 20px 22px; margin: -50px 0 0 108px; border-radius: 5px; box-shadow: 0 0 20px rgba(0,0,0,0.2); position:relative; line-height: 1; font-size: 14px;}
+#ui-datepicker-div {display: none;}
+.ui-datepicker {background: asset-url('bg0_1.png') repeat; padding: 26px 22px 20px 22px; margin: -50px 0 0 108px; border-radius: 5px; box-shadow: 0 0 20px rgba(0,0,0,0.2); position:relative; line-height: 1; font-size: 14px;border: 0;}
 .ui-datepicker:after {content: ' '; display: block; width: 27px; height: 60px; background: asset-url('m2.png') no-repeat 0 0; position:absolute; left: -27px; top: 0;}
 .ui-datepicker .ui-datepicker-header{text-align: center; position:relative; margin:0 0 18px 0; font-weight: 500;}
 
 
 .ui-datepicker .ui-datepicker-prev span,
-.ui-datepicker .ui-datepicker-next span{ font-size: 0; display: block; width: 7px; height: 12px; 
+.ui-datepicker .ui-datepicker-next span{ font-size: 0; display: block; width: 7px; height: 12px;
                                     background: asset-url('arr1.png') no-repeat; position:absolute; top: 0; cursor:pointer;}
 .ui-datepicker .ui-datepicker-prev span {background-position:-32px 0; left: 7px;}
 .ui-datepicker .ui-datepicker-next span{background-position:-41px 0; right: 7px;}

@@ -1,6 +1,7 @@
 // Place all the styles related to the Task controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 ._task {
     margin-bottom: 4px;
     transition: box-shadow 0.3s linear 0s, -webkit-transform 0.3s linear 0s;
@@ -26,8 +27,8 @@
     color: #333;
     border-bottom: none;
     border-radius: 2px;
-    background-color: #fff;
-        background-color: #FaFaFF;
+    //background-color: #fff;
+    background-color: #f9f9f9;
     font-size: 14px;
 }
 

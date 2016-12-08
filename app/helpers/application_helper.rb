@@ -65,6 +65,7 @@ module ApplicationHelper
     params ||= {}
     params[:tag] ||= 'href'
     params[:icons] ||= 'edit,delete'
+    params[:tag] = :span if params[:tag] == 'span'
     icons = params[:icons].split(',')
     params[:subcount] ||= 0
     params[:add_cls] ||= ''
@@ -74,7 +75,8 @@ module ApplicationHelper
     content = params[:content_tag]
     dilable_cls = params[:subcount]>0 ? '_disabled' : ''
 
-    if params[:tag] == 'span'
+    if params[:tag] == :span
+
       all_icons['edit'] = content_tag :span, "", {class: 'icon icon_edit', item_id: element.id} if !element.nil?
       all_icons['delete'] = content_tag( :span,"",{class: ['icon icon_remove',dilable_cls,' ',params[:add_cls]].join, item_id: params[:subcount]>0 ? '' : element.id}) if !element.nil?
       add_icons = icons - ['edit','delete','show']

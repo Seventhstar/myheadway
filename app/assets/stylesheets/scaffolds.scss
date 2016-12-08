@@ -12,11 +12,9 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
+
+
+pre { background-color: #eee; padding: 10px; font-size: 11px; }
 
 div {
   &.field, &.actions {
@@ -24,15 +22,11 @@ div {
   }
 }
 
-#notice {
-  color: green;
-}
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
+
+#notice { color: green;}
+
+.field_with_errors {  padding: 2px;  background-color: red;  display: table; }
 
 #error_explanation {
   width: 450px;

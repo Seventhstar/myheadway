@@ -1,6 +1,6 @@
 
 
-<div class="col-80 right">
+<div>
 
 <% cur_date = "" %>
 
@@ -10,14 +10,14 @@
       <% cur_date = t.start_date.try('strftime',"%d.%m.%Y") %>
       <h4> <%= cur_date %> </h4>
   <% end %>
- <div class="_task">
+ <div class="_task" class="table" model="Task">
   <div class="task-item">
     <div class="task-cat task-cat<%= t.task_cat.try(:code1c).to_i %>" alt="<%= t.task_cat.try(:name) %>"></div>
 
       <div class="task_head">
         <span><%= t.name %></span>
         <div class="statement_edit_menu">
-          <%= tool_icons(t,{content_tag: :span})%>
+          <%= tool_icons(t,{tag: :span})%>
         </div>
       </div>
     </div>
