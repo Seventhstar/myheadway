@@ -62,3 +62,8 @@
 .task-cat4 { background-position: -96px; }
 .task-cat3 { background-position: -80px; }
 .task-cat2 { background-position: -64px; }
+
+::-webkit-input-placeholder {color:#d8d8d8;}
+::-moz-placeholder          {color:#d8d8d8;}/* Firefox 19+ */
+:-moz-placeholder           {color:#d8d8d8;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#d8d8d8;}

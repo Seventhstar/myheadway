@@ -9,7 +9,7 @@
 	<div class="statement_content"><%= raw CheckShortContent(statement.content,statement.id) %></div>
 	<div class="statement_footer">
     <div class="statement_author"><b>Автор: </b><span class="st_a">
-    	<%= link_to statement.author_name, controller: 'statements', author_id: statement.author_id %></span><br/>
+    	<%= link_to statement.author_name, statements_path( author_id: statement.author_id), title: "Высказываний: "+statement.author.statements.size.to_s %></span><br/>
     	<% if statement.book_id? %>
     		<b>Книга: </b> <span class="st_a"><%= link_to statement.book_name,controller: "statements", book_id: statement.book_id %></span><br/>
     	<% end %>

@@ -57,7 +57,7 @@ h1, h3,.hl { font-size: 24px;  padding-bottom: 2px;	border-bottom: 1px solid #cc
 
 .nav { margin-bottom: 0; padding-left: 0; list-style: none;}
 .nav>li { position: relative; display: block;}
-.nav>li.selected {background-color: #616161; box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);}
+.nav>li.selected {background-color: #616161; height: 50px;}
 .nav>li.selected a { color: #f0f0f0;  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);}
 .nav>li {   position: relative;  display: block; font-size: 13px;}
 .nav>li>a { position: relative;  display: block;  }
@@ -139,14 +139,14 @@ a.btn, a.btn:hover {text-decoration: none;}
 }
 
 .btn-success { color: #fff; background-color: #5cb85c; border-color: #4cae4c;
-  box-shadow: 0 0 5px white inset;
+  // box-shadow: 0 0 5px white inset;
   // , 0 2px 0 rgba(200, 200, 200, 1);
 }
-.btn-success:hover, .subnav .btn-success:focus{ background-color: #5fcf5f; }
+.btn-success:hover, .subnav .btn-success:focus{ background-color: #5fcf5f;     box-shadow: 0 -2px 0 0 #4cae4c inset; }
 .btn-cancel { color: black; background-color: #eee; border-color: #aaa; }
 .btn-cancel:hover {background-color: #f5f5f5;}
-.btn-white{	border: 1px solid #ccc; box-shadow: 0 0 3px #ddd inset;}
-.btn-white:hover{	background-color: #eee; }
+.btn-white{	border: 1px solid #ccc; }
+.btn-white:hover{	 box-shadow: 0 -2px 0 0 #eee inset;}
 .btn-sm2 { padding: 4px 10px; line-height: 1; }
 
 .btn-min { height:26px; padding: 4px 12px; font-size: 12px; }

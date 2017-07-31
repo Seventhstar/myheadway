@@ -23,7 +23,7 @@
 
   <div class="input-group left">
     <div class="input-group-addon">Новая задача:</div>
-    <div class="txt"><%= t.text_field :name, :class => 'txt' %></div>
+    <div class="txt"><%= t.text_field :name, :class => 'txt', placeholder: 'Новая задача' %></div>
   </div>
   <div class="field left w100 input-group">
   <%= t.text_field :start_date,:value => Date.today.try('strftime',"%d.%m.%Y"), label: false, class: "txt datepicker" %>
