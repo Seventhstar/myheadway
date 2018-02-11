@@ -11,7 +11,6 @@ group :development, :test do
   gem "binding_of_caller"
 end
   
-gem 'pg'        
 # group :production do
   gem 'pg'
   gem 'rails_12factor', '0.0.2'
