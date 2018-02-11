@@ -11,10 +11,10 @@ group :development, :test do
   gem "binding_of_caller"
 end
           
-group :production do
+#group :production do
   gem 'pg'
   gem 'rails_12factor', '0.0.2'
-end
+#end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
