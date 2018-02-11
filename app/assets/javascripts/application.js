@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery-ui
-//= require jquery-ui/accordion
 //= require jquery_ujs
 //= require jquery.tokeninput
 //= require rails-timeago
