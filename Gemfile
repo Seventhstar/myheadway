@@ -5,7 +5,7 @@ ruby "2.2.4"
 gem 'rails', '~> 5'
 
 group :development, :test do
-  gem 'sqlite3'
+#  gem 'sqlite3'
   gem 'coffee-script-source', '1.8.0'
   gem "better_errors"
   gem "binding_of_caller"
