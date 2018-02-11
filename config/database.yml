@@ -31,9 +31,10 @@ test:
 
 production:
   adapter: postgresql
+  port: 5432
 #  host: 
-#  database: 
+  database: dcedsfrb69fn
   pool: 5
   timeout: 5000
-#  username: 
-#  password: 
+  username: hmdrgkpbxefjia
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
