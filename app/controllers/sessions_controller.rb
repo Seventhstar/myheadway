@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    p "params",params.count,params.class, params[0],params[1],params[2]
+    # p "params",params
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       if user.activated?
