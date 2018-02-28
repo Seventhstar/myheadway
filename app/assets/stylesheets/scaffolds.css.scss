@@ -41,9 +41,7 @@ div {  &.field, &.actions { margin-bottom: 10px;  }}
 
 .field label {width: 80px;}
 label.big_lbl{ width: 120px;}
-.field input[type='text'], #itemAdd_form input[type='text']{height: 27px;
-  // width: 80%;
-}
+.field input[type='text'], #itemAdd_form input[type='text']{ height: 27px;width: 80%; }
 #new_task input[type='text']{ width: 100%; }
 #new_task #task_name{ width: 420px; }
 

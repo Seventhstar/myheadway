@@ -17,6 +17,8 @@
 //= require rails-timeago
 //= require locales/jquery.timeago.ru.js
 //= require chosen.jquery
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .
 
 function capitalize(a) {
@@ -57,11 +59,14 @@ $(document).ready(function(){
 
   $( document ).ajaxStop(function() {
     NProgress.done();
-//    $('.datepicker').datetimepicker({step:5});
   });
 
-//  $('.datepicker').datetimepicker({step:5});
-
+  $(document).on('keyup', function(e) {
+    if (e.keyCode === 13) {
+      $('.chcreate').click();
+      $('.chcreate').trigger('click');
+    }
+  });
 
   $(document).on('click','#itemAdd_form #btn-send1',function(e) {
     var valuesToSubmit = $('form').serialize();
@@ -152,13 +157,13 @@ $(document).ready(function(){
     id = id.substring(4);
 
     $('#addon'+id).slideToggle('slow', function(){
-    	if($('#addon'+id).is(':visible')) {
-    		$('#addon'+id).attr('style','');
-    		$('#stid'+id).text(' <');
-    	}else{
-    		$('#stid'+id).text(' ...');
-    	}
-  	});
+      if($('#addon'+id).is(':visible')) {
+        $('#addon'+id).attr('style','');
+        $('#stid'+id).text(' <');
+      }else{
+        $('#stid'+id).text(' ...');
+      }
+    });
   });
 
   $("#statement_author_name").keyup(function() {
@@ -201,21 +206,21 @@ $(document).ready(function(){
      $(this).attr("state",state);
 
      $.ajax({
-	     url: "/ajax/target_days",
-	     data: {'day':day,'target':target, 'state': state, 'month': month, 'year': year },
-	     type: "POST", beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
-	   });
+       url: "/ajax/target_days",
+       data: {'day':day,'target':target, 'state': state, 'month': month, 'year': year },
+       type: "POST", beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
+     });
 
 
   });
 
   $(".notice").fadeOut(1400);
   $('span.plus').click(function(){
-  	id = $(this).attr('id').substr(5);
-  	$('#children-'+id).slideToggle('slow');
+    id = $(this).attr('id').substr(5);
+    $('#children-'+id).slideToggle('slow');
     $('.day_'+id).slideToggle('slow');
 
-  	if($('#span-'+id).hasClass('opened')) {
+    if($('#span-'+id).hasClass('opened')) {
       $('#span-'+id).removeClass('opened');
       $('#span-'+id).text('-');
     } else {

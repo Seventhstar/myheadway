@@ -6,6 +6,7 @@
   return
 
 $(document).ready ->
+
   $('.schosen').chosen(width: '99.5%')
   $('.chosen').chosen(width: '99.5%', disable_search: 'true')
   $('.chosen-select').chosen({display_selected_options: false, display_disabled_options:false})

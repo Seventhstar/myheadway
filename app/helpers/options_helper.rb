@@ -1,7 +1,7 @@
 module OptionsHelper
 
   def attr_boolean?(item,attr)
-    item.class.column_types[attr.to_s].class == ActiveRecord::Type::Boolean
+    item.class.columns_hash[attr.to_s].class == ActiveRecord::Type::Boolean
   end
 
 
