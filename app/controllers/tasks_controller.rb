@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
 
-	before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-	def index
+  def index
     @task = Task.new
     v = params[:v] || 1
 
@@ -10,11 +10,11 @@ class TasksController < ApplicationController
     when 1
       today = Date.today
 
-      @tasks = Task.where('start_date between ? and ?',today,(today+1.day)).order(:start_date)
+      @tasks = Task.where('start_date between ? and ?', today, today+7.days).order(:start_date)
     else
-		  @tasks = Task.order(:start_date)
+      @tasks = Task.order(:start_date)
     end
-	end
+  end
 
   def new
 
