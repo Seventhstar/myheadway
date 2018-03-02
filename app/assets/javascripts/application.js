@@ -65,6 +65,10 @@ $(document).ready(function(){
     if (e.keyCode === 13) {
       $('.chcreate').click();
       $('.chcreate').trigger('click');
+      if ($('#new_task') != undefined){
+        $('#btn-send').trigger('click');
+        $('#task_name').val('');
+      }
     }
   });
 

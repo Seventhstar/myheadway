@@ -1,0 +1,25 @@
+= form_for(@statement) do |f|
+  div
+    .col-80
+      = f.hidden_field :author_id
+      .field
+        label= t :author
+        = f.text_field :author_name, data: {autocomplete_source: authors_path}
+      .field
+        label= t :source
+        = f.text_field :source
+      .field
+        label= t :tags
+        = f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {multiple: true,  class: "chosen-select", include_blank: 'None', model: 'tags'})
+      .field
+        label= t :book_id
+        = f.text_field :book_name, data: {autocomplete_source: books_path}, class: "width_area"
+    .col-md-1.left
+      label.inp_btn_label
+        .inp_btn.checkbox>= f.check_box :isTip, {}, "true", "false"
+        | Совет
+  .row
+    .field
+      label= t :content
+      = f.text_area :content, class: "width_area", size: "140x10"
+    = submit_cancel statements_path

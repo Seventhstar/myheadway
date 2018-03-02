@@ -1,0 +1,7 @@
+- tasks = Task.this_week
+.statement_show.mini
+  ul.short_tasks
+    - tasks.each do |task|
+      li.short_task
+        .left =task.name
+        .right = task.start_date.try('strftime',"%d.%m.%Y")

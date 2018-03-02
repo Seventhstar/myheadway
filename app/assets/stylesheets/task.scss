@@ -44,12 +44,14 @@
 }
 
 .task-cat {
-	width: 16px;
-	height: 16px;
-	//border: 1px solid black;
-	display: inline-block;
-	background: url(cat.png);
+    width: 16px;
+    height: 16px;
+    //border: 1px solid black;
+    display: inline-block;
+    background: url(cat.png);
 }
+
+#itemAdd_form label {line-height: 25px;}
 
 .task-cat17 { background-position: -320px; }
 .task-cat15 { background-position: -272px; }
@@ -67,3 +69,6 @@
 ::-moz-placeholder          {color:#d8d8d8;}/* Firefox 19+ */
 :-moz-placeholder           {color:#d8d8d8;}/* Firefox 18- */
 :-ms-input-placeholder      {color:#d8d8d8;}
+
+ul.short_tasks {padding: 0;}
+.short_task{ list-style: none; height: 15px; margin: 5px 0;}

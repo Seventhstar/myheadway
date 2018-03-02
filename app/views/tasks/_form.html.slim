@@ -1,0 +1,26 @@
+= form_for(@task) do |f|
+  div
+   .col-80
+    .field        
+      = f.label t :name
+      = f.text_field :name
+    .field
+      = f.label t :description
+      = f.text_area :description, class: "width_area", size: "140x10"
+    .field.left
+      label.left for="start_date"
+        =t :start_date 
+      .inp_dt.left = f.text_field :start_date,value: @task.start_date.try('strftime',"%d.%m.%Y %H:%M"), label: false, class: "txt datepicker"
+      .inp_w.left
+        .left
+          = chosen_src :user_id, User.all, (@task.user_id || 1)
+    
+      .inp_w.left style=("width: 120px;") 
+        = chosen_src :task_cat_id, TaskCat.all, @task
+    .field
+      .inp_ch
+        = f.check_box :fixed
+        .caption Выполнена
+    .sep_1
+    .actions
+      = f.submit 'Сохранить', :class => 'btn btn-success'
