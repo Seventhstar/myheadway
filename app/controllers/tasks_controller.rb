@@ -9,7 +9,6 @@ class TasksController < ApplicationController
     case v
     when 1
       today = Date.today
-
       @tasks = Task.where('start_date between ? and ?', today, today+7.days).order(:start_date)
     else
       @tasks = Task.order(:start_date)
