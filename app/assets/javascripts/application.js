@@ -66,8 +66,8 @@ $(document).ready(function(){
       $('.chcreate').click();
       $('.chcreate').trigger('click');
       if ($('#new_task') != undefined){
-        $('#btn-send').trigger('click');
         $('#task_name').val('');
+        $('#btn-send').trigger('click');
       }
     }
   });
