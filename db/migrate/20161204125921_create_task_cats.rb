@@ -1,4 +1,4 @@
-class CreateTaskCats < ActiveRecord::Migration
+class CreateTaskCats < ActiveRecord::Migration[5.1]
   def change
     create_table :task_cats do |t|
       t.string :name
