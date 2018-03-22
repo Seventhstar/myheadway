@@ -1,5 +1,7 @@
 Myheadway::Application.routes.draw do
 
+  get 'api/random_statement'
+
   resources :docs
   resources :doc_types
 

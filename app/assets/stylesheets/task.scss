@@ -72,3 +72,50 @@
 
 ul.short_tasks {padding: 0;}
 .short_task{ list-style: none; height: 15px; margin: 5px 0;}
+
+.short_tasks .checkbox {float: left; width: 26px;}
+
+.short_tasks li .toggle:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><rect width="50" height="50" fill="none" stroke="#ededed" stroke-width="6"/></svg>');
+}
+
+/* line 83, H:/www/railsprj/td/app/assets/stylesheets/todomvc.scss */
+.short_tasks li .toggle:checked:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="6"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+// .short_tasks li .checkbox {
+//     position: relative;
+//     width: 10px;
+//     height: 10px;
+//     border-top-width: 1px;
+//     border-right-width: 1px;
+//     border-bottom-width: 1px;
+//     border-left-width: 1px;
+//     border-top-style: solid;
+//     border-right-style: solid;
+//     border-bottom-style: solid;
+//     border-left-style: solid;
+//     border-top-color: rgb(154, 156, 160);
+//     border-right-color: rgb(154, 156, 160);
+//     border-bottom-color: rgb(154, 156, 160);
+//     border-left-color: rgb(154, 156, 160);
+//     border-top-left-radius: 2px;
+//     border-top-right-radius: 2px;
+//     border-bottom-right-radius: 2px;
+//     border-bottom-left-radius: 2px;
+//     position: absolute;
+//     left: 0px;
+//     top: 50%;
+//     margin-top: -6px;
+//     cursor: pointer;
+//     user-select: none;
+//     min-width: 12px;
+//     min-height: 12px;
+// }
+
+// .short_tasks input[type="checkbox"]{
+// position: absolute;
+//     top: 0;
+//     left: -50px;
+// }

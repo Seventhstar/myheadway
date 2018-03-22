@@ -3,5 +3,7 @@
   ul.short_tasks
     - tasks.each do |task|
       li.short_task
+        .inp_btn.checkbox
+          input.toggle type="checkbox" checked=task.fixed 
         .left =task.name
         .right = task.start_date.try('strftime',"%d.%m.%Y")

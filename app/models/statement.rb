@@ -24,6 +24,9 @@ class Statement < ActiveRecord::Base
     author.try(:name)
   end
 
+  def get_random()
+    self.order("RANDOM()").first
+  end
   
   def author_name=(name)
     self.author = Author.find_or_create_by(name: name) if name.present?

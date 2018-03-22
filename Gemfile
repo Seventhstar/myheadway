@@ -45,6 +45,7 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -66,7 +67,6 @@ gem 'will_paginate'
 gem 'rails-timeago', '~> 2.0'
 gem 'tzinfo-data'
 gem 'yaml_db'
-gem 'bcrypt'
 gem 'chosen-rails'
 gem 'coderay'
 gem 'redclothcoderay'
