@@ -22,17 +22,17 @@
 //= require_tree .
 
 function capitalize(a) {
-    newVal = '';
-    a = a.split(' ');
-    for (var c = 0; c < a.length; c++) {
-        newVal += a[c].substring(0, 1).toUpperCase() + a[c].substring(1, a[c].length)+' '
-    }
-    return newVal.substring(0, newVal.length-1)
+  newVal = '';
+  a = a.split(' ');
+  for (var c = 0; c < a.length; c++) {
+    newVal += a[c].substring(0, 1).toUpperCase() + a[c].substring(1, a[c].length)+' '
+  }
+  return newVal.substring(0, newVal.length-1)
 }
 
 function capitalize_first(a) {
-    newVal = a.substring(0, 1).toUpperCase() + a.substring(1, a.length)
-    return newVal
+  newVal = a.substring(0, 1).toUpperCase() + a.substring(1, a.length)
+  return newVal
 }
 
 var delay = (function(){
@@ -51,6 +51,17 @@ var showNotifications = function(){
     $nt.removeClass("in"); 
     setTimeout("$nt.addClass('out')",1000);
   }, time);
+}
+
+function paste() {
+  var result = '',
+  sandbox = $('#statement_image_url').val('').select();
+
+  if (document.execCommand('paste')) {
+    result = sandbox.val();
+  }
+  sandbox.val('');
+  return result;
 }
 
 
@@ -72,6 +83,17 @@ $(document).ready(function(){
     }
   });
 
+  $(document).on('click',".paste", function(e){
+    e.preventDefault();
+    $('#statement_image_url').focus()
+    pasteEvent = new ClipboardEvent('paste')
+    document.dispatchEvent(pasteEvent)
+    // paste();
+    //document.execCommand('paste');
+    // var text = e.clipboardData;
+    // alert("text:" + text);
+  });
+
   $(document).on('click','#itemAdd_form #btn-send1',function(e) {
     var valuesToSubmit = $('form').serialize();
     var values = $('form').serialize();
@@ -83,60 +105,60 @@ $(document).ready(function(){
 
     if (!empty_name){
       $.ajax({
-          type: "POST",
+        type: "POST",
           url: url, //sumbits it to the given url of the form
           data: valuesToSubmit,
           dataType: 'JSON',
           beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
           success: function(){$.get(url, null, null, "script"); $('input[name*=name]').val('');}
-      });
+        });
     }
   });
 
 
   $('.switcher_a').each(function(){
-        var switcher = $(this);
-        var link = $(this).find('.link_a');
-        var scale = $(this).find('.scale');
-        var handle = $(this).find('.handle');
-        var details = switcher.parent().find('.details');
+    var switcher = $(this);
+    var link = $(this).find('.link_a');
+    var scale = $(this).find('.scale');
+    var handle = $(this).find('.handle');
+    var details = switcher.parent().find('.details');
 
-        $(link).click(function(event){
-            switcher.toggleClass('toggled');
-            link.toggleClass('on');
-            var attr = link.hasClass('on') ? 'on' : 'off'
-            link[0].innerHTML = link.attr(attr);
-            handle.toggleClass('active');
+    $(link).click(function(event){
+      switcher.toggleClass('toggled');
+      link.toggleClass('on');
+      var attr = link.hasClass('on') ? 'on' : 'off'
+      link[0].innerHTML = link.attr(attr);
+      handle.toggleClass('active');
 
-            if(switcher.hasClass('toggled')){
-                details.slideDown(300);
+      if(switcher.hasClass('toggled')){
+        details.slideDown(300);
 
-            } else {
-                details.slideUp(300);
+      } else {
+        details.slideUp(300);
 
-            }
-            sortable_query({only_actual:link.hasClass('on')});
-            return false;
-        });
-
-        $(scale).click(function(event){
-            switcher.toggleClass('toggled');
-            link.toggleClass('on');
-            link[0].innerHTML = link.attr(link.hasClass('on') ? 'on' : 'off');
-            handle.toggleClass('active');
-
-            if(switcher.hasClass('toggled')){
-                details.slideDown(300);
-            } else {
-                details.slideUp(300);
-            }
-            sortable_query({only_actual:link.hasClass('on')});
-            return false;
-        });
-
-
-
+      }
+      sortable_query({only_actual:link.hasClass('on')});
+      return false;
     });
+
+    $(scale).click(function(event){
+      switcher.toggleClass('toggled');
+      link.toggleClass('on');
+      link[0].innerHTML = link.attr(link.hasClass('on') ? 'on' : 'off');
+      handle.toggleClass('active');
+
+      if(switcher.hasClass('toggled')){
+        details.slideDown(300);
+      } else {
+        details.slideUp(300);
+      }
+      sortable_query({only_actual:link.hasClass('on')});
+      return false;
+    });
+
+
+
+  });
 
   var accordion_head = $('.accordion > li > a'),
   accordion_body = $('.accordion li > .sub-menu');
@@ -194,29 +216,29 @@ $(document).ready(function(){
     });
 
   $('span.calenday').click(function(e){
-     var day = $(this).attr("day");
-     var state = parseInt($(this).attr("state"));
-     var target = $(this).attr("target");
-     var month = $("#current_month").val();
-     var year = $("#current_year").val();
+   var day = $(this).attr("day");
+   var state = parseInt($(this).attr("state"));
+   var target = $(this).attr("target");
+   var month = $("#current_month").val();
+   var year = $("#current_year").val();
 
-     var spkey = false;
-     if (e.shiftKey) {state = 3; spkey = true;}
-     if (e.ctrlKey) {state = 0; spkey = true;}
-     if (e.altKey) {state = 1; spkey = true; }
-     if (!state) { state = 2;}
-     else if (!spkey) {state = state+1; if (state>3) state=0;}
+   var spkey = false;
+   if (e.shiftKey) {state = 3; spkey = true;}
+   if (e.ctrlKey) {state = 0; spkey = true;}
+   if (e.altKey) {state = 1; spkey = true; }
+   if (!state) { state = 2;}
+   else if (!spkey) {state = state+1; if (state>3) state=0;}
 
-     $(this).attr("state",state);
+   $(this).attr("state",state);
 
-     $.ajax({
-       url: "/ajax/target_days",
-       data: {'day':day,'target':target, 'state': state, 'month': month, 'year': year },
-       type: "POST", beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
-     });
+   $.ajax({
+     url: "/ajax/target_days",
+     data: {'day':day,'target':target, 'state': state, 'month': month, 'year': year },
+     type: "POST", beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
+   });
 
 
-  });
+ });
 
   $(".notice").fadeOut(1400);
   $('span.plus').click(function(){

@@ -15,7 +15,8 @@ class StatementsController < ApplicationController
     books_ids   = Book.find(params[:book_id]).statements.ids if !params[:book_id].nil?
     authors_ids = Author.find(params[:author_id]).statements.ids if !params[:author_id].nil?
     tags_ids    = Tag.find(params[:tag_id]).statements.ids if !params[:tag_id].nil?
-    search_ids  = Statement.search(params[:search]).ids if !params[:search].nil?
+    s = "%#{params[:search]}%"
+    search_ids  = Statement.where('lower(content) like ?', s.downcase).ids if !params[:search].nil?
 
     ids = authors_ids & tags_ids & search_ids & all_ids & books_ids
     @statements = Statement.where('id in (?)', ids).order(id: :desc).paginate(:page => params[:page], :per_page => 5)
@@ -89,6 +90,7 @@ class StatementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def statement_params
-      params.require(:statement).permit(:author_id, :source, :theme, :content, :author_name,:author_id, :tag_tokens, :book_name, :isTip, :tag_ids=>[])
+      params.require(:statement).permit(:author_id, :source, :theme, :content, :author_name, 
+                                        :image_url, :tag_tokens, :book_name, :isTip, :tag_ids=>[])
     end
 end

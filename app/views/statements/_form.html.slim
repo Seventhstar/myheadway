@@ -6,6 +6,10 @@
         label= t :author
         = f.text_field :author_name, data: {autocomplete_source: authors_path}
       .field
+        label= t :image_url
+        = f.text_field :image_url
+        span.paste to='image_url'
+      .field
         label= t :source
         = f.text_field :source
       .field
@@ -18,6 +22,7 @@
       label.inp_btn_label
         .inp_btn.checkbox>= f.check_box :isTip, {}, "true", "false"
         | Совет
+
   .row
     .field
       label= t :content

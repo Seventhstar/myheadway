@@ -3,10 +3,10 @@
   <div class="statement_show mini">
     <div class="min_statement_head">Случайное высказываение</div>
     <div class="statement_header">
-      <% link_to image_tag('left.png'), "statements/".concat((statement.id-1).to_s) %> 
+      <%= link_to image_tag('left.png'), statement.previous %> 
       <b>#</b> <%= statement.id %>
       <% text_field :statement_id, statement.id, :size => 1, :value => statement.id %>
-      <% link_to image_tag('right.png'), "statements/".concat((statement.id+1).to_s) %>
+      <% link_to image_tag('right.png'), statement.next %>
     </div><br />
   <div class="statement_content"><%= raw CheckShortContent(RedCloth.new(statement.content).to_html,statement.id) %></div>
   <div class="statement_footer">

@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.img_attn 	{ max-width: 100px; max-height: 140px; }
+.img_attn   { max-width: 100px; max-height: 140px; }
 td.img_attn { width: 102px;}
-.att_head 	{ height: 16px;}
+.att_head   { height: 16px;}
 
 #new_attention label, .edit_attention label {width: 120px;}
 #attn_form .field input[type='text'], #attn_form .field .chosen-container, .field select
@@ -32,3 +32,12 @@ td.img_attn { width: 102px;}
 .acat7 {background-color: #722673;}  //с#
 .acat8 {background-color: #999a97;}  // arduino
 .acat9 {background-color: #bbb89c;}
+
+.paste {
+    width: 16px;
+    display: inline-block;
+    margin-left: 4px;
+    padding: 4px;
+    height: 16px;
+    background-image: image_url('paste.png');
+}

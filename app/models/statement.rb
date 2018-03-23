@@ -19,6 +19,15 @@ class Statement < ActiveRecord::Base
     self.tags.collect{ |t| t.name}.join(", ")
   end
 
+  def previous
+    Statement.where(["id < ?", id]).last
+  end
+
+  def next
+    Statement.where(["id > ?", id]).first
+  end
+
+
   def author_name
     #author.name if !author.nil?
     author.try(:name)
@@ -33,12 +42,12 @@ class Statement < ActiveRecord::Base
   end
 
 
-   def book_name
+  def book_name
     #author.name if !author.nil?
     book.try(:name)
   end
 
-   def book_name=(name)
+  def book_name=(name)
     self.book = Book.find_or_create_by(name: name) if name.present?
   end
 
@@ -46,29 +55,29 @@ class Statement < ActiveRecord::Base
     # converting newlines 
     s = self.content
     s.gsub!(/\r\n?/, "\n") 
- 
+
     # escaping HTML to entities 
     s = s.to_s.gsub('&', '&amp;').gsub('<', '&lt;').gsub('>', '&gt;') 
- 
+
     # blockquote tag support 
     s.gsub!(/\n?&lt;blockquote&gt;\n*(.+?)\n*&lt;\/blockquote&gt;/im, "<blockquote>\\1</blockquote>") 
- 
+
     # other tags: b, i, em, strong, u 
     %w(b i em strong u).each { |x|
-         s.gsub!(Regexp.new('&lt;(' + x + ')&gt;(.+?)&lt;/('+x+')&gt;',
-                 Regexp::MULTILINE|Regexp::IGNORECASE), 
-                 "<\\1>\\2</\\1>") 
-        } 
- 
+     s.gsub!(Regexp.new('&lt;(' + x + ')&gt;(.+?)&lt;/('+x+')&gt;',
+       Regexp::MULTILINE|Regexp::IGNORECASE), 
+     "<\\1>\\2</\\1>") 
+   } 
+
     # replacing newlines to <br> ans <p> tags 
     # wrapping text into paragraph 
     s = "<p>" + s.gsub(/\n\n+/, "</p>\n\n<p>").
-            gsub(/([^\n]\n)(?=[^\n])/, '\1<br />') + "</p>" 
- 
-    self.content =s      
-    end 
+    gsub(/([^\n]\n)(?=[^\n])/, '\1<br />') + "</p>" 
 
-    def self.search(search)
+    self.content =s      
+  end 
+
+  def self.search(search)
     if search
       search_str = search.upcase
       where('content LIKE ?', "%#{search_str}%")
