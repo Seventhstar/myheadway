@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '5.1.5'
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
   gem 'coffee-script-source', '1.8.0'
   gem "better_errors"
   gem "binding_of_caller"
@@ -60,8 +60,6 @@ gem 'execjs'
 #gem 'twitter-bootstrap-rails'
 
 gem 'RedCloth'
-#gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
-#gem 'simple-navigation-bootstrap'
 gem 'simple-navigation'
 gem 'will_paginate'
 gem 'rails-timeago', '~> 2.0'

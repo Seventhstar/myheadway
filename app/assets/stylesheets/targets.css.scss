@@ -1,51 +1,88 @@
-// Place all the styles related to the targets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 $corner-radius: 2px;
 
-#target_list, .target_li{ line-height: 18px; color: #0F67A1; display: block; margin: 0; text-decoration: none; position: relative; font-size: 12px; }
-.thead_group{background-color: #f7f7f7; }
-
-#target_head{ height: 24px; margin-bottom: 3px;}
-#target_list .target_li{ height: 23px;}
-// h2{text-align: center;}
-.span9 .chosen-container {width: 80%;}
-.t-item{ height: 23px;}
-
-.target_line_head{ width: 225px; height: 20px; float: left; border-bottom: 1px solid #EEE; margin: 1px 10px 0px 0px; color: #428bca;
-  &.cur_head,&:hover{ color: white; background-color: #93c0e6;}
+#target_list, .target_li{ 
+  line-height: 18px; 
+  color: #0F67A1; 
+  display: block; 
+  margin: 0; 
+  text-decoration: none; 
+  position: relative; 
+  font-size: 12px; 
 }
 
-span.plus { display: block; float: left; width: 15px;text-align: center; cursor: pointer; }
+#target_list .edit_delete{
+  // position: absolute;
+  // right: 100%;
+  // white-space: nowrap;
+  // margin: 2px 4px 0 0;
+  // font-size: 0;
+    position: relative;
+    /* right: -130px; */
+    float: right;
+    white-space: nowrap;
+    margin: 1px 2px 0 0;
+    font-size: 0;
+}
+#target_list .thead_group .edit_delete{
+  // position: absolute;
+  // right: 100%;
+  // white-space: nowrap;
+  // margin: -20px 4px 0 0;
+  // font-size: 0;
+    position: relative;
+    // right: -142px;
+    white-space: nowrap;
+    margin:  0;
+    font-size: 0;
+}
+
+.thead_group{ background-color: #f7f7f7; }
+
+#target_head{ height: 24px; margin-bottom: 3px; }
+#target_list .target_li{ height: 23px; }
+.span9 .chosen-container {width: 80%; }
+.t-item{ height: 23px; }
+
+.target_line_head{ 
+  width: 184px; 
+  height: 20px; 
+  float: left; 
+  border-bottom: 1px solid #EEE; 
+  margin: 1px 10px 0px 0px; 
+  color: #428bca;
+  &.cur_head, &:hover{ color: white; background-color: #93c0e6;}
+}
+
+span.plus { display: block; float: left; width: 18px;text-align: center; cursor: pointer; }
 
 .target_line_days{height: 23px;}
 
-.calenhead, .calenday { -moz-border-radius: $corner-radius;-webkit-border-radius: $corner-radius;-o-border-radius: $corner-radius;-ms-border-radius: $corner-radius;-khtml-border-radius: $corner-radius;
-  font-size: 0.8em; width:18px; vertical-align: center;  text-align: center; float: left; display: block; border: 1px solid #EEE;}
+.calenhead, .calenday { border-radius: $corner-radius;
+  font-size: 12px; width:18px; text-align: center; float: left; display: block; border: 1px solid #EEE;}
 
 .calenhead{
-    padding: 5px 1px 1px 1px; margin: 0px 1px 4px 0px; min-height:24px;
+    padding: 5px 1px 1px 1px; margin: 0px 1px 4px 0px; min-height:18px;
     &.overhead,&:hover{
-      background-color: #93c0e6; border-color: #428bca;color: white;
+      background-color: #93c0e6; border-color: #428bca; border-radius: $corner-radius;
       &.holyday{ border: 1px solid #ff0000; background-color: #ffaaaa;} }
 
-    &.head{ width: 225px; height: 25px; margin: 0px 10px 0px 0px; background-color: #f9f9f9;
+    &.head{ width: 180px; height: 18px; margin: 0px 10px 0px 0px; background-color: #f9f9f9;
       font-family: verdana, arial, helvetica, sans-serif; font-size: 13px;  font-weight: bold;
-      &:hover{ border: 1px solid #EEE;}
+      &:hover{ cursor: pointer;}
     }
 }
 
 .calenday{
     padding: 1px 1px 1px 1px; margin: 1px 1px 2px 0px; min-height:18px;
+    cursor: pointer;
   &:hover{ border: 1px solid #ACF; background-color: #e9f8ff;
     -webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease; }
-  &.checked{ background-image: url(check.png);-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+  &.checked{ background-image: url('check.png');-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
 }
 
 .calenday[state="1"] { background-color: #f8fde8; border: 1px solid #68ad34;}
-.calenday[state="2"] { background-color:#d3ecb5; border: 1px solid #68ad34;}
-.calenday[state="3"] { background-color: #8cc665;border: 1px solid #68ad34;}
+.calenday[state="2"] { background-color: #d3ecb5; border: 1px solid #68ad34;}
+.calenday[state="3"] { background-color: #8cc665; border: 1px solid #68ad34;}
 
 .group_day .calenday{
   border: 1px solid #ddd;
@@ -53,19 +90,18 @@ span.plus { display: block; float: left; width: 15px;text-align: center; cursor:
   }
 }
 
-.today{ color: white; border: 1px solid #428bca; background-color: #428bca; }
+.today{ color: white; border: 1px solid #04355f; background-color: #428bca; border-radius: $corner-radius;}
+.today.holyday { background-color: #F44336; border-color: #d01f1f;}
 
 .holyday { border: 1px solid #ffcccc; background-color: #ffeeee;
   &:hover{ border: 1px solid #ff0000; background-color: #ffaaaa; }}
 
-td.edit_delete, th.edit_delete{	width: 45px; padding-right: 4px !important;	padding-left: 4px !important;}
+td.edit_delete, th.edit_delete{ width: 45px; padding-right: 4px !important; padding-left: 4px !important;}
 
 
 .end_line{ float: right; width: 10px; display: block;}
 
-
-
-.target_name { width: 170px; float: left;}
+.target_name { padding: 2px 8px;}
 
 .thead_group .target_name{ color: #616161;}
 

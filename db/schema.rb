@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323021007) do
+ActiveRecord::Schema.define(version: 20200203172258) do
 
   create_table "attentions", force: :cascade do |t|
     t.string "name"
@@ -157,6 +157,7 @@ ActiveRecord::Schema.define(version: 20180323021007) do
     t.integer "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean "negative"
   end
 
   create_table "task_cats", force: :cascade do |t|

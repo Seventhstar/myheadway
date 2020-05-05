@@ -1,8 +1,8 @@
 module ApplicationHelper
-	def getRandomStatement()
-		@rand_statement = Statement.order("RANDOM()").first
-		# @rand_statement = Statement.find(95)
-	end
+  def getRandomStatement()
+    @rand_statement = Statement.order("RANDOM()").first
+    # @rand_statement = Statement.find(95)
+  end
 
   def chosen_src( id, collection, obj = nil, options = {})
     p_name    = options[:p_name].nil? ? 'name' : options[:p_name]
@@ -18,6 +18,7 @@ module ApplicationHelper
 
     is_attr = (obj.class != Fixnum && obj.class != String && !obj.nil?)
     sel = is_attr ? obj[id] : obj
+    # wjehfkj
     sel = options[:selected] if !options[:selected].nil?
       n = is_attr ? obj.model_name.singular+'['+ id.to_s+']' : id
 
@@ -47,16 +48,16 @@ module ApplicationHelper
   def edit_delete(element, subcount = 0, invisible = false)
     hidden = invisible ? "hid": ""
     content_tag :div,{:class=>"edit_delete #{hidden}"} do
-		ed = link_to image_tag('edit.png'), edit_polymorphic_path(element)
+    ed = link_to image_tag('edit.png'), edit_polymorphic_path(element)
     subcount ||= 0
-		if subcount>0
-  			de = image_tag('delete-disabled.png')
-		else
-  			de = link_to image_tag('delete.png'), element, method: :delete, data: { confirm: 'Действительно удалить?' }
-		end
+    if subcount>0
+        de = image_tag('delete-disabled.png')
+    else
+        de = link_to image_tag('delete.png'), element, method: :delete, data: { confirm: 'Действительно удалить?' }
+    end
 
-		ed + de
-	end
+    ed + de
+  end
   end
 
   def tool_icons(element,params = nil)
@@ -122,7 +123,7 @@ module ApplicationHelper
   end
 
   def link_to_del( obj)
-	link_to	@task, method: :delete, data: { confirm: 'Действительно удалить?' }, :class=>"icon icon_remove right"
+  link_to @task, method: :delete, data: { confirm: 'Действительно удалить?' }, :class=>"icon icon_remove right"
   end
 
 end

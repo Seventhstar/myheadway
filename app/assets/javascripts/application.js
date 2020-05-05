@@ -234,6 +234,7 @@ $(document).ready(function(){
    $.ajax({
      url: "/ajax/target_days",
      data: {'day':day,'target':target, 'state': state, 'month': month, 'year': year },
+     dataType: 'json',
      type: "POST", beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
    });
 

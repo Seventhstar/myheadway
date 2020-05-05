@@ -34,23 +34,24 @@ class AjaxController < ApplicationController
     render json: list
   end
 
-   def target_days
-   if params[:target]
-      target_day = TargetDay.where( :target_id => params[:target], :day => params[:day], :month => params[:month], :year => params[:year] ).first
+  def target_days
+    if params[:target]
+      find_query = {target_id: params[:target], day: params[:day], month: params[:month], year: params[:year]}
+      target_day = TargetDay.where(find_query).first
       if target_day != nil
-         # target_day.checked = params[:checked]
-          target_day.state = params[:state]
+        target_day.state = params[:state]
       else
-         target_day = TargetDay.new( :target_id => params[:target], :day => params[:day], :month => params[:month], :year => params[:year], :state => params[:state])
+        find_query[:state] = params[:state]
+        target_day = TargetDay.new(find_query)
       end
-
       target_day.save
-   end
-
-    respond_to do |format|
-      format.html { render :text => "Rescued HTML" }
-      format.js { render :action => "errors" }
+      render nothing: true, status: 200, content_type: 'text/html'
     end
+
+    # respond_to do |format|
+    #   format.html { render :text => "Rescued HTML" }
+    #   format.js { render :action => "errors" }
+    # end
   end
 
   def add_option
@@ -67,9 +68,9 @@ class AjaxController < ApplicationController
   end
 
   def upd_param
-  	if params['model'] && params['model']!='undefined'
+    if params['model'] && params['model']!='undefined'
 
-  		obj = Object.const_get(params['model']).find(params['id'])
+      obj = Object.const_get(params['model']).find(params['id'])
       params[:upd].each do |p|
         #p "p",p,obj[p[0]]
         new_value = p[1]
@@ -77,9 +78,9 @@ class AjaxController < ApplicationController
         obj[p[0]] = new_value
       end
       obj.save
-   	 end
-   	 render :nothing => true
-   	end
+     end
+     render :nothing => true
+    end
 
 
 end

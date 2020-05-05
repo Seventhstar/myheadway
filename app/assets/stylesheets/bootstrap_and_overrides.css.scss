@@ -32,21 +32,7 @@ h1, h3,.hl { font-size: 24px;  padding-bottom: 2px; border-bottom: 1px solid #cc
 
 .mt-10 {margin-top: 10px;}
 
-.row {
-  // overflow: hidden;
-  display: inline-block;
-}
-// * {
-//     -webkit-box-sizing: border-box;
-//     -moz-box-sizing: border-box;
-//     box-sizing: border-box;
-// }
-
-.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
-    content: " ";
-    display: table;
-}
-
+.row {display: inline-block; }
 
 .top-menu { margin-top: 15px;}
 .subnav { display: block; overflow:auto; }
@@ -63,22 +49,22 @@ h1, h3,.hl { font-size: 24px;  padding-bottom: 2px; border-bottom: 1px solid #cc
 .nav>li.selected a { color: #f0f0f0;  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);}
 .nav>li {   position: relative;  display: block; font-size: 13px;}
 .nav>li>a { position: relative;  display: block;  }
-.navbar .nav>li>a { padding: 16px 16px; }
+.navbar .nav>li>a { padding: 18px 16px; }
 
 .nav-pills>li { float: left;}
 .nav-pills a {border-radius: 4px;}
 .nav>li>a:hover, .nav>li>a:focus { text-decoration: none; background-color: #93c0e6; color: white;}
-.nav-pills>li+li {margin-left: 2px;}
+.nav-pills>li+li {margin-left: 4px;}
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus { color: #fff; background-color: #428bca; }
 a { color: #428bca;  text-decoration: none;}
 
-.navbar { position: relative; min-height: 51px; margin-bottom: 20px; border: 1px solid #e7e7e7; border-radius: 4px; background-color: #f8f8f8; }
+.navbar { position: relative; height: 50px; margin-bottom: 20px; border: 1px solid #e7e7e7; border-radius: 4px; background-color: #f8f8f8; }
 .navbar-nav { float: left; margin: 0; width: 92%;}
 .navbar-nav>li { float: left;}
 // .navbar .navbar-nav>li>a { padding-top: 10px; padding-bottom: 10px; line-height: 20px;}
 .navbar-nav>li.logout>a { padding-top: 13px; padding-bottom: 13px;}
-#logout a {padding-top: 13px; padding-bottom: 13px;}
-#options a  {padding-top: 13px; padding-bottom: 13px; }
+#logout a {padding-top: 13px; padding-bottom: 13px; line-height: 11px;}
+#options a  {padding-top: 13px; padding-bottom: 13px; line-height: 11px;}
 #options a:hover img  { background-image: asset-url("gear_wh.png") }
 .navbar-nav>li>a { padding-top: 15px; padding-bottom: 15px; }
 
@@ -96,6 +82,7 @@ a { color: #428bca;  text-decoration: none;}
   color: #428bca;
   padding: 3px 10px;
   height: 24px !important;
+  line-height: 22px;
   cursor: pointer;
   &:hover{ background-color: #93c0e6; color: white; }
   &.btn-success:hover{ background-color: green; }
@@ -106,10 +93,6 @@ a { color: #428bca;  text-decoration: none;}
 .subpills a+a {margin-left: 2px;}
 .subtabs{ float: right; margin-left: auto; width: 800;}
 
-.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
-    content: " ";
-    display: table;
-}
 
 .btn {
     display: inline-block;
@@ -285,16 +268,9 @@ a.brand {
   border-bottom-left-radius: 0 !important;
 }
 
-
-
-
-
 .ui-widget {
     font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
     font-size: 1.1em/*{fsDefault}*/;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
 }
 
 #todo-list li .toggle {

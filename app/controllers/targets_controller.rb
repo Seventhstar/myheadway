@@ -35,10 +35,13 @@ class TargetsController < ApplicationController
   # GET /targets/new
   def new
     @target = Target.new
+    @target.user_id = current_user.id
   end
 
   # GET /targets/1/edit
   def edit
+    # @tgroup_ids = 
+    # jhf
   end
 
   # POST /targets
@@ -92,6 +95,6 @@ class TargetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def target_params
-      params.require(:target).permit(:name, :parent_id, :user_id, :group_id, :id, :tgroup_ids=>[])
+      params.require(:target).permit(:name, :parent_id, :user_id, :group_id, :id, :tgroup_ids => [])
     end
 end

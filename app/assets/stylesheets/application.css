@@ -25,7 +25,7 @@ html, body { height: 100%; margin: 0;padding: 0;font: normal 13px sans-serif; }
     border:1px solid #ccc;
 }
 
-.container{ width: 1260px !important; }
+.container{ width: 1300px !important; }
 .chosen-container {width: 100%;}
 .submit_cancel {margin-top: 20px; float: right;}
 
@@ -166,9 +166,3 @@ border-right: 0;
 .sep_4 {height: 40px; }
 .sep_5 {height: 50px; }
 
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
