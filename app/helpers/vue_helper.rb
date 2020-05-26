@@ -193,7 +193,7 @@ module VueHelper
       if !obj["#{name}_id"].nil? && obj["#{name}_id"]>0
         val = obj["#{name}_id"]
         label = obj.try("#{name}_#{attr_name}")
-        label = obj&.try(name)&.try(attr_name) if label.nil?
+        label = obj.try(name).try(attr_name) if label.nil?
       end
     elsif default.present?
       if default.class == Hash then
