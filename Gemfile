@@ -14,7 +14,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'puma', '~> 3.7'	
+gem 'puma', '~> 3.12'	
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
