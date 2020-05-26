@@ -32,7 +32,7 @@ h3= t :target_page_header_h2
         .t-item id="t-item-#{}" 
           .target_line_head.thead_group
             .target_name
-              |{{target.name}} - {{target.id}}
+              |{{target.name}}
         span.calenday :day="d" :state="state(target.id, d)" v-for="d in days"
       .table_targets :target_id="st.id" v-for="st in subtargets(target)" v-show="index == activeTab"
         .target_line_head 
