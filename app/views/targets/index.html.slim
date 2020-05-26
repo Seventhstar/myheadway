@@ -2,51 +2,43 @@ h3= t :target_page_header_h2
 - current_period
 = hidden_field_tag "current_year", @current_year
 = hidden_field_tag "current_month", @current_month
-.subpills
-  - @tgroups.each do |gr|
-    = sortable_pil gr.id, gr.name
-#div_target_list
-  .calendar_period
-    .calendar_period_h
-      = prev_year
-      = prev_month
-      span.page.active= month_year(current_period)
-      = next_month
-      = next_year
-  #target_head
-    span.calenhead.head= t :target_page_header
-    #days_head
+#targets_index
+  .groups 
+    .subpills 
+      .pill :class="tabClass(index, group)" @click="activeTab = index" @click.ctrl.prevent="edit(group)" v-for="group, index in groups"
+        |{{group.name}}
+
+  #div_target_list
+    .calendar_period
+      .calendar_period_h
+        = prev_year
+        = prev_month
+        span.page.active= month_year(current_period)
+        = next_month
+        = next_year
+    #target_head
       - days = @current_period.end_of_month.day
       - current_day = @current_period.beginning_of_month
-      - days.times do |d|
-        span class="calenhead #{class_on_date_type(current_day)} h#{d+1}" =d+1
-        - current_day = current_day.advance(days: 1)
-  #target_list
-    - target_count = 0
-    - child_day_array =[]
-    - @targets.each do |target|
-      - target_count+=1
-      - child_day_array<<nil
-      .t-item id="t-item-#{target.id}" 
-        .target_line_head.thead_group
-          .target_name
-            = target.name
-            = edit_delete(target,0,true)
-        .target_line_days.group_day
-          - days.times do |d|
-            span class="calenday #{day_checked(target.id, d+1)} day_" day="#{d+1}" target="#{target.id}" 
-      - if target.targets.count
-        .children id="children-#{target.id}" style=("display: block; ") 
-      - target.targets.order('id').each do |sub_target|
-        - target_count+=1
-        - child_day_array<<target.id
-        .target_li
-          .target_line_head
-            .subtarget_name
-              = sub_target.name
-              = edit_delete(sub_target,0,true)
-          div class=("target_line_days day_#{target.id}") 
-            - days.times do |d|
-              - state = day_state(sub_target.id,d+1)
-              span.calenday day="#{d+1}" state=state target="#{sub_target.id}" 
-      - if target.targets.count
+      .table_targets
+        span.calenhead.head= t :target_page_header
+        - days.times do |d|
+          span class="calenhead #{class_on_date_type(current_day)} h#{d+1}" =d+1
+          - current_day = current_day.advance(days: 1)
+
+      / - @targets.each do |target|
+  template v-for="group, index in groups" 
+    template v-for="target, idx in grouped[group.name]"
+      .table_targets.group_day :target_id="target.id" v-show="index == activeTab"
+        .t-item id="t-item-#{}" 
+          .target_line_head.thead_group
+            .target_name
+              |{{target.name}} - {{target.id}}
+        span.calenday :day="d" :state="state(target.id, d)" v-for="d in days"
+      .table_targets :target_id="st.id" v-for="st in subtargets(target)" v-show="index == activeTab"
+        .target_line_head 
+          .subtarget_name
+            |{{st.name}}
+        span.calenday :day="d" :state="state(st.id, d)" v-for="d in days"
+
+ 
+= render 'index_vue'

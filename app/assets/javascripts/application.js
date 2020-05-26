@@ -19,7 +19,28 @@
 //= require chosen.jquery
 //= require nprogress
 //= require nprogress-turbolinks
+//= require vue
+//= require vuex
+//= require v-store
+//= require vue-select
 //= require_tree .
+
+var v_nil = function(v, zeroIsNil = false){ 
+  if (typeof(v) == "object") 
+    return v === null || v === undefined || v.value === undefined || v.value === 0
+  if (zeroIsNil && v === 0) return true
+  return v === null || v === undefined || v === ''
+}
+
+var e_nil = function(id) {
+  return e_val(id) === ""
+}
+
+var e_val = function(id) {
+  let v = document.getElementById(id)
+  if (v === null) return ""
+  return v.value
+}
 
 function capitalize(a) {
   newVal = '';
@@ -219,6 +240,7 @@ $(document).ready(function(){
    var day = $(this).attr("day");
    var state = parseInt($(this).attr("state"));
    var target = $(this).attr("target");
+   if (target == undefined) target = $(this).parent().attr("target_id");
    var month = $("#current_month").val();
    var year = $("#current_year").val();
 

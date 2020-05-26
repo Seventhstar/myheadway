@@ -73,7 +73,8 @@ a { color: #428bca;  text-decoration: none;}
 .navbar-collapse.collapse {  display: block !important; height: auto !important; padding-bottom: 0; overflow: visible !important;}
 
 .subnav li.active_li a{ border-radius: 4px; padding: 10px 15px; text-decoration: none; background-color: #428bca; color: #fff; }
-.subpills a{
+// .subpills {display: flex;}
+.subpills a, .subpills .pill{
   min-width: 100px;
   text-align: center;
   text-decoration: none;
@@ -81,14 +82,23 @@ a { color: #428bca;  text-decoration: none;}
   float: left;
   color: #428bca;
   padding: 3px 10px;
+  margin-right: 2px;
   height: 24px !important;
   line-height: 22px;
   cursor: pointer;
-  &:hover{ background-color: #93c0e6; color: white; }
+  background-color: #93c0e6; color: white;
+  &:hover{ background-color: lightskyblue; color: white; }
   &.btn-success:hover{ background-color: green; }
   &.active { background-color: #428bca; color: #fff;  }
   &.passive{ background-color: #eee; }
 }
+
+.subpills .pill.negative {
+  background-color: #ec6f6f; 
+  &:hover{ background-color: #f79696; }
+  &.active {background-color: #d62121;}
+}
+
 
 .subpills a+a {margin-left: 2px;}
 .subtabs{ float: right; margin-left: auto; width: 800;}

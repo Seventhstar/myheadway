@@ -1,0 +1,18 @@
+<script>
+  Vue.component('v-select', VueSelect.VueSelect)
+
+  let app = new Vue({
+    el: '.vue_index', 
+    mixins: [m_created, m_index],
+    data: <%= fill_vue_data(nil, { 
+      filterItems: ['author', 'user'],
+      groupBys: 'author:Автору',
+      searchFileds: ['name', 'author'],
+      sortKey: 'name',
+      controller: 'books',
+      reverse: false,
+      lists: "authors",
+      columns: @columns
+    }, nil, 'vue_index') %>,
+})
+</script>

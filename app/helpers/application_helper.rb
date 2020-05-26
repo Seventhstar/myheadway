@@ -1,7 +1,13 @@
 module ApplicationHelper
-  def getRandomStatement()
+  include VueHelper
+  
+
+  def getRandomStatement
     @rand_statement = Statement.order("RANDOM()").first
-    # @rand_statement = Statement.find(95)
+  end
+ 
+  def add_new_button
+    link_to 'Добавить', ['', controller.controller_name, 'new'].join('/'), class: "btn_a btn-add btn_slim right"
   end
 
   def chosen_src( id, collection, obj = nil, options = {})
@@ -110,12 +116,34 @@ module ApplicationHelper
     end
   end
 
-  def submit_cancel(back_url)
-      s = submit_tag  t('Save'), class: 'btn btn-success'
-      c = link_to t('Cancel'), back_url, class: "btn btn-white btn-reset"
-      content_tag :div, class: 'submit_cancel' do
-        s + c
-      end
+  def submit_cancel(back_url, options = {})
+    is_modal = options['modal'] || options[:modal]
+    add_cls = is_modal ? ' update' : ''
+    dd      = is_modal ? "modal" : ''
+    
+    submit_options = {}
+    cls = "btn sub btn_a #{add_cls}"
+
+    if options[:classValid] 
+      submit_options[':class'] = "[{disabled: #{options[:classValid]}}, '#{cls}']" # ':class' for vue
+    else
+      submit_options['class'] = cls
+    end
+
+    submit_options[':data-original-title'] = options[:tip] if options[:tip]
+    # вернуть если нужен tooltip 
+    submit_options["v-on:click"] = options[:click] if options[:click]
+    
+    s = submit_tag 'Сохранить', submit_options
+    if is_modal 
+      c = button_tag "Отмена", type: "button", class: "text btn_a btn_reset", "data-dismiss": "modal"         
+    else
+      c = link_to 'Отмена', back_url, class: "sub btn_a btn_reset"
+    end
+
+    content_tag :div, class: "actns" do
+      c + s
+    end
   end
 
   def add_new( path )

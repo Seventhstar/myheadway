@@ -1,0 +1,15 @@
+h2 Список групп (для целей)
+table.table.table-striped
+  thead
+    tr
+      th Имя группы
+      th style="width: 20px" Отрицательная
+      th style="width: 36px"
+  tbody
+    - @tgroups.each do |tgroup|
+      tr
+        td= tgroup.name
+        td
+          span chk="active" class="check_img sw_check #{tgroup.negative ? 'checked' : ''}" item_id="#{tgroup.id}"
+        = tool_icons(tgroup)
+br/

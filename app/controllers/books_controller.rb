@@ -1,10 +1,32 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :def_params, only: [:new, :edit, :update]
 
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
+
+    @columns = %w"name author_id"
+    fields  = %w"".concat(@columns)
+    
+    @json_data = []
+    @filterItems = %w'author'
+
+    @books.order(:name).each do |book| 
+      h = {id: book.id, editable: true}
+      
+      fields.each do |col|
+        c = col.include?(":") ? col.split(':')[0] : col.downcase
+        h[c] = book[c]
+        if c.end_with?("_id")
+          n = c[0..-4]
+          h[n] = book.try(n).try("name")
+        end
+      end
+      @json_data.push(h)
+    end
+
   end
 
   # GET /books/1
@@ -62,12 +84,14 @@ class BooksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    def def_params
+      @authors = Author.order(:name)
+    end
+
     def set_book
       @book = Book.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:name, :author_id, :author_name, :img_url, :annotation)
     end

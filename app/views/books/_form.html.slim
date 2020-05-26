@@ -1,0 +1,25 @@
+.vue_app
+  = form_for @book do |f|
+    .box_wrap.box_wrap_1
+      .panel-left
+        .grid_middle_label_name
+          
+          = f.label 'Наименование'
+          = f.text_field :name
+
+          = f.label 'Автор'
+          v-chosen name="author" placeholder="Автор..." :input="true"
+          
+          = f.label 'Адрес картинки'
+          = f.text_field :img_url, "v-model"=>"img_url"
+
+          div
+            = f.label 'Описание'
+            img :src="img_url" class="image_edit_form" alt="Картинка"
+
+          = f.text_area :annotation, class: "width_area", size: "80x8"
+
+          div
+          = submit_cancel books_path, {classValid: "!formValid", tip: 'noteValid', click: 'onSubmit'}
+
+== render 'form_vue'

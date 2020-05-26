@@ -1,15 +1,13 @@
 class TargetsController < ApplicationController
   before_action :set_target, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user
+  include TargetsHelper
   
 
   # GET /targets
   # GET /targets.json
   def index
     current_time = Time.now
-    #@current_period = current_period
-    #days = @current_period.end_of_month.day
-
     @tgroups = Tgroup.all
     puts params[:tgroup_id]
     if params[:tgroup_id]
@@ -19,11 +17,14 @@ class TargetsController < ApplicationController
        @gr_id = "1"
     end
 
-    if Tgroup.count > 0
-     @targets = Tgroup.find(@gr_id).targets
-    else
-     @targets = Target.where('parent_id is NULL')
-    end
+    # if Tgroup.count > 0
+    #  @targets = Tgroup.find(@gr_id).targets
+    # else
+     # @targets = Target.all
+     current_period
+     @checked = TargetDay.where(month: @current_month, year: @current_year)
+     @targets = Target.joins('LEFT JOIN tgroups ON tgroups.id = targets.group_id ').select('targets.*, tgroups.name as group_name')
+    # end
 
   end
 

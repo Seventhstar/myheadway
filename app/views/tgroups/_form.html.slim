@@ -1,0 +1,14 @@
+= form_for(@tgroup) do |f|
+  .field
+    label= t :name
+    = f.text_field :name
+  .field
+    label= t :negative 
+    = f.check_box :negative
+  / .field
+  /   label Группы целей:
+  /   = f.collection_select(:target_ids, Target.where('parent_id is NULL'), :id, :name, {}, {multiple: true,  class: "chosen-select", include_blank: 'None'})
+  .actions
+    = submit_cancel targets_path
+    / = f.submit 'Сохранить', class: "btn btn-success"
+    / = link_to t('Back'), targets_path, class: "btn btn-white"

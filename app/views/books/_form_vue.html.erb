@@ -1,0 +1,30 @@
+<script>
+  Vue.component('v-select', VueSelect.VueSelect)
+
+  let app = new Vue({
+    el: '.vue_app',
+    mixins: [m_created],
+    data: <%= fill_vue_data(@book, {
+      model: 'book',
+      froms: [],
+      tos: [],
+      noteValid: '',
+      currentUser: [],
+      formValid: true,
+      
+      filteredProjects: [],
+      required_list: 'author',
+
+      texts: 'annotation img_url',
+      list_values: 'author',
+      lists: "authors"
+    }) %>,
+
+    methods: {
+          onInput(e) {
+          }
+        }
+    
+  });
+
+</script>

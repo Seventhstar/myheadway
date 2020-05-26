@@ -1,5 +1,6 @@
 class AjaxController < ApplicationController
 
+  respond_to :json 
   def authors
     if params[:term]
       like= "%".concat(params[:term].concat("%"))
@@ -44,10 +45,18 @@ class AjaxController < ApplicationController
         find_query[:state] = params[:state]
         target_day = TargetDay.new(find_query)
       end
-      target_day.save
-      render nothing: true, status: 200, content_type: 'text/html'
+      if target_day.save
+        respond_to do |format|
+          format.json { head :ok }
+        end
+      else
+        render json: target_day.errors, status: 422
+      end
+      # respond_with() # render nothing: true, status: 200, content_type: 'text/html'
     end
 
+
+    
     # respond_to do |format|
     #   format.html { render :text => "Rescued HTML" }
     #   format.js { render :action => "errors" }

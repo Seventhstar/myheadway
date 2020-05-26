@@ -1,0 +1,50 @@
+<script>
+  let app = new Vue({
+    el: '#targets_index', 
+    mixins: [m_index],
+    data: <%= fill_vue_data(nil, {
+      activeTab: 0,
+      days: current_period.end_of_month.day,
+      targets: @targets,
+      checked: @checked,
+      groups: @tgroups
+    }, nil) %>,
+
+    created() {
+      this.grouped = _.groupBy(this.targets, 'group_name')
+      this.groupHeaders = Object.keys(this.grouped) 
+      // this.subtargets = _.groupBy(this.targets, 'parent_id')
+      
+    },
+
+    methods: {
+      tabClass(index, group) {
+        cls = ""
+        if (this.activeTab == index) cls += "active "
+        if (this.groups[index].negative == 'true' || this.groups[index].negative) cls += "negative "
+
+        return cls
+      },
+
+      subtargets(target){
+        if (target == undefined || target.id == undefined) return []
+        // console.log('target.id', target.id, target.name, target.group_name)
+        return this.targets.filter(f => f.parent_id == target.id)
+      },
+
+      edit(group) {
+        // console.log('group', group)
+        window.open('/tgroups/'+group.id+'/edit', '_blank');
+      },
+
+      state(id, day) {
+        var ch = this.checked.filter(f => f.day == day && f.target_id == id)
+        if (ch != undefined && ch[0] != undefined)
+          return ch[0].state
+        else
+          return ""
+      }
+
+    }
+  })
+</script>

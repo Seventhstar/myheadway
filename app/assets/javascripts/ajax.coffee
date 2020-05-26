@@ -174,3 +174,89 @@ $(document).ready ->
       return false
     return
 
+@sortable_prepare = (params, getFromUrl = false, applink = undefined) ->
+  app = applink
+
+  actual = if $('.switcher_a .link_a').length == 0 then null else $('.switcher_a .link_a').hasClass('on')
+
+  cut = ''
+  cut_selecter = '.cut.cutted'
+  if $('.goods_list').length>0
+    cut_selecter = '.cut:not(".cutted")'
+  
+  $(cut_selecter).each ->
+    cut = cut + $(this).attr('cut_id') + '.'
+
+  search = $('.search_area').val()
+  year = if (nav? && nav.year?) then nav.year.value else $('#year').val()
+
+  $('.search_save a').each (i) ->
+    href = new URL(this.href)
+    if search == '' || search == undefined
+      href.searchParams.delete('search')
+    else 
+      href.searchParams.set('search', search)
+    this.href = href
+
+  url = {    
+    only_actual: actual
+    sort: $('span.active').attr('sort')
+    direction: $('span.active').attr('direction')
+    sort2: $('span.subsort.current').attr('sort2')
+    dir2: $('span.subsort.current').attr('dir2')
+    search: search
+    year: year
+    priority_id: $('#priority_id').val()
+    good_state: $('#good_state').val()
+    cut: cut
+  }
+
+  l = window.location.toString().split('?')
+  p = q2ajx(l[1])
+  ser = $('.index_filter').serialize()
+  if ser == ""
+    ser = $('.index_filter select').serialize()
+  if_params = q2ajx(ser)
+  
+  each p, (i, a) -> # restore params from url
+    if url[i] == undefined || ['search','page','_'].include? i 
+      url[i] = a
+    return
+
+  each if_params, (i, a) -> # add params from .index_filter
+    url[i] = a
+    return
+
+  each params, (i, a) -> # add params from args hash
+    url[i] = a
+    return 
+
+  if (app?)
+    filtersList = app.getFiltersList()
+    if filtersList != undefined
+      filtersList.forEach (e) ->
+        if e.name == 'actual'
+          url['actual'] = app.onlyActual
+        else if e.value != undefined 
+          url[e.name] = e.value
+        else if app.readyToChange == undefined || app.readyToChange
+          delete url[e.name]
+        return
+
+  each url, (i, a) ->
+    if (a == 0 || a == '0' || a == undefined)
+      delete url[i]  
+    return 
+    
+  base_url = sort_base_url()  
+  setLoc(""+base_url+"?"+ajx2q(url));
+  return url
+  
+@sort_base_url = ->
+  method = if $('#cur_method').val() == 'edit_multiple' then '/edit_multiple' else ''
+  controller =  $('#search').attr('cname')
+  controller = controller + "/" + $('#search').attr('mname') if controller == 'options'
+  if controller == undefined 
+    controller = window.location.toString().split('?')[0].split('/').splice(3).join('/')
+  return controller+method
+

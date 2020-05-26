@@ -1,9 +1,12 @@
 class Target < ActiveRecord::Base
   belongs_to :parent, class_name: 'Target', foreign_key: "parent_id"
+  # belongs_to :target_group, class_name: 'TargetGroup', foreign_key: "group_id"
   has_many :targets, foreign_key: "parent_id"
   
-  has_many :target_groups
-  has_many :tgroups, through: :target_groups
+  # has_many :target_groups
+  # has_many :tgroups, through: :target_groups
+  # has_many :tgroups, class_name: 'TGroup', foreign_key: :group_id
+  has_many :tgroups
   
   belongs_to :user
   after_save :check_group

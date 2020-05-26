@@ -2,39 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
- # date:
-  #  formats:
-      #short: "%B %Y"
-   #   short: "%m %Y"
-      #default: "%a, %d %b %Y, %H:%M:%S %z"
-    #  month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
-     # abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
-
-    #order:
-     ## - :day
-#      - :month
- #     - :year
-
-          # Названия дней недели -- контекстные и отдельностоящие
-     # common_day_names: [воскресенье, понедельник, вторник, среда, четверг, пятница, суббота]
-      #standalone_day_names: [Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота]
-      #common_abbr_day_names: [Вс, Пн, Вт, Ср, Чт, Пт, Сб]
-      #standalone_abbr_day_names: [вс, пн, вт, ср, чт, пт, сб]
-
-      # Названия месяцев -- сокращенные и полные, плюс отдельностоящие.
-      # Не забудьте nil в начале массиве (~)
-      #
-      #
-      # Don't forget the nil at the beginning; there's no such thing as a 0th month
-      #month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
-      #common_month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
-      #standalone_month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
-      ##common_abbr_month_names: [~, янв., февр., марта, апр., мая, июня, июля, авг., сент., окт., нояб., дек.]
-      #standalone_abbr_month_names: [~, янв., февр., март, апр., май, июнь, июль, авг., сент., окт., нояб., дек.]
-
-    #defaults:
-      ##month_names:
-      #  [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+  user_id: Пользователь
+  negative: Отрицательная
   Save: Сохранить
   Cancel: Отмена
   Name: "Имя"

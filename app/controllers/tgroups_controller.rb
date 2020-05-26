@@ -69,6 +69,6 @@ class TgroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tgroup_params
-      params.require(:tgroup).permit(:name,:target_ids=>[])
+      params.require(:tgroup).permit(:name, :negative, target_ids: [])
     end
 end
