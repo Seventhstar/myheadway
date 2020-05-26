@@ -1,0 +1,6098 @@
+/* line 1, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion,
+.accordion ul,
+.accordion li,
+.accordion a,
+.accordion span {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* line 7, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li {
+  list-style: none;
+  background-color: white;
+}
+
+/* line 8, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li {
+  background-color: #fff;
+  margin-bottom: 2px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+/* line 10, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion {
+  margin-right: 20px;
+}
+
+/* line 12, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > a {
+  display: block;
+  position: relative;
+  min-width: 110px;
+  padding: 0 10px 0 20px;
+  border: none;
+  color: #005580;
+  font: bold 12px/32px Arial, sans-serif;
+  text-decoration: none;
+}
+/* line 17, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > a:hover {
+  color: white;
+  background-color: #93c0e6;
+}
+
+/* line 19, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li > a {
+  padding: 0 10px 0 10px;
+}
+
+/* line 21, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion > li > a.active {
+  background-color: #428bca;
+  color: white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* line 22, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li {
+  background-color: #f9f9f9;
+}
+
+/* line 23, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li {
+  border-top: 1px solid #ddd;
+}
+
+/* line 24, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li.active a, .sub-menu li a.active {
+  background-color: #616161;
+  color: white;
+}
+
+/* line 28, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.sub-menu li:last-child, .sub-menu li.active:last-child, .sub-menu li.active:last-child a {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* line 30, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li > .sub-menu {
+  display: none;
+}
+
+/* line 31, H:/www/railsprj/myheadway/app/assets/stylesheets/accordionmenu.css.scss */
+.accordion li:target > .sub-menu {
+  display: block;
+}
+/* line 5, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.img_attn {
+  max-width: 100px;
+  max-height: 140px;
+}
+
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+td.img_attn {
+  width: 102px;
+}
+
+/* line 7, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.att_head {
+  height: 16px;
+}
+
+/* line 9, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#new_attention label, .edit_attention label {
+  width: 120px;
+}
+
+/* line 10, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#attn_form .field input[type='text'], #attn_form .field .chosen-container, .field select {
+  width: 100%;
+}
+
+/* line 13, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#attn_form .col-30 {
+  margin-right: 20px;
+}
+
+/* line 14, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#attn_form .inp_btn_label {
+  margin: 25px 30px 0 0;
+}
+
+/* line 15, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+#attn_form .field label {
+  display: block;
+}
+
+/* line 18, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.attn {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* line 19, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.attn_body {
+  margin-left: 145px;
+}
+
+/* line 20, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.imgc {
+  text-align: center;
+}
+
+/* line 21, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.attn_img_box {
+  width: 16%;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: table;
+}
+
+/* line 22, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.attn_head {
+  background-color: #93c0e6;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+  height: 27px;
+}
+
+/* line 24, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.attn_cats {
+  background-color: #93c0e6;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+  min-height: 27px;
+}
+
+/* line 26, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat1 {
+  background-color: #e6e2d9;
+  color: #a56400;
+}
+
+/* line 27, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat2 {
+  background-color: #f7f5c4;
+  color: #ec1919;
+}
+
+/* line 28, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat3 {
+  background-color: #409a6d;
+}
+
+/* line 29, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat4 {
+  background-color: #e88b3b;
+}
+
+/* line 30, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat5 {
+  background-color: #3d75af;
+}
+
+/* line 31, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat6 {
+  background-color: #3e983e;
+}
+
+/* line 32, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat7 {
+  background-color: #722673;
+}
+
+/* line 33, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat8 {
+  background-color: #999a97;
+}
+
+/* line 34, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.acat9 {
+  background-color: #bbb89c;
+}
+
+/* line 36, H:/www/railsprj/myheadway/app/assets/stylesheets/attentions.scss */
+.paste {
+  width: 16px;
+  display: inline-block;
+  margin-left: 4px;
+  padding: 4px;
+  height: 16px;
+  background-image: url(/assets/paste-a1a3cc80645a0e7536682e4e06cf0af5698092f909ef20acea13a48e15b5e5b4.png);
+}
+/* line 1, H:/www/railsprj/myheadway/app/assets/stylesheets/autocomplete.css.scss */
+.ui-widget {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/autocomplete.css.scss */
+.ui-autocomplete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+
+/* line 12, H:/www/railsprj/myheadway/app/assets/stylesheets/autocomplete.css.scss */
+.ui-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  outline: none;
+}
+
+/* line 19, H:/www/railsprj/myheadway/app/assets/stylesheets/autocomplete.css.scss */
+.ui-front {
+  z-index: 100;
+}
+
+/* line 22, H:/www/railsprj/myheadway/app/assets/stylesheets/autocomplete.css.scss */
+.ui-widget-content {
+  border: 1px solid #aaaaaa;
+  background: #ffffff url(/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-39ab7ccd9f4e82579da78a9241265df288d8eb65dbbd7cf48aed2d0129887df5.png) 50% 50% repeat-x;
+  color: #222222;
+}
+
+/* line 27, H:/www/railsprj/myheadway/app/assets/stylesheets/autocomplete.css.scss */
+.ui-widget {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+/* line 32, H:/www/railsprj/myheadway/app/assets/stylesheets/autocomplete.css.scss */
+.ui-menu .ui-menu-item {
+  position: relative;
+  margin: 0;
+  padding: 3px 1em 3px .4em;
+  cursor: pointer;
+  min-height: 0;
+  list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+
+/* line 41, H:/www/railsprj/myheadway/app/assets/stylesheets/autocomplete.css.scss */
+.ui-menu .ui-state-focus {
+  color: white;
+  background: #93c0e6;
+}
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/books.css.scss */
+#book_img {
+  margin-top: 20px;
+}
+
+/* line 7, H:/www/railsprj/myheadway/app/assets/stylesheets/books.css.scss */
+#book_img img {
+  height: auto;
+  width: auto;
+  max-width: 400px;
+  max-height: 400px;
+}
+/*
+
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+
+  */
+/* line 11, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h1, h2, h3, h4, h5, h6, .hl {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+/* line 12, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h2 {
+  font-size: 30px;
+}
+
+/* line 13, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h1, h2, h3, .hl {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* line 14, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h1, h3, h5, h6, .hl {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #e5e5e5 !important;
+  margin-bottom: 20px;
+}
+
+/* line 15, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h4, h5, h6 {
+  font-size: 14px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #717171;
+  font-weight: 600;
+}
+
+/* line 16, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h4, h5 {
+  text-align: right;
+}
+
+/* line 17, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h6 {
+  margin-top: 0;
+}
+
+/* line 18, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+h1, h3, .hl {
+  font-size: 24px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #ccc !important;
+  margin-bottom: 20px;
+}
+
+/* line 20, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.hl .icon {
+  margin-top: 8px;
+}
+
+/*h1 { font-family: Georgia, "Times New Roman", serif; text-align: center;}*/
+/* line 23, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.top-menu {
+  margin-top: 15px;
+}
+
+/* line 25, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-80 {
+  width: 80%;
+  float: left;
+}
+
+/* line 26, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-20 {
+  width: 20%;
+  float: left;
+}
+
+/* line 27, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-70 {
+  width: 70%;
+  float: left;
+}
+
+/* line 28, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-30 {
+  width: 30%;
+  float: left;
+}
+
+/* line 29, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-xs-6 {
+  width: 50%;
+}
+
+/* line 30, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-md-8 {
+  width: 66.66666667%;
+  float: left;
+}
+
+/* line 31, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-md-4 {
+  width: 33.33333333%;
+  float: left;
+}
+
+/* line 32, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.col-md-1 {
+  width: 8.33333333%;
+}
+
+/* line 34, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.mt-10 {
+  margin-top: 10px;
+}
+
+/* line 36, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.row {
+  display: inline-block;
+}
+
+/* line 38, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.top-menu {
+  margin-top: 15px;
+}
+
+/* line 39, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subnav {
+  display: block;
+  overflow: auto;
+}
+
+/* line 40, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+}
+
+/* line 41, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #e7e7e7;
+}
+
+/* line 43, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.container {
+  width: 1260px !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 44, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 45, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* line 47, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* line 48, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li {
+  position: relative;
+  display: block;
+}
+
+/* line 49, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li.selected {
+  background-color: #616161;
+  height: 50px;
+}
+
+/* line 50, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li.selected a {
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 51, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li {
+  position: relative;
+  display: block;
+  font-size: 13px;
+}
+
+/* line 52, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li > a {
+  position: relative;
+  display: block;
+}
+
+/* line 53, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar .nav > li > a {
+  padding: 18px 16px;
+}
+
+/* line 55, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav-pills > li {
+  float: left;
+}
+
+/* line 56, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav-pills a {
+  border-radius: 4px;
+}
+
+/* line 57, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #93c0e6;
+  color: white;
+}
+
+/* line 58, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav-pills > li + li {
+  margin-left: 4px;
+}
+
+/* line 59, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+/* line 60, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+/* line 62, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar {
+  position: relative;
+  height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+/* line 63, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-nav {
+  float: left;
+  margin: 0;
+  width: 92%;
+}
+
+/* line 64, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-nav > li {
+  float: left;
+}
+
+/* line 66, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-nav > li.logout > a {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+/* line 67, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#logout a {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  line-height: 11px;
+}
+
+/* line 68, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#options a {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  line-height: 11px;
+}
+
+/* line 69, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#options a:hover img {
+  background-image: url(/assets/gear_wh-2627578243d2b968c8c73ec0f5bdf57f638514db9c19d99b80de96bd1ac95cab.png);
+}
+
+/* line 70, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 73, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-collapse {
+  width: auto;
+  border-top: 0;
+  box-shadow: none;
+}
+
+/* line 74, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-collapse.collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+}
+
+/* line 76, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subnav li.active_li a {
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: #428bca;
+  color: #fff;
+}
+
+/* line 78, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a, .subpills .pill {
+  min-width: 100px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  float: left;
+  color: #428bca;
+  padding: 3px 10px;
+  margin-right: 2px;
+  height: 24px !important;
+  line-height: 22px;
+  cursor: pointer;
+  background-color: #93c0e6;
+  color: white;
+}
+/* line 91, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a:hover, .subpills .pill:hover {
+  background-color: lightskyblue;
+  color: white;
+}
+/* line 92, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a.btn-success:hover, .subpills .pill.btn-success:hover {
+  background-color: green;
+}
+/* line 93, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a.active, .subpills .pill.active {
+  background-color: #428bca;
+  color: #fff;
+}
+/* line 94, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a.passive, .subpills .pill.passive {
+  background-color: #eee;
+}
+
+/* line 97, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills .pill.negative {
+  background-color: #ec6f6f;
+}
+/* line 99, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills .pill.negative:hover {
+  background-color: #f79696;
+}
+/* line 100, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills .pill.negative.active {
+  background-color: #d62121;
+}
+
+/* line 104, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subpills a + a {
+  margin-left: 2px;
+}
+
+/* line 105, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subtabs {
+  float: right;
+  margin-left: auto;
+  width: 800;
+}
+
+/* line 108, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 3px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 129, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+a.btn, a.btn:hover {
+  text-decoration: none;
+}
+
+/* line 130, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+/* line 131, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3071a9;
+  border-color: #285e8e;
+}
+
+/* line 137, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-success {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+/* line 141, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-success:hover, .subnav .btn-success:focus {
+  background-color: #5fcf5f;
+  box-shadow: 0 -2px 0 0 #4cae4c inset;
+}
+
+/* line 142, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-cancel {
+  color: black;
+  background-color: #eee;
+  border-color: #aaa;
+}
+
+/* line 143, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-cancel:hover {
+  background-color: #f5f5f5;
+}
+
+/* line 144, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-white {
+  border: 1px solid #ccc;
+}
+
+/* line 145, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-white:hover {
+  box-shadow: 0 -2px 0 0 #eee inset;
+}
+
+/* line 146, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-sm2 {
+  padding: 4px 10px;
+  line-height: 1;
+}
+
+/* line 148, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.btn-min {
+  height: 26px;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+/* line 150, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.subnav .btn-success:hover, .subnav .btn-success:focus {
+  background-color: #5fcf5f;
+  color: white;
+}
+
+/* line 151, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* line 157, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.signin .btn {
+  width: 100%;
+}
+
+/* line 159, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+input[type="radio"], input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+/* line 165, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+/* line 184, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, .comment_area {
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  -webkit-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s,box-shadow linear 0.2s;
+  transition: border linear 0.2s,box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 197, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.table {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* line 200, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.table-striped > tbody > tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* line 201, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 208, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.li-right {
+  float: right !important;
+}
+
+/* line 209, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.left {
+  float: left;
+}
+
+/* line 210, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.right {
+  float: right;
+}
+
+/* line 214, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+a.brand {
+  color: #0088cc;
+}
+
+/* line 218, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.pagination {
+  margin: 0px;
+}
+
+/* line 222, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.span3 {
+  float: right;
+}
+
+/* line 226, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar1 .nav > li {
+  float: left;
+}
+
+/* line 230, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.navbar-inner {
+  min-height: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, #fff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #fff, #f2f2f2);
+  background-image: -o-linear-gradient(top, #fff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #fff, #f2f2f2);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  margin-bottom: 20px;
+}
+
+/* line 252, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.signin .btn {
+  width: 100%;
+}
+
+/* line 256, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.signin p {
+  margin: 10px 0 10px 0;
+}
+
+/* line 260, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.signin a:nth-child(2) {
+  float: right;
+}
+
+/* line 264, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.addon100 {
+  width: 100px;
+}
+
+/* line 268, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.addon120 {
+  width: 120px;
+}
+
+/* line 273, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.input-group input {
+  width: 350px;
+  border-radius: 4px;
+  border-top-right-radius: 4px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-right-radius: 4px !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* line 282, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+.ui-widget {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+/* line 287, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#todo-list li .toggle {
+  text-align: center;
+  width: 40px;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none;
+  /* Mobile Safari */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* line 78, H:/www/railsprj/td/app/assets/stylesheets/todomvc.scss */
+/* line 303, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#todo-list li .toggle {
+  height: 40px;
+}
+
+/* line 307, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#todo-list li .toggle:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="6"/></svg>');
+}
+
+/* line 83, H:/www/railsprj/td/app/assets/stylesheets/todomvc.scss */
+/* line 312, H:/www/railsprj/myheadway/app/assets/stylesheets/bootstrap_and_overrides.css.scss */
+#todo-list li .toggle:checked:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="6"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+/* line 1, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+#ui-datepicker-div {
+  display: none;
+}
+
+/* line 2, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker {
+  background: url(/assets/bg0_1-be11822af0b377b87a434f1aad4f4848edbf672831d57afe63c714f13bdee7d6.png) repeat;
+  padding: 26px 22px 20px 22px;
+  margin: -50px 0 0 108px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  line-height: 1;
+  font-size: 14px;
+  border: 0;
+}
+
+/* line 3, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker:after {
+  content: ' ';
+  display: block;
+  width: 27px;
+  height: 60px;
+  background: url(/assets/m2-d75cc3b4dd33c4bbe3c71efb12226279cfc6fad502d31c90bd577f053c88859b.png) no-repeat 0 0;
+  position: absolute;
+  left: -27px;
+  top: 0;
+}
+
+/* line 4, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-header {
+  text-align: center;
+  position: relative;
+  margin: 0 0 18px 0;
+  font-weight: 500;
+}
+
+/* line 7, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  font-size: 0;
+  display: block;
+  width: 7px;
+  height: 12px;
+  background: url(/assets/arr1-c9b64f9be7a851d2dd8292055445ef7bd9564da4feeafb84bd75fc302f277123.png) no-repeat;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+/* line 10, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-prev span {
+  background-position: -32px 0;
+  left: 7px;
+}
+
+/* line 11, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-next span {
+  background-position: -41px 0;
+  right: 7px;
+}
+
+/* line 13, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker-next-hover, .ui-datepicker-prev:hover {
+  background: #7d7d7d;
+  border: 1px solid black;
+}
+
+/* line 15, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-calendar {
+  border-collapse: collapse;
+}
+
+/* line 16, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-calendar th {
+  text-align: center;
+  vertical-align: top;
+  padding: 0 0 5px 0;
+  font-weight: 500;
+}
+
+/* line 17, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-calendar td {
+  text-align: center;
+  vertical-align: top;
+  padding: 0;
+}
+
+/* line 18, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-calendar .ui-state-default {
+  display: block;
+  width: 32px;
+  height: 29px;
+  line-height: 29px;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* line 19, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-today .ui-state-default {
+  border: 1px solid #ff8411;
+  width: 30px;
+  height: 27px;
+  line-height: 27px;
+}
+
+/* line 21, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-current-day .ui-state-default {
+  background: #ff8411;
+  border: 0;
+  color: #fff;
+}
+
+/* line 22, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-calendar .ui-state-default:hover {
+  background: #ff8411;
+  opacity: 0.8;
+  color: white;
+}
+
+/* line 23, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-other-month .ui-state-default {
+  color: #7d7d7d;
+}
+
+/* line 26, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker.ui-position-top {
+  margin-top: 50px;
+}
+
+/* line 27, H:/www/railsprj/myheadway/app/assets/stylesheets/calendar.scss */
+.ui-datepicker.ui-position-top:after {
+  top: auto;
+  bottom: 0;
+}
+/*!
+Chosen, a Select Box Enhancer for jQuery and Prototype
+by Patrick Filler for Harvest, http://getharvest.com
+
+Version 1.3.0
+Full source at https://github.com/harvesthq/chosen
+Copyright (c) 2011-2014 Harvest http://getharvest.com
+
+MIT License, https://github.com/harvesthq/chosen/blob/master/LICENSE.md
+This file is generated by `grunt build`, do not edit it by hand.
+*/
+
+/* @group Base */
+
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 13px;
+  zoom: 1;
+  *display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.chosen-container * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-top: 0;
+  background: #fff;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+}
+.chosen-container.chosen-with-drop .chosen-drop {
+  left: 0;
+}
+.chosen-container a {
+  cursor: pointer;
+}
+
+.chcreate {
+  /*margin-left: 10px;*/
+  position: relative;
+  /*margin: 2px 5px 2px 0;*/
+  padding: 2px 5px;
+  /*border: 1px solid #aaa;*/
+  max-width: 100%;
+  border-radius: 3px;
+  background-color: #428bca;
+  color: white;
+  cursor: pointer;
+
+    background-color: #3875d7;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+  float: right;
+  margin-top: -2px;
+}
+
+/* @end */
+/* @group Single Chosen */
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0 0 0 8px;
+  height: 25px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #fff;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #ffffff), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+  background: -webkit-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -moz-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -o-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-clip: padding-box;
+  box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px;
+}
+.chosen-container-single .chosen-default {
+  color: #999;
+}
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  margin-right: 26px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chosen-container-single .chosen-single-with-deselect span {
+  margin-right: 38px;
+}
+.chosen-container-single .chosen-single abbr {
+  position: absolute;
+  top: 6px;
+  right: 26px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url('chosen-sprite.png') -42px 1px no-repeat;
+  font-size: 1px;
+}
+.chosen-container-single .chosen-single abbr:hover {
+  background-position: -42px -10px;
+}
+.chosen-container-single.chosen-disabled .chosen-single abbr:hover {
+  background-position: -42px -10px;
+}
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 18px;
+  height: 100%;
+}
+.chosen-container-single .chosen-single div b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('chosen-sprite.png') no-repeat 0px 2px;
+}
+.chosen-container-single .chosen-search {
+  position: relative;
+  z-index: 1010;
+  margin: 0;
+  padding: 3px 4px;
+  white-space: nowrap;
+}
+.chosen-container-single .chosen-search input[type="text"] {
+  margin: 1px 0;
+  padding: 4px 20px 4px 5px;
+  width: 100%;
+  height: auto;
+  outline: 0;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background: white url('chosen-sprite.png') no-repeat 100% -20px;
+  background: url('chosen-sprite.png') no-repeat 100% -20px;
+  font-size: 1em;
+  font-family: sans-serif;
+  line-height: normal;
+}
+
+.chosen-container-single .chosen-search input[type="text"]:focus {
+  border-color:rgba(82,168,236,0.8);
+}
+
+.chosen-container-single .chosen-drop {
+  margin-top: -1px;
+  border-radius: 0 0 4px 4px;
+  background-clip: padding-box;
+}
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+  position: absolute;
+  left: -9999px;
+}
+
+/* @end */
+/* @group Results */
+.chosen-container .chosen-results {
+  color: #444;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 4px 4px 0;
+  padding: 0 0 0 4px;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch;
+}
+.chosen-container .chosen-results li {
+  display: none;
+  margin: 0;
+  padding: 5px 6px;
+  list-style: none;
+  line-height: 15px;
+  word-wrap: break-word;
+  -webkit-touch-callout: none;
+}
+.chosen-container .chosen-results li.active-result {
+  display: list-item;
+  cursor: pointer;
+}
+.chosen-container .chosen-results li.disabled-result {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+.chosen-container .chosen-results li.highlighted {
+  background-color: #3875d7;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%);
+  background-image: linear-gradient(#3875d7 20%, #2a62bc 90%);
+  color: #fff;
+}
+.chosen-container .chosen-results li.no-results {
+  color: #777;
+  display: list-item;
+  background: #f4f4f4;
+}
+.chosen-container .chosen-results li.group-result {
+  display: list-item;
+  font-weight: bold;
+  cursor: default;
+}
+.chosen-container .chosen-results li.group-option {
+  padding-left: 15px;
+}
+.chosen-container .chosen-results li em {
+  font-style: normal;
+  text-decoration: underline;
+}
+
+/* @end */
+/* @group Multi Chosen */
+.chosen-container-multi .chosen-choices {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  /*padding: 0 5px;*/
+  padding: 1px 3px;
+  width: 100%;
+  height: auto !important;
+  height: 1%;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+  background-image: -webkit-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: -moz-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: -o-linear-gradient(#eeeeee 1%, #ffffff 15%);
+  background-image: linear-gradient(#eeeeee 1%, #ffffff 15%);
+  cursor: text;
+}
+.chosen-container-multi .chosen-choices li {
+  float: left;
+  list-style: none;
+}
+.chosen-container-multi .chosen-choices li.search-field {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  margin: 1px 0;
+  padding: 0;
+  height: 23px;
+  outline: 0;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none;
+  color: #999;
+  font-size: 100%;
+  font-family: sans-serif;
+  line-height: normal;
+  border-radius: 0;
+}
+.chosen-container-multi .chosen-choices li.search-choice {
+  position: relative;
+  margin: 2px 5px 2px 0;
+  padding: 3px 20px 3px 5px;
+  border: 1px solid #428bca;
+  max-width: 100%;
+  border-radius: 2px;
+  background-color: #5bc0de;
+  /*background-color: #93c0e6;*/
+/*  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);*/
+  background-size: 100% 19px;
+  background-repeat: repeat-x;
+  background-clip: padding-box;
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.1);
+  color: white;
+  line-height: 13px;
+  cursor: default;
+}
+.chosen-container-multi .chosen-choices li.search-choice span {
+  word-wrap: break-word;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url('chosen-sprite.png') -42px 1px no-repeat;
+  font-size: 1px;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+  background-position: -42px -10px;
+}
+.chosen-container-multi .chosen-choices li.search-choice-disabled {
+  padding-right: 5px;
+  border: 1px solid #ccc;
+  background-color: #e4e4e4;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  color: #666;
+}
+.chosen-container-multi .chosen-choices li.search-choice-focus {
+  background: #d4d4d4;
+}
+.chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
+  background-position: -42px -10px;
+}
+.chosen-container-multi .chosen-results {
+  margin: 0;
+  padding: 0;
+}
+.chosen-container-multi .chosen-drop .result-selected {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+
+/* @end */
+/* @group Active  */
+.chosen-container-active .chosen-single {
+  /*border: 1px solid #5897fb;*/
+  border:1px solid rgba(82,168,236,0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+  -moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+  /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);*/
+}
+.chosen-container-active.chosen-with-drop .chosen-single {
+  border: 1px solid #aaa;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
+  background-image: -webkit-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: -moz-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: -o-linear-gradient(#eeeeee 20%, #ffffff 80%);
+  background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
+  box-shadow: 0 1px 0 #fff inset;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-left: none;
+  background: transparent;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+  background-position: -18px 2px;
+}
+.chosen-container-active .chosen-choices {
+  /*border: 1px solid #5897fb;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);*/
+    border:1px solid rgba(82,168,236,0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+  -moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+}
+.chosen-container-active .chosen-choices li.search-field input[type="text"] {
+  color: #222 !important;
+
+}
+
+/* @end */
+/* @group Disabled Support */
+.chosen-disabled {
+  opacity: 0.5 !important;
+  cursor: default;
+}
+.chosen-disabled .chosen-single {
+  cursor: default;
+}
+.chosen-disabled .chosen-choices .search-choice .search-choice-close {
+  cursor: default;
+}
+
+/* @end */
+/* @group Right to Left */
+.chosen-rtl {
+  text-align: right;
+}
+.chosen-rtl .chosen-single {
+  overflow: visible;
+  padding: 0 8px 0 0;
+}
+.chosen-rtl .chosen-single span {
+  margin-right: 0;
+  margin-left: 26px;
+  direction: rtl;
+}
+.chosen-rtl .chosen-single-with-deselect span {
+  margin-left: 38px;
+}
+.chosen-rtl .chosen-single div {
+  right: auto;
+  left: 3px;
+}
+.chosen-rtl .chosen-single abbr {
+  right: auto;
+  left: 26px;
+}
+.chosen-rtl .chosen-choices li {
+  float: right;
+}
+.chosen-rtl .chosen-choices li.search-field input[type="text"] {
+  direction: rtl;
+}
+.chosen-rtl .chosen-choices li.search-choice {
+  margin: 3px 5px 3px 0;
+  padding: 3px 5px 3px 19px;
+}
+.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
+  right: auto;
+  left: 4px;
+}
+.chosen-rtl.chosen-container-single-nosearch .chosen-search,
+.chosen-rtl .chosen-drop {
+  left: 9999px;
+}
+.chosen-rtl.chosen-container-single .chosen-results {
+  margin: 0 0 4px 4px;
+  padding: 0 4px 0 0;
+}
+.chosen-rtl .chosen-results li.group-option {
+  padding-right: 15px;
+  padding-left: 0;
+}
+.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-right: none;
+}
+.chosen-rtl .chosen-search input[type="text"] {
+  padding: 4px 5px 4px 20px;
+  background: white url('chosen-sprite.png') no-repeat -30px -20px;
+  background: url('chosen-sprite.png') no-repeat -30px -20px;
+  direction: rtl;
+  border-radius:  3px;
+}
+.chosen-rtl.chosen-container-single .chosen-single div b {
+  background-position: 6px 2px;
+}
+.chosen-rtl.chosen-container-single.chosen-with-drop .chosen-single div b {
+  background-position: -12px 2px;
+}
+
+/* @end */
+/* @group Retina compatibility */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-container-single .chosen-single abbr,
+  .chosen-container-single .chosen-single div b,
+  .chosen-container-single .chosen-search input[type="text"],
+  .chosen-container-multi .chosen-choices .search-choice .search-choice-close,
+  .chosen-container .chosen-results-scroll-down span,
+  .chosen-container .chosen-results-scroll-up span {
+    background-image: url('chosen-sprite@2x.png') !important;
+    background-size: 52px 37px !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+.chosen-drop .def_value{ color: #aaa; }
+
+.chosen-container-multi .chosen-choices:focus{
+  border-color:rgba(82,168,236,0.8);
+ -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+ -moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6)
+}
+/* line 5, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+code.inline_code, div.multiline_code {
+  background-color: #444;
+  color: #f8f8f2;
+  padding: 3px 8px;
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+}
+
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+span.function {
+  color: #a6e22a;
+}
+
+/* line 7, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+.multiline_code span.key {
+  color: #66d9ef;
+  font-weight: 500;
+}
+
+/* line 8, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+span.key {
+  color: #428bca;
+  font-weight: 600;
+}
+
+/* line 9, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+span.symbol, span.predefined-constant {
+  color: #fd971f;
+}
+
+/* line 10, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+span.string {
+  color: #e6db74;
+}
+
+/* line 13, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+.link {
+  color: #428bca;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* line 13, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+.link:hover {
+  color: #55aa00;
+}
+
+/* line 15, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+ul.link-list li {
+  white-space: nowrap;
+}
+
+/* line 19, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+#metadata h4.section-header {
+  margin: 0;
+  padding: 2px 8px;
+  background: #ccc;
+  color: #666;
+  border-bottom: 1px solid #aaa;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+
+/* line 23, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+#metadata ul, #metadata dl, #metadata p {
+  padding: 8px;
+  list-style: none;
+}
+
+/* line 24, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+#metadata {
+  width: 170px;
+  float: left;
+}
+
+/* line 25, H:/www/railsprj/myheadway/app/assets/stylesheets/docs.scss */
+#metadata .section {
+  background-color: #f9f9f9;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #aaa;
+  margin: 0 8px 0 0;
+  font-size: 90%;
+  overflow: hidden;
+}
+/* line 1, H:/www/railsprj/myheadway/app/assets/stylesheets/items.scss */
+.inp_btn, span.check_img {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+/* line 8, H:/www/railsprj/myheadway/app/assets/stylesheets/items.scss */
+.inp_btn.checkbox, span.check_img {
+  width: 18px;
+  height: 18px;
+  background-position: -87px 0;
+}
+
+/* line 9, H:/www/railsprj/myheadway/app/assets/stylesheets/items.scss */
+.inp_btn.checkbox, span.check_img {
+  background: url("pict01.png");
+  width: 18px;
+  height: 18px;
+  background-position: -87px 0;
+}
+
+/* line 10, H:/www/railsprj/myheadway/app/assets/stylesheets/items.scss */
+.inp_btn.checkbox.active, span.check_img.checked {
+  background-position: -87px -20px;
+}
+/* Make clicks pass-through */
+
+#nprogress {
+  pointer-events: none;
+  -webkit-pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d;
+
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1.0;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -moz-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  -o-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 100;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 14px;
+  height: 14px;
+
+  border:  solid 2px transparent;
+  border-top-color:  #29d;
+  border-left-color: #29d;
+  border-radius: 10px;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  -moz-animation:    nprogress-spinner 400ms linear infinite;
+  -ms-animation:     nprogress-spinner 400ms linear infinite;
+  -o-animation:      nprogress-spinner 400ms linear infinite;
+  animation:         nprogress-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes nprogress-spinner {
+  0%   { -moz-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes nprogress-spinner {
+  0%   { -o-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes nprogress-spinner {
+  0%   { -ms-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
+/* line 1, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon, li.icon a {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+/* line 2, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon + .icon {
+  margin-left: 2px;
+}
+
+/* line 3, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon_remove {
+  background: url("delete.png");
+}
+
+/* line 5, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon_edit {
+  background: url("edit.png");
+}
+
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon_code {
+  background: url("code.png");
+}
+
+/* line 7, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.icon_tag {
+  background: url("tag.png");
+}
+
+/* line 9, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+label.inp_btn_label {
+  padding: 0 0 0 18px;
+  position: relative;
+}
+
+/* line 10, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+label.inp_btn_label .inp_btn {
+  position: absolute;
+  top: -2px;
+  left: 0;
+}
+
+/* line 12, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.btn-reset {
+  margin-left: 10px;
+}
+
+/* line 16, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.datepicker {
+  background: url(/assets/ico-date-53c4efc61fe3fb6a701e627088794e841b9b26c898f190a17f94ee688ae1b82f.png) 95% 4px no-repeat;
+  cursor: pointer;
+}
+
+/* line 18, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* line 19, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon:hover {
+  cursor: pointer;
+}
+
+/* line 21, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon_apply {
+  background: url("apply.png") no-repeat;
+}
+
+/* line 22, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+span.icon_cancel {
+  background: url("cancel.png") no-repeat;
+}
+
+/* line 24, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.only_actual:hover {
+  opacity: 0.8;
+}
+
+/* line 25, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a {
+  margin-top: 2px;
+  margin-right: 20px;
+  width: 140px;
+  float: right;
+}
+
+/* line 26, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a .link_a {
+  text-decoration: none;
+  text-align: right;
+  padding: 0 5px;
+  min-width: 78px;
+}
+
+/* line 27, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a .scale {
+  float: right;
+  width: 44px;
+  height: 19px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 28, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a.toggled .scale {
+  background: #009ddd;
+}
+
+/* line 29, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a .handle {
+  float: right;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  transition: left 0.2s ease;
+}
+
+/* line 43, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.switcher_a .handle.active {
+  left: 27px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+/* line 45, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.input-group {
+  display: inline-table;
+  vertical-align: middle;
+}
+
+/* line 50, H:/www/railsprj/myheadway/app/assets/stylesheets/options.css.scss */
+.input-group-addon {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: #555;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: auto;
+  display: table-cell;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+/*------------------------------------*\
+  Light Theme Styles
+\*------------------------------------*/
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination {
+  display: block;
+  overflow: hidden;
+  padding: 0 20px 2px 0;
+}
+
+/* line 12, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.btn-white2 {
+  color: #666;
+  border: 1px solid #BBB;
+  min-width: 14px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: #efefef;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* W3C */
+}
+
+/* line 27, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination a, .pagination span, .pagination em {
+  float: left;
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  text-align: center;
+  border: 1px solid #BBB;
+  min-width: 14px;
+  padding: 0 7px;
+  margin: 0 3px 0 0;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background: #efefef;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #efefef));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #ffffff 0%, #efefef 100%);
+  /* W3C */
+}
+
+/* line 49, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination a:hover, .btn-white2:hover {
+  text-decoration: none;
+  background: #FCFCFC;
+  border-color: rgba(82, 168, 236, 0.8);
+}
+
+/* line 55, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination .current, .pagination .disabled {
+  background: #666;
+  color: #FFF;
+  border-color: #444;
+  box-shadow: 0 1px 0 white, 0 0 2px rgba(0, 0, 0, 0.3) inset;
+  cursor: default;
+}
+
+/* line 63, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.pagination .ellipse {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: bold;
+  cursor: default;
+}
+
+/* line 73, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.page {
+  border-radius: 3px;
+  float: left;
+  padding: 0 8px;
+  height: 24px;
+  margin-right: 1px;
+  border: solid 1px #c0c0c0;
+  background-color: #e9e9e9;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #717171;
+}
+
+/* line 86, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.page:hover, .page.gradient:hover {
+  background: #fefefe;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
+  background: -moz-linear-gradient(0% 0% 270deg, #FEFEFE, #f0f0f0);
+  text-decoration: none;
+}
+
+/* line 93, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.page.active {
+  border: none;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  padding: 1px 20px;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* line 105, H:/www/railsprj/myheadway/app/assets/stylesheets/pagination.scss */
+.page.gradient {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#e9e9e9));
+  background: -moz-linear-gradient(0% 0% 270deg, #f8f8f8, #e9e9e9);
+}
+/* line 1, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 2, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  color: #333;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+
+/* line 8, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 10, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 12, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 14, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 21, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 31, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 34, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.fullwidth {
+  width: 100%;
+}
+
+/* line 35, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.sign-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+/* line 37, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#itemAdd_form {
+  height: 28px;
+}
+
+/* line 38, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#itemAdd_form .input-group-addon {
+  width: 150px;
+  font-weight: 500;
+}
+
+/* line 39, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#itemAdd_form input, #itemAdd_form .field {
+  width: 440px;
+  margin-right: 10px;
+  display: table-cell;
+}
+
+/* line 40, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#itemAdd_form label, #itemAdd_form .chosen-single {
+  margin-right: 10px;
+}
+
+/* line 41, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#itemAdd_form .chosen-single {
+  height: 27px;
+}
+
+/* line 43, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.field label {
+  width: 100px;
+}
+
+/* line 44, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+label.big_lbl {
+  width: 120px;
+}
+
+/* line 45, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.field input[type='text'], #itemAdd_form input[type='text'] {
+  height: 27px;
+  width: 80%;
+}
+
+/* line 46, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#new_task input[type='text'] {
+  width: 100%;
+}
+
+/* line 47, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#new_task #task_name {
+  width: 420px;
+}
+
+/* line 49, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+#new_task .chosen-container {
+  width: 100%;
+}
+
+/* line 51, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.w130 {
+  width: 130px !important;
+}
+
+/* line 52, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.css.scss */
+.w100 {
+  width: 100px !important;
+}
+/* line 1, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 17, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 20, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 26, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 28, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 30, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 38, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 49, H:/www/railsprj/myheadway/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch #search {
+  width: 200px;
+  margin-right: 5px;
+  padding-left: 8px;
+  height: 25px;
+}
+
+/* line 7, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch {
+  margin-bottom: 20px;
+  display: block;
+  height: 30px;
+}
+
+/* line 9, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+textarea.width_area {
+  -webkit-margin-before: 0 !important;
+  display: block;
+  width: 100%;
+  padding: 5px;
+}
+
+/* line 11, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+img.round {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  left: -40px;
+  top: -12px;
+  width: 72px;
+  height: 67px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+}
+
+/* line 13, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.table_row {
+  width: 700px;
+}
+
+/* line 14, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_form_content {
+  width: auto;
+}
+
+/* line 16, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .schosen {
+  float: left;
+  width: 180px;
+}
+
+/* line 17, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .btn {
+  align-items: flex-end;
+}
+
+/* line 19, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .combobox .chosen-container {
+  width: 145px !important;
+}
+
+/* line 20, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .big_combo .chosen-container {
+  width: 190px !important;
+}
+
+/* line 21, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.navsearch .combobox {
+  float: left;
+  padding-right: 5px;
+}
+
+/* line 23, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statements_search .navsearch {
+  width: 88%;
+  float: left;
+}
+
+/* line 25, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+#statements {
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* line 28, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.st_a {
+  padding: 1px 5px;
+}
+
+/* line 29, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.st_a:hover, .st_a:hover a {
+  background-color: #428bca;
+  border-radius: 2px;
+  color: white;
+}
+
+/* line 31, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_show {
+  border: 1px solid #EEE;
+  padding: 10px 20px 30px 20px;
+  margin-right: auto;
+  margin-top: 18px;
+  background: url("back-tet5.png");
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.15);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 40, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_show.mini {
+  width: 338px;
+  height: auto;
+}
+/* line 41, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_show.max_statement {
+  width: 824px;
+}
+
+/* line 43, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_show.mini {
+  width: 338px;
+  height: auto;
+  padding-bottom: 12px;
+}
+
+/* line 46, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.min_statement_head {
+  position: relative;
+  float: left;
+  top: -11px;
+  left: -21px;
+  height: 14px;
+  width: 190px;
+  padding: 7px 12px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  color: #616161;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#e9e9e9));
+  background: -moz-linear-gradient(0% 0% 270deg, #f8f8f8, #e9e9e9);
+  -webkit-border-radius: 4px 0 4px 0;
+  -moz-border-radius: 4px 0 4px 0;
+  border-radius: 4px 0 4px 0;
+}
+
+/* line 60, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_image_content {
+  text-align: center;
+  padding: 20px 0;
+  background-color: white;
+}
+
+/* line 62, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_content, .statement_content p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  margin: 18px 0;
+}
+
+/* line 63, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_mini .statement_content {
+  font-size: 15px;
+}
+
+/* line 66, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+br {
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 68, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_author {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #999;
+  height: auto;
+  padding: 5px;
+}
+
+/* line 69, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_edit_menu {
+  display: inline;
+  float: right;
+  vertical-align: bottom;
+}
+
+/* line 71, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_user {
+  float: right;
+  color: #999;
+}
+
+/* line 73, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_show a:hover {
+  background-color: transparent;
+}
+
+/* line 74, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_header {
+  position: relative;
+  background: #616161;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.8);
+  color: #f0f0f0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  top: -11px;
+  right: -21px;
+  float: right;
+  padding: 5px 7px;
+  border-radius: 0 5px 0 5px;
+  -webkit-border-radius: 0 5px 0 5px;
+  -moz-border-radius: 0 5px 0 5px;
+}
+
+/* line 89, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_footer {
+  vertical-align: bottom;
+  height: auto;
+  display: inline;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+}
+
+/* line 91, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.toggleButton {
+  cursor: pointer;
+  color: white;
+  background-color: #666;
+  border-color: #0088cc;
+  padding-right: 3px;
+  padding-left: 2px;
+  margin-left: 5px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3x;
+}
+
+/* line 104, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination a, .digg_pagination em, .digg_pagination span {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+  background: #838A90;
+  background: -webkit-gradient(linear, left top, left bottom, from(#838A90), to(#414549));
+  background: -moz-linear-gradient(-90deg, #838A90, #414549);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#838a90, endColorstr=#414549);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#838a90, endColorstr=#414549);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-shadow: black 0 1px 0;
+  text-decoration: none;
+  margin-right: 3px;
+  font-weight: bold;
+  font-size: 1.0em;
+  cursor: pointer;
+  padding: .6em 1.4em .5em 1.3em;
+  border: none;
+  color: #EFEFEF;
+  background: #F9F9F9;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F9F9F9), to(#DDDBDB));
+  background: -moz-linear-gradient(-90deg, #F9F9F9, #DDDBDB);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f9f9f9, endColorstr=#dddbdb);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f9f9f9, endColorstr=#dddbdb);
+  text-shadow: white 0 1px 0;
+  color: #777;
+  border-image: initial;
+}
+
+/* line 138, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  padding: 0.35em 0.7em;
+  display: block;
+  float: left;
+  margin-right: 3px;
+}
+/* line 143, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination a.disabled, .digg_pagination span.disabled, .digg_pagination em.disabled {
+  color: #DDDBDB;
+}
+
+/* line 151, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination .digg_pagination a, .digg_pagination em {
+  text-decoration: none;
+}
+/* line 153, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.digg_pagination .digg_pagination a.current, .digg_pagination em.current {
+  background: #F9F9F9;
+}
+
+/* line 160, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.tag_list {
+  width: 200px;
+  float: right;
+}
+
+/* line 162, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_mini, .mini {
+  float: right;
+}
+/* line 163, H:/www/railsprj/myheadway/app/assets/stylesheets/statements.css.scss */
+.statement_mini p, .mini p {
+  font-size: 14px;
+}
+@charset "UTF-8";
+/* line 3, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.blk {
+  display: block;
+}
+
+/* line 5, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.vue_index {
+  margin: 18px 14px 0 0;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+/* line 6, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.index_table.odd {
+  background-color: #f9f9f9;
+}
+
+/* line 8, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+td.vline, th.vline {
+  border-right: 1px solid #D6D6D6;
+}
+
+/* line 9, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.prj_table {
+  display: grid;
+  align-items: end;
+  min-height: 50px;
+}
+
+/* line 11, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.panel-default.gray {
+  border-color: #ddd;
+  background-color: #fafafa;
+}
+
+/* line 12, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads tr {
+  background-color: white;
+}
+
+/*----Таблица списка итемов_start----*/
+/* line 15, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a, .panel {
+  border: 1px solid #D6D6D6;
+  border-radius: 6px 6px 5px 5px;
+  position: relative;
+  line-height: 1.3;
+}
+
+/* line 16, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a .head, .panel-default .table-heading {
+  background: #D6D6D6;
+  padding: 12px;
+  font-size: 17px;
+  position: relative;
+  font-weight: 500;
+}
+
+/* line 17, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grp_row {
+  background: #F2F2F2;
+}
+
+/* line 18, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.panel-default .table-heading.goods-list {
+  background: #dadada;
+}
+
+/* line 19, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.panel-default .table-heading.goods-list a {
+  text-decoration-line: underline;
+  color: firebrick;
+  text-decoration-color: brown;
+}
+
+/* line 20, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.panel-default .table-heading.goods-list a.nonactual {
+  color: gray;
+  text-decoration-color: gray;
+}
+
+/* line 21, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.v-select span.nonactual {
+  color: #c5c5c5;
+  text-decoration-color: gray;
+}
+
+/* line 23, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.modal-grid {
+  display: grid;
+  grid-template-columns: auto 64px;
+}
+
+/* line 24, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.goods-list {
+  display: grid;
+  grid-template-columns: auto 1fr 30px 25px;
+}
+
+/* line 25, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.goods-list span {
+  cursor: pointer;
+}
+
+/* line 26, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+span.title {
+  margin-top: 3px;
+}
+
+/* line 27, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.bold {
+  font-weight: 500;
+}
+
+/* line 29, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.goods-list span.title {
+  margin-top: 4px;
+}
+
+/* line 31, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.client_projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* line 33, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_books {
+  display: grid;
+  grid-template-columns: 1fr 200px 80px;
+}
+
+/* line 34, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grig_1_3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+/* line 35, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grig-user-summary {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+
+/* line 38, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.provider_table_filter {
+  display: grid;
+  grid-template-columns: 190px 370px 1fr auto;
+  column-gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* line 40, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.filter_row {
+  display: grid;
+  grid-template-columns: 190px 1fr 82px 86px;
+  column-gap: 16px;
+  margin-bottom: 3px;
+}
+
+/* line 41, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.filter_row.filter_items {
+  margin-bottom: 20px;
+}
+
+/* line 42, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.filter_item {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 44, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.providers_index_head {
+  display: grid;
+  grid-template-columns: 270px 1fr 180px 205px 295px 60px;
+}
+
+/* line 45, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.providers_index_group {
+  display: grid;
+  grid-template-columns: 270px 1fr 636px 44px 60px;
+}
+
+/* line 46, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.providers_index_head .td, .providers_index_group .td {
+  display: flex;
+  align-items: center;
+}
+
+/* line 48, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.providers_groups_index {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr 60px;
+}
+
+/* line 50, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_absences {
+  display: grid;
+  grid-template-columns: 90px 90px 190px 150px 1fr 45px 52px 60px;
+}
+
+/* line 52, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.user_leads {
+  display: grid;
+  grid-template-columns: 178px 150px 1fr 90px 90px;
+}
+
+/* line 53, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.user_projects {
+  display: grid;
+  grid-template-columns: 178px 150px 1fr 90px 90px 90px;
+}
+
+/* line 54, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.user_absences_target {
+  display: grid;
+  grid-template-columns: 30px 170px 1fr 70px 90px;
+}
+
+/* line 55, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.user_absences_shop {
+  display: grid;
+  grid-template-columns: 30px 1fr 70px 90px;
+}
+
+/* line 56, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.user_absences {
+  display: grid;
+  grid-template-columns: 1fr 70px 90px 90px;
+}
+
+/* line 58, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_leads {
+  display: grid;
+  grid-template-columns: 126px 124px 156px 136px 1fr 92px 120px 60px;
+}
+
+/* line 60, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.vue_index .white {
+  float: right;
+  color: white;
+}
+
+/* line 62, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.user_leads .td {
+  cursor: pointer;
+}
+
+/* line 64, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.vuesort .hTitle {
+  float: left;
+}
+
+/* line 65, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.vuesort .hTitle {
+  width: 80%;
+}
+
+/* line 66, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tarifs .sortArrow {
+  margin-top: 12px;
+  margin-right: 4px;
+}
+
+/* line 67, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.flip-list-move {
+  transition: transform .5s;
+}
+
+/* line 69, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.box_wrap_2 .panel-left {
+  width: 384px;
+}
+
+/* line 70, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.box_wrap_2 .panel-right {
+  width: 935px;
+}
+
+/* line 72, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.th.current a {
+  color: #50aa00;
+}
+
+/* line 74, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_row .td, .grid-row .td, .tr_bottom .th {
+  border-top: 1px solid #D6D6D6;
+  padding: 8px;
+  font-size: 13px;
+}
+
+/* line 76, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.th.current .sortArrow {
+  background: url(/assets/arrow_asc-f86a62a6ca2fb7043aa484703700dfdfa39588cbec70b80fec28b01bbf16c0c8.png) no-repeat 0 0;
+  height: 16px;
+  display: block;
+  margin-top: 4px;
+  width: 16px;
+  float: left;
+}
+
+/* line 80, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.th.current.desc .sortArrow {
+  background: url(/assets/arrow_desc-c55427802f8e3b39bd39c38640c52027fe03bab15eaf203a8944ec9cbe54d88e.png) no-repeat 0 0;
+  height: 16px;
+  display: block;
+  margin-top: 4px;
+  width: 16px;
+  float: left;
+}
+
+/* line 85, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+tr.nonactual td, tr.nonactual td a, td.nonactual a, .nonactual .td, .nonactual .td a {
+  color: #ccc;
+}
+
+/* line 86, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.hotlead, .hot, .hot_date {
+  color: red;
+}
+
+/* line 87, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.goodlead {
+  color: #50aa00;
+}
+
+/* line 88, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.info, .info a {
+  color: #009DDD;
+}
+
+/* line 90, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.alt_goods_head {
+  background: #EFEFEF;
+  padding: 8px 13px 8px 30px;
+  font-size: 15px;
+  border-top: 2px solid #D6D6D6;
+  border-bottom: 1px solid #eee;
+}
+/* line 91, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.alt_goods_head:hover {
+  background: #fafafa;
+}
+
+/* line 94, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.alt_goods_head {
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  height: 24px;
+}
+
+/* line 95, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.alt_goods_head span {
+  cursor: pointer;
+}
+
+/* line 97, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a .head {
+  padding: 8px 12px;
+}
+
+/* line 99, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* line 100, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table th, table th, tr.total {
+  vertical-align: top;
+  font-weight: 500;
+}
+
+/* line 101, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table th {
+  border-bottom: 2px solid #D6D6D6;
+  padding: 12px;
+}
+
+/* line 103, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table td {
+  vertical-align: top;
+  padding: 12px;
+  border-bottom: 1px solid #D6D6D6;
+}
+
+/* line 104, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table .disabled td {
+  color: #aeaeae;
+}
+
+/* line 105, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table .disabled td a {
+  color: #aeaeae;
+}
+
+/* line 106, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table.stripped tr:nth-child(even) td, table.stripped tr:nth-child(even) td, .even {
+  background: #fafafa;
+}
+
+/* line 108, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table tr:not(#new_item):hover td,
+table.tleads tr:not(.new_row):not(.total):not(.ordered):not(#new_item):hover td {
+  background-color: #f5f5f5;
+}
+
+/* line 110, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+tr.hover td {
+  background-color: #f5f5f5 !important;
+}
+
+/* line 112, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.tbl_fc {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* line 113, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.tbl_fc td {
+  vertical-align: top;
+  padding-bottom: 10px;
+}
+
+/* line 114, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.tbl_fc.contacts td {
+  vertical-align: top;
+  padding-bottom: 12px;
+}
+
+/* line 115, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.tbl_fc td.last_td {
+  padding: 0 !important;
+}
+
+/* line 117, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.tbl_fc td.caption {
+  padding-right: 15px;
+  padding-top: 7px;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* line 118, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.tbl_fc td.caption2 {
+  width: 235px;
+  padding-right: 15px;
+  padding-top: 0px;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* line 120, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.provider table.tbl_fc td.caption,
+#new_lead .panel-right table.tbl_fc td.caption {
+  width: 120px;
+}
+
+/* line 122, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table-body-scroll {
+  overflow-x: auto;
+}
+
+/* line 124, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+td.caption3, .label {
+  font-weight: 500;
+}
+
+/* line 125, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+td.caption3 span, .label:not(.grid_sub_goods .label) {
+  float: left;
+  padding-top: 8px;
+  padding-right: 15px;
+}
+
+/* line 126, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+td.caption3 .chosen-container span, td.caption3 .chosen-container li {
+  font-weight: normal;
+}
+
+/* line 127, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+td.caption3 .chosen-container span {
+  padding-top: 0px;
+}
+
+/* line 129, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.inp2 {
+  width: 245px;
+  float: left;
+}
+
+/* line 130, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.btn_reset {
+  margin-right: 10px;
+}
+
+/* line 131, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.mgn_right15 {
+  margin-right: 15px;
+}
+
+/* line 133, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.tbl_fc_1 td.caption {
+  width: 160px;
+}
+
+/* line 134, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.tbl_fc_1 td.caption_sm {
+  width: 70px;
+}
+
+/* line 136, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table, .grid-body {
+  width: 100%;
+  font-size: 13px;
+}
+
+/* line 138, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.short_label {
+  width: 45px;
+}
+
+/* line 139, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.t_cell {
+  display: table-cell;
+}
+
+/* line 140, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.w50 {
+  width: 50%;
+}
+
+/* line 142, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.sep_line {
+  border-bottom: 1px solid #dbdbdb;
+  height: 20px;
+  margin-bottom: 16px;
+}
+
+/* line 144, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.costing_head {
+  display: grid;
+  grid-template-columns: 125px 1fr 125px 1fr;
+  grid-gap: 8px 28px;
+}
+
+/* line 145, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.prj_number {
+  display: grid;
+  grid-template-columns: 1fr 120px 1fr;
+  column-gap: 15px;
+}
+
+/* line 146, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.prj_new_client {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+}
+
+/* line 147, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.prj_new_client label {
+  padding-top: 7px;
+  text-align: right;
+  font-weight: 500;
+}
+
+/* line 149, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.prj_executors {
+  display: grid;
+  grid-template-columns: 232px 232px 232px 1fr 1fr 1fr;
+  column-gap: 15px;
+  margin-bottom: 10px;
+}
+
+/* line 151, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* line 152, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_2col_gap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+/* line 154, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* line 156, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_5col {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 60px;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+/* line 163, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_5col_plus {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr 20px 1fr;
+  grid-template-rows: 60px;
+  column-gap: 12px;
+  row-gap: 10px;
+}
+
+/* line 170, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_7col {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr 20px 1fr 1.5fr 1fr;
+  grid-template-rows: 60px;
+  column-gap: 12px;
+  row-gap: 10px;
+}
+
+/* line 177, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_9col {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
+  grid-template-rows: 60px;
+  column-gap: 12px;
+  row-gap: 10px;
+}
+
+/* line 184, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_targets {
+  display: grid;
+  grid-template-columns: 185px repeat(31, 22px);
+  row-gap: 1px;
+  column-gap: 1px;
+  margin-bottom: 1px;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+}
+
+/* line 196, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_period {
+  display: grid;
+  grid-template-columns: 120px 120px 120px 1fr;
+  grid-template-rows: 60px;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+/* line 204, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_table_absence {
+  display: grid;
+  grid-template-columns: 150px 1fr 46px 1fr;
+  grid-template-rows: 36px 1px;
+  grid-gap: 10px;
+}
+
+/* line 205, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_table_tarif {
+  display: grid;
+  grid-template-columns: 150px 224px 1fr;
+  grid-gap: 10px;
+}
+
+/* line 206, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_table_goods {
+  display: grid;
+  grid-template-columns: 260px 254px 103px 1fr 120px 70px;
+}
+
+/* line 208, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_label_name {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 10px;
+}
+
+/* line 210, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_middle_label_name {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  grid-gap: 10px;
+}
+
+/* line 211, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_sub_goods {
+  display: grid;
+  grid-template-columns: 120px auto 170px;
+  grid-gap: 10px;
+}
+
+/* line 213, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_clients {
+  display: grid;
+  grid-template-columns: 400px 1fr 150px 200px 60px;
+}
+
+/* line 216, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_table_head div {
+  padding: 8px;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 217, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_table div {
+  padding: 8px;
+  font-size: 13px;
+}
+
+/* line 218, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_table div:not(.icons-attach) {
+  border-bottom: 1px solid #ebebeb;
+}
+
+/* line 220, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+div.edit_delete {
+  text-align: center;
+}
+
+/* line 221, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.target_name {
+  width: 130px;
+  float: left;
+}
+
+/* line 222, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.edit_delete {
+  width: 34px;
+  float: right;
+}
+
+/* line 224, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_table_new_item > div {
+  padding: 2px;
+}
+
+/* line 225, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid_table_new_item input[type="text"] {
+  height: 36px;
+}
+
+/* line 227, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_footer {
+  overflow: auto;
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* line 228, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.table_footer span {
+  font-weight: 500;
+}
+
+/* line 230, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.label_col, .grid_label_name .caption, #new_task .caption {
+  margin-top: 8px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+/* line 231, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.label_col.label_2_rows {
+  margin-top: 2px;
+  line-height: 1.2em;
+  text-align: left;
+}
+
+/* line 233, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.label_description, .label_num {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* line 234, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.label_num {
+  text-align: right;
+}
+
+/* line 236, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+th.center, td.center {
+  text-align: center;
+}
+
+/* line 237, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#new_item td {
+  padding: 1px;
+}
+
+/* line 239, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table td {
+  font-size: 13px;
+}
+
+/* line 241, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* line 242, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+/* line 243, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table tbody tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+/* line 244, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table .actual {
+  text-align: center;
+}
+
+/* line 246, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.items_box {
+  margin: 0 0 40px 0;
+}
+
+/* line 247, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.items_box_head {
+  margin: 0 0 16px 0;
+}
+
+/* line 248, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.items_box_head:after {
+  content: ' ';
+  clear: both;
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+}
+
+/* line 250, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads, .tcalendar {
+  width: 100%;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* line 251, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.twfixed {
+  table-layout: fixed;
+}
+
+/* line 252, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table.txfixed td {
+  overflow: hidden;
+}
+
+/* line 254, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads thead {
+  border-radius: 0 3px 3px 0;
+}
+
+/* line 257, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads tr th, .grid-head .th {
+  padding: 8px;
+  font-weight: 600;
+}
+
+/* line 260, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads tr:not(.tr_bottom) th {
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 261, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads tr.tr_bottom th {
+  border-top: 1px solid #D6D6D6;
+}
+
+/* line 263, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid-sub-head .th {
+  padding: 8px;
+  border-top: 2px solid #ddd;
+  font-weight: 500;
+  background: #fafafa;
+}
+
+/* line 265, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.grid-head .th a {
+  text-decoration: none;
+  float: left;
+  margin-right: 4px;
+}
+
+/* line 267, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads td, .grid-body .td {
+  border-top: 1px solid #D6D6D6;
+  padding: 8px;
+}
+/* line 268, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads td.editable, .tleads td.app_cancel, .grid-body .td.editable, .grid-body .td.app_cancel {
+  padding: 4px 4px;
+}
+
+/* line 271, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+tr.editable td {
+  padding: 3px 2px;
+  vertical-align: middle;
+}
+
+/* line 272, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+tr.editable td.e_edit {
+  padding: 3px 7px;
+}
+
+/* line 274, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.shops td {
+  padding: 8px 12px;
+}
+
+/* line 275, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a span.check_img {
+  width: 18px;
+  height: 18px;
+}
+
+/* line 277, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.cut, .allcut, .altcut {
+  float: right;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/* line 278, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.cut:hover, .allcut:hover, .altcut:hover {
+  background: lightgray;
+}
+
+/* line 280, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.toggle-up {
+  transform: rotate(180deg);
+}
+
+/* line 281, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.toggle-down {
+  transform: rotate(0);
+}
+
+/* line 283, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.altcut span {
+  padding-top: 3px;
+  display: block;
+  float: left;
+  font-weight: normal;
+}
+
+/* line 285, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+span.cut b, span.altcut b, .allcut b {
+  display: block;
+  width: 12px;
+  height: 8px;
+  margin-top: 9px;
+  margin-left: 6px;
+  background: url(/assets/arr1-c9b64f9be7a851d2dd8292055445ef7bd9564da4feeafb84bd75fc302f277123.png) no-repeat -18px -9px;
+  transition: all 0.2s 0.2s;
+}
+
+/* line 294, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.allcut {
+  margin-right: 4px;
+}
+
+/* line 295, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.allcut b {
+  background-position: -18px -34px;
+  height: 14px;
+  margin-top: 6px;
+  transform: rotate(0);
+}
+
+/* line 296, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.cutted b {
+  transform: rotate(-180deg);
+}
+
+/* line 297, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.total td {
+  font-size: 14px;
+}
+
+/* line 299, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+td.edit_delete, th.edit_delete, .tbl_a table td.edit_delete {
+  width: 45px;
+  vertical-align: middle;
+}
+
+/* line 300, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tbl_a table td.edit_delete {
+  padding-left: 12px;
+}
+
+/* line 301, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+tr.editable input[type="text"] {
+  height: 28px;
+}
+
+/* line 304, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads tr.month, .month {
+  border-right-color: white;
+  border-left-color: white;
+  vertical-align: bottom;
+  margin-bottom: 0;
+  font-size: 20px !important;
+  font-weight: normal !important;
+  background-color: #fafafa;
+}
+
+/* line 314, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.li-head, tr.gr-head {
+  padding: 8px 12px 4px 12px;
+  font-weight: 500;
+  background-color: #fafafa;
+  margin-top: 20px;
+}
+
+/* line 321, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads tr.month td {
+  padding: 10px;
+}
+
+/* line 322, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.tleads th.inf {
+  padding: 2px;
+  width: 20px;
+}
+
+/* line 323, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+tr.va_middle td, td.va_middle {
+  vertical-align: middle !important;
+}
+
+/* line 325, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#back-top, #to_bottom {
+  position: fixed;
+  bottom: 70px;
+  right: 6px;
+  display: none;
+  z-index: 100;
+}
+
+/* line 326, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#to_bottom {
+  top: 200px;
+}
+
+/* line 328, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#back-top a, #to_bottom a {
+  width: 32px;
+  display: block;
+  text-align: center;
+  font: 11px/100% Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #bbb;
+  /*при наведении мышки меняем фон медленно*/
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+
+/* line 342, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#back-top span, #to_bottom span {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin-bottom: 7px;
+  background: #ddd url(/arrscroll.png) no-repeat center center;
+  background-position: 0 -32px;
+  border-radius: 8px;
+  /*при наведении мышки меняем фон медленно*/
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+}
+
+/* line 356, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#back-top span {
+  background-position: 0 0px;
+}
+
+/* line 357, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#back-top a:hover, #to_bottom a:hover {
+  color: #777;
+}
+
+/* line 358, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#back-top a:hover span, #to_bottom a:hover span {
+  background-color: #999;
+}
+
+/* line 360, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+table thead.center th {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* line 361, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+td.td_prgrs {
+  padding: 6px 0 0 0;
+  text-align: center;
+}
+
+/* line 362, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.new_bar, .prgrs {
+  padding: 0 16px 6px 12px;
+  background: none !important;
+  border: none !important;
+  color: white;
+  text-align: center;
+}
+
+/* line 363, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+td.prgrs:hover, tr:hover td.td_prgrs {
+  background-color: #f5f5f5 !important;
+}
+
+/* line 364, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.bar {
+  height: 16px;
+  background-color: #545a92;
+  width: 0%;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+/* line 365, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.bar .prgrs {
+  position: relative;
+  padding: 0px;
+  background-color: #c7c7c7;
+}
+/* line 366, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.bar .percent {
+  position: absolute;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+/* line 369, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+#project_progress {
+  width: 55px;
+}
+
+/* line 370, H:/www/railsprj/myheadway/app/assets/stylesheets/tables.scss */
+.project_progress label {
+  display: inline-flex;
+  font-size: 14px;
+  margin-bottom: 7px;
+  margin-left: 45px;
+  padding-top: 7px;
+  padding-right: 6px;
+  vertical-align: bottom;
+}
+/* line 3, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_list, .target_li {
+  line-height: 18px;
+  color: #0F67A1;
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  position: relative;
+  font-size: 12px;
+}
+
+/* line 13, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_list .edit_delete {
+  position: relative;
+  /* right: -130px; */
+  float: right;
+  white-space: nowrap;
+  margin: 1px 2px 0 0;
+  font-size: 0;
+}
+
+/* line 26, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_list .thead_group .edit_delete {
+  position: relative;
+  white-space: nowrap;
+  margin: 0;
+  font-size: 0;
+}
+
+/* line 39, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.thead_group {
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 45, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_head {
+  height: 24px;
+  margin-bottom: 3px;
+}
+
+/* line 46, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_list .target_li {
+  height: 23px;
+}
+
+/* line 47, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.span9 .chosen-container {
+  width: 80%;
+}
+
+/* line 51, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.target_line_head {
+  height: 19px;
+  display: flex;
+  border-bottom: 1px solid #EEE;
+  justify-content: center;
+  align-items: center;
+  padding: 1px 5px;
+  color: #428bca;
+}
+/* line 59, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.target_line_head.cur_head, .target_line_head:hover {
+  color: white;
+  background-color: #93c0e6;
+}
+
+/* line 63, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.thead_group .target_name {
+  color: #616161;
+}
+/* line 63, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.thead_group .target_name:hover {
+  color: white;
+}
+
+/* line 64, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.subtarget_name {
+  width: 185px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* line 71, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+span.plus {
+  display: block;
+  float: left;
+  width: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 73, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.target_line_days {
+  height: 23px;
+}
+
+/* line 75, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead, .calenday {
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  float: left;
+  border: 1px solid #EEE;
+}
+
+/* line 84, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead {
+  height: 20px;
+  width: 20px;
+}
+/* line 88, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.overhead, .calenhead:hover {
+  background-color: #93c0e6;
+  border-color: #428bca;
+  border-radius: 2px;
+}
+/* line 90, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.overhead.holyday, .calenhead:hover.holyday {
+  border: 1px solid #ff0000;
+  background-color: #ffaaaa;
+}
+/* line 92, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenhead.head {
+  width: 182px;
+  background-color: #f9f9f9;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 98, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday {
+  min-height: 20px;
+  cursor: pointer;
+}
+/* line 102, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday:hover {
+  border: 1px solid #ACF;
+  background-color: #e9f8ff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* line 104, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday.checked {
+  background-image: url("check.png");
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 108, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.group_day .calenday {
+  border: 1px solid #ddd;
+}
+/* line 110, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.group_day .calenday:hover {
+  border: 1px solid #ACF;
+  background-color: #e9f8ff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* line 117, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday[state="1"] {
+  background-color: #F0FFB0;
+  border: 1px solid #8cc665;
+}
+
+/* line 118, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday[state="2"] {
+  background-color: #BAEC50;
+  border: 1px solid #67b72b;
+}
+
+/* line 119, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calenday[state="3"] {
+  background-color: #70CB30;
+  border: 1px solid #198619;
+}
+
+/* line 121, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.today {
+  color: white;
+  border: 1px solid #04355f;
+  background-color: #428bca;
+  border-radius: 2px;
+}
+
+/* line 122, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.today.holyday {
+  background-color: #F44336;
+  border-color: #d01f1f;
+}
+
+/* line 124, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.holyday {
+  border: 1px solid #ffcccc;
+  background-color: #ffeeee;
+}
+/* line 125, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.holyday:hover {
+  border: 1px solid #ff0000;
+  background-color: #ffaaaa;
+}
+
+/* line 127, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+td.edit_delete, th.edit_delete {
+  width: 45px;
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+}
+
+/* line 130, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.end_line {
+  float: right;
+  width: 10px;
+  display: block;
+}
+
+/* line 133, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#children {
+  margin-left: 20px;
+}
+
+/* line 134, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#target_list {
+  padding: 0px;
+  -webkit-padding-start: 0px;
+}
+
+/* line 135, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+#div_days_list {
+  float: right;
+}
+
+/* line 137, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period_h {
+  float: right;
+}
+
+/* line 139, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period {
+  cursor: default;
+  height: 28px;
+  margin: 10px 0;
+}
+/* line 140, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period span, .calendar_period em {
+  padding: 0.2em 1.2em;
+  display: block;
+  float: left;
+  margin-right: 1px;
+}
+/* line 141, H:/www/railsprj/myheadway/app/assets/stylesheets/targets.css.scss */
+.calendar_period .current {
+  font-style: normal;
+  font-weight: bold;
+  background: #2e6ab1;
+  color: white;
+  border: 1px solid #2e6ab1;
+}
+/* line 5, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+._task {
+  margin-bottom: 4px;
+  transition: box-shadow 0.3s linear 0s, -webkit-transform 0.3s linear 0s;
+  transition: box-shadow 0.3s linear 0s, transform 0.3s linear 0s;
+  transition: box-shadow 0.3s linear 0s, transform 0.3s linear 0s, -webkit-transform 0.3s linear 0s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  font-family: OpenSans, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.33;
+}
+
+/* line 17, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+._task:hover {
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* line 21, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-item {
+  position: relative;
+  display: block;
+  height: 50px;
+  padding: 13px 15px 13px 20px;
+  cursor: pointer;
+  color: #333;
+  border-bottom: none;
+  border-radius: 2px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
+
+/* line 35, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task_head {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #333;
+  display: inline-block;
+  width: 915px;
+  margin-left: 10px;
+}
+
+/* line 46, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: url(cat.png);
+}
+
+/* line 54, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+#itemAdd_form label {
+  line-height: 25px;
+}
+
+/* line 56, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat17 {
+  background-position: -320px;
+}
+
+/* line 57, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat15 {
+  background-position: -272px;
+}
+
+/* line 58, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat13 {
+  background-position: -288px;
+}
+
+/* line 59, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat12 {
+  background-position: -192px;
+}
+
+/* line 60, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat10 {
+  background-position: -208px;
+}
+
+/* line 62, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat9 {
+  background-position: -160px;
+}
+
+/* line 63, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat6 {
+  background-position: -128px;
+}
+
+/* line 64, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat4 {
+  background-position: -96px;
+}
+
+/* line 65, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat3 {
+  background-position: -80px;
+}
+
+/* line 66, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.task-cat2 {
+  background-position: -64px;
+}
+
+/* line 68, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+::-webkit-input-placeholder {
+  color: #d8d8d8;
+}
+
+/* line 69, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+::-moz-placeholder {
+  color: #d8d8d8;
+}
+
+/* Firefox 19+ */
+/* line 70, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+:-moz-placeholder {
+  color: #d8d8d8;
+}
+
+/* Firefox 18- */
+/* line 71, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+:-ms-input-placeholder {
+  color: #d8d8d8;
+}
+
+/* line 73, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+ul.short_tasks {
+  padding: 0;
+}
+
+/* line 74, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.short_task {
+  list-style: none;
+  height: 15px;
+  margin: 5px 0;
+}
+
+/* line 76, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.short_tasks .checkbox {
+  float: left;
+  width: 26px;
+}
+
+/* line 78, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.short_tasks li .toggle:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><rect width="50" height="50" fill="none" stroke="#ededed" stroke-width="6"/></svg>');
+}
+
+/* line 83, H:/www/railsprj/td/app/assets/stylesheets/todomvc.scss */
+/* line 83, H:/www/railsprj/myheadway/app/assets/stylesheets/task.scss */
+.short_tasks li .toggle:checked:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="6"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+@charset "UTF-8";
+/* line 13, H:/www/railsprj/myheadway/app/assets/stylesheets/vue_add.scss */
+.selected-tag {
+  height: 100%;
+}
+
+/* line 14, H:/www/railsprj/myheadway/app/assets/stylesheets/vue_add.scss */
+.image_edit_form {
+  width: 148px;
+}
+
+/* line 34, H:/www/railsprj/myheadway/app/assets/stylesheets/vue_add.scss */
+.v-select input[type=search], .v-select input[type=search]:focus {
+  height: 28px;
+}
+
+/* line 35, H:/www/railsprj/myheadway/app/assets/stylesheets/vue_add.scss */
+input[type="text"], input[type="number"], input[type="password"], input[type="email"] {
+  height: 28px;
+}
+
+/* line 54, H:/www/railsprj/myheadway/app/assets/stylesheets/vue_add.scss */
+.navsearch .clear {
+  font-weight: bolder;
+  position: absolute;
+  cursor: pointer;
+  font-size: 28px;
+  font-family: fantasy;
+  line-height: 1;
+  color: #ca0000;
+  border: 0;
+  padding: 0;
+  margin-top: 3px;
+  margin-left: -22px;
+  /* margin-right: 6px; */
+  background-color: transparent;
+  float: left;
+}
+
+/*.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s !important;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8  {
+  opacity: 0;
+}*/
+/* line 78, H:/www/railsprj/myheadway/app/assets/stylesheets/vue_add.scss */
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+
+/* line 79, H:/www/railsprj/myheadway/app/assets/stylesheets/vue_add.scss */
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*.slide-enter-active, .slide-leave-active {
+    transition: all 1s cubic-bezier(.65, .05, .36, 1) !important;
+}
+.slide-enter, .slide-leave-active {
+    left: -100%;
+}﻿*/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+
+
+
+
+ */
+
+
+html, body { height: 100%; margin: 0;padding: 0;font: normal 13px sans-serif; }
+
+::-webkit-scrollbar { width: 8px; background: #f5f5f5;}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+    border:1px solid #ccc;
+}
+
+.container{ width: 1300px !important; }
+.chosen-container {width: 100%;}
+.submit_cancel {margin-top: 20px; float: right;}
+
+.page-wrapper { display: flex; flex-direction: column; height: 100%; }
+.page-content{  flex: 1 0 auto; }
+.page-footer {  margin-top: 45px; border-top: 1px solid #eaeaea; min-height: 20px; flex: 0 0 auto; }
+
+.edit_delete { opacity: 1; transition: opacity 2s; }
+.hid { opacity: 0; transition: opacity .3s; }
+
+.ui-helper-hidden-accessible { display:none; }
+
+a.brand_title {
+color: #0088cc;
+float: left;
+display: block;
+padding: 10px 20px 10px;
+margin-left: -20px;
+font-size: 20px;
+font-weight: 200;
+text-shadow: 0 1px 0 #ffffff;
+background-repeat: repeat-x;
+}
+
+
+a.brand_title:hover { color: #0066aa;text-decoration: none;}
+
+div#target_list > a:hover{ background-color: #000;}
+.logo { float: left;  margin-right: 20px;}
+
+.signin {width: 500px;padding: 20px 50px;margin: 0px auto;background: #F9F9F9;border-radius: 5px;}
+
+.navsearch {float: left;}
+.search_area { height: 24px;border: 1px solid #bbb;border-radius: 3px;width: 100%;z-index: 2;float: left;width: 100%;margin-bottom: 0;}
+.form-group input { border-radius: 4px; border-top-right-radius: 4px !important; border-bottom-right-radius: 4px !important;}
+.sortnav{   margin-bottom: 20px;}
+.sortnav li a, .sortnav li a:hover, .nav-pills a{ padding: 5px 10px;}
+
+
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, .comment_area{
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  -webkit-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -ms-transition: border linear 0.2s,box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s,box-shadow linear 0.2s;
+  transition: border linear 0.2s,box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  padding: 0 5px;
+}
+
+input[type="text"]:focus,#datepicker:focus,textarea:focus,
+.chosen-container-multi:focus, .chosen-choices:focus
+{
+ outline:0;
+ border-color:rgba(82,168,236,0.8);
+-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+-moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
+ box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6)
+}
+
+
+.chosen-container-multi .chosen-choices {
+  /*padding: 4px 12px 0px !important;*/
+  border-radius: 3px;
+  /*border-color: #CCC !important;*/
+  /*height: 27px !important;*/
+}
+
+.chosen-container-multi .chosen-choices li.search-choice{
+/* margin: -1px 5px 3px 0;
+ padding: 3px 20px 2px 5px;*/
+font-size: 12px !important;
+}
+
+.input-group{
+margin-bottom: 10px;
+ -webkit-margin-after: .5em;
+}
+
+.input-group-addon {
+ line-height: .5;
+
+}
+
+
+
+.label-group-addon1 {
+padding: 6px 12px;
+font-weight: 700;
+line-height: .4;
+color: #555;
+background-color: #eee;
+border: 1px solid #ccc;
+border-radius: 4px;
+vertical-align: middle;
+display: table-cell;
+white-space: nowrap;
+vertical-align: middle;
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+border-right: 0;
+}
+
+.panel {
+  display: block;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+
+.panel-default { border-color: #ddd; }
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+}
+
+.sep_1 {height: 10px; }
+.sep_05 {height: 2px; }
+.sep_15 {height: 15px; }
+.sep_2 {height: 20px; }
+.sep_3 {height: 30px; }
+.sep_4 {height: 40px; }
+.sep_5 {height: 50px; }
+
+/*!
+ * jQuery UI CSS Framework 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ *
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/
+ */
+
+/*
+
+
+
+
+
+
+ */
+
+
+
+/* Component containers
+----------------------------------*/
+
+.ui-widget {
+	font-family: Arial,Helvetica,sans-serif/*{ffDefault}*/;
+	font-size: 1em/*{fsDefault}*/;
+}
+.ui-widget .ui-widget {
+	font-size: 1em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+	font-family: Arial,Helvetica,sans-serif/*{ffDefault}*/;
+	font-size: 1em;
+}
+.ui-widget.ui-widget-content {
+	border: 1px solid #c5c5c5/*{borderColorDefault}*/;
+}
+.ui-widget-content {
+	border: 1px solid #dddddd/*{borderColorContent}*/;
+	background: #ffffff/*{bgColorContent}*/ /*{bgImgUrlContent}*/ /*{bgContentXPos}*/ /*{bgContentYPos}*/ /*{bgContentRepeat}*/;
+	color: #333333/*{fcContent}*/;
+}
+.ui-widget-content a {
+	color: #333333/*{fcContent}*/;
+}
+.ui-widget-header {
+	border: 1px solid #dddddd/*{borderColorHeader}*/;
+	background: #e9e9e9/*{bgColorHeader}*/ /*{bgImgUrlHeader}*/ /*{bgHeaderXPos}*/ /*{bgHeaderYPos}*/ /*{bgHeaderRepeat}*/;
+	color: #333333/*{fcHeader}*/;
+	font-weight: bold;
+}
+.ui-widget-header a {
+	color: #333333/*{fcHeader}*/;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+
+/* We use html here because we need a greater specificity to make sure disabled
+works properly when clicked or hovered */
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+	border: 1px solid #c5c5c5/*{borderColorDefault}*/;
+	background: #f6f6f6/*{bgColorDefault}*/ /*{bgImgUrlDefault}*/ /*{bgDefaultXPos}*/ /*{bgDefaultYPos}*/ /*{bgDefaultRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #454545/*{fcDefault}*/;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited,
+a.ui-button,
+a:link.ui-button,
+a:visited.ui-button,
+.ui-button {
+	color: #454545/*{fcDefault}*/;
+	text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+	border: 1px solid #cccccc/*{borderColorHover}*/;
+	background: #ededed/*{bgColorHover}*/ /*{bgImgUrlHover}*/ /*{bgHoverXPos}*/ /*{bgHoverYPos}*/ /*{bgHoverRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #2b2b2b/*{fcHover}*/;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited,
+a.ui-button:hover,
+a.ui-button:focus {
+	color: #2b2b2b/*{fcHover}*/;
+	text-decoration: none;
+}
+
+.ui-visual-focus {
+	box-shadow: 0 0 3px 1px rgb(94, 158, 214);
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #003eff/*{borderColorActive}*/;
+	background: #007fff/*{bgColorActive}*/ /*{bgImgUrlActive}*/ /*{bgActiveXPos}*/ /*{bgActiveYPos}*/ /*{bgActiveRepeat}*/;
+	font-weight: normal/*{fwDefault}*/;
+	color: #ffffff/*{fcActive}*/;
+}
+.ui-icon-background,
+.ui-state-active .ui-icon-background {
+	border: #003eff/*{borderColorActive}*/;
+	background-color: #ffffff/*{fcActive}*/;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #ffffff/*{fcActive}*/;
+	text-decoration: none;
+}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+	border: 1px solid #dad55e/*{borderColorHighlight}*/;
+	background: #fffa90/*{bgColorHighlight}*/ /*{bgImgUrlHighlight}*/ /*{bgHighlightXPos}*/ /*{bgHighlightYPos}*/ /*{bgHighlightRepeat}*/;
+	color: #777620/*{fcHighlight}*/;
+}
+.ui-state-checked {
+	border: 1px solid #dad55e/*{borderColorHighlight}*/;
+	background: #fffa90/*{bgColorHighlight}*/;
+}
+.ui-state-highlight a,
+.ui-widget-content .ui-state-highlight a,
+.ui-widget-header .ui-state-highlight a {
+	color: #777620/*{fcHighlight}*/;
+}
+.ui-state-error,
+.ui-widget-content .ui-state-error,
+.ui-widget-header .ui-state-error {
+	border: 1px solid #f1a899/*{borderColorError}*/;
+	background: #fddfdf/*{bgColorError}*/ /*{bgImgUrlError}*/ /*{bgErrorXPos}*/ /*{bgErrorYPos}*/ /*{bgErrorRepeat}*/;
+	color: #5f3f3f/*{fcError}*/;
+}
+.ui-state-error a,
+.ui-widget-content .ui-state-error a,
+.ui-widget-header .ui-state-error a {
+	color: #5f3f3f/*{fcError}*/;
+}
+.ui-state-error-text,
+.ui-widget-content .ui-state-error-text,
+.ui-widget-header .ui-state-error-text {
+	color: #5f3f3f/*{fcError}*/;
+}
+.ui-priority-primary,
+.ui-widget-content .ui-priority-primary,
+.ui-widget-header .ui-priority-primary {
+	font-weight: bold;
+}
+.ui-priority-secondary,
+.ui-widget-content .ui-priority-secondary,
+.ui-widget-header .ui-priority-secondary {
+	opacity: .7;
+	filter:Alpha(Opacity=70); /* support: IE8 */
+	font-weight: normal;
+}
+.ui-state-disabled,
+.ui-widget-content .ui-state-disabled,
+.ui-widget-header .ui-state-disabled {
+	opacity: .35;
+	filter:Alpha(Opacity=35); /* support: IE8 */
+	background-image: none;
+}
+.ui-state-disabled .ui-icon {
+	filter:Alpha(Opacity=35); /* support: IE8 - See #6059 */
+}
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+	width: 16px;
+	height: 16px;
+}
+.ui-icon,
+.ui-widget-content .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_444444_256x240-31d988765b4e6f56553c29588c500381dc3e6f0aa2980c8212202e5644aefd5d.png)/*{iconsContent}*/;
+}
+.ui-widget-header .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_444444_256x240-31d988765b4e6f56553c29588c500381dc3e6f0aa2980c8212202e5644aefd5d.png)/*{iconsHeader}*/;
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-button:focus .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_555555_256x240-32175261daee76c82bb0edf0eea16a56421866fbc31e94f3c1d570aa114502f5.png)/*{iconsHover}*/;
+}
+.ui-state-active .ui-icon,
+.ui-button:active .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_ffffff_256x240-350df1b7131037de20e83c5c0f3a41a770d2ac48b5762ea772b3f4a8a7b9d47a.png)/*{iconsActive}*/;
+}
+.ui-state-highlight .ui-icon,
+.ui-button .ui-state-highlight.ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_777620_256x240-0b020fc6e696d88d296e7bb1f61f1eb2ad827848e2c7382a4c3e0999e702dd9b.png)/*{iconsHighlight}*/;
+}
+.ui-state-error .ui-icon,
+.ui-state-error-text .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_cc0000_256x240-40985a64b4d5dd213fba27fcd862a1bd1b337a97674f6ff0b9ec20abcee4bc69.png)/*{iconsError}*/;
+}
+.ui-button .ui-icon {
+	background-image: url(/assets/jquery-ui/ui-icons_777777_256x240-faf32007ae120c302213557626e660dd10e711c5dd4f1113d35f26dc05b78d2f.png)/*{iconsDefault}*/;
+}
+
+/* positioning */
+.ui-icon-blank { background-position: 16px 16px; }
+.ui-icon-caret-1-n { background-position: 0 0; }
+.ui-icon-caret-1-ne { background-position: -16px 0; }
+.ui-icon-caret-1-e { background-position: -32px 0; }
+.ui-icon-caret-1-se { background-position: -48px 0; }
+.ui-icon-caret-1-s { background-position: -65px 0; }
+.ui-icon-caret-1-sw { background-position: -80px 0; }
+.ui-icon-caret-1-w { background-position: -96px 0; }
+.ui-icon-caret-1-nw { background-position: -112px 0; }
+.ui-icon-caret-2-n-s { background-position: -128px 0; }
+.ui-icon-caret-2-e-w { background-position: -144px 0; }
+.ui-icon-triangle-1-n { background-position: 0 -16px; }
+.ui-icon-triangle-1-ne { background-position: -16px -16px; }
+.ui-icon-triangle-1-e { background-position: -32px -16px; }
+.ui-icon-triangle-1-se { background-position: -48px -16px; }
+.ui-icon-triangle-1-s { background-position: -65px -16px; }
+.ui-icon-triangle-1-sw { background-position: -80px -16px; }
+.ui-icon-triangle-1-w { background-position: -96px -16px; }
+.ui-icon-triangle-1-nw { background-position: -112px -16px; }
+.ui-icon-triangle-2-n-s { background-position: -128px -16px; }
+.ui-icon-triangle-2-e-w { background-position: -144px -16px; }
+.ui-icon-arrow-1-n { background-position: 0 -32px; }
+.ui-icon-arrow-1-ne { background-position: -16px -32px; }
+.ui-icon-arrow-1-e { background-position: -32px -32px; }
+.ui-icon-arrow-1-se { background-position: -48px -32px; }
+.ui-icon-arrow-1-s { background-position: -65px -32px; }
+.ui-icon-arrow-1-sw { background-position: -80px -32px; }
+.ui-icon-arrow-1-w { background-position: -96px -32px; }
+.ui-icon-arrow-1-nw { background-position: -112px -32px; }
+.ui-icon-arrow-2-n-s { background-position: -128px -32px; }
+.ui-icon-arrow-2-ne-sw { background-position: -144px -32px; }
+.ui-icon-arrow-2-e-w { background-position: -160px -32px; }
+.ui-icon-arrow-2-se-nw { background-position: -176px -32px; }
+.ui-icon-arrowstop-1-n { background-position: -192px -32px; }
+.ui-icon-arrowstop-1-e { background-position: -208px -32px; }
+.ui-icon-arrowstop-1-s { background-position: -224px -32px; }
+.ui-icon-arrowstop-1-w { background-position: -240px -32px; }
+.ui-icon-arrowthick-1-n { background-position: 1px -48px; }
+.ui-icon-arrowthick-1-ne { background-position: -16px -48px; }
+.ui-icon-arrowthick-1-e { background-position: -32px -48px; }
+.ui-icon-arrowthick-1-se { background-position: -48px -48px; }
+.ui-icon-arrowthick-1-s { background-position: -64px -48px; }
+.ui-icon-arrowthick-1-sw { background-position: -80px -48px; }
+.ui-icon-arrowthick-1-w { background-position: -96px -48px; }
+.ui-icon-arrowthick-1-nw { background-position: -112px -48px; }
+.ui-icon-arrowthick-2-n-s { background-position: -128px -48px; }
+.ui-icon-arrowthick-2-ne-sw { background-position: -144px -48px; }
+.ui-icon-arrowthick-2-e-w { background-position: -160px -48px; }
+.ui-icon-arrowthick-2-se-nw { background-position: -176px -48px; }
+.ui-icon-arrowthickstop-1-n { background-position: -192px -48px; }
+.ui-icon-arrowthickstop-1-e { background-position: -208px -48px; }
+.ui-icon-arrowthickstop-1-s { background-position: -224px -48px; }
+.ui-icon-arrowthickstop-1-w { background-position: -240px -48px; }
+.ui-icon-arrowreturnthick-1-w { background-position: 0 -64px; }
+.ui-icon-arrowreturnthick-1-n { background-position: -16px -64px; }
+.ui-icon-arrowreturnthick-1-e { background-position: -32px -64px; }
+.ui-icon-arrowreturnthick-1-s { background-position: -48px -64px; }
+.ui-icon-arrowreturn-1-w { background-position: -64px -64px; }
+.ui-icon-arrowreturn-1-n { background-position: -80px -64px; }
+.ui-icon-arrowreturn-1-e { background-position: -96px -64px; }
+.ui-icon-arrowreturn-1-s { background-position: -112px -64px; }
+.ui-icon-arrowrefresh-1-w { background-position: -128px -64px; }
+.ui-icon-arrowrefresh-1-n { background-position: -144px -64px; }
+.ui-icon-arrowrefresh-1-e { background-position: -160px -64px; }
+.ui-icon-arrowrefresh-1-s { background-position: -176px -64px; }
+.ui-icon-arrow-4 { background-position: 0 -80px; }
+.ui-icon-arrow-4-diag { background-position: -16px -80px; }
+.ui-icon-extlink { background-position: -32px -80px; }
+.ui-icon-newwin { background-position: -48px -80px; }
+.ui-icon-refresh { background-position: -64px -80px; }
+.ui-icon-shuffle { background-position: -80px -80px; }
+.ui-icon-transfer-e-w { background-position: -96px -80px; }
+.ui-icon-transferthick-e-w { background-position: -112px -80px; }
+.ui-icon-folder-collapsed { background-position: 0 -96px; }
+.ui-icon-folder-open { background-position: -16px -96px; }
+.ui-icon-document { background-position: -32px -96px; }
+.ui-icon-document-b { background-position: -48px -96px; }
+.ui-icon-note { background-position: -64px -96px; }
+.ui-icon-mail-closed { background-position: -80px -96px; }
+.ui-icon-mail-open { background-position: -96px -96px; }
+.ui-icon-suitcase { background-position: -112px -96px; }
+.ui-icon-comment { background-position: -128px -96px; }
+.ui-icon-person { background-position: -144px -96px; }
+.ui-icon-print { background-position: -160px -96px; }
+.ui-icon-trash { background-position: -176px -96px; }
+.ui-icon-locked { background-position: -192px -96px; }
+.ui-icon-unlocked { background-position: -208px -96px; }
+.ui-icon-bookmark { background-position: -224px -96px; }
+.ui-icon-tag { background-position: -240px -96px; }
+.ui-icon-home { background-position: 0 -112px; }
+.ui-icon-flag { background-position: -16px -112px; }
+.ui-icon-calendar { background-position: -32px -112px; }
+.ui-icon-cart { background-position: -48px -112px; }
+.ui-icon-pencil { background-position: -64px -112px; }
+.ui-icon-clock { background-position: -80px -112px; }
+.ui-icon-disk { background-position: -96px -112px; }
+.ui-icon-calculator { background-position: -112px -112px; }
+.ui-icon-zoomin { background-position: -128px -112px; }
+.ui-icon-zoomout { background-position: -144px -112px; }
+.ui-icon-search { background-position: -160px -112px; }
+.ui-icon-wrench { background-position: -176px -112px; }
+.ui-icon-gear { background-position: -192px -112px; }
+.ui-icon-heart { background-position: -208px -112px; }
+.ui-icon-star { background-position: -224px -112px; }
+.ui-icon-link { background-position: -240px -112px; }
+.ui-icon-cancel { background-position: 0 -128px; }
+.ui-icon-plus { background-position: -16px -128px; }
+.ui-icon-plusthick { background-position: -32px -128px; }
+.ui-icon-minus { background-position: -48px -128px; }
+.ui-icon-minusthick { background-position: -64px -128px; }
+.ui-icon-close { background-position: -80px -128px; }
+.ui-icon-closethick { background-position: -96px -128px; }
+.ui-icon-key { background-position: -112px -128px; }
+.ui-icon-lightbulb { background-position: -128px -128px; }
+.ui-icon-scissors { background-position: -144px -128px; }
+.ui-icon-clipboard { background-position: -160px -128px; }
+.ui-icon-copy { background-position: -176px -128px; }
+.ui-icon-contact { background-position: -192px -128px; }
+.ui-icon-image { background-position: -208px -128px; }
+.ui-icon-video { background-position: -224px -128px; }
+.ui-icon-script { background-position: -240px -128px; }
+.ui-icon-alert { background-position: 0 -144px; }
+.ui-icon-info { background-position: -16px -144px; }
+.ui-icon-notice { background-position: -32px -144px; }
+.ui-icon-help { background-position: -48px -144px; }
+.ui-icon-check { background-position: -64px -144px; }
+.ui-icon-bullet { background-position: -80px -144px; }
+.ui-icon-radio-on { background-position: -96px -144px; }
+.ui-icon-radio-off { background-position: -112px -144px; }
+.ui-icon-pin-w { background-position: -128px -144px; }
+.ui-icon-pin-s { background-position: -144px -144px; }
+.ui-icon-play { background-position: 0 -160px; }
+.ui-icon-pause { background-position: -16px -160px; }
+.ui-icon-seek-next { background-position: -32px -160px; }
+.ui-icon-seek-prev { background-position: -48px -160px; }
+.ui-icon-seek-end { background-position: -64px -160px; }
+.ui-icon-seek-start { background-position: -80px -160px; }
+/* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+.ui-icon-seek-first { background-position: -80px -160px; }
+.ui-icon-stop { background-position: -96px -160px; }
+.ui-icon-eject { background-position: -112px -160px; }
+.ui-icon-volume-off { background-position: -128px -160px; }
+.ui-icon-volume-on { background-position: -144px -160px; }
+.ui-icon-power { background-position: 0 -176px; }
+.ui-icon-signal-diag { background-position: -16px -176px; }
+.ui-icon-signal { background-position: -32px -176px; }
+.ui-icon-battery-0 { background-position: -48px -176px; }
+.ui-icon-battery-1 { background-position: -64px -176px; }
+.ui-icon-battery-2 { background-position: -80px -176px; }
+.ui-icon-battery-3 { background-position: -96px -176px; }
+.ui-icon-circle-plus { background-position: 0 -192px; }
+.ui-icon-circle-minus { background-position: -16px -192px; }
+.ui-icon-circle-close { background-position: -32px -192px; }
+.ui-icon-circle-triangle-e { background-position: -48px -192px; }
+.ui-icon-circle-triangle-s { background-position: -64px -192px; }
+.ui-icon-circle-triangle-w { background-position: -80px -192px; }
+.ui-icon-circle-triangle-n { background-position: -96px -192px; }
+.ui-icon-circle-arrow-e { background-position: -112px -192px; }
+.ui-icon-circle-arrow-s { background-position: -128px -192px; }
+.ui-icon-circle-arrow-w { background-position: -144px -192px; }
+.ui-icon-circle-arrow-n { background-position: -160px -192px; }
+.ui-icon-circle-zoomin { background-position: -176px -192px; }
+.ui-icon-circle-zoomout { background-position: -192px -192px; }
+.ui-icon-circle-check { background-position: -208px -192px; }
+.ui-icon-circlesmall-plus { background-position: 0 -208px; }
+.ui-icon-circlesmall-minus { background-position: -16px -208px; }
+.ui-icon-circlesmall-close { background-position: -32px -208px; }
+.ui-icon-squaresmall-plus { background-position: -48px -208px; }
+.ui-icon-squaresmall-minus { background-position: -64px -208px; }
+.ui-icon-squaresmall-close { background-position: -80px -208px; }
+.ui-icon-grip-dotted-vertical { background-position: 0 -224px; }
+.ui-icon-grip-dotted-horizontal { background-position: -16px -224px; }
+.ui-icon-grip-solid-vertical { background-position: -32px -224px; }
+.ui-icon-grip-solid-horizontal { background-position: -48px -224px; }
+.ui-icon-gripsmall-diagonal-se { background-position: -64px -224px; }
+.ui-icon-grip-diagonal-se { background-position: -80px -224px; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+	border-top-left-radius: 3px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+	border-top-right-radius: 3px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+	border-bottom-left-radius: 3px/*{cornerRadius}*/;
+}
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+	border-bottom-right-radius: 3px/*{cornerRadius}*/;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+	background: #aaaaaa/*{bgColorOverlay}*/ /*{bgImgUrlOverlay}*/ /*{bgOverlayXPos}*/ /*{bgOverlayYPos}*/ /*{bgOverlayRepeat}*/;
+	opacity: .3/*{opacityOverlay}*/;
+	filter: Alpha(Opacity=30)/*{opacityFilterOverlay}*/; /* support: IE8 */
+}
+.ui-widget-shadow {
+	-webkit-box-shadow: 0/*{offsetLeftShadow}*/ 0/*{offsetTopShadow}*/ 5px/*{thicknessShadow}*/ #666666/*{bgColorShadow}*/;
+	box-shadow: 0/*{offsetLeftShadow}*/ 0/*{offsetTopShadow}*/ 5px/*{thicknessShadow}*/ #666666/*{bgColorShadow}*/;
+}
+/*!
+ * jQuery UI CSS Framework 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ */
+/*
+
+ */
+
+/* Layout helpers
+----------------------------------*/
+
+.ui-helper-hidden {
+	display: none;
+}
+.ui-helper-hidden-accessible {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+.ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1.3;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+	content: "";
+	display: table;
+	border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+	clear: both;
+}
+.ui-helper-zfix {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: 0;
+	filter:Alpha(Opacity=0); /* support: IE8 */
+}
+
+.ui-front {
+	z-index: 100;
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+	cursor: default !important;
+	pointer-events: none;
+}
+
+
+/* Icons
+----------------------------------*/
+.ui-icon {
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: -.25em;
+	position: relative;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+
+.ui-widget-icon-block {
+	left: 50%;
+	margin-left: -8px;
+	display: block;
+}
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/*!
+ * jQuery UI Accordion 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/accordion/#theming
+ */
+/*
+
+ */
+
+.ui-accordion .ui-accordion-header {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	margin: 2px 0 0 0;
+	padding: .5em .5em .5em .7em;
+	font-size: 100%;
+}
+.ui-accordion .ui-accordion-content {
+	padding: 1em 2.2em;
+	border-top: 0;
+	overflow: auto;
+}
+/*!
+ * jQuery UI Autocomplete 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/autocomplete/#theming
+ */
+/*
+
+ */
+
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+}
+/*!
+ * jQuery UI Button 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/button/#theming
+ */
+/*
+
+ */
+
+.ui-button {
+	padding: .4em 1em;
+	display: inline-block;
+	position: relative;
+	line-height: normal;
+	margin-right: .1em;
+	cursor: pointer;
+	vertical-align: middle;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	/* Support: IE <= 11 */
+	overflow: visible;
+}
+
+.ui-button,
+.ui-button:link,
+.ui-button:visited,
+.ui-button:hover,
+.ui-button:active {
+	text-decoration: none;
+}
+
+/* to make room for the icon, a width needs to be set here */
+.ui-button-icon-only {
+	width: 2em;
+	box-sizing: border-box;
+	text-indent: -9999px;
+	white-space: nowrap;
+}
+
+/* no icon support for input elements */
+input.ui-button.ui-button-icon-only {
+	text-indent: 0;
+}
+
+/* button icon element(s) */
+.ui-button-icon-only .ui-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -8px;
+	margin-left: -8px;
+}
+
+.ui-button.ui-icon-notext .ui-icon {
+	padding: 0;
+	width: 2.1em;
+	height: 2.1em;
+	text-indent: -9999px;
+	white-space: nowrap;
+
+}
+
+input.ui-button.ui-icon-notext .ui-icon {
+	width: auto;
+	height: auto;
+	text-indent: 0;
+	white-space: normal;
+	padding: .4em 1em;
+}
+
+/* workarounds */
+/* Support: Firefox 5 - 40 */
+input.ui-button::-moz-focus-inner,
+button.ui-button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+/*!
+ * jQuery UI Checkboxradio 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/checkboxradio/#theming
+ */
+/*
+
+ */
+
+
+.ui-checkboxradio-label .ui-icon-background {
+	box-shadow: inset 1px 1px 1px #ccc;
+	border-radius: .12em;
+	border: none;
+}
+.ui-checkboxradio-radio-label .ui-icon-background {
+	width: 16px;
+	height: 16px;
+	border-radius: 1em;
+	overflow: visible;
+	border: none;
+}
+.ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-icon,
+.ui-checkboxradio-radio-label.ui-checkboxradio-checked:hover .ui-icon {
+	background-image: none;
+	width: 8px;
+	height: 8px;
+	border-width: 4px;
+	border-style: solid;
+}
+.ui-checkboxradio-disabled {
+	pointer-events: none;
+}
+/*!
+ * jQuery UI Controlgroup 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/controlgroup/#theming
+ */
+/*
+
+ */
+
+
+.ui-controlgroup {
+	vertical-align: middle;
+	display: inline-block;
+}
+.ui-controlgroup > .ui-controlgroup-item {
+	float: left;
+	margin-left: 0;
+	margin-right: 0;
+}
+.ui-controlgroup > .ui-controlgroup-item:focus,
+.ui-controlgroup > .ui-controlgroup-item.ui-visual-focus {
+	z-index: 9999;
+}
+.ui-controlgroup-vertical > .ui-controlgroup-item {
+	display: block;
+	float: none;
+	width: 100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: left;
+}
+.ui-controlgroup-vertical .ui-controlgroup-item {
+	box-sizing: border-box;
+}
+.ui-controlgroup .ui-controlgroup-label {
+	padding: .4em 1em;
+}
+.ui-controlgroup .ui-controlgroup-label span {
+	font-size: 80%;
+}
+.ui-controlgroup-horizontal .ui-controlgroup-label + .ui-controlgroup-item {
+	border-left: none;
+}
+.ui-controlgroup-vertical .ui-controlgroup-label + .ui-controlgroup-item {
+	border-top: none;
+}
+.ui-controlgroup-horizontal .ui-controlgroup-label.ui-widget-content {
+	border-right: none;
+}
+.ui-controlgroup-vertical .ui-controlgroup-label.ui-widget-content {
+	border-bottom: none;
+}
+
+/* Spinner specific style fixes */
+.ui-controlgroup-vertical .ui-spinner-input {
+
+	/* Support: IE8 only, Android < 4.4 only */
+	width: 75%;
+	width: calc( 100% - 2.4em );
+}
+.ui-controlgroup-vertical .ui-spinner .ui-spinner-up {
+	border-top-style: solid;
+}
+
+/*!
+ * jQuery UI Datepicker 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/datepicker/#theming
+ */
+/*
+
+ */
+
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.8em;
+	height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 2px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 1px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 45%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+	width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+	float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+	width: 95%;
+	margin: 0 auto .4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+	width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+	width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+	width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+	border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+	clear: left;
+}
+.ui-datepicker-row-break {
+	clear: both;
+	width: 100%;
+	font-size: 0;
+}
+
+/* RTL support */
+.ui-datepicker-rtl {
+	direction: rtl;
+}
+.ui-datepicker-rtl .ui-datepicker-prev {
+	right: 2px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next {
+	left: 2px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+	right: 1px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+	left: 1px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+	clear: right;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+	float: left;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+	float: right;
+}
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+	border-right-width: 0;
+	border-left-width: 1px;
+}
+
+/* Icons */
+.ui-datepicker .ui-icon {
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	left: .5em;
+	top: .3em;
+}
+/*!
+ * jQuery UI Dialog 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/dialog/#theming
+ */
+/*
+
+ */
+
+.ui-dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: .2em;
+	outline: 0;
+}
+.ui-dialog .ui-dialog-titlebar {
+	padding: .4em 1em;
+	position: relative;
+}
+.ui-dialog .ui-dialog-title {
+	float: left;
+	margin: .1em 0;
+	white-space: nowrap;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+	position: absolute;
+	right: .3em;
+	top: 50%;
+	width: 20px;
+	margin: -10px 0 0 0;
+	padding: 1px;
+	height: 20px;
+}
+.ui-dialog .ui-dialog-content {
+	position: relative;
+	border: 0;
+	padding: .5em 1em;
+	background: none;
+	overflow: auto;
+}
+.ui-dialog .ui-dialog-buttonpane {
+	text-align: left;
+	border-width: 1px 0 0 0;
+	background-image: none;
+	margin-top: .5em;
+	padding: .3em 1em .5em .4em;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+	float: right;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: .5em .4em .5em 0;
+	cursor: pointer;
+}
+.ui-dialog .ui-resizable-n {
+	height: 2px;
+	top: 0;
+}
+.ui-dialog .ui-resizable-e {
+	width: 2px;
+	right: 0;
+}
+.ui-dialog .ui-resizable-s {
+	height: 2px;
+	bottom: 0;
+}
+.ui-dialog .ui-resizable-w {
+	width: 2px;
+	left: 0;
+}
+.ui-dialog .ui-resizable-se,
+.ui-dialog .ui-resizable-sw,
+.ui-dialog .ui-resizable-ne,
+.ui-dialog .ui-resizable-nw {
+	width: 7px;
+	height: 7px;
+}
+.ui-dialog .ui-resizable-se {
+	right: 0;
+	bottom: 0;
+}
+.ui-dialog .ui-resizable-sw {
+	left: 0;
+	bottom: 0;
+}
+.ui-dialog .ui-resizable-ne {
+	right: 0;
+	top: 0;
+}
+.ui-dialog .ui-resizable-nw {
+	left: 0;
+	top: 0;
+}
+.ui-draggable .ui-dialog-titlebar {
+	cursor: move;
+}
+/*!
+ * jQuery UI Draggable 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/*
+
+ */
+
+.ui-draggable-handle {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+/*!
+ * jQuery UI Menu 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/menu/#theming
+ */
+/*
+
+ */
+
+.ui-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	outline: 0;
+}
+.ui-menu .ui-menu {
+	position: absolute;
+}
+.ui-menu .ui-menu-item {
+	margin: 0;
+	cursor: pointer;
+	/* support: IE10, see #8844 */
+	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+.ui-menu .ui-menu-item-wrapper {
+	position: relative;
+	padding: 3px 1em 3px .4em;
+}
+.ui-menu .ui-menu-divider {
+	margin: 5px 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	border-width: 1px 0 0 0;
+}
+.ui-menu .ui-state-focus,
+.ui-menu .ui-state-active {
+	margin: -1px;
+}
+
+/* icon support */
+.ui-menu-icons {
+	position: relative;
+}
+.ui-menu-icons .ui-menu-item-wrapper {
+	padding-left: 2em;
+}
+
+/* left-aligned */
+.ui-menu .ui-icon {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: .2em;
+	margin: auto 0;
+}
+
+/* right-aligned */
+.ui-menu .ui-menu-icon {
+	left: auto;
+	right: 0;
+}
+/*!
+ * jQuery UI Progressbar 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/progressbar/#theming
+ */
+/*
+
+ */
+
+.ui-progressbar {
+	height: 2em;
+	text-align: left;
+	overflow: hidden;
+}
+.ui-progressbar .ui-progressbar-value {
+	margin: -1px;
+	height: 100%;
+}
+.ui-progressbar .ui-progressbar-overlay {
+	background: url("data:image/gif;base64,R0lGODlhKAAoAIABAAAAAP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJAQABACwAAAAAKAAoAAACkYwNqXrdC52DS06a7MFZI+4FHBCKoDeWKXqymPqGqxvJrXZbMx7Ttc+w9XgU2FB3lOyQRWET2IFGiU9m1frDVpxZZc6bfHwv4c1YXP6k1Vdy292Fb6UkuvFtXpvWSzA+HycXJHUXiGYIiMg2R6W459gnWGfHNdjIqDWVqemH2ekpObkpOlppWUqZiqr6edqqWQAAIfkECQEAAQAsAAAAACgAKAAAApSMgZnGfaqcg1E2uuzDmmHUBR8Qil95hiPKqWn3aqtLsS18y7G1SzNeowWBENtQd+T1JktP05nzPTdJZlR6vUxNWWjV+vUWhWNkWFwxl9VpZRedYcflIOLafaa28XdsH/ynlcc1uPVDZxQIR0K25+cICCmoqCe5mGhZOfeYSUh5yJcJyrkZWWpaR8doJ2o4NYq62lAAACH5BAkBAAEALAAAAAAoACgAAAKVDI4Yy22ZnINRNqosw0Bv7i1gyHUkFj7oSaWlu3ovC8GxNso5fluz3qLVhBVeT/Lz7ZTHyxL5dDalQWPVOsQWtRnuwXaFTj9jVVh8pma9JjZ4zYSj5ZOyma7uuolffh+IR5aW97cHuBUXKGKXlKjn+DiHWMcYJah4N0lYCMlJOXipGRr5qdgoSTrqWSq6WFl2ypoaUAAAIfkECQEAAQAsAAAAACgAKAAAApaEb6HLgd/iO7FNWtcFWe+ufODGjRfoiJ2akShbueb0wtI50zm02pbvwfWEMWBQ1zKGlLIhskiEPm9R6vRXxV4ZzWT2yHOGpWMyorblKlNp8HmHEb/lCXjcW7bmtXP8Xt229OVWR1fod2eWqNfHuMjXCPkIGNileOiImVmCOEmoSfn3yXlJWmoHGhqp6ilYuWYpmTqKUgAAIfkECQEAAQAsAAAAACgAKAAAApiEH6kb58biQ3FNWtMFWW3eNVcojuFGfqnZqSebuS06w5V80/X02pKe8zFwP6EFWOT1lDFk8rGERh1TTNOocQ61Hm4Xm2VexUHpzjymViHrFbiELsefVrn6XKfnt2Q9G/+Xdie499XHd2g4h7ioOGhXGJboGAnXSBnoBwKYyfioubZJ2Hn0RuRZaflZOil56Zp6iioKSXpUAAAh+QQJAQABACwAAAAAKAAoAAACkoQRqRvnxuI7kU1a1UU5bd5tnSeOZXhmn5lWK3qNTWvRdQxP8qvaC+/yaYQzXO7BMvaUEmJRd3TsiMAgswmNYrSgZdYrTX6tSHGZO73ezuAw2uxuQ+BbeZfMxsexY35+/Qe4J1inV0g4x3WHuMhIl2jXOKT2Q+VU5fgoSUI52VfZyfkJGkha6jmY+aaYdirq+lQAACH5BAkBAAEALAAAAAAoACgAAAKWBIKpYe0L3YNKToqswUlvznigd4wiR4KhZrKt9Upqip61i9E3vMvxRdHlbEFiEXfk9YARYxOZZD6VQ2pUunBmtRXo1Lf8hMVVcNl8JafV38aM2/Fu5V16Bn63r6xt97j09+MXSFi4BniGFae3hzbH9+hYBzkpuUh5aZmHuanZOZgIuvbGiNeomCnaxxap2upaCZsq+1kAACH5BAkBAAEALAAAAAAoACgAAAKXjI8By5zf4kOxTVrXNVlv1X0d8IGZGKLnNpYtm8Lr9cqVeuOSvfOW79D9aDHizNhDJidFZhNydEahOaDH6nomtJjp1tutKoNWkvA6JqfRVLHU/QUfau9l2x7G54d1fl995xcIGAdXqMfBNadoYrhH+Mg2KBlpVpbluCiXmMnZ2Sh4GBqJ+ckIOqqJ6LmKSllZmsoq6wpQAAAh+QQJAQABACwAAAAAKAAoAAAClYx/oLvoxuJDkU1a1YUZbJ59nSd2ZXhWqbRa2/gF8Gu2DY3iqs7yrq+xBYEkYvFSM8aSSObE+ZgRl1BHFZNr7pRCavZ5BW2142hY3AN/zWtsmf12p9XxxFl2lpLn1rseztfXZjdIWIf2s5dItwjYKBgo9yg5pHgzJXTEeGlZuenpyPmpGQoKOWkYmSpaSnqKileI2FAAACH5BAkBAAEALAAAAAAoACgAAAKVjB+gu+jG4kORTVrVhRlsnn2dJ3ZleFaptFrb+CXmO9OozeL5VfP99HvAWhpiUdcwkpBH3825AwYdU8xTqlLGhtCosArKMpvfa1mMRae9VvWZfeB2XfPkeLmm18lUcBj+p5dnN8jXZ3YIGEhYuOUn45aoCDkp16hl5IjYJvjWKcnoGQpqyPlpOhr3aElaqrq56Bq7VAAAOw==");
+	height: 100%;
+	filter: alpha(opacity=25); /* support: IE8 */
+	opacity: 0.25;
+}
+.ui-progressbar-indeterminate .ui-progressbar-value {
+	background-image: none;
+}
+/*!
+ * jQuery UI Resizable 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/*
+
+ */
+
+.ui-resizable {
+	position: relative;
+}
+.ui-resizable-handle {
+	position: absolute;
+	font-size: 0.1px;
+	display: block;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-resizable-disabled .ui-resizable-handle,
+.ui-resizable-autohide .ui-resizable-handle {
+	display: none;
+}
+.ui-resizable-n {
+	cursor: n-resize;
+	height: 7px;
+	width: 100%;
+	top: -5px;
+	left: 0;
+}
+.ui-resizable-s {
+	cursor: s-resize;
+	height: 7px;
+	width: 100%;
+	bottom: -5px;
+	left: 0;
+}
+.ui-resizable-e {
+	cursor: e-resize;
+	width: 7px;
+	right: -5px;
+	top: 0;
+	height: 100%;
+}
+.ui-resizable-w {
+	cursor: w-resize;
+	width: 7px;
+	left: -5px;
+	top: 0;
+	height: 100%;
+}
+.ui-resizable-se {
+	cursor: se-resize;
+	width: 12px;
+	height: 12px;
+	right: 1px;
+	bottom: 1px;
+}
+.ui-resizable-sw {
+	cursor: sw-resize;
+	width: 9px;
+	height: 9px;
+	left: -5px;
+	bottom: -5px;
+}
+.ui-resizable-nw {
+	cursor: nw-resize;
+	width: 9px;
+	height: 9px;
+	left: -5px;
+	top: -5px;
+}
+.ui-resizable-ne {
+	cursor: ne-resize;
+	width: 9px;
+	height: 9px;
+	right: -5px;
+	top: -5px;
+}
+/*!
+ * jQuery UI Selectable 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/*
+
+ */
+
+.ui-selectable {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-selectable-helper {
+	position: absolute;
+	z-index: 100;
+	border: 1px dotted black;
+}
+/*!
+ * jQuery UI Selectmenu 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/selectmenu/#theming
+ */
+/*
+
+ */
+
+.ui-selectmenu-menu {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.ui-selectmenu-menu .ui-menu {
+	overflow: auto;
+	overflow-x: hidden;
+	padding-bottom: 1px;
+}
+.ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup {
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 2px 0.4em;
+	margin: 0.5em 0 0 0;
+	height: auto;
+	border: 0;
+}
+.ui-selectmenu-open {
+	display: block;
+}
+.ui-selectmenu-text {
+	display: block;
+	margin-right: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ui-selectmenu-button.ui-button {
+	text-align: left;
+	white-space: nowrap;
+	width: 14em;
+}
+.ui-selectmenu-icon.ui-icon {
+	float: right;
+	margin-top: 0;
+}
+/*!
+ * jQuery UI Sortable 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ */
+/*
+
+ */
+
+.ui-sortable-handle {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+/*!
+ * jQuery UI Slider 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/slider/#theming
+ */
+/*
+
+ */
+
+.ui-slider {
+	position: relative;
+	text-align: left;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 1.2em;
+	height: 1.2em;
+	cursor: default;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+
+/* support: IE8 - See #6727 */
+.ui-slider.ui-state-disabled .ui-slider-handle,
+.ui-slider.ui-state-disabled .ui-slider-range {
+	filter: inherit;
+}
+
+.ui-slider-horizontal {
+	height: .8em;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -.3em;
+	margin-left: -.6em;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider-horizontal .ui-slider-range-min {
+	left: 0;
+}
+.ui-slider-horizontal .ui-slider-range-max {
+	right: 0;
+}
+
+.ui-slider-vertical {
+	width: .8em;
+	height: 100px;
+}
+.ui-slider-vertical .ui-slider-handle {
+	left: -.3em;
+	margin-left: 0;
+	margin-bottom: -.6em;
+}
+.ui-slider-vertical .ui-slider-range {
+	left: 0;
+	width: 100%;
+}
+.ui-slider-vertical .ui-slider-range-min {
+	bottom: 0;
+}
+.ui-slider-vertical .ui-slider-range-max {
+	top: 0;
+}
+/*!
+ * jQuery UI Spinner 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/spinner/#theming
+ */
+/*
+
+ */
+
+.ui-spinner {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	padding: 0;
+	vertical-align: middle;
+}
+.ui-spinner-input {
+	border: none;
+	background: none;
+	color: inherit;
+	padding: .222em 0;
+	margin: .2em 0;
+	vertical-align: middle;
+	margin-left: .4em;
+	margin-right: 2em;
+}
+.ui-spinner-button {
+	width: 1.6em;
+	height: 50%;
+	font-size: .5em;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	position: absolute;
+	cursor: default;
+	display: block;
+	overflow: hidden;
+	right: 0;
+}
+/* more specificity required here to override default borders */
+.ui-spinner a.ui-spinner-button {
+	border-top-style: none;
+	border-bottom-style: none;
+	border-right-style: none;
+}
+.ui-spinner-up {
+	top: 0;
+}
+.ui-spinner-down {
+	bottom: 0;
+}
+/*!
+ * jQuery UI Tabs 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/tabs/#theming
+ */
+/*
+
+ */
+
+.ui-tabs {
+	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+	padding: .2em;
+}
+.ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em .2em 0;
+}
+.ui-tabs .ui-tabs-nav li {
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	margin: 1px .2em 0 0;
+	border-bottom-width: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	float: left;
+	padding: .5em 1em;
+	text-decoration: none;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: -1px;
+	padding-bottom: 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+	cursor: text;
+}
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+	cursor: pointer;
+}
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 1em 1.4em;
+	background: none;
+}
+/*!
+ * jQuery UI Tooltip 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/tooltip/#theming
+ */
+/*
+
+ */
+
+.ui-tooltip {
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	max-width: 300px;
+}
+body .ui-tooltip {
+	border-width: 2px;
+}
+/*!
+ * jQuery UI CSS Framework 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ */
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */
+
+/*!
+ * jQuery UI CSS Framework 1.12.1
+ * http://jqueryui.com
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://api.jqueryui.com/category/theming/
+ */
+/*
+
+
+ */
+
