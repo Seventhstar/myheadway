@@ -9,9 +9,9 @@
     = f.hidden_field :parent_id
   - if @target.parent.nil?
     .field
-      label Или группы:
+      label Группа:
       / = f.select :tgroup_ids, Tgroup.all, {class: "chosen-select", multiple: true}
-      = chosen_src :tgroup_ids, Tgroup.all, @target, {class: 'chosen-select', multiple: true, width: '80%'}
+      = chosen_src :group_id, Tgroup.all, @target, {class: 'chosen-select', width: '80%'}
 
   = f.hidden_field :user_id, value: @target.user_id
   = submit_cancel targets_path
