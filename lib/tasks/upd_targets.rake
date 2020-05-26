@@ -5,7 +5,7 @@ namespace :update_targets do
       puts "tg #{tg.name}"
       tg.targets.each do |t|
         puts "t #{t.name} - #{t.group_id}"
-        # t.update_attribute(:group_id, tg.id) if t.group_id.nil?
+        t.update_attribute(:group_id, tg.id) if t.group_id.nil?
       end
     end
   end
