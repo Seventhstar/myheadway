@@ -17,8 +17,8 @@ class Target < ActiveRecord::Base
   end
 
   def check_group
-      if !parent_id.nil? 
-        tgroups.clear
+      if !parent_id.nil? && !tgroup.nil?
+        self.update_attribute(:tgroup, nil)
       end
    end
 

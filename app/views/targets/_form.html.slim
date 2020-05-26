@@ -3,15 +3,15 @@
   .field
     = f.label t :name
     = f.text_field :name
+    
   .field
-    = f.label t :parent_id
-    = f.text_field :parent_name
-    = f.hidden_field :parent_id
-  - if @target.parent.nil?
-    .field
-      label Группа:
-      / = f.select :tgroup_ids, Tgroup.all, {class: "chosen-select", multiple: true}
-      = chosen_src :group_id, Tgroup.all, @target, {class: 'chosen-select', width: '80%'}
+    label Родитель:
+    = chosen_src :parent_id, Target.where(parent_id: nil), @target, {class: 'chosen-select', width: '80%'}
+  .field
+
+    label Группа:
+    / = f.select :tgroup_ids, Tgroup.all, {class: "chosen-select", multiple: true}
+    = chosen_src :group_id, Tgroup.all, @target, {class: 'chosen-select', width: '80%'}
 
   = f.hidden_field :user_id, value: @target.user_id
   = submit_cancel targets_path
