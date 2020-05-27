@@ -3,6 +3,10 @@ class Book < ActiveRecord::Base
   belongs_to :author
 
   attr_accessor :author_name
+
+  def self.random_book
+    Book.order("RANDOM()").first
+  end
   
   def author_name
     #author.name if !author.nil?

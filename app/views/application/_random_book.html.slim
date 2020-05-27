@@ -1,0 +1,6 @@
+- book = Book.random_book
+- if !book.nil?
+  .statement_show.mini
+    .min_statement_head =book.name
+    #book_img
+      = book_img_tag(book)
