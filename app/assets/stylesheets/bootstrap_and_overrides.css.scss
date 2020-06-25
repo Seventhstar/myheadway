@@ -70,7 +70,9 @@ a { color: #428bca;  text-decoration: none;}
 .navbar-collapse.collapse {  display: block !important; height: auto !important; padding-bottom: 0; overflow: visible !important;}
 
 .subnav li.active_li a{ border-radius: 4px; padding: 10px 15px; text-decoration: none; background-color: #428bca; color: #fff; }
-// .subpills {display: flex;}
+
+.subpills { display: table-cell; float: left;}
+
 .subpills a, .subpills .pill{
   min-width: 100px;
   // text-decoration: none;
@@ -78,7 +80,7 @@ a { color: #428bca;  text-decoration: none;}
   float: left;
   // color: #428bca;
   padding: 2px 10px;
-  margin-right: 6px;
+  margin-right: 4px;
   height: 24px !important;
   line-height: 22px;
   cursor: pointer;

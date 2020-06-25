@@ -24,6 +24,11 @@ $corner-radius: 3px;
     font-size: 0;
 }
 
+#targets_index .groups {
+  margin-bottom: 12px;
+  height: 40px;
+}
+
 .thead_group{ background-color: #f7f7f7;
   display: flex;
   justify-content: center;
@@ -129,7 +134,10 @@ td.edit_delete, th.edit_delete{ width: 42px; padding-right: 4px !important; padd
 
 .calendar_period_h { float: right; }
 
-.calendar_period { cursor: default; height: 28px; margin: 10px 0;
+.calendar_period { cursor: default; height: 28px; 
+  // margin: 10px 0;
+      display: table-cell; 
+      float: right;
   span, em { padding: 0.2em 1.2em; display: block; float: left; margin-right: 1px; }
   .current { font-style: normal;font-weight: bold; background: #2e6ab1;color: white; border: 1px solid #2e6ab1;}
 
