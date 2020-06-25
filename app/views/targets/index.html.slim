@@ -8,7 +8,6 @@ h3= t :target_page_header_h2
       .pill :class="tabClass(index, group)" @click="activeTab = index" @click.ctrl.prevent="edit(group)" v-for="group, index in groups"
         |{{group.name}}
 
-  #div_target_list
     .calendar_period
       .calendar_period_h
         = prev_year
@@ -16,14 +15,15 @@ h3= t :target_page_header_h2
         span.page.active= month_year(current_period)
         = next_month
         = next_year
-    #target_head
-      - days = @current_period.end_of_month.day
-      - current_day = @current_period.beginning_of_month
-      .table_targets
-        span.calenhead.head= t :target_page_header
-        - days.times do |d|
-          span class="calenhead #{class_on_date_type(current_day)} h#{d+1}" =d+1
-          - current_day = current_day.advance(days: 1)
+  #target_head
+    - days = @current_period.end_of_month.day
+    - current_day = @current_period.beginning_of_month
+    .table_targets
+      span.calenhead.head= t :target_page_header
+      - days.times do |d|
+        span class="calenhead #{class_on_date_type(current_day)} h#{d+1}" =d+1
+        - current_day = current_day.advance(days: 1)
+  #div_target_list
 
       / - @targets.each do |target|
   template v-for="group, index in groups" 
