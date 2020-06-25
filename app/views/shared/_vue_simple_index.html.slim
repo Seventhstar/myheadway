@@ -11,8 +11,8 @@ div v-cloak=""
           div :class="tdClass(column)" v-for="column in columns" 
             span data-toggle="tooltip" data-placement="top" :data-original-title="toolTipValue(item, column)" v-if="hasTooltip(column)"
               | {{ columnValue(item, column) }}
-            div v-else=""
-              | {{ columnValue(item, column) }}
+            div v-html="columnValue(item, column)" v-else=""
+              
 
           .edit_delete.td_right.td style="" 
             a.icon.icon_edit :href="editLink(item.id)"  

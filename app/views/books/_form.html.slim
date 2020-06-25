@@ -14,8 +14,10 @@
           = f.text_field :img_url, "v-model"=>"img_url"
 
           div
-            = f.label 'Описание'
-            img :src="img_url" class="image_edit_form" alt="Картинка"
+            div class="image_label"
+              = f.label 'Описание'
+            div v-html="imageHtml"
+            
 
           = f.text_area :annotation, class: "width_area", size: "80x8"
 

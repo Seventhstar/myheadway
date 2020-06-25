@@ -30,15 +30,15 @@ h3= t :target_page_header_h2
     template v-for="target, idx in grouped[group.name]"
       .table_targets.group_day :target_id="target.id" v-show="index == activeTab"
         .t-item id="t-item-#{}" 
-          .target_line_head.thead_group
+          .target_line_head.thead_group :class="headClass(target)"
             .target_name
               |{{target.name}}
-        span.calenday :day="d" :state="state(target.id, d)" v-for="d in days"
+        span.calenday @mouseover="mouseOnDay(target)" @mouseleave="mouseLeaveDay(target)" :day="d" :state="state(target.id, d)" v-for="d in days"
       .table_targets :target_id="st.id" v-for="st in subtargets(target)" v-show="index == activeTab"
-        .target_line_head 
-          .subtarget_name
+        .target_line_head :class="headClass(st)"
+          .subtarget_name 
             |{{st.name}}
-        span.calenday :day="d" :state="state(st.id, d)" v-for="d in days"
+        span.calenday @mouseover="mouseOnDay(st)" @mouseleave="mouseLeaveDay(st)" :day="d" :state="state(st.id, d)" v-for="d in days"
 
  
 = render 'index_vue'

@@ -1,6 +1,6 @@
-$corner-radius: 2px;
+$corner-radius: 3px;
 
-#target_list, .target_li{ 
+#target_list, .target_li { 
   line-height: 18px; 
   color: #0F67A1; 
   display: block; 
@@ -10,27 +10,15 @@ $corner-radius: 2px;
   font-size: 12px; 
 }
 
-#target_list .edit_delete{
-  // position: absolute;
-  // right: 100%;
-  // white-space: nowrap;
-  // margin: 2px 4px 0 0;
-  // font-size: 0;
+#target_list .edit_delete {
     position: relative;
-    /* right: -130px; */
     float: right;
     white-space: nowrap;
     margin: 1px 2px 0 0;
     font-size: 0;
 }
 #target_list .thead_group .edit_delete{
-  // position: absolute;
-  // right: 100%;
-  // white-space: nowrap;
-  // margin: -20px 4px 0 0;
-  // font-size: 0;
     position: relative;
-    // right: -142px;
     white-space: nowrap;
     margin:  0;
     font-size: 0;
@@ -45,8 +33,6 @@ $corner-radius: 2px;
 #target_head{ height: 24px; margin-bottom: 3px; }
 #target_list .target_li{ height: 23px; }
 .span9 .chosen-container {width: 80%; }
-.t-item{ 
- }
 
 .target_line_head{ 
   height: 19px; 
@@ -56,11 +42,11 @@ $corner-radius: 2px;
   align-items: center;
   padding:1px 5px;
   color: #428bca;
-  &.cur_head, &:hover{ color: white; background-color: #93c0e6;}
+  &.active, &:hover{ color: white; background-color: #93c0e6;}
 }
 
-// .target_name { padding: 2px 8px;}
-.thead_group .target_name{ color: #616161; &:hover{color: white;}}
+.thead_group .target_name { color: #616161; &:hover{color: white;}}
+.target_line_head.active .target_name {color: white;}
 .subtarget_name { 
   width: 185px;
   font-size: 12px;
@@ -70,36 +56,43 @@ $corner-radius: 2px;
 
 span.plus { display: block; float: left; width: 18px;text-align: center; cursor: pointer; }
 
-.target_line_days{height: 23px;}
+.target_line_days {height: 23px;}
 
-.calenhead, .calenday { border-radius: $corner-radius;
+.calenhead, .calenday { border-radius: $corner-radius; box-sizing: border-box;
   cursor: pointer;
   font-size: 12px; 
-  // width:18px; 
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; float: left; border: 1px solid #EEE;}
+  text-align: center; float: left; border: 1px solid #DDD;}
 
-.calenhead{
-
-    // padding: 5px 1px 1px 1px; margin: 0px 1px 4px 0px; min-height:18px;
-    height: 20px; width: 20px;
-    &.overhead,&:hover{
-      background-color: #93c0e6; border-color: #428bca; border-radius: $corner-radius;
-      &.holyday{ border: 1px solid #ff0000; background-color: #ffaaaa;} }
-
-    &.head{ width: 182px; background-color: #f9f9f9;
-      font-family: verdana, arial, helvetica, sans-serif; font-size: 13px;  font-weight: bold;
-      &:hover{ }
+.calenhead {
+    height: 20px; 
+    width: 22px;
+    &.overhead, &:hover {
+      color: white;
+      background-color: #93c0e6; 
+      border-color: #428bca; 
+      border-radius: $corner-radius;
+      &.holyday { 
+        border: 1px solid #ff0000; 
+        background-color: #ffaaaa;
+      } 
+    } 
+    &.head { 
+      width: 182px; 
+      background-color: #f9f9f9;
+      font-weight: bold;
+      font-family: verdana, arial, helvetica, sans-serif; font-size: 13px;  
     }
 }
 
-.calenday{
-    // padding: 1px 1px 1px 1px; margin: 1px 1px 2px 0px; 
-    min-height:20px;
-    cursor: pointer;
-  &:hover{ border: 1px solid #ACF; background-color: #e9f8ff;
+.calenday {
+  min-height: 20px;
+  cursor: pointer;
+  &:hover{ 
+    border: 1px solid #ACF; 
+    background-color: #e9f8ff;
     -webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease; }
   &.checked{ background-image: url('check.png');-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
 }
@@ -124,7 +117,7 @@ span.plus { display: block; float: left; width: 18px;text-align: center; cursor:
 .holyday { border: 1px solid #ffcccc; background-color: #ffeeee;
   &:hover{ border: 1px solid #ff0000; background-color: #ffaaaa; }}
 
-td.edit_delete, th.edit_delete{ width: 45px; padding-right: 4px !important; padding-left: 4px !important;}
+td.edit_delete, th.edit_delete{ width: 42px; padding-right: 4px !important; padding-left: 4px !important;}
 
 
 .end_line{ float: right; width: 10px; display: block;}

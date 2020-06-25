@@ -5,6 +5,7 @@
     data: <%= fill_vue_data(nil, {
       activeTab: 0,
       days: current_period.end_of_month.day,
+      currentGroup: 0,
       targets: @targets,
       checked: @checked,
       groups: @tgroups
@@ -18,6 +19,23 @@
     },
 
     methods: {
+      mouseOnDay(group) {
+        group.cls = "active"
+      },
+
+      mouseLeaveDay(group) {
+        group.cls = ""
+      },
+
+      headClass(group) {
+        return group.cls
+        // group.color = '#333';
+        // console.log('headClass', group)
+        // if (this.currentGroup == group)
+          // return true
+        // return false
+      },
+
       tabClass(index, group) {
         cls = ""
         if (this.activeTab == index) cls += "active "

@@ -11,7 +11,7 @@
 // }
 
 .selected-tag{height: 100%;}
-.image_edit_form {width: 148px}
+.image_edit_form {width: 170px}
 // .subnav .v-select .dropdown-menu .active a {color: #333; background: lightgray;}
 // .subnav .v-select .dropdown-menu .active a:hover {color: white; background: $main-orange;}
 
@@ -32,7 +32,7 @@
 //     font-weight: bold;margin-top: 1px;}
 
 .v-select input[type=search], .v-select input[type=search]:focus {height: 28px;}
-input[type="text"], input[type="number"], input[type="password"], input[type="email"] {height: 28px;}
+input[type="text"], input[type="number"], input[type="password"], input[type="email"] {height: 28px; box-sizing: border-box; padding: 2px 8px;}
 
 
 // .vue_nav_filter .v-select input[type=search], 

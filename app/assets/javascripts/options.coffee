@@ -5,6 +5,19 @@
   showNotifications()
   return
 
+@delete_item = (url) -> 
+  $.ajax
+    url: url
+    data: '_method': 'delete'
+    dataType: 'script'
+    type: 'POST'
+    complete: ->
+      # $.get url, null, null, 'script'
+      show_ajax_message('Успешно удалено')
+      return
+  return
+
+
 $(document).ready ->
 
   $('.schosen').chosen(width: '99.5%')
@@ -87,15 +100,11 @@ $(document).ready ->
     return
 
   # запись нового элемента простого справочника
-  $(document).on 'click', '#itemAdd_form #btn-send', (e) ->
+  $(document).on 'click', '#btn-send', (e) ->
     valuesToSubmit = $('form').serialize()
     values = $('form').serialize()
-    if document.URL.search('options') >0
-      url = '/options'+$('form').attr('action')+'?_=1'
-    else
-      url = $('form').attr('action')+'?_=1'
+    url = '/options'+$('form').attr('action')
     empty_name = false
-    #alert values
     each q2ajx(values), (i, a) ->
       if i.indexOf('[name]') > 0 and a == ''
         empty_name = true
@@ -115,33 +124,55 @@ $(document).ready ->
           show_ajax_message 'Успешно записано'
           return
         error: (evt, xhr, status, error) ->
-          show_ajax_message(evt.responseText,'error')
+          show_ajax_message('Ошибка записи: '+ evt.responseText,'error')
       return
     return
 
   # удаляем элемент справочника
   $(document).on 'click', ' span.icon_remove', ->
-      item_id = $(this).attr('item_id')
-      # url = document.URL.replace('#', '') #$('form').attr('action')
-      url = document.URL.split('?')[0]
-       # url = url[url.length-1]
-      attr_url = $(this).parents('table').attr('action')
-      if attr_url!=undefined
-        del_url = '/'+attr_url + '/' + item_id
-      else
-        del_url = url + '/' + item_id
-      if url.indexOf('edit')<1 && url.indexOf('options')<1 && url.indexOf('tasks')<1 then url = url + '/edit'
-     # url = url.replace('options/','')
-      del = confirm('Действительно удалить?')
-      if !del
-        return
-      $.ajax
-        url: del_url
-        data: '_method': 'delete'
-        dataType: 'json'
-        type: 'POST'
-        complete: ->
-          $.get url, null, null, 'script'
-          show_ajax_message('Успешно удалено')
-          return
+    item_id = $(this).attr('item_id')
+    url = document.URL.replace('#', '') #$('form').attr('action')
+    attr_url = $(this).closest('table').attr('id') 
+    if attr_url!=undefined
+      del_url = '/'+attr_url + '/' + item_id
+    else
+      del_url = url + '/' + item_id
+    if url.indexOf('edit')<1 && url.indexOf('options')<1 then url = url + '/edit'
+   # url = url.replace('options/','')  
+    del = confirm('Действительно удалить?')
+    if !del
       return
+    delete_item(del_url)
+
+
+  # # удаляем элемент справочника
+  # $(document).on 'click', ' span.icon_remove', ->
+  #     item_id = $(this).attr('item_id')
+  #     url = document.URL.split('?')[0]
+  #     data =  
+  #       '_method': 'delete'
+  #     attr_url = $(this).parents('table').attr('action')
+  #     if attr_url != undefined
+  #       if url.indexOf('options') > 1
+  #         del_url = '/options/' + item_id
+  #         data['options_page'] = attr_url
+  #         data['id'] = item_id
+  #       else
+  #         del_url = '/'+attr_url + '/' + item_id
+  #     else
+  #       del_url = url + '/' + item_id
+  #     if url.indexOf('edit')<1 && url.indexOf('options')<1 && url.indexOf('tasks')<1 then url = url + '/edit'
+  #    # url = url.replace('options/','')
+  #     del = confirm('Действительно удалить?')
+  #     if !del
+  #       return
+  #     $.ajax
+  #       url: del_url
+  #       data: '_method': 'delete'
+  #       dataType: 'json'
+  #       type: 'POST'
+  #       complete: ->
+  #         $.get url, null, null, 'script'
+  #         show_ajax_message('Успешно удалено')
+  #         return
+  #     return

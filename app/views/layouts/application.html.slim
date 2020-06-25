@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta content="text/html; charset=UTF-8" http-equiv="Content-Type" 
+    title My HeadWay
+    = javascript_include_tag "application"
+    = stylesheet_link_tag    "application", media: "all"
+    = csrf_meta_tags
+    = favicon_link_tag 'leaf.ico'
+    meta content="width=device-width, initial-scale=1.0" name="viewport" 
+  body
+    .page-wrapper
+      .page-content
+        - if current_user
+          = render "menu"
+        .container
+          - if controller.controller_name == "tasks"
+            .span9= yield
+          - else
+            div class=("#{current_user ? 'col-70':''}") 
+              .span9= yield
+            - if current_user
+              .col-30
+                .statement_mini
+                  = render "random_statement"
+                .sep15
+                .statement_mini
+                  = render "week_tasks"
+                .sep15
+                .statement_mini
+                  = render "notices"
+                .sep15
+                .statement_mini
+                  = render "random_book"
+      .page-footer
+        p seventhstar

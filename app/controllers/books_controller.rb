@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
 
-    @columns = %w"name author_id"
+    @columns = %w"has_picture name author_id"
     fields  = %w"".concat(@columns)
     
     @json_data = []
@@ -18,6 +18,7 @@ class BooksController < ApplicationController
       
       fields.each do |col|
         c = col.include?(":") ? col.split(':')[0] : col.downcase
+        h['has_picture'] = book.img_url.present?
         h[c] = book[c]
         if c.end_with?("_id")
           n = c[0..-4]

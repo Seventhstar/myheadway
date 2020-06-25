@@ -8,3 +8,20 @@
 .inp_btn.checkbox, span.check_img {width: 18px; height: 18px; background-position: -87px 0; }
 .inp_btn.checkbox, span.check_img { background: url('pict01.png'); width: 18px; height: 18px; background-position: -87px 0; }
 .inp_btn.checkbox.active, span.check_img.checked {background-position: -87px -20px;}
+
+.checked {background: asset-url('check.png'); width: 16px; height: 16px; display: block; }
+.empty_book{background: asset-url('book.png');  background-repeat: no-repeat; display: block; height: 130px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;}
+
+.image_label {    height: 20px;
+    padding-top: 4px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;}
+
+.image_label label{float: right;}
+
+.signin .inp_btn.checkbox {top: -2px;}
+.signin span {padding: 8px;}

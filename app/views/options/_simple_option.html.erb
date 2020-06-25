@@ -16,22 +16,22 @@
 
 <div class="panel panel-default">
 <div class="panel-heading table-heading"><%= t("list_"+@item.class.name) %></div>
-<table class="table table-striped" model="<%= @item.class.name %>" action="<%= @item.class.name.underscore.pluralize %>">
+<table class="table table-striped" model="<%= @item.class.name %>">
   <thead>
   <% attrs.each do |attr| %>
     <% if attr_boolean?(@item,attr[0]) %>
       <th width=60px; fld='<%= attr[0] %>'><%= t(attr[0]) %></th>
     <% elsif attr[0]=='id' %>
-  	  <th width=30px; fld='id'>#</th>
+      <th width=30px; fld='id'>#</th>
     <% else %>
       <th fld='<%= attr[0] %>'><%= t(attr[0]) %></th>
     <% end %>
   <% end %>
-  <th width="60px;"></th>
+  <th width="42px;"></th>
   </thead>
   <tbody>
     <% @items.each do |item| %>
-      <tr>
+      <tr id="item_<%= item.id %>">
         <% attrs.each do |attr| %>
           <% if attr_boolean?(@item,attr[0]) %>
             <td class="state"><span class="check_img sw_check <%= item[attr[0]] ? "checked" :"" %>" item_id="<%= item.id %>" chk="<%= attr[0] %>"></span>

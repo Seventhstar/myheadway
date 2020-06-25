@@ -1,6 +1,6 @@
 class AjaxController < ApplicationController
-
   respond_to :json 
+
   def authors
     if params[:term]
       like= "%".concat(params[:term].concat("%"))

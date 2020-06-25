@@ -1,0 +1,8 @@
+= form_for(@item, html: {class: 'simple_options_form field'}) do |f|
+  #itemAdd_form
+    .input-group
+      .input-group-addon
+        = t("new_"+@item.class.name)
+        |:
+      = f.text_field :name, class: 'txt'
+    span#btn-send.sub.btn.btn-success.right Добавить

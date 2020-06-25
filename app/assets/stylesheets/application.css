@@ -32,6 +32,7 @@ html, body { height: 100%; margin: 0;padding: 0;font: normal 13px sans-serif; }
 .page-wrapper { display: flex; flex-direction: column; height: 100%; }
 .page-content{  flex: 1 0 auto; }
 .page-footer {  margin-top: 45px; border-top: 1px solid #eaeaea; min-height: 20px; flex: 0 0 auto; }
+.page-footer p { padding: 4px;}
 
 .edit_delete { opacity: 1; transition: opacity 2s; }
 .hid { opacity: 0; transition: opacity .3s; }
@@ -56,7 +57,12 @@ a.brand_title:hover { color: #0066aa;text-decoration: none;}
 div#target_list > a:hover{ background-color: #000;}
 .logo { float: left;  margin-right: 20px;}
 
-.signin {width: 500px;padding: 20px 50px;margin: 0px auto;background: #F9F9F9;border-radius: 5px;}
+.signin {width: 300px; padding: 20px 50px; margin: 0px auto; background: #F9F9F9; border-radius: 15px;}
+.signin label {padding-bottom: 4px;}
+.inp_btn.checkbox input {
+    position: absolute;
+    top: 0;
+    left: -50px;
 
 .navsearch {float: left;}
 .search_area { height: 24px;border: 1px solid #bbb;border-radius: 3px;width: 100%;z-index: 2;float: left;width: 100%;margin-bottom: 0;}
@@ -66,27 +72,14 @@ div#target_list > a:hover{ background-color: #000;}
 
 
 input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, .comment_area{
-  border: 1px solid #bbb;
-  border-radius: 3px;
-  -webkit-transition: border linear 0.2s,box-shadow linear 0.2s;
-  -moz-transition: border linear 0.2s,box-shadow linear 0.2s;
-  -ms-transition: border linear 0.2s,box-shadow linear 0.2s;
-  -o-transition: border linear 0.2s,box-shadow linear 0.2s;
-  transition: border linear 0.2s,box-shadow linear 0.2s;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 5px;
   padding: 0 5px;
 }
 
 input[type="text"]:focus,#datepicker:focus,textarea:focus,
-.chosen-container-multi:focus, .chosen-choices:focus
-{
+.chosen-container-multi:focus, .chosen-choices:focus {
  outline:0;
  border-color:rgba(82,168,236,0.8);
--webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
--moz-box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6);
- box-shadow:inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(82,168,236,0.6)
 }
 
 
@@ -138,8 +131,6 @@ border-right: 0;
   background-color: #fff;
   border: 1px solid transparent;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
-  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
 }
 
 

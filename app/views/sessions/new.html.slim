@@ -9,8 +9,10 @@
         = f.label "Пароль"
         = f.password_field :password, class: 'form-control'
         br
-        = f.check_box :remember_me 
-        span Запомнить меня
+        .inp_btn_label
+          .inp_btn.checkbox
+            = f.check_box :remember_me 
+          span Запомнить меня
 
         = f.submit "Войти", class: "btn btn-primary mt-10"
     p

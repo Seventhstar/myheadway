@@ -132,9 +132,10 @@ Vue.component('v-chosen', {
         let label = (v_nil(val)) ? undefined : val.label
 
         this.localValue = (v_nil(val)) ? 0 : val.value
+        if (this.$parent[this.name] == val) return
         this.$parent[this.name] = val
         this.$emit('input', val)
-        this.$root.$emit('onInput', {value: this.localValue, key: this.k, index: this.index, name: this.name, label: label})
+        // this.$root.$emit('onInput', {value: this.localValue, key: this.k, index: this.index, name: this.name, label: label})
         if (typeof(val) == "object" && value == this.$parent[this.name]) return
         if (this.storable) localStorage[this.name] = this.localValue
       },

@@ -226,13 +226,19 @@ var m_index = {
 
     columnValue(item, column) {
       if (this.hasTooltip(column)) {
-        let _t = this.getToolTipData(item, column)
+        let _t = this.getToolTipData(item, column)        
         if (toInt(_t) > 0)
           return item[column[0]].slice(0, toInt(_t))
         else
           return item[column[0]]
       } 
-      return this.formatValue(item[column[0]], column[0])
+      // console.log('_t', _t)
+      let val = item[column[0]]
+      if (val == false)
+        return ''
+      else if (val == true)
+        return '<span class="checked">'
+      return this.formatValue(val, column[0])
     },
 
     fGroup(groupName = ''){

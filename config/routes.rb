@@ -30,17 +30,19 @@ Myheadway::Application.routes.draw do
   post 'exchange1c/:model/upload' => 'exchange1c#upload'
 
   get    'options'  => 'options#edit'
+  post   'options/:options_page'  => 'options#create'
+  get    'options/:options_page'  => 'options#edit', constraints: {format: /(json|html)/}
   get    'options/:options_page.json' => 'options#index'
-  get    'options/:options_page'  => 'options#edit',:constraints => {:format => /(json|html)/}
-  post   'options/upload/:options_page' => 'options#upload'
-  post   'options/:options_page' => 'options#create'
   delete 'options/:options_page/:id' => 'options#destroy'
+  delete 'options/:id' => 'options#destroy'
+
+  post   'options/upload/:options_page' => 'options#upload'
 
   post "ajax/upd_param"
   post "ajax/add_option"
 
 
-  root :to => "statements#index"
+  root to: "statements#index"
 
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'                                   

@@ -18,7 +18,6 @@
 //= require locales/jquery.timeago.ru.js
 //= require chosen.jquery
 //= require nprogress
-//= require nprogress-turbolinks
 //= require vue
 //= require vuex
 //= require v-store
@@ -89,53 +88,43 @@ function paste() {
 
 $(document).ready(function(){
 
-  $( document ).ajaxStop(function() {
+  $(document).ajaxStop(function() {
     NProgress.done();
   });
 
-  $(document).on('keyup', function(e) {
-    if (e.keyCode === 13) {
-      $('.chcreate').click();
-      $('.chcreate').trigger('click');
-      if ($('#new_task') != undefined){
-        $('#task_name').val('');
-        $('#btn-send').trigger('click');
-      }
+  $(document).on('keypress', 'form', e => {
+    if (e.keyCode == 13) {
+      console.log('on enter keypress disable')
+      return false;
     }
   });
 
-  $(document).on('click',".paste", function(e){
+  // $(document).on('keyup', function(e) {
+  //   if (e.keyCode === 1 3) {
+  //     $('.chcreate').click();
+  //     $('.chcreate').trigger('click');
+  //     if ($('#new_task') != undefined){
+  //       $('#task_name').val('');
+  //       $('#btn-send').trigger('click');
+  //     }
+  //   }
+  // });
+
+  $(document).on('click', '.checkbox', function(event){
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+    } else {
+      $(this).addClass('active');
+    }
+  });
+
+
+  $(document).on('click', ".paste", function(e){
     e.preventDefault();
     $('#statement_image_url').focus()
     pasteEvent = new ClipboardEvent('paste')
     document.dispatchEvent(pasteEvent)
-    // paste();
-    //document.execCommand('paste');
-    // var text = e.clipboardData;
-    // alert("text:" + text);
   });
-
-  $(document).on('click','#itemAdd_form #btn-send1',function(e) {
-    var valuesToSubmit = $('form').serialize();
-    var values = $('form').serialize();
-    var url = $('form').attr('action');
-    var empty_name = false;
-    each(q2ajx(values), function(i, a) {
-      if (i.indexOf("[name]") >0  && a=="" ) { empty_name = true; return false; }
-    });
-
-    if (!empty_name){
-      $.ajax({
-        type: "POST",
-          url: url, //sumbits it to the given url of the form
-          data: valuesToSubmit,
-          dataType: 'JSON',
-          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-          success: function(){$.get(url, null, null, "script"); $('input[name*=name]').val('');}
-        });
-    }
-  });
-
 
   $('.switcher_a').each(function(){
     var switcher = $(this);

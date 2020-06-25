@@ -122,7 +122,7 @@ module ApplicationHelper
     dd      = is_modal ? "modal" : ''
     
     submit_options = {}
-    cls = "btn sub btn_a #{add_cls}"
+    cls = "btn btn-success sub btn_a #{add_cls}"
 
     if options[:classValid] 
       submit_options[':class'] = "[{disabled: #{options[:classValid]}}, '#{cls}']" # ':class' for vue
@@ -138,7 +138,7 @@ module ApplicationHelper
     if is_modal 
       c = button_tag "Отмена", type: "button", class: "text btn_a btn_reset", "data-dismiss": "modal"         
     else
-      c = link_to 'Отмена', back_url, class: "sub btn_a btn_reset"
+      c = link_to 'Отмена', back_url, class: "sub btn btn_reset"
     end
 
     content_tag :div, class: "actns" do
@@ -147,7 +147,7 @@ module ApplicationHelper
   end
 
   def add_new( path )
-    link_to '+ Добавить',path, :class =>"btn-success right"
+    link_to '+ Добавить', path, class: "btn-success right"
   end
 
   def link_to_del( obj)

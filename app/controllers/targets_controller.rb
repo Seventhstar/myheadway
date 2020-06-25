@@ -23,7 +23,8 @@ class TargetsController < ApplicationController
      # @targets = Target.all
      current_period
      @checked = TargetDay.where(month: @current_month, year: @current_year)
-     @targets = Target.joins('LEFT JOIN tgroups ON tgroups.id = targets.group_id ').select('targets.*, tgroups.name as group_name')
+     @targets = Target.joins('LEFT JOIN tgroups ON tgroups.id = targets.group_id ')
+                      .select('targets.*, tgroups.name as group_name, "" as cls')
     # end
 
   end

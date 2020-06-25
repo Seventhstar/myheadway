@@ -20,10 +20,14 @@
       lists: "authors"
     }) %>,
 
-    methods: {
-          onInput(e) {
-          }
-        }
+    computed: { 
+      imageHtml() {
+        console.log('this.img_url', this.img_url)
+        if (this.img_url && this.img_url!='')
+          return '<img src="'+this.img_url+'" class="image_edit_form" alt="Картинка">'
+        return '<span class="empty_book">'
+      }
+    }
     
   });
 
