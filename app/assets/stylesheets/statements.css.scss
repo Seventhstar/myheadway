@@ -67,7 +67,8 @@ img.round { position: absolute; z-index: 2; display: block; left: -40px; top: -1
 br {margin-top: 10px;padding-bottom: 10px;}
 
 .statement_author    { font-family: Georgia, "Times New Roman", serif; color: #999; height: auto; padding: 5px; }
-.statement_edit_menu { display: inline; float: right; vertical-align: bottom;}
+.statement_edit_menu { display: flex; float: right; vertical-align: bottom;}
+.statement_edit_menu a:first-child {padding-right: 2px;}
 
 .statement_user { float: right; color: #999;}
 

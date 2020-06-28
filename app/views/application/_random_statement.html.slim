@@ -1,0 +1,25 @@
+- statement = getRandomStatement
+- if statement != nil
+  .statement_show.mini
+    .min_statement_head Случайное высказываение
+    .statement_header
+      = link_to image_tag('left.png'), statement.previous
+      b #
+      = statement.id
+      - text_field :statement_id, statement.id, size: 1, value: statement.id
+      - link_to image_tag('right.png'), statement.next
+    br/
+
+    .statement_content= raw CheckShortContent(RedCloth.new(statement.content).to_html,statement.id)
+    .statement_footer
+      .statement_author.col-80
+        b Автор: 
+        = statement.author_name
+        br/
+        - if statement.theme?
+          b Тема: 
+          = statement.theme
+      .statement_edit_menu
+        = link_to image_tag('link.png'), statement.source
+        = tool_icons(statement, {icons: 'edit'})
+  .statement_bottom.mini

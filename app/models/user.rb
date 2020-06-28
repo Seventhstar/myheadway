@@ -68,8 +68,7 @@ class User < ActiveRecord::Base
   end
 
   # Sends password reset email.
-  def send_password_reset_email
-      
+  def send_password_reset_email      
     UserMailer.password_reset(self).deliver_now
   end
 
@@ -77,25 +76,20 @@ class User < ActiveRecord::Base
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
-  private
 
+  private
     # Converts email to all lower-case.
     def downcase_email
       self.email = email.downcase
-      if User.count==0
+      if User.count == 0
          self.admin = true
          self.activated = true
       end
-
     end
-
-  
 
     # Creates and assigns the activation token and digest.
     def create_activation_digest
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
-
-
 end

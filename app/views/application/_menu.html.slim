@@ -1,0 +1,10 @@
+.container
+  nav.navbar.navbar-default.top-menu
+    .container-fluid
+      .logo= image_tag('rostok.png')
+      .navbar-header
+        a.navbar-brand href="#" 
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        = render_navigation level: 1
+  .subnav
+    = render "submenu"

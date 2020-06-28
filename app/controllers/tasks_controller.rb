@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -8,26 +7,21 @@ class TasksController < ApplicationController
 
     case v
     when 1
-      today = Date.today
-      @tasks = Task.where('start_date between ? and ?', today, today+7.days).order(:start_date)
+      today  = Date.today
+      @tasks = Task.where('start_date between ? and ?', today, today + 7.days)
+                   .order(:start_date)
     else
       @tasks = Task.order(:start_date)
     end
   end
 
   def new
-
     @task = Task.new
   end
 
-
   def edit
-
   end
 
-
-  # POST /books
-  # POST /books.json
   def create
     @task = Task.new(task_params)
 
@@ -43,8 +37,6 @@ class TasksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /goals/1
-  # PATCH/PUT /goals/1.json
   def update
     respond_to do |format|
       if @task.update(task_params)
@@ -57,9 +49,6 @@ class TasksController < ApplicationController
     end
   end
 
-
-  # DELETE /books/1
-  # DELETE /books/1.json
   def destroy
     @task.destroy
     respond_to do |format|
@@ -67,9 +56,7 @@ class TasksController < ApplicationController
     end
   end
 
-
-private
-    # Use callbacks to share common setup or constraints between actions.
+  private
     def set_task
       @task = Task.find(params[:id])
     end
@@ -77,5 +64,4 @@ private
     def task_params
       params.require(:task).permit(:name, :description, :user_id, :fixed, :start_date, :tasl, :priority_id, :task_cat_id)
     end
-
 end

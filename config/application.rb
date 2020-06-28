@@ -24,5 +24,17 @@ module Myheadway
     config.i18n.default_locale = :ru
 
     config.serve_static_file = true
+
+    config.generators do |g|
+      g.test_framework :rspec,
+                       fixtures: true,
+                       view_spec: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       request_specs: false,
+                       controller_spec: true
+      g.factory_bot dir: 'spec/factories'
+    end
+
   end
 end

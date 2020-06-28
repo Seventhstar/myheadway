@@ -1,0 +1,8 @@
+- notices = Notice.all
+- if !notices.nil?
+  .statement_show.mini
+    .min_statement_head Установки / заметки
+    .statement_content
+      - notices.each do |notice|
+        p= notice.name
+  .statement_bottom.mini

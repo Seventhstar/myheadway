@@ -13,14 +13,6 @@ class OptionsController < ApplicationController
   def create
     @items = option_model.order(:name)  
     respond_with(@item = option_model.create(options_params))
-
-    # @item  = option_model.new(options_params)
-    # if @item.save
-    # else
-      # respond_to do |format|
-        # format.json { render json: @item.errors, status: :unprocessable_entity }
-      # end
-    # end
   end
 
   def edit

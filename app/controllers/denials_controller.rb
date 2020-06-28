@@ -1,28 +1,17 @@
 class DenialsController < ApplicationController
   before_action :set_denial, only: [:show, :edit, :update, :destroy]
 
-  # GET /denials
-  # GET /denials.json
   def index
     @denials = Denial.all
   end
 
-  # GET /denials/1
-  # GET /denials/1.json
-  def show
-  end
-
-  # GET /denials/new
   def new
     @denial = Denial.new
   end
 
-  # GET /denials/1/edit
   def edit
   end
 
-  # POST /denials
-  # POST /denials.json
   def create
     @denial = Denial.new(denial_params)
 
@@ -37,8 +26,6 @@ class DenialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /denials/1
-  # PATCH/PUT /denials/1.json
   def update
     respond_to do |format|
       if @denial.update(denial_params)
@@ -51,8 +38,6 @@ class DenialsController < ApplicationController
     end
   end
 
-  # DELETE /denials/1
-  # DELETE /denials/1.json
   def destroy
     @denial.destroy
     respond_to do |format|
@@ -62,12 +47,10 @@ class DenialsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_denial
       @denial = Denial.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def denial_params
       params.require(:denial).permit(:name, :start_date)
     end

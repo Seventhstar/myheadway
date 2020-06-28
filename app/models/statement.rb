@@ -8,7 +8,7 @@ class Statement < ActiveRecord::Base
 
   attr_accessor :author_name
   attr_accessor :book_name
-  
+
   attr_reader :tag_tokens
   
   def tag_tokens=(tokens)
@@ -29,7 +29,6 @@ class Statement < ActiveRecord::Base
 
 
   def author_name
-    #author.name if !author.nil?
     author.try(:name)
   end
 
@@ -41,9 +40,7 @@ class Statement < ActiveRecord::Base
     self.author = Author.find_or_create_by(name: name) if name.present?
   end
 
-
   def book_name
-    #author.name if !author.nil?
     book.try(:name)
   end
 
@@ -52,7 +49,6 @@ class Statement < ActiveRecord::Base
   end
 
   def ae_some_html
-    # converting newlines 
     s = self.content
     s.gsub!(/\r\n?/, "\n") 
 
@@ -64,17 +60,16 @@ class Statement < ActiveRecord::Base
 
     # other tags: b, i, em, strong, u 
     %w(b i em strong u).each { |x|
-     s.gsub!(Regexp.new('&lt;(' + x + ')&gt;(.+?)&lt;/('+x+')&gt;',
-       Regexp::MULTILINE|Regexp::IGNORECASE), 
-     "<\\1>\\2</\\1>") 
-   } 
+      s.gsub!(Regexp.new('&lt;(' + x + ')&gt;(.+?)&lt;/('+x+')&gt;',
+                          Regexp::MULTILINE|Regexp::IGNORECASE), 
+                          "<\\1>\\2</\\1>")} 
 
     # replacing newlines to <br> ans <p> tags 
     # wrapping text into paragraph 
     s = "<p>" + s.gsub(/\n\n+/, "</p>\n\n<p>").
-    gsub(/([^\n]\n)(?=[^\n])/, '\1<br />') + "</p>" 
+                  gsub(/([^\n]\n)(?=[^\n])/, '\1<br />') + "</p>" 
 
-    self.content =s      
+    self.content = s      
   end 
 
   def self.search(search)
@@ -85,6 +80,4 @@ class Statement < ActiveRecord::Base
       all
     end
   end
-
-
 end
