@@ -3,6 +3,15 @@ html
   head
     meta content="text/html; charset=UTF-8" http-equiv="Content-Type" 
     title My HeadWay
+    
+    = javascript_include_tag src="https://cdn.jsdelivr.net/npm/vuex@3.5.1/dist/vuex.min.js"
+    = javascript_include_tag src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+
+    - if Rails.env.production?
+      = javascript_include_tag src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"
+    - else
+      = javascript_include_tag src="https://cdn.jsdelivr.net/npm/vue@2.6.11"
+
     = javascript_include_tag "application"
     = stylesheet_link_tag    "application", media: "all"
     = csrf_meta_tags
@@ -17,7 +26,7 @@ html
           - if controller.controller_name == "tasks"
             .span9= yield
           - else
-            div class=("#{current_user ? 'col-70':''}") 
+            div class="#{current_user ? 'col-70':''}"
               .span9= yield
             - if current_user
               .col-30

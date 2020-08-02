@@ -1,4 +1,4 @@
-class CreateTgroups < ActiveRecord::Migration
+class CreateTgroups < ActiveRecord::Migration[5.1]
   def change
     create_table :tgroups do |t|
       t.string :name

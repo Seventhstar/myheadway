@@ -11,17 +11,17 @@ $corner-radius: 3px;
 }
 
 #target_list .edit_delete {
-    position: relative;
-    float: right;
-    white-space: nowrap;
-    margin: 1px 2px 0 0;
-    font-size: 0;
+  position: relative;
+  float: right;
+  white-space: nowrap;
+  margin: 1px 2px 0 0;
+  font-size: 0;
 }
 #target_list .thead_group .edit_delete{
-    position: relative;
-    white-space: nowrap;
-    margin:  0;
-    font-size: 0;
+  position: relative;
+  white-space: nowrap;
+  margin:  0;
+  font-size: 0;
 }
 
 #targets_index .groups {
@@ -33,7 +33,7 @@ $corner-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  }
+}
 
 #target_head{ height: 24px; margin-bottom: 3px; }
 #target_list .target_li{ height: 23px; }
@@ -47,6 +47,7 @@ $corner-radius: 3px;
   align-items: center;
   padding:1px 5px;
   color: #428bca;
+  cursor: pointer;
   &.active, &:hover{ color: white; background-color: #93c0e6;}
 }
 
@@ -71,7 +72,7 @@ span.plus { display: block; float: left; width: 18px;text-align: center; cursor:
   align-items: center;
   text-align: center; float: left; border: 1px solid #DDD;}
 
-.calenhead {
+  .calenhead {
     height: 20px; 
     width: 22px;
     &.overhead, &:hover {
@@ -90,59 +91,111 @@ span.plus { display: block; float: left; width: 18px;text-align: center; cursor:
       font-weight: bold;
       font-family: verdana, arial, helvetica, sans-serif; font-size: 13px;  
     }
-}
+  }
 
-.calenday {
-  min-height: 20px;
-  cursor: pointer;
-  &:hover{ 
-    border: 1px solid #ACF; 
-    background-color: #e9f8ff;
-    -webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease; }
-  &.checked{ background-image: url('check.png');-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
-}
-
-
-.group_day .calenday {
-  border: 1px solid #ddd;
-  &:hover {border: 1px solid #ACF; background-color: #e9f8ff; 
-    -webkit-transition: all 0.5s ease; 
-    -moz-transition: all 0.5s ease; 
-    -o-transition: all 0.5s ease;    
-    transition: all 0.5s ease;}
-}
-
-.calenday[state="1"] { background-color: #F0FFB0; border: 1px solid #8cc665;}
-.calenday[state="2"] { background-color: #BAEC50; border: 1px solid #67b72b;}
-.calenday[state="3"] { background-color: #70CB30; border: 1px solid #198619;}
-
-.today{ color: white; border: 1px solid #04355f; background-color: #428bca; border-radius: $corner-radius;}
-.today.holyday { background-color: #F44336; border-color: #d01f1f;}
-
-.holyday { border: 1px solid #ffcccc; background-color: #ffeeee;
-  &:hover{ border: 1px solid #ff0000; background-color: #ffaaaa; }}
-
-td.edit_delete, th.edit_delete{ width: 42px; padding-right: 4px !important; padding-left: 4px !important;}
+  .calenday {
+    min-height: 20px;
+    cursor: pointer;
+    &:hover{ 
+      border: 1px solid #ACF; 
+      background-color: #e9f8ff;
+      -webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease; }
+      &.checked{ background-image: url('check.png');-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
+    }
 
 
-.end_line{ float: right; width: 10px; display: block;}
+    .group_day .calenday {
+      border: 1px solid #ddd;
+      &:hover {border: 1px solid #ACF; background-color: #e9f8ff; 
+        -webkit-transition: all 0.5s ease; 
+        -moz-transition: all 0.5s ease; 
+        -o-transition: all 0.5s ease;    
+        transition: all 0.5s ease;}
+      }
+
+      .calenday[state="1"] { background-color: #F0FFB0; border: 1px solid #8cc665;}
+      .calenday[state="2"] { background-color: #BAEC50; border: 1px solid #67b72b;}
+      .calenday[state="3"] { background-color: #70CB30; border: 1px solid #198619;}
+
+      .today{ color: white; border: 1px solid #04355f; background-color: #428bca; border-radius: $corner-radius;}
+      .today.holyday { background-color: #F44336; border-color: #d01f1f;}
+
+      .holyday { border: 1px solid #ffcccc; background-color: #ffeeee;
+        &:hover{ border: 1px solid #ff0000; background-color: #ffaaaa; }}
+
+        td.edit_delete, th.edit_delete{ width: 42px; padding-right: 4px !important; padding-left: 4px !important;}
 
 
-#children { margin-left: 20px;}
-#target_list{ padding:0px; -webkit-padding-start: 0px;}
-#div_days_list{ float: right;}
+        .end_line{ float: right; width: 10px; display: block;}
 
-.calendar_period_h { float: right; }
 
-.calendar_period { cursor: default; height: 28px; 
+        #children { margin-left: 20px;}
+        #target_list{ padding:0px; -webkit-padding-start: 0px;}
+        #div_days_list{ float: right;}
+
+        .calendar_period_h { float: right; }
+
+        .calendar_period { cursor: default; height: 28px; 
   // margin: 10px 0;
-      display: table-cell; 
-      float: right;
+  display: table-cell; 
+  float: right;
   span, em { padding: 0.2em 1.2em; display: block; float: left; margin-right: 1px; }
   .current { font-style: normal;font-weight: bold; background: #2e6ab1;color: white; border: 1px solid #2e6ab1;}
 
 }
 
 
+/* The Modal (background) */
+.modal {
+  // display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
 
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  border: 1px solid #888;
+  // width: 80%;  Could be more or less, depending on screen size 
+  width: 320px;
+  border-radius: 8px;
+  -webkit-box-shadow: 7px 7px 2px 0 rgba(0,0,0,0.2);
+  -moz-box-shadow: 7px 7px 2px 0 rgba(0,0,0,0.2);
+  box-shadow: 7px 7px 2px 0 rgba(0,0,0,0.2);
+}
+
+.modal-head {
+  background-color: #428bca;
+  color: #fff;
+  padding: 10px;
+  border-radius: 7px 7px 0 0;
+}
+
+.modal-body {
+  padding: 20px;
+
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 

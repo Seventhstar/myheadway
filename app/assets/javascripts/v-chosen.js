@@ -1,4 +1,4 @@
-Vue.component('v-chosen', {
+var VueChosen = Vue.component('v-chosen', {
     data() {
       return {
         model: "",

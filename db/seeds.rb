@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+if SetsName.all.size == 0
+  sets_names = SetsName.create([{name: 'Раз'}, {name: 'Подходов'}, {name: 'Кругов'}])
+end

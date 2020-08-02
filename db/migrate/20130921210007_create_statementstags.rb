@@ -1,4 +1,4 @@
-class CreateStatementstags < ActiveRecord::Migration
+class CreateStatementstags < ActiveRecord::Migration[5.1]
   def change
     create_table :statementstags do |t|
       t.integer :statement_id

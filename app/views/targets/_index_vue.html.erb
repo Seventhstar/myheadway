@@ -1,21 +1,54 @@
 <script>
+  Vue.component('v-select', VueSelect.VueSelect)
+  // Vue.component('v-chosen', VueSelect.VueChosen)
   let app = new Vue({
     el: '#targets_index', 
     mixins: [m_index],
     data: <%= fill_vue_data(nil, {
       activeTab: 0,
       days: current_period.end_of_month.day,
+      month: 0,
+      year: 0,
       currentGroup: 0,
+      currentTarget: "",
+      targetEdit: false,
+      targetDayEdit: false,
       targets: @targets,
       checked: @checked,
+      lists: "sets_names",
       groups: @tgroups
     }, nil) %>,
 
     created() {
-      this.grouped = _.groupBy(this.targets, 'group_name')
-      this.groupHeaders = Object.keys(this.grouped) 
-      // this.subtargets = _.groupBy(this.targets, 'parent_id')
-      
+      this.grouped      = _.groupBy(this.targets, 'group_name')
+      this.groupHeaders = Object.keys(this.grouped)   
+      document.body.addEventListener('keyup', e => {
+          if (event.keyCode === 27) {
+            this.targetEdit = false
+          }
+          else if (event.keyCode === 13) this.targetEdit = false
+      })  
+
+      this.targets.forEach((t) => {
+        t.checked = Array(this.days).fill(0)
+        checks = this.checked.filter(f => f.target_id == t.id)
+        checks.forEach((ch) => {
+          t.checked[ch.day - 1] = ch.state
+        })
+      })
+
+      this.month = $("#current_month").val()
+      this.year = $("#current_year").val()
+
+      let token = document.head.querySelector('meta[name="csrf-token"]').content
+      window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token
+    },
+
+    computed: {
+      targetName() {
+        if (typeof(this.currentTarget) == "object") return this.currentTarget.name
+        return ""
+      }
     },
 
     methods: {
@@ -27,42 +60,75 @@
         group.cls = ""
       },
 
+      targetClick(target, event) {
+        this.currentTarget = target
+        if (event.ctrlKey || event.type == "dblclick") {
+          this.targetEdit = true
+          return 
+        }
+      },
+
+      cellClick(day, target, event) {
+        this.currentTarget = target
+        var ch = target.checked[day-1]
+        if (event.ctrlKey) {
+          this.targetEdit = true
+          return 
+        }
+
+        var state = target.checked[day-1]
+        var spkey = false
+        if (event.shiftKey) {state = 3; spkey = true;}
+        // if (event.ctrlKey) {state = 0; spkey = true;}
+        if (event.altKey) {state = 1; spkey = true; }
+        if (!state) {state = 2;}
+        else if (!spkey) {
+          state = state + 1; 
+          if (state > 2) state = 0;
+        }
+
+        target.checked[day-1] = state
+
+        axios.post('/ajax/target_days', {
+          'day': day,
+          'target': target.id, 
+          'state': state, 
+          'month': this.month, 
+          'year': this.year 
+        }).then(response => {
+          console.log('response', response)
+        })
+      },
+
+      onSaveTargetDay() {
+        this.targetEdit = false
+      },
+
+      onSaveTarget() {
+        this.targetEdit = false
+      },
+
       headClass(group) {
         return group.cls
-        // group.color = '#333';
-        // console.log('headClass', group)
-        // if (this.currentGroup == group)
-          // return true
-        // return false
       },
 
       tabClass(index, group) {
         cls = ""
         if (this.activeTab == index) cls += "active "
-        if (this.groups[index].negative == 'true' || this.groups[index].negative) cls += "negative "
+          if (this.groups[index].negative == 'true' || this.groups[index].negative) cls += "negative "
 
-        return cls
-      },
+            return cls
+        },
 
-      subtargets(target){
-        if (target == undefined || target.id == undefined) return []
-        // console.log('target.id', target.id, target.name, target.group_name)
-        return this.targets.filter(f => f.parent_id == target.id)
-      },
+        subtargets(target){
+          if (target == undefined || target.id == undefined) return []
+            return this.targets.filter(f => f.parent_id == target.id)
+        },
 
-      edit(group) {
-        // console.log('group', group)
-        window.open('/tgroups/'+group.id+'/edit', '_blank');
-      },
+        edit(group) {
+          window.open('/tgroups/'+group.id+'/edit', '_blank');
+        },
 
-      state(id, day) {
-        var ch = this.checked.filter(f => f.day == day && f.target_id == id)
-        if (ch != undefined && ch[0] != undefined)
-          return ch[0].state
-        else
-          return ""
       }
-
-    }
-  })
-</script>
+    })
+  </script>

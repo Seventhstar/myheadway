@@ -18,10 +18,7 @@
 //= require locales/jquery.timeago.ru.js
 //= require chosen.jquery
 //= require nprogress
-//= require vue
-//= require vuex
 //= require v-store
-//= require vue-select
 //= require_tree .
 
 var v_nil = function(v, zeroIsNil = false){ 
@@ -226,28 +223,28 @@ $(document).ready(function(){
     });
 
   $('span.calenday').click(function(e){
-   var day = $(this).attr("day");
-   var state = parseInt($(this).attr("state"));
-   var target = $(this).attr("target");
-   if (target == undefined) target = $(this).parent().attr("target_id");
-   var month = $("#current_month").val();
-   var year = $("#current_year").val();
+   // var day = $(this).attr("day");
+   // var state = parseInt($(this).attr("state"));
+   // var target = $(this).attr("target");
+   // if (target == undefined) target = $(this).parent().attr("target_id");
+   // var month = $("#current_month").val();
+   // var year = $("#current_year").val();
 
-   var spkey = false;
-   if (e.shiftKey) {state = 3; spkey = true;}
-   if (e.ctrlKey) {state = 0; spkey = true;}
-   if (e.altKey) {state = 1; spkey = true; }
-   if (!state) { state = 2;}
-   else if (!spkey) {state = state+1; if (state>3) state=0;}
+   // var spkey = false;
+   // if (e.shiftKey) {state = 3; spkey = true;}
+   // if (e.ctrlKey) {state = 0; spkey = true;}
+   // if (e.altKey) {state = 1; spkey = true; }
+   // if (!state) { state = 2;}
+   // else if (!spkey) {state = state+1; if (state>3) state=0;}
 
-   $(this).attr("state",state);
+   // $(this).attr("state",state);
 
-   $.ajax({
-     url: "/ajax/target_days",
-     data: {'day':day,'target':target, 'state': state, 'month': month, 'year': year },
-     dataType: 'json',
-     type: "POST", beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
-   });
+   // $.ajax({
+   //   url: "/ajax/target_days",
+   //   data: {'day':day,'target':target, 'state': state, 'month': month, 'year': year },
+   //   dataType: 'json',
+   //   type: "POST", beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))}
+   // });
 
 
  });

@@ -1,4 +1,4 @@
-class CreateDocTypes < ActiveRecord::Migration
+class CreateDocTypes < ActiveRecord::Migration[5.1]
   def change
     create_table :doc_types do |t|
       t.string :name

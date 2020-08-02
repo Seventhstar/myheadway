@@ -9,14 +9,31 @@ class TargetsController < ApplicationController
     if params[:tgroup_id]
       @gr_id = params[:tgroup_id]      
     else
-      #@targets = Target.where('parent_id is NULL')
       @gr_id = "1"
     end
 
     current_period
+
+    @targets = Target.left_joins([:sets_name, :count_name, :tgroup])            
+                     .select("targets.*, 
+                              tgroups.name as group_name, 
+                              sets_names.name as sets_name,
+                              count_names.name as count_name,
+                              '' as cls")
+
+    # @sets_names = 
+    # .joins('LEFT JOIN tgroups ON tgroups.id = targets.group_id')
+
+    # @checked = []
+    # 31.times do |day|
+    #   checked[day] = []
+    #   @target.each do |target|
+    #     checked[day]
+    #   end
+    # end
     @checked = TargetDay.where(month: @current_month, year: @current_year)
-    @targets = Target.joins('LEFT JOIN tgroups ON tgroups.id = targets.group_id ')
-                    .select("targets.*, tgroups.name as group_name, '' as cls")
+    @days = @current_period.end_of_month.day
+
   end
 
   def new

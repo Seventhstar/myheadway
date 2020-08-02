@@ -1,0 +1,16 @@
+#myModal.modal.tartet_dialog v-show="targetEdit || targetDayEdit" 
+  .modal-content v-show="targetDayEdit"
+    .modal-head
+      |Задайте количество для: "{{targetName}}"
+    .modal-body
+      span.close wekfjwlkjel
+      p Some text in the Modal..
+      span.btn.btn-min.btn-success @click="onSaveTargetDay()" Сохранить
+  .modal-content v-show="targetEdit"
+    .modal-head
+      |Редактирование цели: "{{targetName}}"
+    .modal-body
+      .grid_middle_label_name
+        |Название подхода/повторения:
+        v-chosen name="sets_name" options="sets_names"
+      span.btn.btn-min.btn-success @click="onSaveTarget()" Сохранить

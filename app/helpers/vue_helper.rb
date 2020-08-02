@@ -126,7 +126,6 @@ module VueHelper
 
     if data[:booleans].present?
       string_to_array(data[:booleans]).each do |b|
-        # puts "booleans", b, obj[b].nil?
         data[b] = obj[b].nil? ? eval("@#{b}") : obj[b]
       end
       data.delete(:booleans)
@@ -149,9 +148,10 @@ module VueHelper
           fields = lf[1]
           l = lf[0]
         end
-        if l.index(':').nil?
 
+        if l.index(':').nil?
           collection = eval("@#{l}")
+          collection = l.classify.constantize.order(:id) if collection.nil?
         else
           la = l.split(':')
           if la[1].include?('raw')

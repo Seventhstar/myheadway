@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200526200139) do
+ActiveRecord::Schema.define(version: 20200728160513) do
 
   create_table "attentions", force: :cascade do |t|
     t.string "name"
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(version: 20200526200139) do
     t.datetime "date"
     t.integer "user_id"
     t.boolean "reached"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "count_names", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -103,6 +109,12 @@ ActiveRecord::Schema.define(version: 20200526200139) do
     t.integer "author"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "sets_names", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "statements", force: :cascade do |t|
@@ -158,6 +170,8 @@ ActiveRecord::Schema.define(version: 20200526200139) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean "negative"
+    t.integer "sets_name_id"
+    t.integer "count_name_id"
   end
 
   create_table "task_cats", force: :cascade do |t|

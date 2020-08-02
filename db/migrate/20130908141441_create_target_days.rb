@@ -1,4 +1,4 @@
-class CreateTargetDays < ActiveRecord::Migration
+class CreateTargetDays < ActiveRecord::Migration[5.1]
   def change
     create_table :target_days do |t|
       t.boolean :checked
