@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :def_params, only: [:new, :edit, :update]
 
   def index
-    @books = Book.all
+    @books = Book.left_joins(:author)
 
     @columns = %w"has_picture name author_id"
     fields  = %w"".concat(@columns)

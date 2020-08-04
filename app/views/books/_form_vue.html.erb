@@ -1,4 +1,19 @@
 <script>
+  import Vue from 'vue'
+  import Vuetify from 'vuetify/lib'
+
+  Vue.use(Vuetify) 
+
+  import { VCard, VCardText, VCardTitle } from 'vuetify/lib'
+
+  export default {
+    components: {
+      VCard,
+      VCardText,
+      VCardTitle,
+    }
+  }
+
   Vue.component('v-select', VueSelect.VueSelect)
 
   let app = new Vue({

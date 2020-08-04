@@ -1,13 +1,15 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
+#require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module Myheadway
   class Application < Rails::Application
+    config.load_defaults 6.0
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
 

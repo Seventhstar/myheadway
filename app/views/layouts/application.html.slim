@@ -3,43 +3,26 @@ html
   head
     meta content="text/html; charset=UTF-8" http-equiv="Content-Type" 
     title My HeadWay
-    
-    = javascript_include_tag src="https://cdn.jsdelivr.net/npm/vuex@3.5.1/dist/vuex.min.js"
-    = javascript_include_tag src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
-
-    - if Rails.env.production?
-      = javascript_include_tag src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"
-    - else
-      = javascript_include_tag src="https://cdn.jsdelivr.net/npm/vue@2.6.11"
-
-    = javascript_include_tag "application"
-    = stylesheet_link_tag    "application", media: "all"
-    = csrf_meta_tags
     = favicon_link_tag 'leaf.ico'
-    meta content="width=device-width, initial-scale=1.0" name="viewport" 
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
+    = javascript_pack_tag 'main'
+    = javascript_pack_tag 'hello_erb' 
+
+    link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"
+
+    = csrf_meta_tags
+    / meta content="width=device-width, initial-scale=1.0" name="viewport"
   body
-    .page-wrapper
-      .page-content
+    / .page-wrapper
+    / .page-content
         - if current_user
           = render "menu"
         .container
           - if controller.controller_name == "tasks"
-            .span9= yield
+            / .span9= yield
           - else
             div class="#{current_user ? 'col-70':''}"
               .span9= yield
-            - if current_user
-              .col-30
-                .statement_mini
-                  = render "random_statement"
-                .sep15
-                .statement_mini
-                  = render "week_tasks"
-                .sep15
-                .statement_mini
-                  = render "notices"
-                .sep15
-                .statement_mini
-                  = render "random_book"
-      .page-footer
-        p seventhstar
+
