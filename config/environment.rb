@@ -1,8 +1,7 @@
 # Load the Rails application.
-# require File.expand_path('../application', __FILE__)
 require_relative 'application'
+require 'will_paginate'
 
 # Initialize the Rails application.
-Myheadway::Application.initialize!
+Rails.application.initialize!
 
-Rails::Timeago.default_options :limit => proc { 20.days.ago }, :force => true, :nojs => true, :date_only =>false 

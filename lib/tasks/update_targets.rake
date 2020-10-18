@@ -9,4 +9,10 @@ namespace :update_targets do
       end
     end
   end
+
+  task set_user: :environment do
+    Target.all.each do |t|
+      t.update_attribute(:user, User.first)
+    end
+  end
 end

@@ -78,9 +78,7 @@ gem 'execjs'
 
 gem 'RedCloth'
 gem 'simple-navigation'
-gem 'will_paginate'
 gem 'rails-timeago', '~> 2.0'
-gem 'tzinfo-data'
 gem 'yaml_db'
 gem 'chosen-rails'
 gem 'coderay'
@@ -90,10 +88,8 @@ gem 'nprogress-rails'
 gem 'slim-rails'
 #gem 'clipboard-rails'
 
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+
 gem 'activeadmin'
+gem 'will_paginate', '~> 3.1.0'

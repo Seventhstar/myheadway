@@ -46,12 +46,12 @@
     methods: {
       onAdd() {
         http.sendToServer(this, 'task')
-        this.task.name = ''
+        // this.task.name = ''
       },
 
-      // onInput(e) {
-      //   console.log('new item e', e)
-      // }
+      onInput(e) {
+        console.log('new item e', e)
+      }
     }
   }
 

@@ -43,7 +43,7 @@ h1, h3,.hl { font-size: 24px;  padding-bottom: 4px; border-bottom: 1px solid #cc
 
 .nav-pills>li { float: left;}
 .nav-pills a {border-radius: 4px; padding: 6px 12px;}
-.nav>li>a:hover, .nav>li>a:focus { text-decoration: none; background-color: #93c0e6; color: white;}
+.nav>li>a:hover, .nav>li>a:focus { text-decoration: none !important; background-color: #93c0e6; color: white;}
 .nav-pills>li+li {margin-left: 4px;}
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus { 
   color: #fff; background-color: #288be0; 
@@ -54,7 +54,7 @@ h1, h3,.hl { font-size: 24px;  padding-bottom: 4px; border-bottom: 1px solid #cc
 }
 
 
-a { color: #428bca;  text-decoration: none;}
+a { color: #428bca;  text-decoration: none !important;}
 
 .navbar { position: relative; height: 50px; margin-bottom: 20px; border: 1px solid #e7e7e7; border-radius: 4px; 
   background-color: #f8f8f8; 
@@ -131,7 +131,7 @@ a { color: #428bca;  text-decoration: none;}
     user-select: none;
 }
 
-a.btn, a.btn:hover {text-decoration: none;}
+a.btn, a.btn:hover {text-decoration: none !important;}
 .btn-primary { color: #fff; background-color: #428bca; border-color: #357ebd;}
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
@@ -139,7 +139,7 @@ a.btn, a.btn:hover {text-decoration: none;}
     border-color: #285e8e;
 }
 
-.btn-success { color: #fff; background-color: #5cb85c; border-color: #409040;
+.btn-success { color: #fff !important; background-color: #5cb85c; border-color: #409040;
   // box-shadow: 0 0 5px white inset;
   // , 0 2px 0 rgba(200, 200, 200, 1);
 }
