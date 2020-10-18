@@ -1,16 +1,19 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
 gem 'webpacker', '~> 4.0'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'coffee-script-source', '1.8.0'
+  gem 'coffee-script-source', '1.12.2'
   gem "better_errors"
   gem "binding_of_caller"
   gem 'factory_bot_rails'
@@ -25,17 +28,12 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-  
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
 
 gem 'puma', '~> 4.1'	
-
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use SCSS for stylesheets
@@ -45,7 +43,7 @@ gem 'sass-rails', '>= 6'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', github: 'rails/coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -56,9 +54,6 @@ gem 'jquery-ui-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -94,3 +89,10 @@ gem 'responders'
 gem 'nprogress-rails'
 gem 'slim-rails'
 #gem 'clipboard-rails'
+
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 4.0'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.7'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.2', require: false
