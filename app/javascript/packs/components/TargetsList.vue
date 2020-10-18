@@ -1,28 +1,48 @@
-<script>
-  Vue.component('v-select', VueSelect.VueSelect)
-  Vue.component('v-chosen', VueSelect.VueChosen)
-  let app = new Vue({
-    el: '#targets_index',
-    mixins: [m_index],
-    data: <%= fill_vue_data(nil, {
-      activeTab: 0,
-      days: current_period.end_of_month.day,
-      month: 0,
-      year: 0,
-      currentGroup: 0,
-      currentTarget: "",
-      currentIndex: 0,
-      targetEdit: false,
-      targetDayEdit: false,
-      targets: @targets,
-      checked: @checked,
-      sets_name_id: 1,
-      group_id: 1,
-      lists: "sets_names groups:@tgroups",
+<template>
+  <div>
+    <div class="grid_label_name">
+      <label for="name"> Название: </label>
+      <input type="text" v-model="target.name" id="name">
+      <label> Группа: </label>
+      <v-select v-model="target.group_id" :reduce="v=>v.value" :options="groups"></v-select>
+      <label> Родитель: </label>
+      <v-select v-model="target.parent_id" :reduce="v=>v.value" :options="parents"></v-select>
+      <label>Название подхода (повторения):</label>
+      <v-select v-model="target.sets_name_id" :reduce="v=>v.value" :options="sets_names"></v-select>
+      <label>Название количества:</label>
+      <v-select v-model="target.count_name_id" :reduce="v=>v.value" :options="count_names"></v-select>
+    </div>
+    <br>
+    <div class="actns" style="float: right">
+      <span class="btn btn_reset ml-2" @click="targetEdit = false">Отменить</span>
+      <span class="btn btn-min btn-success" @click="onSaveTarget()"> Сохранить </span>
+    </div>
+  </div>
+</template>
 
-    }, nil) %>,
+<script>
+  import {_} from 'vue-underscore'
+  export default {
+    name: "TargetsList",
+    data() {
+      return {
+        id: null,
+        checked: [],
+        targets: []
+      }
+    },
+        // el: '#targets_index',
+    // mixins: [m_index],
 
     created() {
+
+      let element = document.getElementById('targets-data')
+      if (element !== null) {
+        this.targets = JSON.parse(element.dataset.targets)
+        this.checked = element.dataset.cheked
+      }
+
+
       this.grouped = _.groupBy(this.targets, 'group_name')
       this.groupHeaders = Object.keys(this.grouped)
       document.body.addEventListener('keyup', e => {
@@ -151,5 +171,5 @@
       },
 
     }
-  })
+  }
 </script>

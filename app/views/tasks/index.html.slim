@@ -1,13 +1,18 @@
+= javascript_pack_tag 'taks_list'
+= content_tag :div, id: 'task-data',
+        data: {categories: for_js(TaskCat.all),
+                tasks: for_vue(Task.order([:start_date]), [:task_cat_name, :task_cat_img_num])} do
+
 h1 Список задач
-.col-80
+#tasks-list.col-80
   = form_for(@task) do |t|
     #itemAdd_form.inline
       .left
         label.left for="task_name" Новая задача: 
         = t.text_field :name, class: 'txt left', placeholder: 'Новая задача'
       .field.left.w100
-        = t.text_field :start_date, value: Date.today.try('strftime',"%d.%m.%Y"), label: false, class: "txt datepicker"
-      .field.left style=("width: 186px;") 
+        = t.text_field :start_date, value: Date.today.try('strftime', "%d.%m.%Y"), label: false, class: "txt datepicker"
+      .field.left style=("width: 186px;")
         = chosen_src "task[task_cat_id]", TaskCat.all, params[:task_cat_id], {nil_value: 'Категория...', class: 'filter_chosen'}
       span#btn-send.sub.btn.btn-min.btn-success.right Добавить
   #tasks

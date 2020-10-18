@@ -5,12 +5,18 @@
     .modal-body
       span.close wekfjwlkjel
       p Some text in the Modal..
+      br
       span.btn.btn-min.btn-success @click="onSaveTargetDay()" Сохранить
   .modal-content v-show="targetEdit"
     .modal-head
       |Редактирование цели: "{{targetName}}"
     .modal-body
       .grid_middle_label_name
+        |Группа
+        v-select v-model="group_id" :reduce="v=>v.value" :options="groups"
         |Название подхода/повторения:
-        v-chosen name="sets_name" options="sets_names"
-      span.btn.btn-min.btn-success @click="onSaveTarget()" Сохранить
+        v-select v-model="sets_name_id" :reduce="v=>v.value" :options="sets_names"
+        br
+      .actns
+        span.btn.btn-min.btn-success @click.once="onSaveTarget()" Сохранить
+        span.btn.btn_reset.ml-2 @click="targetEdit = false"  Отменить

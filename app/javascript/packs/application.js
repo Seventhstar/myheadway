@@ -1,13 +1,11 @@
+/* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-
-require("@rails/ujs").start()
-// require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
-require.context('../images', true)
+//
+// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
+// layout file, like app/views/layouts/application.html.erb
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -16,3 +14,39 @@ require.context('../images', true)
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+require("@rails/ujs").start()
+//require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require.context('../images', true)
+require("underscore")
+console.log('Hello World from Webpacker')
+
+
+var v_nil = function(v, zeroIsNil = false){
+  if (typeof(v) == "object")
+    return v === null || v === undefined || v.value === undefined || v.value === 0
+  if (zeroIsNil && v === 0) return true
+  return v === null || v === undefined || v === ''
+}
+
+var e_nil = function(id) {
+  return e_val(id) === ""
+}
+
+var e_val = function(id) {
+  let v = document.getElementById(id)
+  if (v === null) return ""
+  return v.value
+}
+
+window.formatTime = function (str) {
+  if (v_nil(str)) return ''
+  return new Date(str).toString().slice(16, 21)
+}
+
+window.formatDate = function(date) {
+  if (v_nil(date)) date = new Date().toJSON().slice(0,10).replace(/-/g,'-')
+  if (date.includes('-')) return date.slice(0,10).split('-').reverse().join('.')
+  return date
+}

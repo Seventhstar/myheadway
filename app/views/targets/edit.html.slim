@@ -1,0 +1,13 @@
+= javascript_pack_tag 'target_form'
+= content_tag :div, id: 'target-data',
+        data: {id: @target.id,
+                target: @target.to_json(except: [:created_at, :updated_at, :id]),
+                groups: for_js(Tgroup.all),
+                parents: for_js(Target.where(parent_id: nil)),
+                countnames: for_js(CountName.all),
+                setsnames: for_js(SetsName.all)} do
+h1
+  = t "Editing Target"
+#target_form
+/ = render 'form'
+
