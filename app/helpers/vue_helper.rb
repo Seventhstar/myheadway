@@ -1,7 +1,12 @@
 module VueHelper
+  def for_js(data, methods = [], except = [])
+    except = [:created_at, :updated_at] if except.empty?
+    select_src(data).to_json
+    # console
+  end
+
   def for_vue(data, methods = [], except = [])
     except = [:created_at, :updated_at] if except.empty?
-
     data.to_json(except: except, methods: methods).html_safe
   end
 
@@ -219,10 +224,10 @@ module VueHelper
       collection = collection.collect{|u| 
         case u.class.to_s
           when "Hash"
-            {label: u[attr_name.to_sym], value: u[:id]} if u[attr_name.to_sym].present? 
+            {label: u[attr_name.to_sym], value: u[:id]} if u[attr_name.to_sym].present?
           when "Array"
           else
-            {label: u.try(attr_name), value: u.id} if u.try(attr_name).present? 
+            {label: u.try(attr_name), value: u.id} if u.try(attr_name).present?
         end
       }.compact
     else

@@ -1,5 +1,19 @@
 @import "common.scss";
 
+.grid_middle_label_name {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  grid-gap: 10px;
+}
+
+.grid_short_label_name {
+  display: grid;
+  grid-template-columns: 124px 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+
 .blk {display: block;}
 
 .vue_index {margin: 18px 14px 0 0; font-family: verdana, arial, helvetica, sans-serif;}

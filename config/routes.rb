@@ -1,5 +1,6 @@
 Myheadway::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
   get 'api/random_statement'
 
   resources :docs

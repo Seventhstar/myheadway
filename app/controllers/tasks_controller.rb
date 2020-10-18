@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
+  respond_to :json
+
   def index
     @task = Task.new
     v = params[:v] || 1
@@ -11,6 +13,7 @@ class TasksController < ApplicationController
       @tasks = Task.where('start_date between ? and ?', today, today + 7.days)
                    .order(:start_date)
     else
+      # efwe
       @tasks = Task.order(:start_date)
     end
   end
@@ -23,37 +26,17 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
-
-    respond_to do |format|
-      if @task.save
-        # format.html { redirect_to tasks_url, notice: 'Book was successfully created.' }
-        # format.json { render :index, status: :created, location: @task }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
-    end
+    respond_with(@task = Task.create(task_params))
   end
 
   def update
-    respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to tasks_url, notice: 'Goal was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
-      else
-        format.html { render :edit }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
-    end
+    @task.update(task_params)
+    respond_with(@task)
   end
 
   def destroy
-    @task.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+    @task.destroy!
+    head :no_content
   end
 
   private
@@ -62,6 +45,8 @@ class TasksController < ApplicationController
     end
 
     def task_params
-      params.require(:task).permit(:name, :description, :user_id, :fixed, :start_date, :tasl, :priority_id, :task_cat_id)
+      params.require(:task).permit(:name, :description, :user_id,
+                                   :fixed, :start_date, :tasl, :priority_id,
+                                   :task_cat_id)
     end
 end

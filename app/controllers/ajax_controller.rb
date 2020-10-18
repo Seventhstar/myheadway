@@ -3,7 +3,7 @@ class AjaxController < ApplicationController
 
   def authors
     if params[:term]
-      like= "%".concat(params[:term].concat("%"))
+      like = "%#{params[:term]}%"
       authors = Author.where("name like ? ", like)
     else
       authors = Author.all
@@ -14,7 +14,7 @@ class AjaxController < ApplicationController
 
   def books
     if params[:term]
-      like= "%".concat(params[:term].concat("%"))
+      like = "%#{params[:term]}%"
       books = Book.where("name like ? ", like)
     else
       books = Book.all
@@ -25,7 +25,7 @@ class AjaxController < ApplicationController
 
   def targets
     if params[:term]
-      like= "%".concat(params[:term].concat("%"))
+      like = "%#{params[:term]}%"
 #      targets = Target.where("name like ?", like)
       targets = Target.where("name like ? and parent_id is NULL ", like)
     else

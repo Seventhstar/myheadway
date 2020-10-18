@@ -2,20 +2,21 @@ class TargetsController < ApplicationController
   before_action :set_target, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user
   include TargetsHelper
-  
+  include VueHelper
+
   def index
     current_time = Time.now
     @tgroups = Tgroup.all
     if params[:tgroup_id]
-      @gr_id = params[:tgroup_id]      
+      @gr_id = params[:tgroup_id]
     else
       @gr_id = "1"
     end
 
     current_period
 
-    @targets = Target.left_joins([:sets_name, :count_name, :tgroup])            
-                     .select("targets.*, 
+    @targets = Target.left_joins([:sets_name, :count_name, :tgroup])
+                   .select("targets.*,
                               tgroups.name as group_name, 
                               sets_names.name as sets_name,
                               count_names.name as count_name,
@@ -65,7 +66,7 @@ class TargetsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @target.errors, status: :unprocessable_entity }
+        format.json { render json: @target.errors.full_messages, status: :unprocessable_entity }
       end
     end
   end
@@ -79,11 +80,14 @@ class TargetsController < ApplicationController
   end
 
   private
-    def set_target
-      @target = Target.find(params[:id])
-    end
 
-    def target_params
-      params.require(:target).permit(:name, :parent_id, :user_id, :group_id, :id, :tgroup_ids => [])
-    end
+  def set_target
+    @target = Target.find(params[:id])
+  end
+
+  def target_params
+    params.require(:target).permit(:name, :parent_id, :user_id, :group_id, :id,
+                                   :count_name_id, :negative,
+                                   :sets_name_id, :tgroup_ids => [])
+  end
 end
