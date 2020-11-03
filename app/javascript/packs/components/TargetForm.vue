@@ -22,9 +22,11 @@
 
 <script>
   import axios from "axios"
+  import http from "../mixins/rorHTTP";
 
   export default {
     name: "TargetForm",
+    mixins: [http],
     data() {
       return {
         id: null,
@@ -56,6 +58,8 @@
         if (this.id !== undefined) {
           axios.defaults.headers.common['X-CSRF-TOKEN'] = this.token
 
+
+          //http.sendToServer(this, 'task', {id: id, data: this.task})
           axios.patch(`/targets/${this.id}`, {
             format: 'json',
             target: this.target

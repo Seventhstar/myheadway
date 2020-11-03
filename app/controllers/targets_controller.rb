@@ -33,6 +33,8 @@ class TargetsController < ApplicationController
     #   end
     # end
     @checked = TargetDay.where(month: @current_month, year: @current_year)
+    puts "@checked #{@checked.to_json}"
+
     @days = @current_period.end_of_month.day
 
   end

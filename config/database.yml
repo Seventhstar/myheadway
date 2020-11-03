@@ -1,15 +1,15 @@
 development:                        
-  adapter: sqlite3
-  database: db/development.sqlite3
+#  adapter: sqlite3
+#  database: db/development.sqlite3
+  host:     localhost
   pool: 3
   timeout: 10000
+  adapter: postgresql
+  encoding: utf8
+  database: myheadway
+  username: postgres
+  password: 11111111
 
-#  adapter: postgresql
-#  encoding: utf8
-#  database: myheadway
-#  username: postgres
-#  password: pf,fdyj
-#  host:     localhost
 
 production:
   adapter: postgresql

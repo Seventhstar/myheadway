@@ -10,14 +10,27 @@
       return url == null ? `${model}s` : url
     },
 
-    sendToServer(context, model, id = null, url = null) {
+    sendToServer(context, model, options = {}) {
       axios.defaults.headers.common['X-CSRF-TOKEN'] =
           document.querySelector("meta[name=csrf-token]").content
-
-      let path = this.urlFromModel(model, url)
+      let id = options['id']
+      let path = this.urlFromModel(model, options['url'])
       let data = {format: 'json'}
-      data[model] = context[model]
-      if (id !== null) {
+      let source = options['data'] != undefined ? options['data'] :context[model]
+
+      // if ()
+      //   data[model] =
+      // else
+      //   data[model] =
+      data[model] = source
+      // for (let i in source) {
+      //   // this.$set(this.task, i, taskData[i])
+      //   console.log('data[model]', model, data[model])
+      //   data[model][i] = source[i]
+      // }
+
+      console.log('sendToServer data', data)
+      if (id !== null && id !== undefined) {
         data['id'] = id
         axios.patch(`/${path}/${id}`, data)
             .then(function (response) {
@@ -33,8 +46,8 @@
           log.showError(context, error)
         })
       }
-
     },
+
 
     deleteObject(context, model, id, url = null) {
       let path = this.urlFromModel(model, url)

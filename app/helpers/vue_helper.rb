@@ -1,8 +1,8 @@
 module VueHelper
   def for_js(data, methods = [], except = [])
     except = [:created_at, :updated_at] if except.empty?
-    select_src(data).to_json
     # console
+    select_src(data).to_json
   end
 
   def for_vue(data, methods = [], except = [])

@@ -66,8 +66,8 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :feelings, 'Ощущения', '/feelings'
     primary.item :denials, 'Отказы', '/denials'
     primary.item :logout, image_tag('logout.png'),logout_path, method: :delete, html: {class: " logout li-right"}
-    img_url = request.original_fullpath() == "/options" ? 'gear_wh.png' : 'gear.png'
-    primary.item :options, image_tag(img_url) ,options_path, html: {class: "orange logout li-right"}
+    img_url = request.original_fullpath() == "/admin" ? 'gear_wh.png' : 'gear.png'
+    primary.item :options, image_tag(img_url), admin_root_path, html: {class: "orange logout li-right"}
 
     # Add an item which has a sub navigation (same params, but with block)
 #    primary.item :key_2, 'name', url, options do |sub_nav|

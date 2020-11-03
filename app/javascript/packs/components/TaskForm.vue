@@ -11,6 +11,7 @@
           <span>Дата:</span>
           <div class="date-week">
             <datetime v-model="task.start_date" class="date" :phrases="phrases" :auto=true></datetime>
+            <span @click="task.start_date=''" class="icon icon_remove"/>
           </div>
 
           <span>Название:</span>
@@ -67,7 +68,7 @@
 
     watch: {
       value: function (newVal) {
-        this.fillTasktData(newVal)
+        this.fillTaskData(newVal)
       },
     },
 
@@ -90,11 +91,11 @@
       if (element !== null) {
         this.categories = JSON.parse(element.dataset.categories)
       }
-      this.fillTasktData(null)
+      this.fillTaskData(null)
     },
 
     methods: {
-      fillTasktData(newVal) {
+      fillTaskData(newVal) {
         let taskData = newVal === null ? this.taskTemplate : newVal
         for (let i in taskData) {
           this.$set(this.task, i, taskData[i])
@@ -106,7 +107,7 @@
       },
 
       onSaveTarget() {
-        rorHTTP.sendToServer(this, 'task', this.task.id)
+        rorHTTP.sendToServer(this, 'task', {id: this.task.id})
       },
 
       deleteTask() {

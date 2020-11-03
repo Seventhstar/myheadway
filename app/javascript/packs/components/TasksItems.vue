@@ -2,7 +2,11 @@
   <div class="tasks-list">
     <div class="task-list-item" v-for="(task, index) in tasks" @dblclick="editTask(task)">
       <div class="check-container">
-        <input type="checkbox" v-model="task.fixed" :id="'task_checked'+[task.id]" class="custom-checkbox">
+        <input type="checkbox"
+               v-model="task.fixed"
+               :id="'task_checked'+[task.id]"
+               @click="switchCheck(task)"
+               class="custom-checkbox">
         <label :for="'task_checked'+[task.id]"></label>
       </div>
       <span>{{task.name}}</span>
@@ -19,10 +23,12 @@
 <script>
   import EventForm from "./TaskForm.vue";
   import EventIcon from "./TaskIcon.vue";
+  import http from "../mixins/rorHTTP";
 
   export default {
     name: "TasksItems",
     props: ["tasks", "type"],
+    mixins: [http],
     data() {
       return {
         id: null,
@@ -46,6 +52,12 @@
 
       formatDate(str) {
         return formatDate(str)
+      },
+
+      switchCheck(task) {
+        setTimeout(() => {
+          http.sendToServer(this, 'task', {id: task.id, data: task})
+        }, 100)
       },
 
       formatTime(str) {

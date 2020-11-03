@@ -10,7 +10,7 @@
       </ul>
     </div>
     <div>
-      <new-task @input="onInput($event)"/>
+      <new-task @input="onInput($event)" :date="currentDate"/>
       <br/>
       <tasks-tabs v-model="currentTab" @switchTab="onSwitchTab($event)"/>
       <task-form v-model="currentTask" @input="onInput($event)" v-show="showModal"/>
@@ -40,6 +40,9 @@
         </div>
       </div>
       <div class="event-list-container" v-show="currentTab === 4">
+        <tasks-items :tasks="withoutDates" @showModal="onShowModal($event)"/>
+      </div>
+      <div class="event-list-container" v-show="currentTab === 5">
         <tasks-items :tasks="filtered" @showModal="onShowModal($event)"/>
       </div>
     </div>
@@ -73,8 +76,10 @@
         currentTab: 4,
 
         currentTask: {},
+        currentDate: '',
 
         filtered: [],
+        withoutDates: [],
         currentFilters: [],
 
         parents: [],
@@ -115,6 +120,7 @@
         this.week.push(this.dateToStr(date))
       }
 
+      // console.log('task', this.tasks)
       this.tabsValues.push(this.dateToStr(date))
       this.tabsValues.push(this.dateToStr(date))
       this.updateFiltered()
@@ -169,7 +175,7 @@
       },
 
       updateFiltered() {
-        console.log('this.currentFilters', this.currentFilters)
+        // console.log('this.currentFilters', this.currentFilters)
         if (this.currentFilters.length === 0) {
           this.filtered = this.tasks
           this.clearFilterText = ''
@@ -179,12 +185,16 @@
               this.currentFilters.includes(i.task_cat_name)
           )
         }
+
+        this.withoutDates = this.filtered.filter(f =>
+            f.start_date === null)
+
         this.updateGroups()
       },
 
       updateGroups() {
         this.cats = _.groupBy(this.tasks, 'task_cat_name')
-        this.catHeaders = Object.keys(this.cats)
+        this.catHeaders = Object.keys(this.cats).sort()
 
         this.grouped = _.groupBy(this.filtered, 'start_date')
         this.groupHeaders = Object.keys(this.grouped)
@@ -204,9 +214,19 @@
 
       onSwitchTab(tab) {
         this.currentTab = tab
+        //console.log('this.currentTab', this.currentTab)
+        switch (tab) {
+          case 4: this.currentDate = ''
+            break;
+          case 1: this.currentDate = this.tomorrow
+            break;
+          default:
+            this.currentDate = this.today
+        }
       },
 
       dateToStr(date) {
+        if (date == null) return ''
         return date.toISOString().substring(0, 10)
       }
     },

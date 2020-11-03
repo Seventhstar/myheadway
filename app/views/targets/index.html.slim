@@ -1,7 +1,11 @@
 = javascript_pack_tag 'target_form'
 
 = content_tag :div, id: 'targets-data',
-        data: {sets_names: for_js(SetsName.all),
+        data: {month: @current_month,
+                year: @current_year,
+                setsNames: for_js(SetsName.all),
+                countNames: for_js(CountName.all),
+                parents: for_js(Target.where(parent_id: nil)),
                 checked: for_vue(@checked),
                 groups: for_js(@tgroups),
                 targets: for_vue(@targets)} do
@@ -12,8 +16,8 @@ h3= t :target_page_header_h2
 = hidden_field_tag "current_year", @current_year
 = hidden_field_tag "current_month", @current_month
 #targets_index
-  .groups 
-    .subpills 
+  .groups
+    .subpills
       .pill :class="tabClass(index, group)" @click="activeTab = index" @click.ctrl.prevent="edit(group)" v-for="group, index in groups"
         |{{group.label}}
 
@@ -26,11 +30,10 @@ h3= t :target_page_header_h2
         = next_year
 
   #target_head
-    - current_day = @current_period.beginning_of_month
+    //- current_day = @current_period.beginning_of_month
     .table_targets
       span.calenhead.head= t :target_page_header
-      - @days.times do |d|
-        span class="calenhead #{class_on_date_type(current_day)} h#{d+1}" =d+1
+        span class="calenhead #{class_on_date_type(current_day)} h#{d + 1}" = d + 1
         - current_day = current_day.advance(days: 1)
   #div_target_list
 
@@ -39,17 +42,17 @@ h3= t :target_page_header_h2
       .table_targets.group_day :target_id="target.id" v-show="index == activeTab"
         .t-item id="t-item-#{}" 
           .target_line_head.thead_group :class="headClass(target)" @click="targetClick(target, $event)" @dblclick="targetClick(target, $event)"
-            .target_name 
+            .target_name
               |{{target.name}}
         span.calenday @mouseover="mouseOnDay(target)" @mouseleave="mouseLeaveDay(target)" @click="cellClick(d, target, $event)" :day="d" :state="target.checked[d-1]" v-for="d in days"
       .table_targets :target_id="st.id" v-for="st, i in subtargets(target)" v-show="index == activeTab"
         .target_line_head :class="headClass(st)" @click="targetClick(st, $event)" @dblclick="targetClick(st, $event)"
-          .subtarget_name 
+          .subtarget_name
             |{{st.name}}
         span.calenday @mouseover="mouseOnDay(st)" @mouseleave="mouseLeaveDay(st)" @click="cellClick(d, st, $event)" :day="d" :state="st.checked[d-1]" v-for="d in days"
   = render 'modal'
 
-/= render 'index_vue'
+  /= render 'index_vue'
 
   
 

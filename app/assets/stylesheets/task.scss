@@ -39,6 +39,10 @@
   background-color: white;
 }
 
+.date-week .vdatetime {width: 120px; float: left}
+.date-week .vdatetime input {width: 108px; text-align: center}
+.date-week .icon {margin-top: 6px !important;}
+
 .task-list-item {
   display: grid;
   grid-template-columns: 36px 1fr 100px 160px 32px;
@@ -65,7 +69,7 @@
 
 #task-tabs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 5px;
 
   height: 48px;

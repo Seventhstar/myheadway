@@ -18,9 +18,9 @@ $(document).ready ->
   #   day = $(this).attr("day");
   #   $('.h'+day).addClass('overhead');
   
-  $(".calenday").hover ->
-     day = $(this).attr("day")
-     $('.h'+day).toggleClass('overhead')
+  #$(".calenday").hover ->
+  #   day = $(this).attr("day")
+  #   $('.h'+day).toggleClass('overhead')
 
   $('.target_li').hover ->
     $(this).find('div.target_line_head').toggleClass 'cur_head'

@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_15_141427) do
+ActiveRecord::Schema.define(version: 2020_10_18_150103) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "author_type"
+    t.bigint "author_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
 
   create_table "attentions", force: :cascade do |t|
     t.string "name"
@@ -32,16 +49,16 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
   end
 
   create_table "authors", force: :cascade do |t|
-    t.string "name", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "name", limit: 255
+    t.string "name"
     t.integer "author_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "img_url"
     t.text "annotation"
     t.integer "order"
@@ -63,10 +80,10 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
   end
 
   create_table "denials", force: :cascade do |t|
-    t.string "name", limit: 255
-    t.date "start_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
+    t.datetime "start_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "doc_types", force: :cascade do |t|
@@ -86,8 +103,8 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
   create_table "feelings", force: :cascade do |t|
     t.text "content"
     t.date "day"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "notices", force: :cascade do |t|
@@ -105,10 +122,10 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
   end
 
   create_table "search_suggestions", force: :cascade do |t|
-    t.string "term", limit: 255
+    t.string "term"
     t.integer "author"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sets_names", force: :cascade do |t|
@@ -119,12 +136,12 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
 
   create_table "statements", force: :cascade do |t|
     t.integer "author_id"
-    t.string "source", limit: 255
-    t.string "theme", limit: 255
+    t.string "source"
+    t.string "theme"
     t.text "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "book_id"
     t.boolean "isTip"
     t.string "image_url"
@@ -133,14 +150,14 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
   create_table "statementstags", force: :cascade do |t|
     t.integer "statement_id"
     t.integer "tag_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string "name", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "target_days", force: :cascade do |t|
@@ -149,8 +166,8 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
     t.integer "day"
     t.integer "month"
     t.integer "year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "state"
     t.integer "value"
   end
@@ -163,12 +180,12 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
   end
 
   create_table "targets", force: :cascade do |t|
-    t.string "name", limit: 255
+    t.string "name"
     t.integer "parent_id"
     t.integer "user_id"
     t.integer "group_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "negative"
     t.integer "sets_name_id"
     t.integer "count_name_id"
@@ -191,7 +208,7 @@ ActiveRecord::Schema.define(version: 2020_10_15_141427) do
     t.integer "task_cat_id"
     t.integer "priority_id"
     t.date "start_date"
-    t.boolean "fixed", default: true
+    t.boolean "fixed", default: false
     t.boolean "upd_1c"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

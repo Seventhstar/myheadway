@@ -1,7 +1,11 @@
 <template>
   <div id="item-add-form" class="inline">
     <span>Новая задача:</span>
-    <input type="text" class="txt left" placeholder="Новая задача" id="task_name" v-model="task.name" @keyup.enter="onAdd" ref="name">
+    <input type="text" class="txt left"
+           placeholder="Новая задача"
+           id="task_name"
+           v-model="task.name"
+           @keyup.enter="onAdd" ref="name">
     <datetime v-model="task.start_date" class="date" :phrases="phrases" :auto=true></datetime>
     <v-select :options="categories" :reduce="v=>v.value" v-model="task.task_cat_id"></v-select>
     <span id="btn-send" class="btn btn-success" @click="onAdd()">Добавить</span>
@@ -9,12 +13,12 @@
 </template>
 
 <script>
-  import axios from "axios";
   import http from "../mixins/rorHTTP";
 
   export default {
     name: "NewTask",
     mixins: [http],
+    props: ['date'],
 
     data: function () {
       return {
@@ -36,22 +40,32 @@
       if (element !== null) {
         this.categories = JSON.parse(element.dataset.categories)
       }
+    },
 
+    watch: {
+      date: function (newVal, oldVal) {
+        console.log('date watch', this.date, newVal)
+        this.task.start_date = newVal
+
+      }
     },
 
     mounted() {
-      setTimeout(() =>this.$refs.name.focus(), 300)
+      setTimeout(() => this.$refs.name.focus(), 300)
     },
 
     methods: {
       onAdd() {
         http.sendToServer(this, 'task')
-        // this.task.name = ''
+        setTimeout(() => {
+          this.task.name = ''
+        })
+
       },
 
-      onInput(e) {
-        console.log('new item e', e)
-      }
+      // onInput(e) {
+      //   console.log('new item e', e)
+      // }
     }
   }
 

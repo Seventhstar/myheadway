@@ -19,8 +19,8 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require.context('../images', true)
-require("underscore")
-console.log('Hello World from Webpacker')
+// require("underscore")
+// console.log('Hello World from Webpacker')
 
 
 var v_nil = function(v, zeroIsNil = false){
@@ -46,7 +46,8 @@ window.formatTime = function (str) {
 }
 
 window.formatDate = function(date) {
-  if (v_nil(date)) date = new Date().toJSON().slice(0,10).replace(/-/g,'-')
+  if (v_nil(date)) date = ''
+      //new Date().toJSON().slice(0,10).replace(/-/g,'-')
   if (date.includes('-')) return date.slice(0,10).split('-').reverse().join('.')
   return date
 }

@@ -1,13 +1,13 @@
 $corner-radius: 3px;
 
-#target_list, .target_li { 
-  line-height: 18px; 
-  color: #0F67A1; 
-  display: block; 
-  margin: 0; 
-  text-decoration: none; 
-  position: relative; 
-  font-size: 12px; 
+#target_list, .target_li {
+  line-height: 18px;
+  color: #0F67A1;
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  position: relative;
+  font-size: 12px;
 }
 
 #target_list .edit_delete {
@@ -17,10 +17,11 @@ $corner-radius: 3px;
   margin: 1px 2px 0 0;
   font-size: 0;
 }
-#target_list .thead_group .edit_delete{
+
+#target_list .thead_group .edit_delete {
   position: relative;
   white-space: nowrap;
-  margin:  0;
+  margin: 0;
   font-size: 0;
 }
 
@@ -29,118 +30,236 @@ $corner-radius: 3px;
   height: 40px;
 }
 
-.thead_group{ background-color: #f7f7f7;
+.thead_group {
+  background-color: #f7f7f7;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#target_head{ height: 24px; margin-bottom: 3px; }
-#target_list .target_li{ height: 23px; }
-.span9 .chosen-container {width: 80%; }
+#target_head {
+  height: 24px;
+  margin-bottom: 3px;
+}
 
-.target_line_head{ 
-  height: 19px; 
+#target_list .target_li {
+  height: 23px;
+}
+
+.span9 .chosen-container {
+  width: 80%;
+}
+
+.target_line_head {
+  height: 19px;
   display: flex;
-  border-bottom: 1px solid #EEE; 
+  border-bottom: 1px solid #EEE;
   justify-content: center;
   align-items: center;
-  padding:1px 5px;
+  padding: 1px 5px;
   color: #428bca;
   cursor: pointer;
-  &.active, &:hover{ color: white; background-color: #93c0e6;}
+
+  &.active, &:hover {
+    color: white;
+    background-color: #93c0e6;
+  }
 }
 
-.thead_group .target_name { color: #616161; &:hover{color: white;}}
-.target_line_head.active .target_name {color: white;}
-.subtarget_name { 
+.thead_group .target_name {
+  color: #616161;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.target_line_head.active .target_name {
+  color: white;
+}
+
+.subtarget_name {
   width: 185px;
   font-size: 12px;
   margin-left: 8px;
 }
 
 
-span.plus { display: block; float: left; width: 18px;text-align: center; cursor: pointer; }
-
-.target_line_days {height: 23px;}
-
-.calenhead, .calenday { border-radius: $corner-radius; box-sizing: border-box;
+span.plus {
+  display: block;
+  float: left;
+  width: 18px;
+  text-align: center;
   cursor: pointer;
-  font-size: 12px; 
+}
+
+.target_line_days {
+  height: 23px;
+}
+
+.calenhead, .calenday {
+  border-radius: $corner-radius;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; float: left; border: 1px solid #DDD;}
+  text-align: center;
+  float: left;
+  border: 1px solid #DDD;
+}
 
-  .calenhead {
-    height: 20px; 
-    width: 22px;
-    &.overhead, &:hover {
-      color: white;
-      background-color: #93c0e6; 
-      border-color: #428bca; 
-      border-radius: $corner-radius;
-      &.holyday { 
-        border: 1px solid #ff0000; 
-        background-color: #ffaaaa;
-      } 
-    } 
-    &.head { 
-      width: 182px; 
-      background-color: #f9f9f9;
-      font-weight: bold;
-      font-family: verdana, arial, helvetica, sans-serif; font-size: 13px;  
+.calenhead {
+  height: 20px;
+  width: 22px;
+
+  &.active, &:not(.head):hover {
+    color: white;
+    background-color: #93c0e6;
+    border-color: #428bca;
+    border-radius: $corner-radius;
+
+    &.holiday {
+      border: 1px solid #ff0000;
+      background-color: #ffaaaa;
     }
   }
 
-  .calenday {
-    min-height: 20px;
-    cursor: pointer;
-    &:hover{ 
-      border: 1px solid #ACF; 
-      background-color: #e9f8ff;
-      -webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease; }
-      &.checked{ background-image: url('check.png');-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
-    }
+  &.head {
+    width: 182px;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+  }
+}
+
+.calenday {
+  min-height: 20px;
+  cursor: pointer;
+
+  &:not(.head):hover {
+    border: 1px solid #ACF;
+    background-color: #e9f8ff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+
+  &.checked {
+    background-image: url('check.png');
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+}
 
 
-    .group_day .calenday {
-      border: 1px solid #ddd;
-      &:hover {border: 1px solid #ACF; background-color: #e9f8ff; 
-        -webkit-transition: all 0.5s ease; 
-        -moz-transition: all 0.5s ease; 
-        -o-transition: all 0.5s ease;    
-        transition: all 0.5s ease;}
-      }
+.group_day .calenday {
+  border: 1px solid #ddd;
 
-      .calenday[state="1"] { background-color: #F0FFB0; border: 1px solid #8cc665;}
-      .calenday[state="2"] { background-color: #BAEC50; border: 1px solid #67b72b;}
-      .calenday[state="3"] { background-color: #70CB30; border: 1px solid #198619;}
+  &:hover {
+    border: 1px solid #ACF;
+    background-color: #e9f8ff;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+}
 
-      .today{ color: white; border: 1px solid #04355f; background-color: #428bca; border-radius: $corner-radius;}
-      .today.holyday { background-color: #F44336; border-color: #d01f1f;}
+.calenday[state="1"] {
+  background-color: #F0FFB0;
+  border: 1px solid #8cc665;
+}
 
-      .holyday { border: 1px solid #ffcccc; background-color: #ffeeee;
-        &:hover{ border: 1px solid #ff0000; background-color: #ffaaaa; }}
+.calenday[state="2"] {
+  background-color: #BAEC50;
+  border: 1px solid #67b72b;
+}
 
-        td.edit_delete, th.edit_delete{ width: 42px; padding-right: 4px !important; padding-left: 4px !important;}
+.calenday[state="3"] {
+  background-color: #70CB30;
+  border: 1px solid #198619;
+}
+
+.today {
+  color: white;
+  border: 1px solid #04355f;
+  background-color: #428bca;
+  border-radius: $corner-radius;
+}
+
+.today.holiday {
+  background-color: #F44336;
+  border-color: #d01f1f;
+}
+
+.holiday {
+  border: 1px solid #f3adad;
+  background-color: #f5d6d6;
+
+  &:hover {
+    border: 1px solid #ff0000;
+    background-color: #ffaaaa;
+  }
+}
+
+td.edit_delete, th.edit_delete {
+  width: 42px;
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+}
 
 
-        .end_line{ float: right; width: 10px; display: block;}
-
-
-        #children { margin-left: 20px;}
-        #target_list{ padding:0px; -webkit-padding-start: 0px;}
-        #div_days_list{ float: right;}
-
-        .calendar_period_h { float: right; }
-
-        .calendar_period { cursor: default; height: 28px; 
-  // margin: 10px 0;
-  display: table-cell; 
+.end_line {
   float: right;
-  span, em { padding: 0.2em 1.2em; display: block; float: left; margin-right: 1px; }
-  .current { font-style: normal;font-weight: bold; background: #2e6ab1;color: white; border: 1px solid #2e6ab1;}
+  width: 10px;
+  display: block;
+}
+
+
+#children {
+  margin-left: 20px;
+}
+
+#target_list {
+  padding: 0px;
+  -webkit-padding-start: 0px;
+}
+
+#div_days_list {
+  float: right;
+}
+
+.calendar_period_h {
+  float: right;
+}
+
+.calendar_period {
+  cursor: default;
+  height: 28px;
+  // margin: 10px 0;
+  display: table-cell;
+  float: right;
+
+  span, em {
+    padding: 0.2em 1.2em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+  }
+
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1;
+  }
 
 }
 
@@ -155,8 +274,8 @@ span.plus { display: block; float: left; width: 18px;text-align: center; cursor:
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -167,7 +286,7 @@ span.plus { display: block; float: left; width: 18px;text-align: center; cursor:
   // width: 80%;  Could be more or less, depending on screen size 
   width: 450px;
   border-radius: 8px;
-  box-shadow: 0 5px 7px 2px rgba(0,0,0,.2),0 3px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)!important;
+  box-shadow: 0 5px 7px 2px rgba(0, 0, 0, .2), 0 3px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12) !important;
 }
 
 .modal-head {
