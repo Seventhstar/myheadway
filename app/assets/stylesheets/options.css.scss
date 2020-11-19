@@ -1,10 +1,10 @@
 .icon,li.icon a {display: inline-block; vertical-align:middle; position:relative; width: 16px; height: 16px;}
 .icon+.icon {margin-left: 2px;}
-.icon_remove {background: url('delete.png');}
+.icon_remove {background: asset-url('delete.png');}
 .icon_remove.disabled { }
-.icon_edit {background: url('edit.png');}
-.icon_code {background: url('code.png');}
-.icon_tag {background: url('tag.png');}
+.icon_edit {background: asset-url('edit.png');}
+.icon_code {background: asset-url('code.png');}
+.icon_tag {background: asset-url('tag.png');}
 
 label.inp_btn_label { padding: 0 0 0 18px; position: relative; }
 label.inp_btn_label .inp_btn { position: absolute; top: -2px; left: 0; }
@@ -18,8 +18,8 @@ label.inp_btn_label .inp_btn { position: absolute; top: -2px; left: 0; }
 span.icon { width: 16px;  height: 16px; display: inline-block; vertical-align:middle; position:relative; }
 span.icon:hover{ cursor: pointer; }
 
-span.icon_apply{background: url('apply.png') no-repeat;}
-span.icon_cancel{background: url('cancel.png') no-repeat;}
+span.icon_apply{background: asset-url('apply.png') no-repeat;}
+span.icon_cancel{background: asset-url('cancel.png') no-repeat;}
 
 .only_actual:hover {opacity: 0.8;}
 .switcher_a { margin-top: 2px; margin-right:20px; width: 140px; float: right; }

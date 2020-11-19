@@ -29,7 +29,7 @@ img.round { position: absolute; z-index: 2; display: block; left: -40px; top: -1
 .st_a:hover, .st_a:hover a{background-color:#428bca; border-radius: 2px; color: white;}
 
 .statement_show { border: 1px solid #EEE; padding: 10px 20px 30px 20px;
- margin-right: auto; margin-top: 18px; background: url("back-tet5.png");
+ margin-right: auto; margin-top: 18px; background: asset-url("back-tet5.png");
  box-shadow: 3px 3px 4px rgba(0,0,0,0.15);
  -moz-border-radius: 4px;
  -webkit-border-radius: 4px;
