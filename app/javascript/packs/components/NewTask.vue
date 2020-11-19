@@ -14,10 +14,11 @@
 
 <script>
   import http from "../mixins/rorHTTP";
+  import log from '../mixins/log';
 
   export default {
     name: "NewTask",
-    mixins: [http],
+    mixins: [http, log],
     props: ['date'],
 
     data: function () {
@@ -56,10 +57,15 @@
 
     methods: {
       onAdd() {
-        http.sendToServer(this, 'task')
-        setTimeout(() => {
-          this.task.name = ''
-        })
+        if (this.task.name.length === 0) {
+          //log.showError(this, 'Заполните наименование!')
+          this.$noty.error('Заполните наименование!')
+        } else {
+          http.sendToServer(this, 'task')
+          setTimeout(() => {
+            this.task.name = ''
+          })
+        }
 
       },
 

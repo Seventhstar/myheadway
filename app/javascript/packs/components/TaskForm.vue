@@ -26,7 +26,7 @@
           </textarea>
           <br></div>
         <div class="actions">
-          <span @click="onSaveTarget()" class="btn btn-min btn-success">Сохранить</span>
+          <span @click="onSaveTask()" class="btn btn-min btn-success">Сохранить</span>
           <span @click="onCancel()" class="btn btn_reset mr-2">Отменить</span>
         </div>
       </div>
@@ -81,7 +81,7 @@
     mounted() {
       document.body.addEventListener('keyup', e => {
         if (e.code === "Escape") this.onCancel()
-        else if (e.code === "Enter" && e.ctrlKey) this.onSaveTarget()
+        else if (e.code === "Enter" && e.ctrlKey) this.onSaveTask()
       })
     },
 
@@ -106,7 +106,7 @@
         this.$emit('input')
       },
 
-      onSaveTarget() {
+      onSaveTask() {
         rorHTTP.sendToServer(this, 'task', {id: this.task.id})
       },
 
