@@ -33,7 +33,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'puma', '~> 4.1'	
+gem 'puma', '~> 4.3'	
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Use SCSS for stylesheets
