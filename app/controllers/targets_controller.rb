@@ -4,6 +4,8 @@ class TargetsController < ApplicationController
   include TargetsHelper
   include VueHelper
 
+  respond_to :json
+
   def index
     current_time = Time.now
     @tgroups = Tgroup.all
@@ -49,28 +51,13 @@ class TargetsController < ApplicationController
 
   def create
     @target = Target.new(target_params)
-
-    respond_to do |format|
-      if @target.save
-        format.html { redirect_to targets_path, notice: 'Target was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @target }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @target.errors, status: :unprocessable_entity }
-      end
-    end
+    @target.user_id = current_user.id if @target.user_id.nil?
+    respond_with(@target.save)
   end
 
   def update
-    respond_to do |format|
-      if @target.update(target_params)
-        format.html { redirect_to targets_path, notice: 'Target was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @target.errors.full_messages, status: :unprocessable_entity }
-      end
-    end
+    @target.update(target_params)
+    respond_with(@target)
   end
 
   def destroy

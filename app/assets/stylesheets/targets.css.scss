@@ -1,3 +1,5 @@
+@import "common.scss";
+
 $corner-radius: 3px;
 
 #target_list, .target_li {
@@ -31,10 +33,9 @@ $corner-radius: 3px;
 }
 
 .thead_group {
-  background-color: #f7f7f7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #428bca;
+  border-radius: 6px 6px 0 0;
+  color: white !important;
 }
 
 #target_head {
@@ -53,7 +54,10 @@ $corner-radius: 3px;
 .target_line_head {
   height: 19px;
   display: flex;
-  border-bottom: 1px solid #EEE;
+
+  border-bottom: 1px solid $pills;
+  border-left: 1px solid $pills;
+
   justify-content: center;
   align-items: center;
   padding: 1px 5px;
@@ -62,17 +66,18 @@ $corner-radius: 3px;
 
   &.active, &:hover {
     color: white;
-    background-color: #93c0e6;
+    background-color: #78aedc;
   }
+
 }
 
-.thead_group .target_name {
-  color: #616161;
-
-  &:hover {
+.thead_group {
+  &.active, &:hover {
     color: white;
+    background-color: $pills-active;
   }
 }
+
 
 .target_line_head.active .target_name {
   color: white;
@@ -98,16 +103,15 @@ span.plus {
 }
 
 .calenhead, .calenday {
-  border-radius: $corner-radius;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-size: 12px;
   display: flex;
-  justify-content: center;
+  cursor: pointer;
+  border-radius: 3px;
   align-items: center;
-  text-align: center;
-  float: left;
+  font-family: 'Teko', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
   border: 1px solid #DDD;
+  justify-content: center;
 }
 
 .calenhead {
@@ -136,7 +140,7 @@ span.plus {
 }
 
 .calenday {
-  min-height: 20px;
+  min-height: 22px;
   cursor: pointer;
 
   &:not(.head):hover {

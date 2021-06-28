@@ -23,7 +23,7 @@ class StatementsController < ApplicationController
 
   def new
     @statement = Statement.new
-     @tags = Tag.all.order(:name)
+    @tags = Tag.all.order(:name)
   end
 
   def edit
@@ -40,6 +40,7 @@ class StatementsController < ApplicationController
         format.html { redirect_to statements_url, notice: 'Statement was successfully created.' }
         format.json { render action: 'show', status: :created, location: @statement }
       else
+        puts "@statement.errors #{@statement.errors}"
         format.html { render action: 'new' }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end

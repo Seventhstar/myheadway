@@ -1,24 +1,6 @@
 <template>
   <div>
-    <div class="target_edit_modal" v-show="targetEdit">
-      <div class="grid_label_name">
-        <label for="name"> Название: </label>
-        <input type="text" v-model="target.name" id="name">
-        <label> Группа: </label>
-        <v-select v-model="target.group_id" :reduce="v=>v.value" :options="groups"/>
-        <label> Родитель: </label>
-        <v-select v-model="target.parent_id" :reduce="v=>v.value" :options="parents"/>
-        <label>Название подхода (повторения):</label>
-        <v-select v-model="target.sets_name_id" :reduce="v=>v.value" :options="setsnames"/>
-        <label>Название количества:</label>
-        <v-select v-model="target.count_name_id" :reduce="v=>v.value" :options="countnames"/>
-      </div>
-      <br>
-      <div class="actns" style="float: right">
-        <span class="btn btn_reset ml-2" @click="targetEdit = false"> Отменить </span>
-        <span class="btn btn-min btn-success" @click="onSaveTarget()"> Сохранить </span>
-      </div>
-    </div>
+    <target-form v-model="currentTarget" @input="onInput($event)" v-show="targetEdit"/>
 
     <div id="targets_index">
       <div class="groups">
@@ -27,7 +9,10 @@
                @click="activeTab = index" @click.ctrl.prevent="edit(group)"
                v-for="(group, index) in groups">{{group.label}}
           </div>
+          <div class="pill success" @click="addNew()">+ Добавить</div>
         </div>
+
+
         <div class="calendar_period">
           <div class="calendar_period_h">
             <div class="prev_year"></div>
@@ -49,7 +34,7 @@
         <template v-for="(group, index) in groups">
           <template v-for="(target, idx) in grouped[group.label]">
             <div class="table_targets group_day" :target_id="target.id" v-show="index === activeTab">
-              <div class="t-item" id="`t-item-${idx}`">
+              <div class="t-item" :id="'t-item'+idx">
                 <div class="target_line_head thead_group"
                      :class="headClass(target)"
                      @click="targetClick(target, $event)"
@@ -86,6 +71,7 @@
 <script>
   import {_} from 'vue-underscore'
   import axios from "axios"
+  import TargetForm from "./TargetForm";
 
   export default {
     name: "TargetsList",
@@ -100,6 +86,7 @@
         groups: [],
         setsnames: [],
         current_period: '',
+        currentTarget: 0,
         targetEdit: false,
         hoverDay: -1,
         activeTab: 0,
@@ -109,6 +96,10 @@
           count_name_id: 0
         }
       }
+    },
+
+    components: {
+      TargetForm,
     },
     // el: '#targets_index',
     // mixins: [m_index],
@@ -125,17 +116,6 @@
       this.getData('targets-data', 'month')
       this.getData('targets-data', 'year')
 
-      // let element = document.getElementById('targets-data')
-      // if (element !== null) {
-      //   this.targets = JSON.parse(element.dataset.targets)
-      //   this.checked = JSON.parse(element.dataset.cheked)
-      // }
-
-      this.grouped = _.groupBy(this.targets, 'group_name')
-      this.groupHeaders = Object.keys(this.grouped)
-
-      console.log('this.checked', this.checked, this.month)
-
       document.body.addEventListener('keyup', e => {
         if (e.key === 'Escape') {
           this.targetEdit = false
@@ -144,22 +124,13 @@
         }
       })
 
-      this.targets.forEach((t) => {
-        t.checked = Array(this.days).fill(0)
-        let checks = this.checked.filter(f => f.target_id == t.id)
-        checks.forEach((ch) => {
-          t.checked[ch.day - 1] = ch.state
-        })
-      })
+      this.updateFiltered();
 
       let d = new Date()
       d = new Date(d.getFullYear(), d.getMonth() + 1, 0);
       this.days = Array.from(Array(d.getDate()).keys())
 
       this.current_period = new Date().toLocaleDateString('ru-RU', {month: 'long', year: 'numeric'}).toUpperCase()
-
-      // this.month = $("#current_month").val()
-      // this.year = $("#current_year").val()
 
       let token = document.head.querySelector('meta[name="csrf-token"]').content
       axios.defaults.headers.common['X-CSRF-TOKEN'] = token
@@ -173,6 +144,18 @@
     },
 
     methods: {
+      updateFiltered() {
+        this.grouped = _.groupBy(this.targets, 'group_name')
+        this.groupHeaders = Object.keys(this.grouped)
+        this.targets.forEach((t) => {
+          t.checked = Array(this.days).fill(0)
+          let checks = this.checked.filter(f => f.target_id == t.id)
+          checks.forEach((ch) => {
+            t.checked[ch.day - 1] = ch.state
+          })
+        })
+      },
+
       dayClass(day) {
         let cls = "calenhead"
         let today = new Date()
@@ -181,17 +164,17 @@
         // d.g
 
         // console.log('today', today, 'day', day, 'd', d)
-        if(d.getDay() >= 5)
+        if (d.getDay() >= 5)
           cls = cls + ' holiday'
 
-        if ( day === today.getDay())
+        if (day === today.getDay())
           cls = cls + ' today'
 
         if (day === this.hoverDay)
           cls = cls + ' active'
 
 
-          return cls
+        return cls
       },
 
       getData(elementName, itemName) {
@@ -271,6 +254,35 @@
           this.group_id = target.group_id
           this.targetEdit = true
         }
+      },
+
+      onInput(e) {
+        this.targetEdit = false
+        if (e === undefined) return
+        if (e.delete) {
+          let forDelete = this.targets.filter(f => f.id === e.id)
+          if (forDelete.length) {
+            let index = this.targets.indexOf(forDelete[0])
+            this.targets.splice(index, 1)
+          }
+        } else if (!e.update) {
+          this.targets.push(e.data)
+        } else {
+          let data = e.data
+          let forUpdate = this.targets.filter(e => e.id === data.id)
+          if (forUpdate.length > 0) {
+            let i = this.targets.indexOf(forUpdate[0])
+            this.$set(this.targets, i, data)
+          }
+        }
+        console.log('this.targets', this.targets)
+        this.updateFiltered()
+
+      },
+
+      addNew() {
+        this.currentTarget = null
+        this.targetEdit = true
       },
 
       onSaveTargetDay() {

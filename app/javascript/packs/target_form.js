@@ -22,5 +22,5 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 document.addEventListener('keyup', (e) => {
-  console.log('key code', e)
+
 })
