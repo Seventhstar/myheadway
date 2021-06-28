@@ -40,7 +40,7 @@ class StatementsController < ApplicationController
         format.html { redirect_to statements_url, notice: 'Statement was successfully created.' }
         format.json { render action: 'show', status: :created, location: @statement }
       else
-        puts "@statement.errors #{@statement.errors}"
+        puts "@statement.errors #{@statement.errors.full_messages}"
         format.html { render action: 'new' }
         format.json { render json: @statement.errors, status: :unprocessable_entity }
       end
